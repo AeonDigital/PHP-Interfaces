@@ -1,0 +1,41 @@
+{
+    "name": "aeondigital/phpinterfaces",
+    "description": "Coleção de Interfaces para bibliotecas e projetos.",
+    "version": "v0.1.0-alpha",
+    "time": "2020-01-23",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Rianna Cantarelli",
+            "email": "rianna.aeon@gmail.com",
+            "homepage": "http://aeondigital.com.br",
+            "role": "developer"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=7.4"
+    },
+    "autoload": {
+        "classmap": [
+            "src/"
+        ]
+    },
+    "autoload-dev": {
+        "classmap": [
+            "src/"
+        ]
+    },
+    "keywords": [
+        "interfaces",
+        "collection",
+        "data",
+        "list",
+        "type",
+        "append-only",
+        "case-insensitive",
+        "immutable",
+        "readonly"
+    ]
+}
