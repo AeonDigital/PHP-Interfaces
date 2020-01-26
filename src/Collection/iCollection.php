@@ -27,8 +27,7 @@ interface iCollection extends iBasicCollection
 
 
     /**
-     * Converte a coleção atualmente armazenada em um ``Array Associativo``.
-     * Retorna toda a coleção atualmente armazenada em um
+     * Converte a coleção atualmente armazenada em um ``array associativo``.
      *
      * @param       bool $originalKeys
      *              Quando ``true`` irá usar as chaves conforme foram definidas na função ``set``.
@@ -36,9 +35,9 @@ interface iCollection extends iBasicCollection
      *              ``false`` então elas retornarão seu formato alterado.
      *
      * @return      array
-     *              Retorna um ``Array Associativo`` ou ``[]`` caso a coleção esteja vazia.
+     *              Retorna um ``array associativo`` ou ``[]`` caso a coleção esteja vazia.
      */
-    function toArray(?bool $originalKeys = false) : array;
+    function toArray(bool $originalKeys = false) : array;
 
 
 
@@ -46,19 +45,14 @@ interface iCollection extends iBasicCollection
      * Permite inserir multiplos dados de uma única vez na coleção.
      *
      * @param       array $newValues
-     *              ``Array Associativo`` contendo os novos valores a serem definidos para a coleção.
+     *              ``array associativo`` contendo os novos valores a serem definidos para a coleção.
      *
      * @return      bool
      *              Retornará ``true`` caso TODOS os novos valores sejam adicionados e ``false``
-     *              caso 1 deles falhe. No caso de falha, NENHUM valor deve ser adicionado.
+     *              caso 1 deles falhe.
      *
      * @throws      \InvalidArgumentException
-     *              Lançada caso na classe concreta exista alguma restrição quanto to tipo/valor de
-     *              cada item a ser armazenado.
-     *
-     * @throws      \RuntimeException
-     *              Lançada caso na classe concreta exista alguma regra que impeça esta ação de
-     *              prosseguir.
+     *              DEVE ser lançado caso algum dos valores passados seja ``undefined``.
      */
     function insert(array $newValues) : bool;
 
@@ -68,11 +62,7 @@ interface iCollection extends iBasicCollection
      * Limpa totalmente a coleção de dados eliminando toda informação armazenada no momento.
      *
      * @return      bool
-     *              Retornará ``true`` caso a exclusão dos dados tenha sido executada.
-     *
-     * @throws      \RuntimeException
-     *              Lançada caso alguma restrição na classe concreta impeça que os dados sejam
-     *              eliminados.
+     *              Retornará ``true`` caso a exclusão dos dados tenha sido executada com sucesso.
      */
     function clean() : bool;
 }

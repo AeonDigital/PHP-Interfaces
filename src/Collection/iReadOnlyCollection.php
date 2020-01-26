@@ -19,7 +19,7 @@ use AeonDigital\Interfaces\Collection\iProtectedCollection as iProtectedCollecti
  * ``iProtectedCollection`` pois, além de não permitir que nenhum estado dos objetos armazenados
  * seja alterado, ele também não permite qualquer alteração na coleção em si.
  *
- * Neste caso a coleção DEVE SER definida no construtor da classe e após isto NENHUMA outra
+ * Neste caso a coleção DEVE ser definida no construtor da classe e após isto NENHUMA outra
  * alteração pode ser executada nos valores que estão armazenados.
  *
  * @package     AeonDigital\Interfaces\Collection
@@ -39,8 +39,7 @@ interface iReadOnlyCollection extends iProtectedCollection
      * ``set(string $key, $value) : bool``
      *
      * Este método NUNCA deve funcionar quando usado com esta interface.
-     * É indicado que, ao ser usado, ele retorne sempre ``false`` ou que cause o lançamento de
-     * uma ``exception``.
+     * É indicado que, ao ser usado, ele retorne sempre ``false``.
      *
      *
      *
@@ -55,7 +54,6 @@ interface iReadOnlyCollection extends iProtectedCollection
      * ``remove(string $key) : bool``
      *
      * Este método NUNCA deve funcionar quando usado com esta interface.
-     * É indicado que, ao ser usado, ele retorne sempre ``false`` ou que cause o lançamento de
-     * uma ``exception``.
+     * É indicado que, ao ser usado, ele retorne sempre ``false``.
      */
 }

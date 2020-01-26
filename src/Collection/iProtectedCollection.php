@@ -45,8 +45,8 @@ interface iProtectedCollection extends iBasicCollection
      * Este método deverá clonar o objeto passado para assim mantê-lo seguro de qualquer
      * posterior alteração.
      *
-     * Quando houver uma tentativa de alterar um valor já definido uma exception deve ser
-     * lançada.
+     * Quando houver uma tentativa de alterar um valor já definido uma deve simplesmente
+     * retornar ``false``.
      *
      *
      *
@@ -62,7 +62,7 @@ interface iProtectedCollection extends iBasicCollection
      *
      * Nesta interface este método deve funcionar normalmente sem qualquer forma de restrição.
      *
-     * As regras da interface apenas preveem que a ALTERAÇÃO/SUBSTITUIÇÃO de valores EXISTENTES
+     * As regras da interface apenas preveem que a ALTERAÇÃO/SUBSTITUIÇÃO de VALORES EXISTENTES
      * sejam protegidos mas não a sua remoção e nem a futura adição de um outro valor usando
      * uma chave que já não faz mais parte da coleção.
      */

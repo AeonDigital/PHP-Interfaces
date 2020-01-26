@@ -15,7 +15,7 @@ use AeonDigital\Interfaces\Collection\iBasicCollection as iBasicCollection;
 /**
  * Interface que identifica uma coleção como sendo ``appendOnly``.
  *
- * Quando implementada DEVE IMPEDIR qualquer forma de remoção de valores previamente definidos.
+ * Quando implementada DEVE impedir qualquer forma de remoção de valores previamente definidos.
  * Note que o valor PODE ainda ser alterado, no entanto, uma chave que seja definida uma vez
  * permanecerá na ``collection`` até o final de sua vida.
  *
@@ -40,7 +40,6 @@ interface iAppendOnlyCollection extends iBasicCollection
      * ``remove(string $key) : bool``
      *
      * Este método NUNCA deve funcionar quando usado com esta interface.
-     * É indicado que, ao ser usado, ele retorne sempre ``false`` ou que cause o lançamento de
-     * uma ``exception``.
+     * É indicado que, ao ser usado, ele retorne sempre ``false``.
      */
 }

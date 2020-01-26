@@ -15,13 +15,15 @@ namespace AeonDigital\Interfaces\Collection;
 /**
  * Interface fundamental para qualquer classe que planeje ser uma coleção de dados.
  *
- * Uma coleção (collection) é uma forma mais complexa de um ``Array Associativo`` que permite,
+ * Uma coleção (collection) é uma forma mais complexa de um ``array associativo`` que permite,
  * além de acesso a controles especiais, que seja definidos tipos e regras específicas para o
  * tratamento dos dados que ele pode conter.
  *
+ * Por padrão, as chaves dos itens da coleção recebem tratamento ``case sensitive``, ou seja,
+ * ``Key != key != KEY``.
+ *
  * Para complementar este projeto e as classes concretas que venham a ser criadas a partir daqui
- * existem outras 4 interfaces que permitem extender as capacidades das collections,
- * são elas:
+ * existem outras 4 interfaces que permitem extender as capacidades das collections, são elas:
  *
  *  - iProtectedCollection
  *  - iAppendOnlyCollection
@@ -79,7 +81,7 @@ interface iBasicCollection extends \ArrayAccess, \Countable, \IteratorAggregate
      *
      * @return      bool
      *              Quando ``true`` indica que os nomes das chaves de cada entrada de dados será
-     *              tratado de forma **case insensitive**, ou seja, ``KeyName = keyname = KEYNAME``.
+     *              tratado de forma ``case insensitive``, ou seja, ``KeyName = keyname = KEYNAME``.
      */
     function isCaseInsensitive() : bool;
 
@@ -93,7 +95,7 @@ interface iBasicCollection extends \ArrayAccess, \Countable, \IteratorAggregate
      * ``array`` iniciado em zero.
      *
      * Ainda assim o tratamento das chaves sempre se dará como se fossem ``strings`` e não
-     * numerais inteiros como ocorre em um ``array unidimensional``.
+     * numerais inteiros como ocorre em um ``array comum``.
      *
      * As implementações desta caracteristica devem também controlar os índices quando estes são
      * removidos. A regra geral é que TODOS os itens existentes mantenham como chave o índice
@@ -140,20 +142,16 @@ interface iBasicCollection extends \ArrayAccess, \Countable, \IteratorAggregate
      *
      * @param       string $key
      *              Nome da chave.
-     *              Pode ser omitido caso a instância seja do tipo ``autoincrement``.
+     *              Pode ser usado ``''`` caso a instância seja do tipo ``autoincrement``.
      *
      * @param       mixed $value
-     *              Valor que será associado.
+     *              Valor que será associado a esta chave.
      *
      * @return      bool
-     *              Deve retornar ``true`` quando a insersão/atualização do item foi bem sucedido.
+     *              Retorna ``true`` quando a insersão/atualização do item foi bem sucedido.
      *
      * @throws      \InvalidArgumentException
-     *              Caso alguma regra proposta por uma classe concreta impeça o valor indicado de
-     *              ser adicionado na coleção.
-     *
-     * @throws      \RuntimeException
-     *              Caso alguma regra de uma classe concreta impeça que esta ação seja realizada.
+     *              DEVE ser lançado caso o valor passado seja ``undefined``.
      */
     function set(string $key, $value) : bool;
 
@@ -162,19 +160,12 @@ interface iBasicCollection extends \ArrayAccess, \Countable, \IteratorAggregate
     /**
      * Resgata um valor da coleção a partir do nome da chave indicada.
      *
-     * Normalmente deve ser considerado retornar ``null`` sempre que a chave indicada não existir
-     * entre os itens da coleção mas pode ser definido em uma classe concreta que neste caso uma
-     * ``exception`` seja lançada.
-     *
      * @param       string $key
      *              Nome da chave cujo valor deve ser retornado.
      *
      * @return      ?mixed
-     *              Valor armazenado na collection que correspondente a chave passada.
-     *
-     * @throws      \InvalidArgumentException
-     *              Caso a regra da classe concreta defina que em caso de ser passado uma chave
-     *              inexistente seja lançada uma ``exception``.
+     *              Valor armazenado na ``collection`` que correspondente a chave passada.
+     *              DEVE retornar ``undefined`` quando a chave de nome indicado não existir.
      */
     function get(string $key);
 
@@ -183,22 +174,21 @@ interface iBasicCollection extends \ArrayAccess, \Countable, \IteratorAggregate
     /**
      * Remove da coleção o item com a chave indicada.
      *
-     * Normalmente a ausencia da chave indicada apenas não produz efeito na execução deste método.
-     *
      * @param       string $key
      *              Nome da chave do valor que será excluído.
      *
+     * @param       bool $checkExists
+     *              Quando ``true``, a pré-existência da chave a ser removida será levada em conta
+     *              no retorno deste método.
+     *
      * @return      bool
-     *              Retorna ``true`` se o item foi removido.
-     *              Retornará ``false`` se por algum motivo a exclusão não foi possível, incluindo
-     *              casos onde a chave passada é inexistente.
+     *              Considerando que ``$checkExists = true``:
+     *              Retorna ``true`` APENAS SE o item existia E foi removido.
+     *              Retornará ``false`` SE o item não existir OU se não foi possível tal remoção.
      *
-     * @throws      \InvalidArgumentException
-     *              Caso a regra da classe concreta defina que em caso de ser passado uma chave
-     *              inexistente seja lançada uma ``exception``.
-     *
-     * @throws      \RuntimeException
-     *              Caso alguma regra da classe concreta impeça esta ação de ser executada.
+     *              Considerando que ``$checkExists = false``:
+     *              Retornará ``true`` se o item não existir OU se ele existia e foi removido.
+     *              Retornará ``false`` APENAS SE o item existia E não foi possível remover o item.
      */
-    function remove(string $key) : bool;
+    function remove(string $key, bool $checkExists = false) : bool;
 }
