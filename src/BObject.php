@@ -97,7 +97,7 @@ abstract class BObject
      *
      * @codeCoverageIgnore
      */
-    public function __set_state($assoc_array)
+    public static function __set_state($assoc_array)
     {
         throw new \RuntimeException("Unable to use \"__set_state\" method.");
     }
