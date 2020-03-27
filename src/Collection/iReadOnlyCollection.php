@@ -24,7 +24,7 @@ use AeonDigital\Interfaces\Collection\iProtectedCollection as iProtectedCollecti
  *
  * @package     AeonDigital\Interfaces\Collection
  * @author      Rianna Cantarelli <rianna@aeondigital.com.br>
- * @copyright   2019, Rianna Cantarelli
+ * @copyright   2020, Rianna Cantarelli
  * @license     MIT
  */
 interface iReadOnlyCollection extends iProtectedCollection

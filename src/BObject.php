@@ -13,11 +13,11 @@ namespace AeonDigital;
 
 
 /**
- * Classe básica para todas as demais classes de projetos Aeon Digital.
+ * Classe básica.
  *
  * @package     AeonDigital
  * @author      Rianna Cantarelli <rianna@aeondigital.com.br>
- * @copyright   2019, Rianna Cantarelli
+ * @copyright   2020, Rianna Cantarelli
  * @license     MIT
  */
 abstract class BObject

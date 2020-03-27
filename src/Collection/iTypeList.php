@@ -82,7 +82,7 @@ use AeonDigital\Interfaces\Collection\iBasicCollection as iBasicCollection;
  *
  * @package     AeonDigital\Interfaces\Collection
  * @author      Rianna Cantarelli <rianna@aeondigital.com.br>
- * @copyright   2019, Rianna Cantarelli
+ * @copyright   2020, Rianna Cantarelli
  * @license     MIT
  */
 interface iTypeList extends iBasicCollection

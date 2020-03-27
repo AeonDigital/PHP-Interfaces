@@ -46,7 +46,7 @@ para que, nas classes concretas, as exceptions apenas sejam lançadas se for
 considerado REALMENTE IMPORTANTE.
 
 Um método que receba um argumento inválido por exemplo deveria, em princípio,
-apenas não funcionar e ter seu retorno marcado como ``false``.
+apenas não funcionar e ter seu retorno marcado como ``false`` ou ``null``.
 
 Apenas em casos onde retornar ``false`` possa causar uma falha de interpretação
 substancial do real resultado daquele método é que as exceptions deveriam ser
