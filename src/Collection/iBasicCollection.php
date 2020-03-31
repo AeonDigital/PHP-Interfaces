@@ -162,7 +162,7 @@ interface iBasicCollection extends \ArrayAccess, \Countable, \IteratorAggregate
      *
      * @return      ?mixed
      *              Valor armazenado na ``collection`` que correspondente a chave passada.
-     *              DEVE retornar ``undefined`` quando a chave de nome indicado não existir.
+     *              DEVE retornar ``null`` quando a chave de nome indicado não existir.
      */
     function get(string $key);
 
@@ -174,18 +174,9 @@ interface iBasicCollection extends \ArrayAccess, \Countable, \IteratorAggregate
      * @param       string $key
      *              Nome da chave do valor que será excluído.
      *
-     * @param       bool $checkExists
-     *              Quando ``true``, a pré-existência da chave a ser removida será levada em conta
-     *              no retorno deste método.
-     *
      * @return      bool
-     *              Considerando que ``$checkExists = true``:
-     *              Retorna ``true`` APENAS SE o item existia E foi removido.
-     *              Retornará ``false`` SE o item não existir OU se não foi possível tal remoção.
-     *
-     *              Considerando que ``$checkExists = false``:
-     *              Retornará ``true`` se o item não existir OU se ele existia e foi removido.
-     *              Retornará ``false`` APENAS SE o item existia E não foi possível remover o item.
+     *              Retornará ``true`` se a chave foi removida, ou, se, ela não existia dentro
+     *              da coleção atual.
      */
-    function remove(string $key, bool $checkExists = false) : bool;
+    function remove(string $key) : bool;
 }
