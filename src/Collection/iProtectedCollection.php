@@ -58,7 +58,7 @@ interface iProtectedCollection extends iBasicCollection
      *
      *
      *
-     * ``remove(string $key) : bool``
+     * ``remove(string $key, bool $checkExists = false) : bool``
      *
      * Nesta interface este método deve funcionar normalmente sem qualquer forma de restrição.
      *

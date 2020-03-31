@@ -51,7 +51,7 @@ interface iReadOnlyCollection extends iProtectedCollection
      *
      *
      *
-     * ``remove(string $key) : bool``
+     * ``remove(string $key, bool $checkExists = false) : bool``
      *
      * Este método NUNCA deve funcionar quando usado com esta interface.
      * É indicado que, ao ser usado, ele retorne sempre ``false``.
