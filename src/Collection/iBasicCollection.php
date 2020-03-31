@@ -176,7 +176,8 @@ interface iBasicCollection extends \ArrayAccess, \Countable, \IteratorAggregate
      *
      * @return      bool
      *              Retornará ``true`` se a chave foi removida, ou, se, ela não existia dentro
-     *              da coleção atual.
+     *              da coleção atual e ``false`` caso por algum motivo não seja possível executar
+     *              este método.
      */
     function remove(string $key) : bool;
 }
