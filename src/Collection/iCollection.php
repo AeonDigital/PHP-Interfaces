@@ -59,7 +59,9 @@ interface iCollection extends iBasicCollection
      * Limpa totalmente a coleção de dados eliminando toda informação armazenada no momento.
      *
      * @return      bool
-     *              Retornará ``true`` caso a exclusão dos dados tenha sido executada com sucesso.
+     *              Retornará ``true`` caso a exclusão dos dados tenha sido executada com sucesso
+     *              e ``false`` caso ocorra algum erro em algum dos itens. Neste caso, a coleção
+     *              ficará pela metade.
      */
     function clean() : bool;
 }
