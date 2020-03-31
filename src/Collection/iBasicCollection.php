@@ -149,9 +149,6 @@ interface iBasicCollection extends \ArrayAccess, \Countable, \IteratorAggregate
      *
      * @return      bool
      *              Retorna ``true`` quando a insersão/atualização do item foi bem sucedido.
-     *
-     * @throws      \InvalidArgumentException
-     *              DEVE ser lançado caso o valor passado seja ``undefined``.
      */
     function set(string $key, $value) : bool;
 

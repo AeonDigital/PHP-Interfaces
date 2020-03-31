@@ -50,9 +50,6 @@ interface iCollection extends iBasicCollection
      * @return      bool
      *              Retornará ``true`` caso TODOS os novos valores sejam adicionados e ``false``
      *              caso 1 deles falhe.
-     *
-     * @throws      \InvalidArgumentException
-     *              DEVE ser lançado caso algum dos valores passados seja ``undefined``.
      */
     function insert(array $newValues) : bool;
 
