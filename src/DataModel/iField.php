@@ -83,9 +83,9 @@ interface iField
     /**
      * Retorna a descrição de uso/funcionalidade do campo.
      *
-     * @return      ?string
+     * @return      string
      */
-    function getDescription() : ?string;
+    function getDescription() : string;
 
 
 
