@@ -44,9 +44,9 @@ interface iModel extends \IteratorAggregate
     /**
      * Retorna a descrição de uso/funcionalidade do modelo de dados.
      *
-     * @return      ?string
+     * @return      string
      */
-    function getDescription() : ?string;
+    function getDescription() : string;
 
 
 
