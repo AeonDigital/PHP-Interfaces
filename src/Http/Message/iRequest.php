@@ -1,7 +1,7 @@
 <?php
 declare (strict_types=1);
 
-namespace AeonDigital\Http\Message\Interfaces;
+namespace AeonDigital\Interfaces\Http\Message;
 
 use Psr\Http\Message\RequestInterface as RequestInterface;
 
