@@ -15,7 +15,8 @@
     ],
     "minimum-stability": "dev",
     "require": {
-        "php": ">=7.4"
+        "php": ">=7.4",
+        "psr/http-message": "v1.0.1"
     },
     "autoload": {
         "classmap": [
