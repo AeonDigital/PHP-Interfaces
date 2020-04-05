@@ -108,7 +108,7 @@ abstract class BObject
      *
      * @codeCoverageIgnore
      */
-    public function __clone ()
+    public function __clone()
     {
         throw new \RuntimeException("Unable to use \"__clone \" method.");
     }
