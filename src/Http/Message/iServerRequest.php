@@ -65,9 +65,9 @@ interface iServerRequest extends ServerRequestInterface
      * @param       string $name
      *              Nome do campo alvo.
      *
-     * @return      ?string
+     * @return      ?string|array
      */
-    function getPost(string $name) : ?string;
+    function getPost(string $name);
 
 
 
