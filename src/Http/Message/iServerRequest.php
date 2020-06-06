@@ -4,7 +4,7 @@ declare (strict_types=1);
 namespace AeonDigital\Interfaces\Http\Message;
 
 use Psr\Http\Message\ServerRequestInterface as ServerRequestInterface;
-
+use AeonDigital\Interfaces\Http\Data\iCookie as iCookie;
 
 
 
@@ -72,6 +72,19 @@ interface iServerRequest extends ServerRequestInterface
 
 
     /**
+     * Retorna o objeto ``iCookie`` correspondente ao cookie de nome indicado.
+     * Retornará ``null`` caso ele não exista.
+     *
+     * @param       string $name
+     *              Nome do cookie alvo.
+     *
+     * @return      ?iCookie
+     */
+    function getCookie(string $name) : ?iCookie;
+
+
+
+    /**
      * Retorna o valor do cookie de nome indicado.
      * Retornará ``null`` caso ele não exista.
      *
@@ -80,7 +93,7 @@ interface iServerRequest extends ServerRequestInterface
      *
      * @return      ?string
      */
-    function getCookie(string $name) : ?string;
+    function getCookieValue(string $name) : ?string;
 
 
 
