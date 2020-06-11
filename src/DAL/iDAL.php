@@ -358,7 +358,7 @@ interface iDAL
      *
      * @return      bool
      */
-    function deleteFrom(string $tableName, string $pkName = null, int $pk = null) : bool;
+    function deleteFrom(string $tableName, string $pkName, int $pk) : bool;
 
 
 
