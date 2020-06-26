@@ -13,7 +13,7 @@ use AeonDigital\Interfaces\Http\Message\iResponse as iResponse;
 
 
 /**
- * Responsável por manipular uma requisição ``HTTP``.
+ * Responsável por manipular uma requisição ``Http``.
  *
  * @package     AeonDigital\EnGarde
  * @author      Rianna Cantarelli <rianna@aeondigital.com.br>

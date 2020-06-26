@@ -15,7 +15,7 @@ use AeonDigital\Interfaces\Collection\iCollection as iCollection;
 /**
  * Interface ``iCookieCollection``.
  *
- * Extende a interface ``iCollection`` para que ela se especialize em Cookies ``HTTP``.
+ * Extende a interface ``iCollection`` para que ela se especialize em Cookies ``Http``.
  *
  * @package     AeonDigital\Interfaces\Http
  * @author      Rianna Cantarelli <rianna@aeondigital.com.br>

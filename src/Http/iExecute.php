@@ -13,7 +13,7 @@ namespace AeonDigital\Interfaces\Http;
 
 
 /**
- * Interface que implementa métodos de execução de ações ``HTTP``.
+ * Interface que implementa métodos de execução de ações ``Http``.
  *
  * @package     AeonDigital\EnGarde
  * @author      Rianna Cantarelli <rianna@aeondigital.com.br>
@@ -28,11 +28,11 @@ interface iExecute
 
 
     /**
-     * Efetua uma requisição ``HTTP`` e retorna seu resultado em uma ``string``.
+     * Efetua uma requisição ``Http`` e retorna seu resultado em uma ``string``.
      * Qualquer tipo de falha encontrada fará retornar ``null``.
      *
      * @param       string $method
-     *              Método ``HTTP`` que será executado.
+     *              Método ``Http`` que será executado.
      *
      * @param       string $absoluteURL
      *              ``URL`` alvo.
@@ -41,7 +41,7 @@ interface iExecute
      *              Array associativo com as chaves e valores que serão enviados.
      *
      * @param       array $headers
-     *              Array associativo com cabeçalhos ``HTTP`` para serem enviados na requisição.
+     *              Array associativo com cabeçalhos ``Http`` para serem enviados na requisição.
      *
      * @return      ?string
      */

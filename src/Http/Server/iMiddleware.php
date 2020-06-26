@@ -46,7 +46,7 @@ interface iMiddleware
      * responsabilidade para o manipulador padrão.
      *
      * @param       iServerRequest $request
-     *              Objeto da requisição HTTP.
+     *              Objeto da requisição Http.
      *
      * @param       iRequestHandler $handler
      *              Manipulador padrão para as requisições.

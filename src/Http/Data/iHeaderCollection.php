@@ -15,7 +15,7 @@ use AeonDigital\Interfaces\Collection\iCollection as iCollection;
 /**
  * Interface ``iHeaderCollection``.
  *
- * Extende a interface ``iCollection`` para que ela se especialize em Headers ``HTTP``.
+ * Extende a interface ``iCollection`` para que ela se especialize em Headers ``Http``.
  *
  * @package     AeonDigital\Interfaces\Http
  * @author      Rianna Cantarelli <rianna@aeondigital.com.br>

@@ -16,7 +16,7 @@ use AeonDigital\Interfaces\Collection\iCollection as iCollection;
  * Interface ``iFileCollection``.
  *
  * Extende a interface ``iCollection`` para que ela se especialize em arquivos enviados
- * via ``HTTP``.
+ * via ``Http``.
  *
  * @package     AeonDigital\Interfaces\Http
  * @author      Rianna Cantarelli <rianna@aeondigital.com.br>

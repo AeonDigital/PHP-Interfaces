@@ -253,7 +253,7 @@ interface iBasicUri
     /**
      * Retorna o nome do ``scheme`` que o ``URI`` da classe está usando.
      * Implementações devem fazer a conversão do valor para ``lowercase`` e além disso,
-     * comparações como ``HTTP`` e ``http`` devem ser equivalentes.
+     * comparações como ``Http`` e ``http`` devem ser equivalentes.
      *
      * Nomes válidos devem seguir o formato:
      *
