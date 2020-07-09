@@ -46,6 +46,15 @@ interface iColumnFK extends iColumn
 
 
     /**
+     * Indica se os objetos filhos (que recebem a FK) exigem exclusividade na relação com
+     * seus respectivos objetos pai, ou seja, nenhum objeto filho pode ter o mesmo objeto pai.
+     *
+     * @return      bool
+     */
+    function isFKUnique() : bool;
+
+
+    /**
      * Indica se o vínculo entre as 2 tabelas de dados se dá por meio de uma ``linkTable``.
      * Quando ``true``, designa que a relação é do tipo ``N-N``.
      *
