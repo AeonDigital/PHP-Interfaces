@@ -64,6 +64,17 @@ interface iTable extends iModel
 
 
 
+    /**
+     * Retorna um array de arrays contendo em cada qual uma coleção de nomes de colunas de
+     * dados desta mesma tabela. Cada conjunto de nomes irá corresponder a uma constraint
+     * do tipo unique composta.
+     *
+     * @return      ?array
+     */
+    function getUniqueMultipleKeys() : ?array;
+
+
+
 
 
 
