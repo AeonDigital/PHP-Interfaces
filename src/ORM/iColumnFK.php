@@ -118,4 +118,15 @@ interface iColumnFK extends iColumn
      *   No registro que contêm a chave extrangeira, define o valor da coluna que faz o
      *   vínculo com a tabela pai para aquele indicado na regra ``default``.
      */
+
+
+
+
+
+    /**
+     * Retorna a coleção de colunas especialmente definidas para figurar em uma linkTable.
+     *
+     * @return      ?array
+     */
+    function getFKLinkTableColumns() : ?array;
 }
