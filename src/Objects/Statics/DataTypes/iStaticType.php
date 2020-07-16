@@ -99,26 +99,4 @@ interface iStaticDataType
      * @return      mixed
      */
     static function nullEquivalent();
-
-
-
-    /**
-     * Retorna o menor valor possível para este tipo.
-     * Quando ``null`` indica que não há limites definidos ou que isto não se aplica
-     * para o tipo indicado.
-     *
-     * @return      mixed
-     */
-    static function min();
-
-
-
-    /**
-     * Retorna o menor valor possível para este tipo.
-     * Quando ``null`` indica que não há limites definidos ou que isto não se aplica
-     * para o tipo indicado.
-     *
-     * @return      mixed
-     */
-    static function max();
 }
