@@ -43,6 +43,7 @@ interface iInt extends iNumeric
     static function min() : int;
 
 
+
     /**
      * Retorna o menor valor possível para este tipo.
      *

@@ -48,6 +48,7 @@ interface iFloat extends iNumeric
     static function min() : float;
 
 
+
     /**
      * Retorna o menor valor possível para este tipo.
      *

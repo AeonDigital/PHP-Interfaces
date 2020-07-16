@@ -43,6 +43,7 @@ interface iDateTime extends iStaticDataType
     static function min() : \DateTime;
 
 
+
     /**
      * Retorna o menor valor possível para este tipo.
      *

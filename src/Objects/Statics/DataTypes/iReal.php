@@ -49,6 +49,7 @@ interface iReal extends iNumeric
     static function min() : string;
 
 
+
     /**
      * Retorna o menor valor possível para este tipo.
      *
