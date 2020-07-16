@@ -136,7 +136,7 @@ interface iHierPartUri extends iBasicUri
      *
      * @return      string
      */
-    public function getHost() : string;
+    function getHost() : string;
 
 
 

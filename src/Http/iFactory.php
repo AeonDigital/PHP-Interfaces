@@ -305,7 +305,7 @@ interface iFactory
      * @throws      \InvalidArgumentException
      *              Caso algum dos argumentos passados seja inválido.
      */
-    public function createResponse(
+    function createResponse(
         int $statusCode = 200,
         string $reasonPhrase = "",
         ?string $httpVersion = null,
