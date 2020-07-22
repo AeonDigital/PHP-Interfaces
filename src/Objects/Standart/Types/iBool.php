@@ -1,9 +1,9 @@
 <?php
 declare (strict_types=1);
 
-namespace AeonDigital\Interfaces\Objects\Statics\DataTypes;
+namespace AeonDigital\Interfaces\Objects\Standart\Types;
 
-use AeonDigital\Interfaces\Objects\Statics\DataTypes\iStaticDataType as iStaticDataType;
+use AeonDigital\Interfaces\Objects\Standart\iStandartType as iStandartType;
 
 
 
@@ -13,14 +13,14 @@ use AeonDigital\Interfaces\Objects\Statics\DataTypes\iStaticDataType as iStaticD
 
 
 /**
- * Define um ``static data type bool``.
+ * Define um ``Standart\Types do tipo bool``.
  *
- * @package     AeonDigital\Interfaces\Objects\Statics\DataTypes
+ * @package     AeonDigital\Interfaces\Objects\Standart
  * @author      Rianna Cantarelli <rianna@aeondigital.com.br>
  * @copyright   2020, Rianna Cantarelli
  * @license     MIT
  */
-interface iBool extends iStaticDataType
+interface iBool extends iStandartType
 {
 
 

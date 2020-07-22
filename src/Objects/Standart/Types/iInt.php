@@ -1,9 +1,9 @@
 <?php
 declare (strict_types=1);
 
-namespace AeonDigital\Interfaces\Objects\Statics\DataTypes;
+namespace AeonDigital\Interfaces\Objects\Standart\Types;
 
-use AeonDigital\Interfaces\Objects\Statics\DataTypes\iNumeric as iNumeric;
+use AeonDigital\Interfaces\Objects\Standart\Types\iNumeric as iNumeric;
 
 
 
@@ -13,9 +13,9 @@ use AeonDigital\Interfaces\Objects\Statics\DataTypes\iNumeric as iNumeric;
 
 
 /**
- * Define um ``static data type int``.
+ * Define um ``Standart\Types do tipo int``.
  *
- * @package     AeonDigital\Interfaces\Objects\Statics\DataTypes
+ * @package     AeonDigital\Interfaces\Objects\Standart
  * @author      Rianna Cantarelli <rianna@aeondigital.com.br>
  * @copyright   2020, Rianna Cantarelli
  * @license     MIT

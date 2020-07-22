@@ -1,7 +1,7 @@
 <?php
 declare (strict_types=1);
 
-namespace AeonDigital\Interfaces\Objects\Statics\DataTypes;
+namespace AeonDigital\Interfaces\Objects\Standart;
 
 
 
@@ -13,9 +13,10 @@ namespace AeonDigital\Interfaces\Objects\Statics\DataTypes;
 
 
 /**
- * Uma classe ``static data type`` deve possuir membros que são exclusivamente métodos
- * estáticos que referienciam-se a características esperadas para os tipos de dados
- * que se planeja mapear, descrever e limitar.
+ * Descreve uma interface para uma ``Standart\Types`` deve são classes que irão possuir
+ * membros que são exclusivamente métodos estáticos e que referienciam-se a
+ * características esperadas para cada tipo de dado que a classe concreta planeja
+ * mapear, descrever e limitar.
  *
  * Neste sentido:
  * - Mapear significa que os tipos de dados representados por futuras classes concretas
@@ -32,15 +33,13 @@ namespace AeonDigital\Interfaces\Objects\Statics\DataTypes;
  *   ano 1, portanto, esta poderia ser uma data mínima aceitável e uma data máxima, por
  *   exemplo o ano 3000.
  *
- * @package     AeonDigital\Interfaces\Objects\Statics\DataTypes
+ * @package     AeonDigital\Interfaces\Objects\Standart
  * @author      Rianna Cantarelli <rianna@aeondigital.com.br>
  * @copyright   2020, Rianna Cantarelli
  * @license     MIT
  */
-interface iStaticDataType
+interface iStandartType
 {
-
-
 
 
 
