@@ -15,12 +15,6 @@ use AeonDigital\Interfaces\Objects\Statics\DataTypes\iNumeric as iNumeric;
 /**
  * Define um ``static data type`` preparada para lidar com números naturais.
  *
- * Esta classe deve ser usada em conjunto com alguma classe que implemente
- * uma extenção matemática do PHP. Elas usam ``strings`` para representar os
- * numerais mas permitem que qualquer valor numerico seja usado independente da
- * quantidade de digitos antes ou após o separador decimal. Além disso a precisão
- * do ponto decimal se mantém ao longo das operações.
- *
  * @package     AeonDigital\Interfaces\Objects\Statics\DataTypes
  * @author      Rianna Cantarelli <rianna@aeondigital.com.br>
  * @copyright   2020, Rianna Cantarelli
@@ -28,6 +22,13 @@ use AeonDigital\Interfaces\Objects\Statics\DataTypes\iNumeric as iNumeric;
  */
 interface iReal extends iNumeric
 {
+    /*
+     * Esta interface deve ser usada em conjunto com alguma classe que implemente
+     * uma extenção matemática do PHP. Elas usam ``strings`` para representar os
+     * numerais mas permitem que qualquer valor numerico seja usado independente da
+     * quantidade de digitos antes ou após o separador decimal. Além disso a precisão
+     * do ponto decimal se mantém ao longo das operações.
+    */
 
 
 
@@ -51,7 +52,7 @@ interface iReal extends iNumeric
 
 
     /**
-     * Retorna o menor valor possível para este tipo.
+     * Retorna o maior valor possível para este tipo.
      *
      * @return      string
      */

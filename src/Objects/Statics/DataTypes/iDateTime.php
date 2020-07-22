@@ -45,7 +45,7 @@ interface iDateTime extends iStaticDataType
 
 
     /**
-     * Retorna o menor valor possível para este tipo.
+     * Retorna o maior valor possível para este tipo.
      *
      * @return      \DateTime
      */

@@ -32,9 +32,6 @@ namespace AeonDigital\Interfaces\Objects\Statics\DataTypes;
  *   ano 1, portanto, esta poderia ser uma data mínima aceitável e uma data máxima, por
  *   exemplo o ano 3000.
  *
- * Esta interface tem como objetivo marcar uma outra interface desta coleção como sendo
- * realmente um tipo simples apta a ser implementada em uma classe concreta.
- *
  * @package     AeonDigital\Interfaces\Objects\Statics\DataTypes
  * @author      Rianna Cantarelli <rianna@aeondigital.com.br>
  * @copyright   2020, Rianna Cantarelli
@@ -114,7 +111,7 @@ interface iStaticDataType
 
 
     /**
-     * Retorna o menor valor possível para este tipo.
+     * Retorna o maior valor possível para este tipo.
      * Quando ``null`` indica que não há limites definidos ou que isto não se aplica
      * para o tipo indicado.
      *

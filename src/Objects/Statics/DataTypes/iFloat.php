@@ -15,11 +15,6 @@ use AeonDigital\Interfaces\Objects\Statics\DataTypes\iNumeric as iNumeric;
 /**
  * Define um ``static data type float``.
  *
- * Por padrão os valores máximos e mínimos do para numerais no PHP variam
- * conforme a versão que está sendo usada (32/64 bits).
- * Portanto é altamente recomendável que, sempre que possível, seja
- * usada a versão x64.
- *
  * @package     AeonDigital\Interfaces\Objects\Statics\DataTypes
  * @author      Rianna Cantarelli <rianna@aeondigital.com.br>
  * @copyright   2020, Rianna Cantarelli
@@ -27,6 +22,12 @@ use AeonDigital\Interfaces\Objects\Statics\DataTypes\iNumeric as iNumeric;
  */
 interface iFloat extends iNumeric
 {
+    /*
+     * Por padrão os valores máximos e mínimos do para numerais no PHP variam
+     * conforme a versão que está sendo usada (32/64 bits).
+     * Portanto é altamente recomendável que, sempre que possível, seja
+     * usada a versão x64.
+    */
 
 
 
@@ -50,7 +51,7 @@ interface iFloat extends iNumeric
 
 
     /**
-     * Retorna o menor valor possível para este tipo.
+     * Retorna o maior valor possível para este tipo.
      *
      * @return      float
      */
