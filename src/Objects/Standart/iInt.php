@@ -26,27 +26,6 @@ interface iInt extends iNumeric
 
 
     /**
-     * Define um novo valor para a instância.
-     *
-     * @param       ?int $v
-     *              Valor a ser atribuido a esta instância.
-     *
-     * @param       bool $throws
-     *              Indica se deve soltar uma exception caso o valor definido
-     *              seja inválido.
-     *
-     * @param       ?string $err
-     *              Informa o tipo de erro que impediu que o valor fosse atribuido.
-     *
-     * @return      bool
-     *              Retornará ``true`` caso o valor tenha sido aceito e ``false``
-     *              caso contrário.
-     */
-    function set(?int $v, bool $throws = true, ?string &$err = null) : bool;
-
-
-
-    /**
      * Retorna o valor atualmente definido para a instância atual.
      *
      * @return      ?int

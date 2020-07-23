@@ -32,27 +32,6 @@ interface iFloat extends iNumeric
 
 
     /**
-     * Define um novo valor para a instância.
-     *
-     * @param       ?float $v
-     *              Valor a ser atribuido a esta instância.
-     *
-     * @param       bool $throws
-     *              Indica se deve soltar uma exception caso o valor definido
-     *              seja inválido.
-     *
-     * @param       ?string $err
-     *              Informa o tipo de erro que impediu que o valor fosse atribuido.
-     *
-     * @return      bool
-     *              Retornará ``true`` caso o valor tenha sido aceito e ``false``
-     *              caso contrário.
-     */
-    function set(?float $v, bool $throws = true, ?string &$err = null) : bool;
-
-
-
-    /**
      * Retorna o valor atualmente definido para a instância atual.
      *
      * @return      ?float
