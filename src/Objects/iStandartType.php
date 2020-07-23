@@ -125,12 +125,12 @@ interface iStandartType
      * @param       mixed $v
      *              Valor que será verificado.
      *
-     * @param       bool $allowNull
-     *              Quando ``true`` aceitará o valor ``null`` como válido.
+     * @param       bool $nullable
+     *              Quando ``true`` indica que o valor ``null`` é válido para este tipo.
      *
      * @return      bool
      */
-    static function validate($v, bool $allowNull = false) : bool;
+    static function validate($v, bool $nullable = false) : bool;
 
 
 
@@ -138,24 +138,32 @@ interface iStandartType
      * Efetuará a conversão do valor indicado para o tipo que esta classe representa
      * apenas se passar na validação.
      *
-     * A não ser que seja explicitado o contrário, o valor ``null`` não será aceito.
-     *
      * Caso não passe retornará um código que identifica o erro ocorrido na variável
      * ``$err``.
      *
      * @param       mixed $v
      *              Valor que será convertido.
      *
-     * @param       bool $allowNull
-     *              Quando ``true`` aceitará o valor ``null`` como válido.
-     *              Neste caso retornará o valor definido em ``self::nullEquivalent``.
+     * @param       bool $nullable
+     *              Quando ``true`` indica que o valor ``null`` é válido para este tipo
+     *              e não será convertido.
+     *
+     * @param       bool $nullEquivalent
+     *              Quando ``true``, converterá ``null`` para o valor existente em
+     *              ``self::nullEquivalent()``. Se ``$nullable=true`` for definido esta
+     *              opção será ignorada.
      *
      * @param       ?string $err
      *              Código do erro da validação.
      *
      * @return      mixed
      */
-    static function parseIfValidate($v, bool $allowNull = false, ?string &$err = null);
+    static function parseIfValidate(
+        $v,
+        bool $nullable = false,
+        bool $nullEquivalent = false,
+        ?string &$err = null
+    );
 
 
 
