@@ -42,7 +42,7 @@ interface iBool extends iStandartType
      *              Retornará ``true`` caso o valor tenha sido aceito e ``false``
      *              caso contrário.
      */
-    function set(?bool $v, bool $throws = true, ?string &$err = null) : bool;
+    //function set(?bool $v, bool $throws = true, ?string &$err = null) : bool;
 
 
 
@@ -51,14 +51,14 @@ interface iBool extends iStandartType
      *
      * @return      ?bool
      */
-    function get() : ?bool;
+    //function get() : ?bool;
     /**
      * Retorna o valor atualmente definido para a instância atual mas caso o
      * valor seja ``null``, retornará o valor definido em ``self::nullEquivalent()``.
      *
      * @return      bool
      */
-    function getNotNull() : bool;
+    //function getNotNull() : bool;
 
 
 

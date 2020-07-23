@@ -50,7 +50,7 @@ interface iStandartType
      *
      * @return      bool
      */
-    function isNullable() : bool;
+    //function isNullable() : bool;
 
 
 
@@ -60,17 +60,7 @@ interface iStandartType
      *
      * @return      bool
      */
-    function isReadOnly() : bool;
-
-
-
-    /**
-     * Informa se a presente instância já teve seu valor definido alguma vez durante
-     * ou após sua criação.
-     *
-     * @return      bool
-     */
-    function isUndefined() : bool;
+    //function isReadOnly() : bool;
 
 
 
@@ -91,7 +81,7 @@ interface iStandartType
      *              Retornará ``true`` caso o valor tenha sido aceito e ``false``
      *              caso contrário.
      */
-    function set($v, bool $throws = true, ?string &$err = null) : bool;
+    //function set($v, bool $throws = true, ?string &$err = null) : bool;
 
 
 
@@ -100,14 +90,14 @@ interface iStandartType
      *
      * @return      mixed
      */
-    function get();
+    //function get();
     /**
      * Retorna o valor atualmente definido para a instância atual mas caso o
      * valor seja ``null``, retornará o valor definido em ``self::nullEquivalent()``.
      *
      * @return      mixed
      */
-    function getNotNull();
+    //function getNotNull();
 
 
 
@@ -130,12 +120,17 @@ interface iStandartType
      * Verifica se o valor indicado pode ser convertido e usado como um valor válido
      * dentro das definições deste tipo.
      *
+     * A não ser que seja explicitado o contrário, o valor ``null`` não será aceito.
+     *
      * @param       mixed $v
      *              Valor que será verificado.
      *
+     * @param       bool $allowNull
+     *              Quando ``true`` aceitará o valor ``null`` como válido.
+     *
      * @return      bool
      */
-    static function validate($v) : bool;
+    static function validate($v, bool $allowNull = false) : bool;
 
 
 
@@ -143,18 +138,24 @@ interface iStandartType
      * Efetuará a conversão do valor indicado para o tipo que esta classe representa
      * apenas se passar na validação.
      *
+     * A não ser que seja explicitado o contrário, o valor ``null`` não será aceito.
+     *
      * Caso não passe retornará um código que identifica o erro ocorrido na variável
      * ``$err``.
      *
      * @param       mixed $v
      *              Valor que será convertido.
      *
+     * @param       bool $allowNull
+     *              Quando ``true`` aceitará o valor ``null`` como válido.
+     *              Neste caso retornará o valor definido em ``self::nullEquivalent``.
+     *
      * @param       ?string $err
      *              Código do erro da validação.
      *
      * @return      mixed
      */
-    static function parseIfValidate($v, ?string &$err = null);
+    static function parseIfValidate($v, bool $allowNull = false, ?string &$err = null);
 
 
 

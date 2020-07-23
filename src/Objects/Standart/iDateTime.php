@@ -42,7 +42,7 @@ interface iDateTime extends iStandartType
      *              Retornará ``true`` caso o valor tenha sido aceito e ``false``
      *              caso contrário.
      */
-    function set(?\DateTime $v, bool $throws = true, ?string &$err = null) : bool;
+    //function set(?\DateTime $v, bool $throws = true, ?string &$err = null) : bool;
 
 
 
@@ -51,14 +51,14 @@ interface iDateTime extends iStandartType
      *
      * @return      ?\DateTime
      */
-    function get() : ?\DateTime;
+    //function get() : ?\DateTime;
     /**
      * Retorna o valor atualmente definido para a instância atual mas caso o
      * valor seja ``null``, retornará o valor definido em ``self::nullEquivalent()``.
      *
      * @return      \DateTime
      */
-    function getNotNull() : \DateTime;
+    //function getNotNull() : \DateTime;
 
 
 
