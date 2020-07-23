@@ -4,7 +4,7 @@ declare (strict_types=1);
 namespace AeonDigital\Interfaces\Objects\Standart;
 
 use AeonDigital\Interfaces\Objects\Standart\iNumeric as iNumeric;
-
+use AeonDigital\Objects\Realtype as Realtype;
 
 
 
@@ -35,16 +35,16 @@ interface iReal extends iNumeric
     /**
      * Retorna o valor atualmente definido para a instância atual.
      *
-     * @return      ?string
+     * @return      ?Realtype
      */
-    function get() : ?string;
+    function get() : ?Realtype;
     /**
      * Retorna o valor atualmente definido para a instância atual mas caso o
      * valor seja ``null``, retornará o valor definido em ``self::nullEquivalent()``.
      *
-     * @return      string
+     * @return      Realtype
      */
-    function getNotNull() : string;
+    function getNotNull() : Realtype;
 
 
 
@@ -54,25 +54,25 @@ interface iReal extends iNumeric
      * Indica qual valor (para este tipo) deve ser considerado equivalente a ``null``
      * para fins de comparação.
      *
-     * @return      string
+     * @return      Realtype
      */
-    static function nullEquivalent() : string;
+    static function nullEquivalent() : Realtype;
 
 
 
     /**
      * Retorna o menor valor possível para este tipo.
      *
-     * @return      string
+     * @return      Realtype
      */
-    static function min() : string;
+    static function min() : Realtype;
 
 
 
     /**
      * Retorna o maior valor possível para este tipo.
      *
-     * @return      string
+     * @return      Realtype
      */
-    static function max() : string;
+    static function max() : Realtype;
 }
