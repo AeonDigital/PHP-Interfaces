@@ -1,9 +1,9 @@
 <?php
 declare (strict_types=1);
 
-namespace AeonDigital\Interfaces\Objects\Standart\Types;
+namespace AeonDigital\Interfaces\Objects\Standart;
 
-use AeonDigital\Interfaces\Objects\Standart\iStandartType as iStandartType;
+use AeonDigital\Interfaces\Objects\iStandartType as iStandartType;
 
 
 
@@ -13,7 +13,7 @@ use AeonDigital\Interfaces\Objects\Standart\iStandartType as iStandartType;
 
 
 /**
- * Define um ``Standart\Types`` para tipos numéricos.
+ * Define um ``Standart`` para tipos numéricos.
  *
  * @package     AeonDigital\Interfaces\Objects\Standart
  * @author      Rianna Cantarelli <rianna@aeondigital.com.br>
