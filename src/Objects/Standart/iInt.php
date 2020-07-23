@@ -42,7 +42,7 @@ interface iInt extends iNumeric
      *              Retornará ``true`` caso o valor tenha sido aceito e ``false``
      *              caso contrário.
      */
-    //function set(?int $v, bool $throws = true, ?string &$err = null) : bool;
+    function set(?int $v, bool $throws = true, ?string &$err = null) : bool;
 
 
 
@@ -51,14 +51,14 @@ interface iInt extends iNumeric
      *
      * @return      ?int
      */
-    //function get() : ?int;
+    function get() : ?int;
     /**
      * Retorna o valor atualmente definido para a instância atual mas caso o
      * valor seja ``null``, retornará o valor definido em ``self::nullEquivalent()``.
      *
      * @return      int
      */
-    //function getNotNull() : int;
+    function getNotNull() : int;
 
 
 

@@ -48,7 +48,7 @@ interface iFloat extends iNumeric
      *              Retornará ``true`` caso o valor tenha sido aceito e ``false``
      *              caso contrário.
      */
-    //function set(?float $v, bool $throws = true, ?string &$err = null) : bool;
+    function set(?float $v, bool $throws = true, ?string &$err = null) : bool;
 
 
 
@@ -57,14 +57,14 @@ interface iFloat extends iNumeric
      *
      * @return      ?float
      */
-    //function get() : ?float;
+    function get() : ?float;
     /**
      * Retorna o valor atualmente definido para a instância atual mas caso o
      * valor seja ``null``, retornará o valor definido em ``self::nullEquivalent()``.
      *
      * @return      float
      */
-    //function getNotNull() : float;
+    function getNotNull() : float;
 
 
 

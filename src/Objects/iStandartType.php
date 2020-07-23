@@ -50,7 +50,7 @@ interface iStandartType
      *
      * @return      bool
      */
-    //function isNullable() : bool;
+    function isNullable() : bool;
 
 
 
@@ -60,7 +60,7 @@ interface iStandartType
      *
      * @return      bool
      */
-    //function isReadOnly() : bool;
+    function isReadOnly() : bool;
 
 
 
@@ -81,7 +81,7 @@ interface iStandartType
      *              Retornará ``true`` caso o valor tenha sido aceito e ``false``
      *              caso contrário.
      */
-    //function set($v, bool $throws = true, ?string &$err = null) : bool;
+    function set($v, bool $throws = true, ?string &$err = null) : bool;
 
 
 
@@ -90,14 +90,14 @@ interface iStandartType
      *
      * @return      mixed
      */
-    //function get();
+    function get();
     /**
      * Retorna o valor atualmente definido para a instância atual mas caso o
      * valor seja ``null``, retornará o valor definido em ``self::nullEquivalent()``.
      *
      * @return      mixed
      */
-    //function getNotNull();
+    function getNotNull();
 
 
 

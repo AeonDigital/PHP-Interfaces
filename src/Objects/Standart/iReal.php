@@ -49,7 +49,7 @@ interface iReal extends iNumeric
      *              Retornará ``true`` caso o valor tenha sido aceito e ``false``
      *              caso contrário.
      */
-    //function set(?string $v, bool $throws = true, ?string &$err = null) : bool;
+    function set(?string $v, bool $throws = true, ?string &$err = null) : bool;
 
 
 
@@ -58,14 +58,14 @@ interface iReal extends iNumeric
      *
      * @return      ?string
      */
-    //function get() : ?string;
+    function get() : ?string;
     /**
      * Retorna o valor atualmente definido para a instância atual mas caso o
      * valor seja ``null``, retornará o valor definido em ``self::nullEquivalent()``.
      *
      * @return      string
      */
-    //function getNotNull() : string;
+    function getNotNull() : string;
 
 
 
