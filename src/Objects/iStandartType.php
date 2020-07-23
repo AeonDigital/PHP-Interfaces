@@ -46,7 +46,7 @@ interface iStandartType
 
 
     /**
-     * Informa se a presente instância aceita ``null`` como valor.
+     * Informa se esta instância é ``nullable``.
      *
      * @return      bool
      */
@@ -55,8 +55,10 @@ interface iStandartType
 
 
     /**
-     * Informa se a presente instância aceita ter seu valor alterado após
-     * a criação da mesma.
+     * Informa se esta instância é ``readonly``.
+     *
+     * Quando ``true``, após a criação da instância nenhum outro valor poderá
+     * ser definido para a mesma
      *
      * @return      bool
      */
@@ -68,11 +70,10 @@ interface iStandartType
      * Define um novo valor para a instância.
      *
      * @param       mixed $v
-     *              Valor a ser atribuido a esta instância.
+     *              Valor a ser atribuido.
      *
      * @param       bool $throws
-     *              Indica se deve soltar uma exception caso o valor definido
-     *              seja inválido.
+     *              Indica se deve criar uma exception caso o valor seja inválido.
      *
      * @param       ?string $err
      *              Informa o tipo de erro que impediu que o valor fosse atribuido.
