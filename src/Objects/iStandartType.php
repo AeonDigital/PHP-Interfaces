@@ -67,6 +67,16 @@ interface iStandartType
 
 
     /**
+     * Informa se esta instância está ``undefined``.
+     * Significa que ela nunca recebeu um valor de forma explicita.
+     *
+     * @return      bool
+     */
+    function isUndefined() : bool;
+
+
+
+    /**
      * Define um novo valor para a instância.
      *
      * @param       mixed $v
