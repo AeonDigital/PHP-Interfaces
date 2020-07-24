@@ -3,7 +3,7 @@ declare (strict_types=1);
 
 namespace AeonDigital\Interfaces\Objects\Standart;
 
-use AeonDigital\Interfaces\Objects\iNumericFloating as iNumericFloating;
+use AeonDigital\Interfaces\Objects\Standart\iNumericFloating as iNumericFloating;
 
 
 

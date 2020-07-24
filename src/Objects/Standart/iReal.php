@@ -3,7 +3,7 @@ declare (strict_types=1);
 
 namespace AeonDigital\Interfaces\Objects\Standart;
 
-use AeonDigital\Interfaces\Objects\iNumericReal as iNumericReal;
+use AeonDigital\Interfaces\Objects\Standart\iNumericReal as iNumericReal;
 
 
 
