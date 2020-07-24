@@ -20,7 +20,7 @@ use AeonDigital\Interfaces\Objects\iNumericInteger as iNumericInteger;
  * @copyright   2020, Rianna Cantarelli
  * @license     MIT
  */
-interface iInt extends iNumericInteger
+interface iLong extends iNumericInteger
 {
 
 
