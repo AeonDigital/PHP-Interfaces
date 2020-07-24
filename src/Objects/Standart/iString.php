@@ -13,7 +13,7 @@ use AeonDigital\Interfaces\Objects\iStandartType as iStandartType;
 
 
 /**
- * Define um ``Standart do tipo string``.
+ * Define um ``Standart`` para o tipo ``string``
  *
  * @package     AeonDigital\Interfaces\Objects\Standart
  * @author      Rianna Cantarelli <rianna@aeondigital.com.br>
@@ -22,6 +22,34 @@ use AeonDigital\Interfaces\Objects\iStandartType as iStandartType;
  */
 interface iString extends iStandartType
 {
+
+
+
+    /**
+     * Nome deste tipo
+     * OU
+     * Namespace completa para quando tratar-se de uma classe.
+     *
+     * @var         string
+     */
+    const TYPE = "String";
+    /**
+     * Quando ``true`` indica se este tipo é representado por uma classe.
+     *
+     * @var         bool
+     */
+    const IS_CLASS = false;
+    /**
+     * Quando ``true`` indica que trata-se de um tipo de valor numérico ou comparável
+     * em termos de grandeza.
+     * Nestes casos há definição explicita para o valor mínimo e máximo que o ítem
+     * pode assumir.
+     *
+     * @var         bool
+     */
+    const HAS_LIMIT_RANGE = false;
+
+
 
 
 

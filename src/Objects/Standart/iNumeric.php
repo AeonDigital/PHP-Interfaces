@@ -22,4 +22,16 @@ use AeonDigital\Interfaces\Objects\iStandartType as iStandartType;
  */
 interface iNumeric extends iStandartType
 {
+
+
+
+    /**
+     * Quando ``true`` indica que trata-se de um tipo de valor numérico ou comparável
+     * em termos de grandeza.
+     * Nestes casos há definição explicita para o valor mínimo e máximo que o ítem
+     * pode assumir.
+     *
+     * @var         bool
+     */
+    const HAS_LIMIT_RANGE = true;
 }

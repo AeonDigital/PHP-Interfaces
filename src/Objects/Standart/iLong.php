@@ -13,7 +13,7 @@ use AeonDigital\Interfaces\Objects\iNumericInteger as iNumericInteger;
 
 
 /**
- * Define um ``Standart`` para o tipo ``int`` (inteiro de 32 bits).
+ * Define um ``Standart`` para o tipo ``long`` (inteiro de 64 bits).
  *
  * @package     AeonDigital\Interfaces\Objects\Standart
  * @author      Rianna Cantarelli <rianna@aeondigital.com.br>
@@ -32,5 +32,5 @@ interface iInt extends iNumericInteger
      *
      * @var         string
      */
-    const TYPE = "Int";
+    const TYPE = "Long";
 }

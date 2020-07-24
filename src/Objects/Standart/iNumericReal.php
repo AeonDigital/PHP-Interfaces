@@ -3,8 +3,8 @@ declare (strict_types=1);
 
 namespace AeonDigital\Interfaces\Objects\Standart;
 
-use AeonDigital\Interfaces\Objects\iStandartType as iStandartType;
-
+use AeonDigital\Interfaces\Objects\Standart\iNumeric as iNumeric;
+use AeonDigital\Objects\Realtype as Realtype;
 
 
 
@@ -13,41 +13,24 @@ use AeonDigital\Interfaces\Objects\iStandartType as iStandartType;
 
 
 /**
- * Define um ``Standart`` para o tipo ``DateTime``.
+ * Define um ``Standart`` para tipos numéricos reais.
  *
  * @package     AeonDigital\Interfaces\Objects\Standart
  * @author      Rianna Cantarelli <rianna@aeondigital.com.br>
  * @copyright   2020, Rianna Cantarelli
  * @license     MIT
  */
-interface iDateTime extends iStandartType
+interface iNumericReal extends iNumeric
 {
 
 
 
-    /**
-     * Nome deste tipo
-     * OU
-     * Namespace completa para quando tratar-se de uma classe.
-     *
-     * @var         string
-     */
-    const TYPE = "DateTime";
     /**
      * Quando ``true`` indica se este tipo é representado por uma classe.
      *
      * @var         bool
      */
     const IS_CLASS = true;
-    /**
-     * Quando ``true`` indica que trata-se de um tipo de valor numérico ou comparável
-     * em termos de grandeza.
-     * Nestes casos há definição explicita para o valor mínimo e máximo que o ítem
-     * pode assumir.
-     *
-     * @var         bool
-     */
-    const HAS_LIMIT_RANGE = true;
 
 
 
@@ -56,16 +39,16 @@ interface iDateTime extends iStandartType
     /**
      * Retorna o valor atualmente definido para a instância atual.
      *
-     * @return      ?\DateTime
+     * @return      ?Realtype
      */
-    function get() : ?\DateTime;
+    function get() : ?Realtype;
     /**
      * Retorna o valor atualmente definido para a instância atual mas caso o
      * valor seja ``null``, retornará o valor definido em ``self::nullEquivalent()``.
      *
-     * @return      \DateTime
+     * @return      Realtype
      */
-    function getNotNull() : \DateTime;
+    function getNotNull() : Realtype;
 
 
 
@@ -75,25 +58,25 @@ interface iDateTime extends iStandartType
      * Indica qual valor (para este tipo) deve ser considerado equivalente a ``null``
      * para fins de comparação.
      *
-     * @return      \DateTime
+     * @return      Realtype
      */
-    static function nullEquivalent() : \DateTime;
+    static function nullEquivalent() : Realtype;
 
 
 
     /**
      * Retorna o menor valor possível para este tipo.
      *
-     * @return      \DateTime
+     * @return      Realtype
      */
-    static function min() : \DateTime;
+    static function min() : Realtype;
 
 
 
     /**
      * Retorna o maior valor possível para este tipo.
      *
-     * @return      \DateTime
+     * @return      Realtype
      */
-    static function max() : \DateTime;
+    static function max() : Realtype;
 }

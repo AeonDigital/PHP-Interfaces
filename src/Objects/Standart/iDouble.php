@@ -3,7 +3,7 @@ declare (strict_types=1);
 
 namespace AeonDigital\Interfaces\Objects\Standart;
 
-use AeonDigital\Interfaces\Objects\iNumericInteger as iNumericInteger;
+use AeonDigital\Interfaces\Objects\iNumericFloating as iNumericFloating;
 
 
 
@@ -13,14 +13,14 @@ use AeonDigital\Interfaces\Objects\iNumericInteger as iNumericInteger;
 
 
 /**
- * Define um ``Standart`` para o tipo ``int`` (inteiro de 32 bits).
+ * Define um ``Standart`` para o tipo ``double`` (flutuante de 64 bits).
  *
  * @package     AeonDigital\Interfaces\Objects\Standart
  * @author      Rianna Cantarelli <rianna@aeondigital.com.br>
  * @copyright   2020, Rianna Cantarelli
  * @license     MIT
  */
-interface iInt extends iNumericInteger
+interface iDouble extends iNumericFloating
 {
 
 
@@ -32,5 +32,5 @@ interface iInt extends iNumericInteger
      *
      * @var         string
      */
-    const TYPE = "Int";
+    const TYPE = "Double";
 }

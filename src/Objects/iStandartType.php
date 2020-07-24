@@ -42,6 +42,27 @@ namespace AeonDigital\Interfaces\Objects;
  */
 interface iStandartType
 {
+    /**
+     * Se esta interface for implementada em uma outra que sugira um tipo específico,
+     * é recomendável que as constantes relatadas abaixo sejam definidas já nela.
+     *
+     * Caso contrário, tal implementação pode ser feita nas classes concretas.
+     *
+     * CONSTANTES
+     *
+     * string TYPE
+     * Refere-se sempre ao tipo de dado que está sendo definido ou ao namespace completo
+     * da classe que se planeja especializar como um tipo.
+     *
+     * bool IS_CLASS
+     * Deve indicar se as classes concretas que implementam aquela definição estão
+     * referindo-se a uma classe.
+     *
+     * bool HAS_LIMIT_RANGE
+     * Indica se é uma classe do tipo que é válida a espectativa de possuir um valor
+     * mínimo e um máximo.
+     */
+
 
 
 
