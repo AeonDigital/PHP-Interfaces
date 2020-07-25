@@ -43,6 +43,12 @@ interface iType
      * @return      mixed
      */
     function nullEquivalent();
+    /**
+     * Informa se o valor atualmente definido é o mesmo que ``nullEquivalent``.
+     *
+     * @return      bool
+     */
+    function isNullEquivalent() : bool;
 
 
 
@@ -64,16 +70,6 @@ interface iType
     function max();
 
 
-
-
-
-    /**
-     * Informa se esta instância está ``undefined``.
-     * Significa que ela nunca recebeu um valor de forma explicita.
-     *
-     * @return      bool
-     */
-    function isUndefined() : bool;
 
 
 
