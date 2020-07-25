@@ -36,6 +36,35 @@ interface iType
 
 
 
+    /**
+     * Indica qual valor (para esta instância) deve ser considerado equivalente a ``null``
+     * para fins de comparação.
+     *
+     * @return      mixed
+     */
+    function nullEquivalent();
+
+
+
+    /**
+     * Retorna o menor valor aceitável para esta instância.
+     * Quando ``null`` indica que não há limites definidos ou que isto não se aplica
+     * para o tipo indicado.
+     *
+     * @return      mixed
+     */
+    function min();
+    /**
+     * Retorna o maior valor aceitável para esta instância.
+     * Quando ``null`` indica que não há limites definidos ou que isto não se aplica
+     * para o tipo indicado.
+     *
+     * @return      mixed
+     */
+    function max();
+
+
+
 
 
     /**
@@ -99,7 +128,7 @@ interface iType
     function get();
     /**
      * Retorna o valor atualmente definido para a instância atual mas caso o
-     * valor seja ``null``, retornará o valor definido em ``static::nullEquivalent()``.
+     * valor seja ``null``, retornará o valor definido em ``self::nullEquivalent``.
      *
      * @return      mixed
      */
@@ -115,32 +144,4 @@ interface iType
      * @return      string
      */
     function toString() : string;
-
-
-
-
-
-    /**
-     * Indica qual valor (para esta instância) deve ser considerado equivalente a ``null``
-     * para fins de comparação.
-     *
-     * @return      mixed
-     */
-    function nullEquivalent();
-    /**
-     * Retorna o menor valor aceitável para esta instância.
-     * Quando ``null`` indica que não há limites definidos ou que isto não se aplica
-     * para o tipo indicado.
-     *
-     * @return      mixed
-     */
-    function min();
-    /**
-     * Retorna o menor valor aceitável para esta instância.
-     * Quando ``null`` indica que não há limites definidos ou que isto não se aplica
-     * para o tipo indicado.
-     *
-     * @return      mixed
-     */
-    function max();
 }

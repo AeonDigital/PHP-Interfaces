@@ -26,24 +26,6 @@ interface iNumericReal extends iNumeric
 
 
     /**
-     * Retorna o valor atualmente definido para a instância atual.
-     *
-     * @return      ?Realtype
-     */
-    function get() : ?Realtype;
-    /**
-     * Retorna o valor atualmente definido para a instância atual mas caso o
-     * valor seja ``null``, retornará o valor definido em ``static::nullEquivalent()``.
-     *
-     * @return      Realtype
-     */
-    function getNotNull() : Realtype;
-
-
-
-
-
-    /**
      * Indica qual valor (para esta instância) deve ser considerado equivalente a ``null``
      * para fins de comparação.
      *
@@ -62,4 +44,20 @@ interface iNumericReal extends iNumeric
      * @return      Realtype
      */
     function max() : Realtype;
+
+
+
+    /**
+     * Retorna o valor atualmente definido para a instância atual.
+     *
+     * @return      ?Realtype
+     */
+    function get() : ?Realtype;
+    /**
+     * Retorna o valor atualmente definido para a instância atual mas caso o
+     * valor seja ``null``, retornará o valor definido em ``self::nullEquivalent``.
+     *
+     * @return      Realtype
+     */
+    function getNotNull() : Realtype;
 }

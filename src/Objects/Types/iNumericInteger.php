@@ -26,24 +26,6 @@ interface iNumericInteger extends iNumeric
 
 
     /**
-     * Retorna o valor atualmente definido para a instância atual.
-     *
-     * @return      ?int
-     */
-    function get() : ?int;
-    /**
-     * Retorna o valor atualmente definido para a instância atual mas caso o
-     * valor seja ``null``, retornará o valor definido em ``static::nullEquivalent()``.
-     *
-     * @return      int
-     */
-    function getNotNull() : int;
-
-
-
-
-
-    /**
      * Indica qual valor (para esta instância) deve ser considerado equivalente a ``null``
      * para fins de comparação.
      *
@@ -62,4 +44,20 @@ interface iNumericInteger extends iNumeric
      * @return      int
      */
     function max() : int;
+
+
+
+    /**
+     * Retorna o valor atualmente definido para a instância atual.
+     *
+     * @return      ?int
+     */
+    function get() : ?int;
+    /**
+     * Retorna o valor atualmente definido para a instância atual mas caso o
+     * valor seja ``null``, retornará o valor definido em ``self::nullEquivalent``.
+     *
+     * @return      int
+     */
+    function getNotNull() : int;
 }

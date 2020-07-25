@@ -26,6 +26,16 @@ interface iString extends iType
 
 
     /**
+     * Indica qual valor (para esta instância) deve ser considerado equivalente a ``null``
+     * para fins de comparação.
+     *
+     * @return      string
+     */
+    function nullEquivalent() : string;
+
+
+
+    /**
      * Retorna o valor atualmente definido para a instância atual.
      *
      * @return      ?string
@@ -33,21 +43,9 @@ interface iString extends iType
     function get() : ?string;
     /**
      * Retorna o valor atualmente definido para a instância atual mas caso o
-     * valor seja ``null``, retornará o valor definido em ``static::nullEquivalent()``.
+     * valor seja ``null``, retornará o valor definido em ``self::nullEquivalent``.
      *
      * @return      string
      */
     function getNotNull() : string;
-
-
-
-
-
-    /**
-     * Indica qual valor (para esta instância) deve ser considerado equivalente a ``null``
-     * para fins de comparação.
-     *
-     * @return      string
-     */
-    function nullEquivalent() : string;
 }

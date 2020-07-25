@@ -26,24 +26,6 @@ interface iGeneralDateTime extends iType
 
 
     /**
-     * Retorna o valor atualmente definido para a instância atual.
-     *
-     * @return      ?\DateTime
-     */
-    function get() : ?\DateTime;
-    /**
-     * Retorna o valor atualmente definido para a instância atual mas caso o
-     * valor seja ``null``, retornará o valor definido em ``static::nullEquivalent()``.
-     *
-     * @return      \DateTime
-     */
-    function getNotNull() : \DateTime;
-
-
-
-
-
-    /**
      * Indica qual valor (para esta instância) deve ser considerado equivalente a ``null``
      * para fins de comparação.
      *
@@ -62,4 +44,20 @@ interface iGeneralDateTime extends iType
      * @return      \DateTime
      */
     function max() : \DateTime;
+
+
+
+    /**
+     * Retorna o valor atualmente definido para a instância atual.
+     *
+     * @return      ?\DateTime
+     */
+    function get() : ?\DateTime;
+    /**
+     * Retorna o valor atualmente definido para a instância atual mas caso o
+     * valor seja ``null``, retornará o valor definido em ``self::nullEquivalent``.
+     *
+     * @return      \DateTime
+     */
+    function getNotNull() : \DateTime;
 }

@@ -26,6 +26,16 @@ interface iBool extends iType
 
 
     /**
+     * Indica qual valor (para esta instância) deve ser considerado equivalente a ``null``
+     * para fins de comparação.
+     *
+     * @return      bool
+     */
+    function nullEquivalent() : bool;
+
+
+
+    /**
      * Retorna o valor atualmente definido para a instância atual.
      *
      * @return      ?bool
@@ -33,21 +43,9 @@ interface iBool extends iType
     function get() : ?bool;
     /**
      * Retorna o valor atualmente definido para a instância atual mas caso o
-     * valor seja ``null``, retornará o valor definido em ``static::nullEquivalent()``.
+     * valor seja ``null``, retornará o valor definido em ``self::nullEquivalent``.
      *
      * @return      bool
      */
     function getNotNull() : bool;
-
-
-
-
-
-    /**
-     * Indica qual valor (para esta instância) deve ser considerado equivalente a ``null``
-     * para fins de comparação.
-     *
-     * @return      bool
-     */
-    function nullEquivalent() : bool;
 }

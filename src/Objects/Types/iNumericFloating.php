@@ -26,24 +26,6 @@ interface iNumericFloating extends iNumeric
 
 
     /**
-     * Retorna o valor atualmente definido para a instância atual.
-     *
-     * @return      ?float
-     */
-    function get() : ?float;
-    /**
-     * Retorna o valor atualmente definido para a instância atual mas caso o
-     * valor seja ``null``, retornará o valor definido em ``static::nullEquivalent()``.
-     *
-     * @return      float
-     */
-    function getNotNull() : float;
-
-
-
-
-
-    /**
      * Indica qual valor (para esta instância) deve ser considerado equivalente a ``null``
      * para fins de comparação.
      *
@@ -62,4 +44,20 @@ interface iNumericFloating extends iNumeric
      * @return      float
      */
     function max() : float;
+
+
+
+    /**
+     * Retorna o valor atualmente definido para a instância atual.
+     *
+     * @return      ?float
+     */
+    function get() : ?float;
+    /**
+     * Retorna o valor atualmente definido para a instância atual mas caso o
+     * valor seja ``null``, retornará o valor definido em ``self::nullEquivalent``.
+     *
+     * @return      float
+     */
+    function getNotNull() : float;
 }
