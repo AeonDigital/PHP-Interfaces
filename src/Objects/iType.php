@@ -27,11 +27,12 @@ interface iType
 
 
     /**
-     * Aponta para o ``Standart`` desta instância.
+     * Retorna o namespace completo da classe ``Standart`` que
+     * define esta instância.
      *
-     * @return      iStandart
+     * @return      string
      */
-    static function standart() : iStandart;
+    static function standart() : string;
 
 
 
