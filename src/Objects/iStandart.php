@@ -13,11 +13,12 @@ namespace AeonDigital\Interfaces\Objects;
 
 
 /**
- * Descreve uma interface para uma classe do tipo ``Standart``.
- * Estas classes representam tipos de dados especializados e/ou normatizam os tipos
- * padrões do PHP.
+ * Definição de um tipo ``Standart`` de dado.
  *
- * Seus membros estáticos trazem as regras que definem cada tipo planeja mapear,
+ * As classes concretas representarão tipos de dados especializados e/ou normatizam os
+ * tipos padrões do PHP.
+ *
+ * Seus membros, TODOS ESTÁTICOS, trazem as regras que definem cada tipo planeja mapear,
  * descrever e limitar.
  *
  * Neste sentido:
@@ -40,11 +41,11 @@ namespace AeonDigital\Interfaces\Objects;
  * @copyright   2020, Rianna Cantarelli
  * @license     MIT
  */
-interface iStandartType
+interface iStandart
 {
     /**
-     * Se esta interface for implementada em uma outra que sugira um tipo específico,
-     * é recomendável que as constantes relatadas abaixo sejam definidas já nela.
+     * Na interface que implementa um tipo específico é recomendável que as constantes
+     * relatadas abaixo sejam definidas.
      *
      * Caso contrário, tal implementação pode ser feita nas classes concretas.
      *
@@ -62,74 +63,6 @@ interface iStandartType
      * Indica se é uma classe do tipo que é válida a espectativa de possuir um valor
      * mínimo e um máximo.
      */
-
-
-
-
-    /**
-     * Informa se esta instância é ``nullable``.
-     *
-     * @return      bool
-     */
-    function isNullable() : bool;
-
-
-
-    /**
-     * Informa se esta instância é ``readonly``.
-     *
-     * Quando ``true``, após a criação da instância nenhum outro valor poderá
-     * ser definido para a mesma
-     *
-     * @return      bool
-     */
-    function isReadOnly() : bool;
-
-
-
-    /**
-     * Informa se esta instância está ``undefined``.
-     * Significa que ela nunca recebeu um valor de forma explicita.
-     *
-     * @return      bool
-     */
-    function isUndefined() : bool;
-
-
-
-    /**
-     * Define um novo valor para a instância.
-     *
-     * @param       mixed $v
-     *              Valor a ser atribuido.
-     *
-     * @param       bool $throws
-     *              Indica se deve criar uma exception caso o valor seja inválido.
-     *
-     * @param       ?string $err
-     *              Informa o tipo de erro que impediu que o valor fosse atribuido.
-     *
-     * @return      bool
-     *              Retornará ``true`` caso o valor tenha sido aceito e ``false``
-     *              caso contrário.
-     */
-    function set($v, bool $throws = true, ?string &$err = null) : bool;
-
-
-
-    /**
-     * Retorna o valor atualmente definido para a instância atual.
-     *
-     * @return      mixed
-     */
-    function get();
-    /**
-     * Retorna o valor atualmente definido para a instância atual mas caso o
-     * valor seja ``null``, retornará o valor definido em ``self::nullEquivalent()``.
-     *
-     * @return      mixed
-     */
-    function getNotNull();
 
 
 
@@ -182,7 +115,7 @@ interface iStandartType
      *
      * @param       bool $nullEquivalent
      *              Quando ``true``, converterá ``null`` para o valor existente em
-     *              ``self::nullEquivalent()``. Se ``$nullable=true`` for definido esta
+     *              ``static::nullEquivalent()``. Se ``$nullable=true`` for definido esta
      *              opção será ignorada.
      *
      * @param       ?string $err

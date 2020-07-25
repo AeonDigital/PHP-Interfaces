@@ -24,7 +24,7 @@ namespace AeonDigital\Interfaces\Objects;
  * @copyright   2020, Rianna Cantarelli
  * @license     MIT
  */
-interface iStandartArray extends IteratorAggregate, ArrayAccess, Serializable, Countable
+interface iArray extends IteratorAggregate, ArrayAccess, Serializable, Countable
 {
     /**
      * Nas classes concretas deve ser definido uma constante com o nome ``TYPE``
@@ -259,7 +259,7 @@ interface iStandartArray extends IteratorAggregate, ArrayAccess, Serializable, C
      *
      * @param       bool $nullEquivalent
      *              Quando ``true``, converterá ``null`` para o valor existente em
-     *              ``self::nullEquivalent()``. Se ``$nullable=true`` for definido esta
+     *              ``static::nullEquivalent()``. Se ``$nullable=true`` for definido esta
      *              opção será ignorada.
      *
      * @param       ?string $err

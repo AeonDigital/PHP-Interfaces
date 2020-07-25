@@ -13,9 +13,9 @@ use AeonDigital\Interfaces\Objects\Standart\iGeneralDateTime as iGeneralDateTime
 
 
 /**
- * Define um ``Standart`` para o tipo ``DateTime``
+ * Descreve um ``Standart`` para o tipo ``DateTime``.
  *
- * @package     AeonDigital\Interfaces\Objects\Standart
+ * @package     AeonDigital\Interfaces\Objects
  * @author      Rianna Cantarelli <rianna@aeondigital.com.br>
  * @copyright   2020, Rianna Cantarelli
  * @license     MIT

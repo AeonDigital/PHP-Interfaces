@@ -13,9 +13,9 @@ use AeonDigital\Interfaces\Objects\Standart\iNumericInteger as iNumericInteger;
 
 
 /**
- * Define um ``Standart`` para o tipo ``byte`` (inteiro de 8 bits).
+ * Descreve um ``Standart`` para o tipo ``byte`` (inteiro de 8 bits).
  *
- * @package     AeonDigital\Interfaces\Objects\Standart
+ * @package     AeonDigital\Interfaces\Objects
  * @author      Rianna Cantarelli <rianna@aeondigital.com.br>
  * @copyright   2020, Rianna Cantarelli
  * @license     MIT

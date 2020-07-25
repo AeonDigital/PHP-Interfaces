@@ -3,7 +3,7 @@ declare (strict_types=1);
 
 namespace AeonDigital\Interfaces\Objects\Standart;
 
-use AeonDigital\Interfaces\Objects\iStandartType as iStandartType;
+use AeonDigital\Interfaces\Objects\iStandart as iStandart;
 
 
 
@@ -13,14 +13,14 @@ use AeonDigital\Interfaces\Objects\iStandartType as iStandartType;
 
 
 /**
- * Define um ``Standart`` para o tipo ``string``
+ * Descreve um ``Standart`` para o tipo ``string``
  *
- * @package     AeonDigital\Interfaces\Objects\Standart
+ * @package     AeonDigital\Interfaces\Objects
  * @author      Rianna Cantarelli <rianna@aeondigital.com.br>
  * @copyright   2020, Rianna Cantarelli
  * @license     MIT
  */
-interface iString extends iStandartType
+interface iString extends iStandart
 {
 
 
@@ -48,24 +48,6 @@ interface iString extends iStandartType
      * @var         bool
      */
     const HAS_LIMIT_RANGE = false;
-
-
-
-
-
-    /**
-     * Retorna o valor atualmente definido para a instância atual.
-     *
-     * @return      ?string
-     */
-    function get() : ?string;
-    /**
-     * Retorna o valor atualmente definido para a instância atual mas caso o
-     * valor seja ``null``, retornará o valor definido em ``self::nullEquivalent()``.
-     *
-     * @return      string
-     */
-    function getNotNull() : string;
 
 
 

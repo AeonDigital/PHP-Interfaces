@@ -13,9 +13,9 @@ use AeonDigital\Objects\Realtype as Realtype;
 
 
 /**
- * Define um ``Standart`` para tipos numéricos reais.
+ * Descreve um ``Standart`` básico para os tipos numéricos reais.
  *
- * @package     AeonDigital\Interfaces\Objects\Standart
+ * @package     AeonDigital\Interfaces\Objects
  * @author      Rianna Cantarelli <rianna@aeondigital.com.br>
  * @copyright   2020, Rianna Cantarelli
  * @license     MIT
@@ -31,24 +31,6 @@ interface iNumericReal extends iNumeric
      * @var         bool
      */
     const IS_CLASS = true;
-
-
-
-
-
-    /**
-     * Retorna o valor atualmente definido para a instância atual.
-     *
-     * @return      ?Realtype
-     */
-    function get() : ?Realtype;
-    /**
-     * Retorna o valor atualmente definido para a instância atual mas caso o
-     * valor seja ``null``, retornará o valor definido em ``self::nullEquivalent()``.
-     *
-     * @return      Realtype
-     */
-    function getNotNull() : Realtype;
 
 
 

@@ -13,9 +13,9 @@ use AeonDigital\Interfaces\Objects\Standart\iNumeric as iNumeric;
 
 
 /**
- * Define um ``Standart`` para tipos numéricos de ponto flutuante.
+ * Descreve um ``Standart`` básico para os tipos numéricos de ponto flutuante.
  *
- * @package     AeonDigital\Interfaces\Objects\Standart
+ * @package     AeonDigital\Interfaces\Objects
  * @author      Rianna Cantarelli <rianna@aeondigital.com.br>
  * @copyright   2020, Rianna Cantarelli
  * @license     MIT
@@ -31,24 +31,6 @@ interface iNumericFloating extends iNumeric
      * @var         bool
      */
     const IS_CLASS = false;
-
-
-
-
-
-    /**
-     * Retorna o valor atualmente definido para a instância atual.
-     *
-     * @return      ?float
-     */
-    function get() : ?float;
-    /**
-     * Retorna o valor atualmente definido para a instância atual mas caso o
-     * valor seja ``null``, retornará o valor definido em ``self::nullEquivalent()``.
-     *
-     * @return      float
-     */
-    function getNotNull() : float;
 
 
 

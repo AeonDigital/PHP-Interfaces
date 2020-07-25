@@ -13,9 +13,9 @@ use AeonDigital\Interfaces\Objects\Standart\iNumericReal as iNumericReal;
 
 
 /**
- * Define um ``Standart`` para o tipo ``Realtype``.
+ * Descreve um ``Standart`` para o tipo ``Realtype``.
  *
- * @package     AeonDigital\Interfaces\Objects\Standart
+ * @package     AeonDigital\Interfaces\Objects
  * @author      Rianna Cantarelli <rianna@aeondigital.com.br>
  * @copyright   2020, Rianna Cantarelli
  * @license     MIT

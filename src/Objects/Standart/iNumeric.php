@@ -3,7 +3,7 @@ declare (strict_types=1);
 
 namespace AeonDigital\Interfaces\Objects\Standart;
 
-use AeonDigital\Interfaces\Objects\iStandartType as iStandartType;
+use AeonDigital\Interfaces\Objects\iStandart as iStandart;
 
 
 
@@ -13,14 +13,14 @@ use AeonDigital\Interfaces\Objects\iStandartType as iStandartType;
 
 
 /**
- * Define um ``Standart`` para tipos numéricos.
+ * Descreve um ``Standart`` básico para os tipos numéricos.
  *
- * @package     AeonDigital\Interfaces\Objects\Standart
+ * @package     AeonDigital\Interfaces\Objects
  * @author      Rianna Cantarelli <rianna@aeondigital.com.br>
  * @copyright   2020, Rianna Cantarelli
  * @license     MIT
  */
-interface iNumeric extends iStandartType
+interface iNumeric extends iStandart
 {
 
 

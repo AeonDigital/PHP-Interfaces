@@ -3,7 +3,7 @@ declare (strict_types=1);
 
 namespace AeonDigital\Interfaces\Objects\Standart;
 
-use AeonDigital\Interfaces\Objects\iStandartType as iStandartType;
+use AeonDigital\Interfaces\Objects\iStandart as iStandart;
 
 
 
@@ -13,14 +13,14 @@ use AeonDigital\Interfaces\Objects\iStandartType as iStandartType;
 
 
 /**
- * Define um ``Standart`` para tipos de ``DateTime``.
+ * Descreve um ``Standart`` básico para os tipos ``DateTime``.
  *
- * @package     AeonDigital\Interfaces\Objects\Standart
+ * @package     AeonDigital\Interfaces\Objects
  * @author      Rianna Cantarelli <rianna@aeondigital.com.br>
  * @copyright   2020, Rianna Cantarelli
  * @license     MIT
  */
-interface iGeneralDateTime extends iStandartType
+interface iGeneralDateTime extends iStandart
 {
 
 
@@ -40,24 +40,6 @@ interface iGeneralDateTime extends iStandartType
      * @var         bool
      */
     const HAS_LIMIT_RANGE = true;
-
-
-
-
-
-    /**
-     * Retorna o valor atualmente definido para a instância atual.
-     *
-     * @return      ?\DateTime
-     */
-    function get() : ?\DateTime;
-    /**
-     * Retorna o valor atualmente definido para a instância atual mas caso o
-     * valor seja ``null``, retornará o valor definido em ``self::nullEquivalent()``.
-     *
-     * @return      \DateTime
-     */
-    function getNotNull() : \DateTime;
 
 
 

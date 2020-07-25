@@ -3,7 +3,7 @@ declare (strict_types=1);
 
 namespace AeonDigital\Interfaces\Objects\Standart;
 
-use AeonDigital\Interfaces\Objects\iStandartType as iStandartType;
+use AeonDigital\Interfaces\Objects\iStandart as iStandart;
 
 
 
@@ -13,14 +13,14 @@ use AeonDigital\Interfaces\Objects\iStandartType as iStandartType;
 
 
 /**
- * Define um ``Standart`` para o tipo ``bool``
+ * Descreve um ``Standart`` para o tipo ``bool``.
  *
- * @package     AeonDigital\Interfaces\Objects\Standart
+ * @package     AeonDigital\Interfaces\Objects
  * @author      Rianna Cantarelli <rianna@aeondigital.com.br>
  * @copyright   2020, Rianna Cantarelli
  * @license     MIT
  */
-interface iBool extends iStandartType
+interface iBool extends iStandart
 {
 
 
@@ -48,24 +48,6 @@ interface iBool extends iStandartType
      * @var         bool
      */
     const HAS_LIMIT_RANGE = false;
-
-
-
-
-
-    /**
-     * Retorna o valor atualmente definido para a instância atual.
-     *
-     * @return      ?bool
-     */
-    function get() : ?bool;
-    /**
-     * Retorna o valor atualmente definido para a instância atual mas caso o
-     * valor seja ``null``, retornará o valor definido em ``self::nullEquivalent()``.
-     *
-     * @return      bool
-     */
-    function getNotNull() : bool;
 
 
 
