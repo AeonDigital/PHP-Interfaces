@@ -37,6 +37,31 @@ interface iType
 
 
     /**
+     * Retornará ``true`` enquanto nenhum valor for definido para
+     * esta instância de forma explicita.
+     *
+     * @return      bool
+     */
+    function isUndefined() : bool;
+    /**
+     * Informa se esta instância é ``nullable``.
+     *
+     * @return      bool
+     */
+    function isNullable() : bool;
+    /**
+     * Informa se esta instância é ``readonly``.
+     *
+     * Quando ``true``, após a criação da instância nenhum outro valor poderá
+     * ser definido para a mesma
+     *
+     * @return      bool
+     */
+    function isReadOnly() : bool;
+
+
+
+    /**
      * Indica qual valor (para esta instância) deve ser considerado equivalente a ``null``
      * para fins de comparação.
      *
@@ -74,29 +99,6 @@ interface iType
 
 
     /**
-     * Informa se esta instância é ``nullable``.
-     *
-     * @return      bool
-     */
-    function isNullable() : bool;
-
-
-
-    /**
-     * Informa se esta instância é ``readonly``.
-     *
-     * Quando ``true``, após a criação da instância nenhum outro valor poderá
-     * ser definido para a mesma
-     *
-     * @return      bool
-     */
-    function isReadOnly() : bool;
-
-
-
-
-
-    /**
      * Define um novo valor para a instância.
      *
      * @param       mixed $v
@@ -113,9 +115,6 @@ interface iType
      *              caso contrário.
      */
     function set($v, bool $throws = true, ?string &$err = null) : bool;
-
-
-
     /**
      * Retorna o valor atualmente definido para a instância atual.
      *
