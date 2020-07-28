@@ -118,7 +118,7 @@ interface iStandart
      *              ``static::nullEquivalent()``. Se ``$nullable=true`` for definido esta
      *              opção será ignorada.
      *
-     * @param       ?string $err
+     * @param       string $err
      *              Código do erro da validação.
      *
      * @return      mixed
@@ -127,7 +127,7 @@ interface iStandart
         $v,
         bool $nullable = false,
         bool $nullEquivalent = false,
-        ?string &$err = null
+        string &$err = ""
     );
 
 
