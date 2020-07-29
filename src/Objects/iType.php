@@ -86,10 +86,18 @@ interface iType
     function isReadOnly() : bool;
     /**
      * Informa se o valor atualmente definido é o mesmo que ``nullEquivalent``.
+     * Retornará ``false`` caso o valor seja ``null``.
      *
      * @return      bool
      */
     function isNullEquivalent() : bool;
+    /**
+     * Informa se o valor atualmente definido é ``null`` ou se é o mesmo que
+     * ``nullEquivalent``.
+     *
+     * @return      bool
+     */
+    function isNullOrEquivalent() : bool;
 
 
 
