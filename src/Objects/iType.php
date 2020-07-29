@@ -30,9 +30,19 @@ interface iType
      * Retorna o namespace completo da classe ``Standart`` que
      * define esta instância.
      *
+     * Em classes genéricas deve retornar ``tpGeneric``.
+     *
      * @return      string
      */
     static function standart() : string;
+    /**
+     * Retorna o namespace completo da classe usada por esta instância.
+     *
+     * Classes concretas vinculadas a um tipo ``Standart`` devem retornar ``""``.
+     *
+     * @return      string
+     */
+    function getGenericType() : string;
 
 
 

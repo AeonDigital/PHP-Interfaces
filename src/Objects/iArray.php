@@ -13,11 +13,8 @@ namespace AeonDigital\Interfaces\Objects;
 
 
 /**
- * Descreve uma interface para uma classe do tipo ``StandartArray``.
- *
- * Tratam-se de arrays especializados em tipos específicos de dados.
- * O Funcionamento é análogo ao ``iStandartType`` porém focado na criação
- * e uso de instâncias e não na definição dos tipos.
+ * Descreve uma interface para uma classe que representa um ``array`` especializado
+ * em um tipo especificado.
  *
  * @package     AeonDigital\Interfaces\Objects
  * @author      Rianna Cantarelli <rianna@aeondigital.com.br>
