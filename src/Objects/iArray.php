@@ -47,19 +47,15 @@ interface iArray extends IteratorAggregate, ArrayAccess, Serializable, Countable
 
 
     /**
-     * Informa se ``null`` será aceito como um valor válido para os itens
-     * da instância.
-     *
-     * @return      bool
-     */
-    function isNullable() : bool;
-    /**
-     * Informa se esta instância está ``undefined``.
-     * Significa que ela nunca recebeu um valor de forma explicita.
+     * Retornará ``true`` se durante a construção da instância nenhum valor foi
+     * passado para que o ``array`` seja iniciado e enquanto nenhum valor for
+     * aceito como válido para o mesmo.
      *
      * @return      bool
      */
     function isUndefined() : bool;
+
+
 
 
 
@@ -124,18 +120,6 @@ interface iArray extends IteratorAggregate, ArrayAccess, Serializable, Countable
      * @return      bool
      */
     function isCaseSensitive() : bool;
-
-
-
-
-
-    /**
-     * Indica qual valor (para o tipo de dado que este array armazena) deve ser
-     * considerado equivalente a ``null``.
-     *
-     * @return      mixed
-     */
-    function nullEquivalent();
 
 
 
@@ -286,26 +270,4 @@ interface iArray extends IteratorAggregate, ArrayAccess, Serializable, Countable
         bool $nullEquivalent = false,
         ?string &$err = null
     );
-
-
-
-    /**
-     * Retorna o menor valor possível para este tipo.
-     * Quando ``null`` indica que não há limites definidos ou que isto não se aplica
-     * para o tipo indicado.
-     *
-     * @return      mixed
-     */
-    static function min();
-
-
-
-    /**
-     * Retorna o maior valor possível para este tipo.
-     * Quando ``null`` indica que não há limites definidos ou que isto não se aplica
-     * para o tipo indicado.
-     *
-     * @return      mixed
-     */
-    static function max();
 }

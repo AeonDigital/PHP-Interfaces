@@ -100,6 +100,12 @@ interface iType
      */
     function isReadOnly() : bool;
     /**
+     * Informa quando o tipo de valor aceito é do tipo ``iterable``.
+     *
+     * @return      bool
+     */
+    function isIterable() : bool;
+    /**
      * Informa se o valor atualmente definido é o mesmo que ``static::nullEquivalent()``.
      * Retornará ``false`` caso o valor seja ``null``.
      *
