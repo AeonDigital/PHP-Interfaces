@@ -159,4 +159,18 @@ interface iType
      * @return      string
      */
     function toString() : string;
+
+
+
+    /**
+     * Retorna uma instância definida com as propriedades definidas no
+     * ``array`` de configuração.
+     *
+     * @param       array $cfg
+     *              Array associativo contendo as configurações para a
+     *              definição da instância resultante.
+     *
+     * @return      iType
+     */
+    static function fromArray(array $cfg) : iType;
 }

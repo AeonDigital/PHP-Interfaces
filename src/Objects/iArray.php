@@ -3,7 +3,7 @@ declare (strict_types=1);
 
 namespace AeonDigital\Interfaces\Objects;
 
-
+use AeonDigital\Interfaces\Objects\iType as iType;
 
 
 
@@ -23,10 +23,26 @@ namespace AeonDigital\Interfaces\Objects;
  */
 interface iArray extends IteratorAggregate, ArrayAccess, Serializable, Countable
 {
+
+
+
     /**
-     * Nas classes concretas deve ser definido uma constante com o nome ``TYPE``
-     * que deverá trazer o nome do tipo de dado que aquela classe pretende definir.
+     * Retorna o namespace completo da classe ``Standart`` que
+     * define esta instância.
+     *
+     * @return      string
      */
+    static function standart() : string;
+    /**
+     * Retorna uma instância ``iType`` que é modelo para os tipos de itens aceitos
+     * por este ``array``.
+     *
+     * @return      iType
+     */
+    function getType() : iType;
+
+
+
 
 
 
