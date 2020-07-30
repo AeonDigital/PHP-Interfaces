@@ -29,9 +29,9 @@ interface iNumericInteger extends iNumeric
      * Valor padrão a ser definido para este tipo de instância caso nenhum valor válido
      * tenha sido explicitamente definido.
      *
-     * @return      int
+     * @return      ?int
      */
-    function default() : int;
+    function default() : ?int;
     /**
      * Retorna o menor valor aceitável para esta instância.
      *

@@ -29,9 +29,9 @@ interface iNumericFloating extends iNumeric
      * Valor padrão a ser definido para este tipo de instância caso nenhum valor válido
      * tenha sido explicitamente definido.
      *
-     * @return      float
+     * @return      ?float
      */
-    function default() : float;
+    function default() : ?float;
     /**
      * Retorna o menor valor aceitável para esta instância.
      *

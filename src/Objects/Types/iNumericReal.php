@@ -29,9 +29,9 @@ interface iNumericReal extends iNumeric
      * Valor padrão a ser definido para este tipo de instância caso nenhum valor válido
      * tenha sido explicitamente definido.
      *
-     * @return      Realtype
+     * @return      ?Realtype
      */
-    function default() : Realtype;
+    function default() : ?Realtype;
     /**
      * Retorna o menor valor aceitável para esta instância.
      *

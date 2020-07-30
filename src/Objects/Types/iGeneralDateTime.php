@@ -29,9 +29,9 @@ interface iGeneralDateTime extends iType
      * Valor padrão a ser definido para este tipo de instância caso nenhum valor válido
      * tenha sido explicitamente definido.
      *
-     * @return      \DateTime
+     * @return      ?\DateTime
      */
-    function default() : \DateTime;
+    function default() : ?\DateTime;
     /**
      * Retorna o menor valor aceitável para esta instância.
      *

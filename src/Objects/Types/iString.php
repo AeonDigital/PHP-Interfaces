@@ -29,9 +29,9 @@ interface iString extends iType
      * Valor padrão a ser definido para este tipo de instância caso nenhum valor válido
      * tenha sido explicitamente definido.
      *
-     * @return      string
+     * @return      ?string
      */
-    function default() : string;
+    function default() : ?string;
 
 
 

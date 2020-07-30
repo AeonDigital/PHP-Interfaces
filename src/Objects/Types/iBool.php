@@ -29,9 +29,9 @@ interface iBool extends iType
      * Valor padrão a ser definido para este tipo de instância caso nenhum valor válido
      * tenha sido explicitamente definido.
      *
-     * @return      mixed
+     * @return      ?bool
      */
-    function default() : bool;
+    function default() : ?bool;
 
 
 
