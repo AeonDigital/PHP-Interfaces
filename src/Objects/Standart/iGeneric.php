@@ -13,14 +13,14 @@ use AeonDigital\Interfaces\Objects\iStandart as iStandart;
 
 
 /**
- * Descreve um ``Standart`` para tipos ``object``.
+ * Descreve um ``Standart`` para tipos ``object`` definidos em ``runtime``.
  *
  * @package     AeonDigital\Interfaces\Objects
  * @author      Rianna Cantarelli <rianna@aeondigital.com.br>
  * @copyright   2020, Rianna Cantarelli
  * @license     MIT
  */
-interface iGenericObject extends iStandart
+interface iGeneric extends iStandart
 {
     /**
      * Nome deste tipo
@@ -29,7 +29,7 @@ interface iGenericObject extends iStandart
      *
      * @var         string
      */
-    const TYPE = "GenericObject";
+    const TYPE = "iGeneric";
     /**
      * Quando ``true`` indica se este tipo é representado por uma classe.
      *
