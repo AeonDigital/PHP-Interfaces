@@ -30,29 +30,27 @@ interface iType
      * Retorna o namespace completo da classe ``Standart`` que
      * define esta instância.
      *
-     * Em classes genéricas deve retornar ``tpGeneric``.
-     *
      * @return      string
      */
     static function standart() : string;
     /**
      * Retorna o namespace completo da classe usada por esta instância.
-     *
-     * Classes concretas vinculadas a um tipo ``Standart`` devem retornar ``""``.
+     * Em classes de tipo invariável retornará o mesmo resultado obtido pelo
+     * método ``static::standart()``.
      *
      * @return      string
      */
-    function getGenericType() : string;
+    function getType() : string;
 
 
 
     /**
-     * Indica qual valor (para esta instância) deve ser considerado equivalente a ``null``
-     * para fins de comparação.
+     * Valor padrão a ser definido para este tipo de instância caso nenhum valor válido
+     * tenha sido explicitamente definido.
      *
      * @return      mixed
      */
-    function nullEquivalent();
+    function default();
     /**
      * Retorna o menor valor aceitável para esta instância.
      * Quando ``null`` indica que não há limites definidos ou que isto não se aplica
@@ -80,11 +78,18 @@ interface iType
      */
     function isUndefined() : bool;
     /**
-     * Informa se esta instância é ``nullable``.
+     * Informa se esta instância aceita ``null`` como válido.
      *
      * @return      bool
      */
-    function isNullable() : bool;
+    function isAllowNull() : bool;
+    /**
+     * Informa se esta instância aceita ``""`` como um valor válido.
+     * Esta configuação funciona apenas em casos de tipo ``string``.
+     *
+     * @return      bool
+     */
+    function isAllowEmpty() : bool;
     /**
      * Informa se esta instância é ``readonly``.
      *
@@ -138,7 +143,7 @@ interface iType
     function get();
     /**
      * Retorna o valor atualmente definido para a instância atual mas caso o
-     * valor seja ``null``, retornará o valor definido em ``self::nullEquivalent``.
+     * valor seja ``null``, retornará o valor definido em ``static::nullEquivalent()``.
      *
      * @return      mixed
      */
