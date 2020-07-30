@@ -26,12 +26,12 @@ interface iString extends iType
 
 
     /**
-     * Indica qual valor (para esta instância) deve ser considerado equivalente a ``null``
-     * para fins de comparação.
+     * Valor padrão a ser definido para este tipo de instância caso nenhum valor válido
+     * tenha sido explicitamente definido.
      *
      * @return      string
      */
-    function nullEquivalent() : string;
+    function default() : string;
 
 
 
