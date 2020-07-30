@@ -34,11 +34,17 @@ interface iTypeArray extends iType, IteratorAggregate, ArrayAccess, Serializable
      */
     function isCaseSensitive() : bool;
     /**
-     * Uma vez acionado, impede a adição de novos itens no ``array``.
+     * Uma vez acionado, impede a adição e remoção de itens no ``array``.
      *
      * @return      bool
      */
     function lockArray() : bool;
+    /**
+     * Indica se a instância está bloquada contra alterações.
+     *
+     * @return      bool
+     */
+    function isLocked() : bool;
 
 
 
@@ -48,7 +54,7 @@ interface iTypeArray extends iType, IteratorAggregate, ArrayAccess, Serializable
      * Indica se a chave de nome indicado existe.
      *
      * @param       string $key
-     *              Chave.
+     *              Chave que será verificada.
      *
      * @return      bool
      */
@@ -110,10 +116,16 @@ interface iTypeArray extends iType, IteratorAggregate, ArrayAccess, Serializable
      *              Se no armazenamento interno elas sofrerem qualquer alteração e for definido
      *              ``false`` então elas retornarão seu formato alterado.
      *
+     * @param       bool $notNull
+     *              Retornará no ``array`` resultante apenas os itens que não são ``null``.
+     *
      * @return      array
      *              Retorna um ``array associativo`` ou ``[]`` caso a coleção esteja vazia.
      */
-    function toArray(bool $originalKeys = false) : array;
+    function toArray(
+        bool $originalKeys = false,
+        bool $notNull = false
+    ) : array;
 
 
 
