@@ -14,7 +14,7 @@ namespace AeonDigital\Interfaces\Objects;
 
 /**
  * Interface que orienta a criação de classes concretas capazes de representar
- * ou especializar tipos ``iStandart`` definidos.
+ * e/ou especializar tipos ``iStandart`` definidos.
  *
  * @package     AeonDigital\Interfaces\Objects
  * @author      Rianna Cantarelli <rianna@aeondigital.com.br>
@@ -41,6 +41,15 @@ interface iType
      * @return      string
      */
     function getType() : string;
+
+
+
+    /**
+     * Informa quando tratar-se de uma instância que lida com ``arrays`` de valores.
+     *
+     * @return      bool
+     */
+    function isIterable() : bool;
 
 
 
@@ -94,20 +103,17 @@ interface iType
      * Informa se esta instância é ``readonly``.
      *
      * Quando ``true``, após a criação da instância nenhum outro valor poderá
-     * ser definido para a mesma
+     * ser definido para a mesma.
      *
      * @return      bool
      */
     function isReadOnly() : bool;
     /**
-     * Informa quando o tipo de valor aceito é do tipo ``iterable``.
-     *
-     * @return      bool
-     */
-    function isIterable() : bool;
-    /**
      * Informa se o valor atualmente definido é o mesmo que ``static::nullEquivalent()``.
      * Retornará ``false`` caso o valor seja ``null``.
+     *
+     * Usado apenas em casos onde ``self::isIterable() = false``.
+     * Se ``isIterable = true`` deve retornar sempre ``false``.
      *
      * @return      bool
      */
@@ -115,6 +121,9 @@ interface iType
     /**
      * Informa se o valor atualmente definido é ``null`` ou se é o mesmo que
      * ``static::nullEquivalent()``.
+     *
+     * Usado apenas em casos onde ``self::isIterable() = false``.
+     * Se ``isIterable = true`` deve retornar sempre ``false``.
      *
      * @return      bool
      */
@@ -137,6 +146,8 @@ interface iType
     /**
      * Define um novo valor para a instância.
      *
+     * Usado apenas em casos onde ``self::isIterable() = false``.
+     *
      * @param       mixed $v
      *              Valor a ser atribuido.
      */
@@ -144,12 +155,16 @@ interface iType
     /**
      * Retorna o valor atualmente definido para a instância atual.
      *
+     * Usado apenas em casos onde ``self::isIterable() = false``.
+     *
      * @return      mixed
      */
     function get();
     /**
      * Retorna o valor atualmente definido para a instância atual mas caso o
      * valor seja ``null``, retornará o valor definido em ``static::nullEquivalent()``.
+     *
+     * Usado apenas em casos onde ``self::isIterable() = false``.
      *
      * @return      mixed
      */
@@ -161,6 +176,9 @@ interface iType
 
     /**
      * Converte o valor atualmente definido para uma ``string``.
+     *
+     * Usado apenas em casos onde ``self::isIterable() = false``.
+     * Se ``isIterable = true`` deve retornar sempre ``""``.
      *
      * @return      string
      */

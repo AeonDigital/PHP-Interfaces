@@ -21,7 +21,7 @@ use AeonDigital\Interfaces\Objects\iType as iType;
  * @copyright   2020, Rianna Cantarelli
  * @license     MIT
  */
-interface iTypeArray extends iType, IteratorAggregate, ArrayAccess, Serializable, Countable
+interface iTypeArray extends iType, \IteratorAggregate, \ArrayAccess, \Serializable, \Countable
 {
 
 
