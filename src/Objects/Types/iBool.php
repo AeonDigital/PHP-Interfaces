@@ -31,7 +31,7 @@ interface iBool extends iType
      *
      * @return      ?bool
      */
-    function default() : ?bool;
+    function getDefault() : ?bool;
 
 
 

@@ -31,19 +31,19 @@ interface iNumericInteger extends iNumeric
      *
      * @return      ?int
      */
-    function default() : ?int;
+    function getDefault() : ?int;
     /**
      * Retorna o menor valor aceitável para esta instância.
      *
      * @return      int
      */
-    function min() : int;
+    function getMin() : int;
     /**
      * Retorna o maior valor aceitável para esta instância.
      *
      * @return      int
      */
-    function max() : int;
+    function getMax() : int;
 
 
 

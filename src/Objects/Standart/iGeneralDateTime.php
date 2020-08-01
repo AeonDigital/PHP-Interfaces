@@ -51,7 +51,7 @@ interface iGeneralDateTime extends iStandart
      *
      * @return      \DateTime
      */
-    static function nullEquivalent() : \DateTime;
+    static function getNullEquivalent() : \DateTime;
 
 
 
@@ -60,7 +60,7 @@ interface iGeneralDateTime extends iStandart
      *
      * @return      \DateTime
      */
-    static function min() : \DateTime;
+    static function getMin() : \DateTime;
 
 
 
@@ -69,5 +69,5 @@ interface iGeneralDateTime extends iStandart
      *
      * @return      \DateTime
      */
-    static function max() : \DateTime;
+    static function getMax() : \DateTime;
 }

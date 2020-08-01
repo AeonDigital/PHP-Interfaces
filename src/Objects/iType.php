@@ -32,7 +32,7 @@ interface iType
      *
      * @return      string
      */
-    static function standart() : string;
+    static function getStandart() : string;
     /**
      * Retorna o namespace completo da classe usada por esta instância.
      * Em classes de tipo invariável retornará o mesmo resultado obtido pelo
@@ -59,7 +59,7 @@ interface iType
      *
      * @return      mixed
      */
-    function default();
+    function getDefault();
     /**
      * Retorna o menor valor aceitável para esta instância.
      * Quando ``null`` indica que não há limites definidos ou que isto não se aplica
@@ -67,7 +67,7 @@ interface iType
      *
      * @return      mixed
      */
-    function min();
+    function getMin();
     /**
      * Retorna o maior valor aceitável para esta instância.
      * Quando ``null`` indica que não há limites definidos ou que isto não se aplica
@@ -75,7 +75,7 @@ interface iType
      *
      * @return      mixed
      */
-    function max();
+    function getMax();
     /**
      * Retorna o tamanho máximo (em caracteres) que um valor do tipo ``string`` pode ter.
      * O valor ``null`` indica que não existe tal limitação.
@@ -83,7 +83,7 @@ interface iType
      *
      * @return      ?int
      */
-    function length() : ?int;
+    function getLength() : ?int;
 
 
 

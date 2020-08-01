@@ -31,7 +31,7 @@ interface iString extends iType
      *
      * @return      ?string
      */
-    function default() : ?string;
+    function getDefault() : ?string;
 
 
 

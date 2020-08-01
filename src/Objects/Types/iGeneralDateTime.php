@@ -31,19 +31,19 @@ interface iGeneralDateTime extends iType
      *
      * @return      ?\DateTime
      */
-    function default() : ?\DateTime;
+    function getDefault() : ?\DateTime;
     /**
      * Retorna o menor valor aceitável para esta instância.
      *
      * @return      \DateTime
      */
-    function min() : \DateTime;
+    function getMin() : \DateTime;
     /**
      * Retorna o maior valor aceitável para esta instância.
      *
      * @return      \DateTime
      */
-    function max() : \DateTime;
+    function getMax() : \DateTime;
 
 
 

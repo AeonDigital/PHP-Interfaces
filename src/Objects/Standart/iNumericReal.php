@@ -42,7 +42,7 @@ interface iNumericReal extends iNumeric
      *
      * @return      Realtype
      */
-    static function nullEquivalent() : Realtype;
+    static function getNullEquivalent() : Realtype;
 
 
 
@@ -51,7 +51,7 @@ interface iNumericReal extends iNumeric
      *
      * @return      Realtype
      */
-    static function min() : Realtype;
+    static function getMin() : Realtype;
 
 
 
@@ -60,5 +60,5 @@ interface iNumericReal extends iNumeric
      *
      * @return      Realtype
      */
-    static function max() : Realtype;
+    static function getMax() : Realtype;
 }

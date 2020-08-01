@@ -59,5 +59,5 @@ interface iString extends iStandart
      *
      * @return      string
      */
-    static function nullEquivalent() : string;
+    static function getNullEquivalent() : string;
 }

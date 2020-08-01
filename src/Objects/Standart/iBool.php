@@ -59,5 +59,5 @@ interface iBool extends iStandart
      *
      * @return      bool
      */
-    static function nullEquivalent() : bool;
+    static function getNullEquivalent() : bool;
 }

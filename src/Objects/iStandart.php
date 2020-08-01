@@ -141,7 +141,7 @@ interface iStandart
      *
      * @return      mixed
      */
-    static function nullEquivalent();
+    static function getNullEquivalent();
 
 
 
@@ -152,7 +152,7 @@ interface iStandart
      *
      * @return      mixed
      */
-    static function min();
+    static function getMin();
 
 
 
@@ -163,5 +163,5 @@ interface iStandart
      *
      * @return      mixed
      */
-    static function max();
+    static function getMax();
 }

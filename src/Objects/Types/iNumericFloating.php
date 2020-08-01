@@ -31,19 +31,19 @@ interface iNumericFloating extends iNumeric
      *
      * @return      ?float
      */
-    function default() : ?float;
+    function getDefault() : ?float;
     /**
      * Retorna o menor valor aceitável para esta instância.
      *
      * @return      float
      */
-    function min() : float;
+    function getMin() : float;
     /**
      * Retorna o maior valor aceitável para esta instância.
      *
      * @return      float
      */
-    function max() : float;
+    function getMax() : float;
 
 
 

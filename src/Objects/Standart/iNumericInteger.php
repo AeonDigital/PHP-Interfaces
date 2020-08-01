@@ -42,7 +42,7 @@ interface iNumericInteger extends iNumeric
      *
      * @return      int
      */
-    static function nullEquivalent() : int;
+    static function getNullEquivalent() : int;
 
 
 
@@ -51,7 +51,7 @@ interface iNumericInteger extends iNumeric
      *
      * @return      int
      */
-    static function min() : int;
+    static function getMin() : int;
 
 
 
@@ -60,5 +60,5 @@ interface iNumericInteger extends iNumeric
      *
      * @return      int
      */
-    static function max() : int;
+    static function getMax() : int;
 }

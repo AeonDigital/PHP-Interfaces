@@ -31,19 +31,19 @@ interface iNumericReal extends iNumeric
      *
      * @return      ?Realtype
      */
-    function default() : ?Realtype;
+    function getDefault() : ?Realtype;
     /**
      * Retorna o menor valor aceitável para esta instância.
      *
      * @return      Realtype
      */
-    function min() : Realtype;
+    function getMin() : Realtype;
     /**
      * Retorna o maior valor aceitável para esta instância.
      *
      * @return      Realtype
      */
-    function max() : Realtype;
+    function getMax() : Realtype;
 
 
 

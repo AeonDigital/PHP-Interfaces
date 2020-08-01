@@ -42,7 +42,7 @@ interface iNumericFloating extends iNumeric
      *
      * @return      float
      */
-    static function nullEquivalent() : float;
+    static function getNullEquivalent() : float;
 
 
 
@@ -51,7 +51,7 @@ interface iNumericFloating extends iNumeric
      *
      * @return      float
      */
-    static function min() : float;
+    static function getMin() : float;
 
 
 
@@ -60,5 +60,5 @@ interface iNumericFloating extends iNumeric
      *
      * @return      float
      */
-    static function max() : float;
+    static function getMax() : float;
 }
