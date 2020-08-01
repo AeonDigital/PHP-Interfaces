@@ -3,7 +3,7 @@ declare (strict_types=1);
 
 namespace AeonDigital\Interfaces\Objects\Types;
 
-use AeonDigital\Interfaces\Objects\Types\iType as iType;
+use AeonDigital\Interfaces\Objects\iType as iTypes;
 
 
 
@@ -20,6 +20,6 @@ use AeonDigital\Interfaces\Objects\Types\iType as iType;
  * @copyright   2020, Rianna Cantarelli
  * @license     MIT
  */
-interface iType extends iType
+interface iType extends iTypes
 {
 }

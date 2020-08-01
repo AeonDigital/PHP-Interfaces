@@ -4,7 +4,7 @@ declare (strict_types=1);
 namespace AeonDigital\Interfaces\Objects\Types;
 
 use AeonDigital\Interfaces\Objects\iType as iType;
-use AeonDigital\Interfaces\Objects\iStandart as iStandart;
+
 
 
 
