@@ -132,12 +132,24 @@ interface iTypeArray extends iType, \IteratorAggregate, \ArrayAccess, \Serializa
 
 
     /**
+     * Permite inserir multiplos dados de uma única vez no ``array``.
+     *
+     * @param       array $values
+     *              ``array associativo`` contendo os valores a serem definidos.
+     *
+     * @return      bool
+     *              Retornará ``true`` caso TODOS os novos valores sejam adicionados.
+     *              Em caso de falha irá parar o processo e NENHUM item passado será
+     *              mantido na instância.
+     *              O motivo do erro poderá ser visto em ``self::getLastSetError()``.
+     */
+    function insert(array $values) : bool;
+    /**
      * Limpa totalmente o ``array`` eliminando toda informação armazenada no momento.
      *
      * @return      bool
-     *              Retornará ``true`` caso a exclusão dos dados tenha sido executada com sucesso
-     *              e ``false`` caso ocorra algum erro em algum dos itens.
-     *              Neste caso, o ``array`` poderá ficará pela metade.
+     *              Retornará ``true`` caso a exclusão dos dados tenha sido executada
+     *              com sucesso.
      */
     function clean() : bool;
 }
