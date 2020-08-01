@@ -76,6 +76,14 @@ interface iType
      * @return      mixed
      */
     function max();
+    /**
+     * Retorna o tamanho máximo (em caracteres) que um valor do tipo ``string`` pode ter.
+     * O valor ``null`` indica que não existe tal limitação.
+     * Esta configuação funciona apenas em casos de tipo ``string``.
+     *
+     * @return      ?int
+     */
+    function length() : ?int;
 
 
 
@@ -152,6 +160,16 @@ interface iType
      *              Valor a ser atribuido.
      */
     function set($v) : bool;
+    /**
+     * Em classes concretas quando ``allowEmpty = false`` e ``allowNull = true``
+     * deverá convertar todo ``""`` em ``null``.
+     *
+     * Quando houver um ``length`` definido e uma ``string`` for maior que o mesmo
+     * deve falhar no ``set`` assim como falharia com um valor numérico que extrapola
+     * os limites definidos para o mesmo.
+     */
+
+
     /**
      * Retorna o valor atualmente definido para a instância atual.
      *
