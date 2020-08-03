@@ -32,5 +32,5 @@ interface iPGeneric extends iPClass
      *
      * @var         string
      */
-    const TYPE = "Generic";
+    const TYPE = "iPGeneric";
 }
