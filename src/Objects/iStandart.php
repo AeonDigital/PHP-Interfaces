@@ -107,20 +107,14 @@ interface iStandart
      * Verifica se o valor indicado pode ser convertido e usado como um valor válido
      * dentro das definições deste tipo.
      *
-     * A não ser que seja explicitado o contrário, o valor ``null`` não será aceito.
-     *
      * @param       mixed $v
      *              Valor que será verificado.
      *
-     * @param       bool $allowNull
-     *              Quando ``true`` indica que o valor ``null`` é válido para este tipo.
-     *
      * @return      bool
      */
-    static function validate(
-        $v,
-        bool $allowNull = false
-    ) : bool;
+    static function validate($v) : bool;
+
+
 
 
 
@@ -134,24 +128,13 @@ interface iStandart
      * @param       mixed $v
      *              Valor que será convertido.
      *
-     * @param       bool $allowNull
-     *              Quando ``true`` indica que o valor ``null`` é válido para este tipo
-     *              e não será convertido.
-     *
-     * @param       bool $nullEquivalent
-     *              Quando ``true``, converterá ``null`` para o valor existente em
-     *              ``static::nullEquivalent()``. Se ``$allowNull=true`` for definido esta
-     *              opção será ignorada.
-     *
      * @param       string $err
      *              Código do erro da validação.
      *
      * @return      mixed
      */
-    static function parseIfValidate(
+    public static function parseIfValidate(
         $v,
-        bool $allowNull = false,
-        bool $nullEquivalent = false,
         string &$err = ""
     );
 
