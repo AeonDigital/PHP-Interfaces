@@ -21,21 +21,6 @@ namespace AeonDigital\Interfaces\Objects;
  * Seus membros, TODOS ESTÁTICOS, trazem as regras que definem cada tipo planeja mapear,
  * descrever e limitar.
  *
- * Neste sentido:
- * - Mapear significa que os tipos de dados representados por futuras classes concretas
- *   poderão operar dentro de sistemas mais complexos de forma interoperável pois
- *   participarão de uma natureza mínima descritiva de suas respectivas composições.
- *
- * - Descrever e Limitar significa indicar formas de validar tal dado ou converter outros
- *   para ele além de identificar seus valores mínimos e máximos aceitáveis* ou mesmo
- *   qual valor será convencionado para representar ``null`` quando o uso do próprio
- *   ``null`` não for válido.
- *
- * * ``aceitável`` significa, neste caso, extritamente do ponto de vista comercial.
- *   Por exemplo: não é nada comum, num sistema comercial o uso de datas anteriores ao
- *   ano 1, portanto, esta poderia ser uma data mínima aceitável e uma data máxima, por
- *   exemplo o ano 3000.
- *
  * @package     AeonDigital\Interfaces\Objects
  * @author      Rianna Cantarelli <rianna@aeondigital.com.br>
  * @copyright   2020, Rianna Cantarelli
@@ -44,24 +29,60 @@ namespace AeonDigital\Interfaces\Objects;
 interface iStandart
 {
     /**
-     * Na interface que implementa um tipo específico é recomendável que as constantes
+     * Na interface que implementa um tipo específico é NECESSÁRIO que as constantes
      * relatadas abaixo sejam definidas.
-     *
-     * Caso contrário, tal implementação pode ser feita nas classes concretas.
      *
      * CONSTANTES
      *
      * string TYPE
-     * Refere-se sempre ao tipo de dado que está sendo definido ou ao namespace completo
-     * da classe que se planeja especializar como um tipo.
+     * Refere-se ao tipo de dado que está sendo definido ou ao namespace completo
+     * da classe ou interface que se planeja especializar como um tipo.
      *
      * bool IS_CLASS
      * Deve indicar se as classes concretas que implementam aquela definição estão
      * referindo-se a uma classe.
      *
-     * bool HAS_LIMIT_RANGE
-     * Indica se é uma classe do tipo que é válida a espectativa de possuir um valor
-     * mínimo e um máximo.
+     * bool NULLABLE
+     * Indica quando o tipo aceita ``null`` como válido.
+     *
+     * bool READONLY
+     * Quando ``true`` indica que classes concretas devem proteger o valor definido em
+     * seu construtor e não permitir que o mesmo seja alterado posteriormente.
+     *
+     * ?bool SIGNED
+     * Usado apenas para tipos Int, Float, Real e DateTime.
+     * Quando ``true`` indica que trata-se de um valor numérico que ACEITA valores
+     * negativos.
+     *
+     * ?bool UNSIGNED
+     * Usado apenas para tipos Int, Float, Real e DateTime.
+     * Quando ``true`` indica que trata-se de um valor numérico que NÃO ACEITA valores
+     * negativos.
+     *
+     *
+     * ?bool EMPTY
+     * Usado para quando ``TYPE`` for ``String``.
+     * Indica se classes concretas podem aceitar valores vazios (``""``) como válidos.
+     *
+     *
+     * bool HAS_LIMIT
+     * Usado apenas para tipos Int, Float, Real, DateTime e String.
+     * Indica quando trata-se de um tipo que possui um valor mínimo e máximo para limitar
+     * seus valores aceitáveis. Em tipos ``string`` indica que há um limite mínimo e um
+     * máximo de caracteres esperados para que o tipo seja válido.
+     *
+     * ?string MIN
+     * Usado apenas para tipos Int, Float, Real, DateTime e String.
+     * Representação em ``string`` do valor mínimo aceitável para este tipo ou do número
+     * mínimo de caracteres aceitos.
+     *
+     * ?string MAX
+     * Usado apenas para tipos Int, Float, Real, DateTime e String.
+     * Representação em ``string`` do valor máximo aceitável para este tipo ou do número
+     * máximo de caracteres aceitos.
+     *
+     * ?string NULL_EQUIVALENT
+     * Representação em ``string`` do valor que o tipo deve considerar equivalente a ``null``.
      */
 
 
@@ -135,33 +156,31 @@ interface iStandart
 
 
 
+
+
     /**
-     * Indica qual valor (para este tipo) deve ser considerado equivalente a ``null``
-     * para fins de comparação.
+     * Retorna o valor indicado em ``MIN`` convertido para
+     * o tipo nativo.
      *
-     * @return      mixed
-     */
-    static function getNullEquivalent();
-
-
-
-    /**
-     * Retorna o menor valor possível para este tipo.
-     * Quando ``null`` indica que não há limites definidos ou que isto não se aplica
-     * para o tipo indicado.
+     * Quando ``null`` indica que não é aplicavel a este tipo.
      *
      * @return      mixed
      */
     static function getMin();
-
-
-
     /**
-     * Retorna o maior valor possível para este tipo.
-     * Quando ``null`` indica que não há limites definidos ou que isto não se aplica
-     * para o tipo indicado.
+     * Retorna o valor indicado em ``MAX`` convertido para
+     * o tipo nativo.
+     *
+     * Quando ``null`` indica que não é aplicavel a este tipo.
      *
      * @return      mixed
      */
     static function getMax();
+    /**
+     * Retorna o valor indicado em ``NULL_EQUIVALENT`` convertido para
+     * o tipo nativo.
+     *
+     * @return      mixed
+     */
+    static function getNullEquivalent();
 }

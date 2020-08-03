@@ -142,6 +142,38 @@ interface iType
 
 
     /**
+     * Retorna um ``array`` com a coleção de valores que este campo está apto a assumir.
+     * Os valores aqui pré-definidos devem seguir as regras de validade especificadas.
+     *
+     * @param       bool $onlyValues
+     *              Quando ``true``, retorna um array unidimensional contendo apenas os
+     *              valores válidos de serem selecionados sem seus respectivos ``labels``.
+     *
+     * @return      ?array
+     */
+    function getEnumerator(bool $onlyValues = false) : ?array;
+    /**
+     * SET
+     * Define a coleção de valores que este campo está apto a assumir.
+     *
+     * O ``array`` pode ser unidimensional ou multidimensional, no caso de ser
+     * multidimensional, cada entrada deverá ser um novo ``array`` com 2 posições onde a
+     * primeira será o valor real do campo e o segundo, um ``label`` para o mesmo.
+     *
+     * ``` php
+     *      // Exemplo de definição
+     *      $arr = [
+     *          ["RS", "Rio Grande do Sul"],
+     *          ["SC", "Santa Catarina"],
+     *          ["PR", "Paraná"]
+     *      ];
+     * ```
+     */
+
+
+
+
+    /**
      * Retorna o último código de erro encontrado ao tentar definir um valor
      * para a instância. ``""`` será retornado caso não tenha havido erros.
      *
