@@ -47,7 +47,8 @@ interface iStandart
      *
      * bool READONLY
      * Quando ``true`` indica que classes concretas devem proteger o valor definido em
-     * seu construtor e não permitir que o mesmo seja alterado posteriormente.
+     * seu construtor ou na primeira vez que a mesma for definida e, a partir de então,
+     * não permitir que o mesmo seja alterado posteriormente.
      *
      * ?bool SIGNED
      * Usado apenas para tipos Int, Float, Real e DateTime.
