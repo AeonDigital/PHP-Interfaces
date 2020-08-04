@@ -4,7 +4,7 @@ declare (strict_types=1);
 namespace AeonDigital\Interfaces\Objects\Standart\Types;
 
 use AeonDigital\Interfaces\Objects\Standart\Primitive\iPBool as iPBool;
-use AeonDigital\Interfaces\Objects\Standart\Flag\iReadWrite as iReadWrite;
+use AeonDigital\Interfaces\Objects\Standart\Flag\iReadOnly as iReadOnly;
 use AeonDigital\Interfaces\Objects\Standart\Flag\iNotNullable as iNotNullable;
 
 
@@ -20,6 +20,6 @@ use AeonDigital\Interfaces\Objects\Standart\Flag\iNotNullable as iNotNullable;
  * @copyright   2020, Rianna Cantarelli
  * @license     MIT
  */
-interface iROBool extends iPBool, iReadWrite, iNotNullable
+interface iROBool extends iPBool, iReadOnly, iNotNullable
 {
 }
