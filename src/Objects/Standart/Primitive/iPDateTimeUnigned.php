@@ -4,7 +4,7 @@ declare (strict_types=1);
 namespace AeonDigital\Interfaces\Objects\Standart\Primitive;
 
 use AeonDigital\Interfaces\Objects\Standart\Primitive\iPDateTime as iPDateTime;
-use AeonDigital\Interfaces\Objects\Standart\Flag\iSigned as iUnsigned;
+use AeonDigital\Interfaces\Objects\Standart\Flag\iUnsigned as iUnsigned;
 
 
 
