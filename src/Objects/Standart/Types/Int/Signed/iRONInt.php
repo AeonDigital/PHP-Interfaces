@@ -3,7 +3,7 @@ declare (strict_types=1);
 
 namespace AeonDigital\Interfaces\Objects\Standart\Types;
 
-use AeonDigital\Interfaces\Objects\Standart\Types\Primitive\iPIntSigned as iPIntSigned;
+use AeonDigital\Interfaces\Objects\Standart\Primitive\iPIntSigned as iPIntSigned;
 use AeonDigital\Interfaces\Objects\Standart\Flag\iReadOnly as iReadOnly;
 use AeonDigital\Interfaces\Objects\Standart\Flag\iNullable as iNullable;
 

@@ -3,7 +3,7 @@ declare (strict_types=1);
 
 namespace AeonDigital\Interfaces\Objects\Standart\Types;
 
-use AeonDigital\Interfaces\Objects\Standart\Types\Primitive\iPRealUnsigned as iPRealUnsigned;
+use AeonDigital\Interfaces\Objects\Standart\Primitive\iPRealUnsigned as iPRealUnsigned;
 use AeonDigital\Interfaces\Objects\Standart\Flag\iReadWrite as iReadWrite;
 use AeonDigital\Interfaces\Objects\Standart\Flag\iNullable as iNullable;
 
