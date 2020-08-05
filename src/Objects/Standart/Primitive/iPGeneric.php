@@ -3,7 +3,7 @@ declare (strict_types=1);
 
 namespace AeonDigital\Interfaces\Objects\Standart\Primitive;
 
-use AeonDigital\Interfaces\Objects\Primitive\iPClass as iPClass;
+use AeonDigital\Interfaces\Objects\Standart\Primitive\iPClass as iPClass;
 
 
 
