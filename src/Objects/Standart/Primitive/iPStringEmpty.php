@@ -53,4 +53,5 @@ interface iPStringEmpty extends iPString
      *
      * @var         ?string
      */
-    const NULL_EQUIVALENT = "";}
+    const NULL_EQUIVALENT = "";
+}
