@@ -75,6 +75,24 @@ interface iPString extends iStandart
 
 
     /**
+     * Retorna o valor indicado em ``MIN`` convertido para
+     * o tipo nativo.
+     *
+     * Quando ``null`` indica que não é aplicavel a este tipo.
+     *
+     * @return      int
+     */
+    static function getMin() : int;
+    /**
+     * Retorna o valor indicado em ``MAX`` convertido para
+     * o tipo nativo.
+     *
+     * Quando ``null`` indica que não é aplicavel a este tipo.
+     *
+     * @return      int
+     */
+    static function getMax() : int;
+    /**
      * Retorna o valor indicado em ``NULL_EQUIVALENT`` convertido para
      * o tipo nativo.
      *

@@ -40,7 +40,7 @@ interface iPStringNotEmpty extends iPString
      *
      * @var         ?string
      */
-    const MIN = 1;
+    const MIN = "1";
     /**
      * Representação em ``string`` do valor máximo aceitável para este tipo ou do número
      * máximo de caracteres aceitos.
