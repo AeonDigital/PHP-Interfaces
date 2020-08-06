@@ -20,7 +20,7 @@ use AeonDigital\Interfaces\Objects\iType as iType;
  * @copyright   2020, Rianna Cantarelli
  * @license     MIT
  */
-interface iBString extends iType
+interface iString extends iType
 {
 
 
