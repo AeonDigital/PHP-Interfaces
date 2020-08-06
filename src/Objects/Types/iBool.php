@@ -49,9 +49,9 @@ interface iBool extends iType
      * para o tipo indicado.
      * Em tipos ``String`` informa o menor número de caracteres que um valor deve ter.
      *
-     * @return      bool
+     * @return      ?bool
      */
-    function getMin() : bool;
+    function getMin() : ?bool;
     /**
      * Retorna o maior valor aceitável para esta instância.
      *
@@ -59,9 +59,9 @@ interface iBool extends iType
      * para o tipo indicado.
      * Em tipos ``String`` informa o maior número de caracteres que um valor deve ter.
      *
-     * @return      bool
+     * @return      ?bool
      */
-    function getMax() : bool;
+    function getMax() : ?bool;
 
 
 
