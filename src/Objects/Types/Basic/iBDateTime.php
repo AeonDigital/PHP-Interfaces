@@ -26,6 +26,16 @@ interface iBDateTime extends iType
 
 
     /**
+     * Retorna o valor indicado em ``NULL_EQUIVALENT`` convertido para
+     * o tipo nativo.
+     *
+     * @return      \DateTime
+     */
+    function getNullEquivalent() : \DateTime;
+
+
+
+    /**
      * Valor padrão a ser definido para este tipo de instância caso nenhum valor válido
      * tenha sido explicitamente definido.
      *

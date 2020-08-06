@@ -26,6 +26,16 @@ interface iBNumericInteger extends iBNumeric
 
 
     /**
+     * Retorna o valor indicado em ``NULL_EQUIVALENT`` convertido para
+     * o tipo nativo.
+     *
+     * @return      int
+     */
+    function getNullEquivalent() : int;
+
+
+
+    /**
      * Valor padrão a ser definido para este tipo de instância caso nenhum valor válido
      * tenha sido explicitamente definido.
      *

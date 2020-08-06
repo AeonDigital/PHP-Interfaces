@@ -76,8 +76,8 @@ interface iType
      */
     function isAllowEmpty() : ?bool;
     /**
-     * Retorna o valor encontrado na constante ``NULL_EQUIVALENT`` do
-     * ``Standart`` utilizado.
+     * Retorna o valor indicado em ``NULL_EQUIVALENT`` convertido para
+     * o tipo nativo.
      *
      * @return      mixed
      */
