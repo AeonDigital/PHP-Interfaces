@@ -35,6 +35,7 @@ interface iType
     static function getStandart() : string;
     /**
      * Retorna o namespace completo da classe usada por esta instância.
+     *
      * Em classes de tipo invariável retornará o mesmo resultado obtido pelo
      * método ``static::standart()``.
      *
@@ -54,6 +55,39 @@ interface iType
 
 
     /**
+     * Informa se esta instância aceita ``null`` como válido.
+     * Mesmo valor encontrado na constante ``NULLABLE`` do ``Standart`` utilizado.
+     *
+     * @return      bool
+     */
+    function isAllowNull() : bool;
+    /**
+     * Informa se esta instância é ``readonly``.
+     * Mesmo valor encontrado na constante ``READONLY`` do ``Standart`` utilizado.
+     *
+     * @return      bool
+     */
+    function isReadOnly() : bool;
+    /**
+     * Informa se esta instância aceita ``""`` como um valor válido.
+     * Mesmo valor encontrado na constante ``EMPTY`` do ``Standart`` utilizado.
+     *
+     * @return      bool
+     */
+    function isAllowEmpty() : bool;
+    /**
+     * Retorna o valor encontrado na constante ``NULL_EQUIVALENT`` do
+     * ``Standart`` utilizado.
+     *
+     * @return      mixed
+     */
+    function getNullEquivalent();
+
+
+
+
+
+    /**
      * Valor padrão a ser definido para este tipo de instância caso nenhum valor válido
      * tenha sido explicitamente definido.
      *
@@ -62,92 +96,38 @@ interface iType
     function getDefault();
     /**
      * Retorna o menor valor aceitável para esta instância.
+     *
      * Quando ``null`` indica que não há limites definidos ou que isto não se aplica
      * para o tipo indicado.
+     * Em tipos ``String`` informa o menor número de caracteres que um valor deve ter.
      *
-     * @return      mixed
+     * @return      ?int|float|Realtype|\DateTime|string
      */
     function getMin();
     /**
      * Retorna o maior valor aceitável para esta instância.
+     *
      * Quando ``null`` indica que não há limites definidos ou que isto não se aplica
      * para o tipo indicado.
+     * Em tipos ``String`` informa o maior número de caracteres que um valor deve ter.
      *
-     * @return      mixed
+     * @return      ?int|float|Realtype|\DateTime|string
      */
     function getMax();
     /**
-     * Retorna o tamanho máximo (em caracteres) que um valor do tipo ``string`` pode ter.
-     * O valor ``null`` indica que não existe tal limitação.
-     * Esta configuação funciona apenas em casos de tipo ``string``.
+     * Em tipos ``String`` retorna o maior número de caracteres aceitável para validar
+     * o valor. Trata-se do mesmo número indicado em ``self::getMax()``
      *
      * @return      ?int
      */
     function getLength() : ?int;
-
-
-
-    /**
-     * Retornará ``true`` enquanto nenhum valor for definido para
-     * esta instância de forma explicita.
-     *
-     * @return      bool
-     */
-    function isUndefined() : bool;
-    /**
-     * Informa se esta instância aceita ``null`` como válido.
-     *
-     * @return      bool
-     */
-    function isAllowNull() : bool;
-    /**
-     * Informa se esta instância aceita ``""`` como um valor válido.
-     * Esta configuação funciona apenas em casos de tipo ``string``.
-     *
-     * @return      bool
-     */
-    function isAllowEmpty() : bool;
-    /**
-     * Informa se esta instância é ``readonly``.
-     *
-     * Quando ``true``, após a criação da instância nenhum outro valor poderá
-     * ser definido para a mesma.
-     *
-     * @return      bool
-     */
-    function isReadOnly() : bool;
-    /**
-     * Informa se o valor atualmente definido é o mesmo que ``static::nullEquivalent()``.
-     * Retornará ``false`` caso o valor seja ``null``.
-     *
-     * Usado apenas em casos onde ``self::isIterable() = false``.
-     * Se ``isIterable = true`` deve retornar sempre ``false``.
-     *
-     * @return      bool
-     */
-    function isNullEquivalent() : bool;
-    /**
-     * Informa se o valor atualmente definido é ``null`` ou se é o mesmo que
-     * ``static::nullEquivalent()``.
-     *
-     * Usado apenas em casos onde ``self::isIterable() = false``.
-     * Se ``isIterable = true`` deve retornar sempre ``false``.
-     *
-     * @return      bool
-     */
-    function isNullOrEquivalent() : bool;
-
-
-
-
-
     /**
      * Retorna um ``array`` com a coleção de valores que este campo está apto a assumir.
      * Os valores aqui pré-definidos devem seguir as regras de validade especificadas.
      *
      * @param       bool $onlyValues
-     *              Quando ``true``, retorna um array unidimensional contendo apenas os
-     *              valores válidos de serem selecionados sem seus respectivos ``labels``.
+     *              Quando ``true``, retorna um ``array`` unidimensional contendo apenas
+     *              os valores sem seus respectivos ``labels``.
      *
      * @return      ?array
      */
@@ -173,9 +153,42 @@ interface iType
 
 
 
+
+     /**
+     * Retornará ``true`` enquanto nenhum valor for definido para
+     * esta instância de forma explicita.
+     *
+     * @return      bool
+     */
+    function isUndefined() : bool;
+    /**
+     * Informa se o valor atualmente definido é o mesmo que ``NULL_EQUIVALENT``.
+     * Retornará ``false`` caso o valor seja ``null``.
+     *
+     * Usado apenas em casos onde ``self::isIterable() = false``.
+     * Se ``isIterable = true`` deve retornar ``false``.
+     *
+     * @return      bool
+     */
+    function isNullEquivalent() : bool;
+    /**
+     * Informa se o valor atualmente definido é ``null`` ou se é o mesmo que
+     * ``NULL_EQUIVALENT``.
+     *
+     * Usado apenas em casos onde ``self::isIterable() = false``.
+     * Se ``isIterable = true`` deve retornar ``false``.
+     *
+     * @return      bool
+     */
+    function isNullOrEquivalent() : bool;
+
+
+
+
+
     /**
      * Retorna o último código de erro encontrado ao tentar definir um valor
-     * para a instância. ``""`` será retornado caso não tenha havido erros.
+     * para a instância. ``""`` será retornado caso não existam erros.
      *
      * @return      string
      */
@@ -195,13 +208,7 @@ interface iType
     /**
      * Em classes concretas quando ``allowEmpty = false`` e ``allowNull = true``
      * deverá convertar todo ``""`` em ``null``.
-     *
-     * Quando houver um ``length`` definido e uma ``string`` for maior que o mesmo
-     * deve falhar no ``set`` assim como falharia com um valor numérico que extrapola
-     * os limites definidos para o mesmo.
      */
-
-
     /**
      * Retorna o valor atualmente definido para a instância atual.
      *
@@ -212,7 +219,7 @@ interface iType
     function get();
     /**
      * Retorna o valor atualmente definido para a instância atual mas caso o
-     * valor seja ``null``, retornará o valor definido em ``static::nullEquivalent()``.
+     * valor seja ``null``, retornará o valor definido em ``NULL_EQUIVALENT``.
      *
      * Usado apenas em casos onde ``self::isIterable() = false``.
      *
@@ -233,11 +240,8 @@ interface iType
      * @return      string
      */
     function toString() : string;
-
-
-
     /**
-     * Retorna uma instância definida com as propriedades definidas no
+     * Retorna uma instância definida com as propriedades indicadas no
      * ``array`` de configuração.
      *
      * @param       array $cfg
