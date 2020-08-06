@@ -72,9 +72,9 @@ interface iType
      * Informa se esta instância aceita ``""`` como um valor válido.
      * Mesmo valor encontrado na constante ``EMPTY`` do ``Standart`` utilizado.
      *
-     * @return      bool
+     * @return      ?bool
      */
-    function isAllowEmpty() : bool;
+    function isAllowEmpty() : ?bool;
     /**
      * Retorna o valor encontrado na constante ``NULL_EQUIVALENT`` do
      * ``Standart`` utilizado.
