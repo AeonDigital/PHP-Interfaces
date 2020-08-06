@@ -3,7 +3,7 @@ declare (strict_types=1);
 
 namespace AeonDigital\Interfaces\Objects\Types;
 
-use AeonDigital\Interfaces\Objects\Types\iNumericReal as iNumericReal;
+use AeonDigital\Interfaces\Objects\Types\Basic\iBNumericReal as iBNumericReal;
 
 
 
@@ -13,13 +13,13 @@ use AeonDigital\Interfaces\Objects\Types\iNumericReal as iNumericReal;
 
 
 /**
- * Descreve uma instância para o tipo ``Realtype``.
+ * Tipo ``Realtype``.
  *
  * @package     AeonDigital\Interfaces\Objects
  * @author      Rianna Cantarelli <rianna@aeondigital.com.br>
  * @copyright   2020, Rianna Cantarelli
  * @license     MIT
  */
-interface iReal extends iNumericReal
+interface iReal extends iBNumericReal
 {
 }

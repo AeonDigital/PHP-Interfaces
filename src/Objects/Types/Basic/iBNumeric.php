@@ -1,7 +1,7 @@
 <?php
 declare (strict_types=1);
 
-namespace AeonDigital\Interfaces\Objects\Types;
+namespace AeonDigital\Interfaces\Objects\Types\Basic;
 
 use AeonDigital\Interfaces\Objects\iType as iType;
 
@@ -20,6 +20,6 @@ use AeonDigital\Interfaces\Objects\iType as iType;
  * @copyright   2020, Rianna Cantarelli
  * @license     MIT
  */
-interface iNumeric extends iType
+interface iBNumeric extends iType
 {
 }

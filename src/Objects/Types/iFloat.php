@@ -3,7 +3,7 @@ declare (strict_types=1);
 
 namespace AeonDigital\Interfaces\Objects\Types;
 
-use AeonDigital\Interfaces\Objects\Types\iNumericFloating as iNumericFloating;
+use AeonDigital\Interfaces\Objects\Types\Basic\iBNumericFloating as iBNumericFloating;
 
 
 
@@ -13,13 +13,13 @@ use AeonDigital\Interfaces\Objects\Types\iNumericFloating as iNumericFloating;
 
 
 /**
- * Descreve uma instância para o tipo ``float`` (flutuante de 32 bits).
+ * Tipo ``Float`` (flutuante de 32 bits).
  *
  * @package     AeonDigital\Interfaces\Objects
  * @author      Rianna Cantarelli <rianna@aeondigital.com.br>
  * @copyright   2020, Rianna Cantarelli
  * @license     MIT
  */
-interface iFloat extends iNumericFloating
+interface iFloat extends iBNumericFloating
 {
 }

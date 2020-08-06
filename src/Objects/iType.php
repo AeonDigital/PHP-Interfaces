@@ -209,7 +209,10 @@ interface iType
      * Em classes concretas quando ``allowEmpty = false`` e ``allowNull = true``
      * deverá convertar todo ``""`` em ``null``.
      */
-    /**
+
+
+
+     /**
      * Retorna o valor atualmente definido para a instância atual.
      *
      * Usado apenas em casos onde ``self::isIterable() = false``.

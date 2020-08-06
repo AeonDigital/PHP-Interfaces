@@ -13,7 +13,7 @@ use AeonDigital\Interfaces\Objects\iType as iTypes;
 
 
 /**
- * Descreve uma instância para o tipo ``iType``.
+ * Tipo ``iType``.
  *
  * @package     AeonDigital\Interfaces\Objects
  * @author      Rianna Cantarelli <rianna@aeondigital.com.br>

@@ -1,9 +1,9 @@
 <?php
 declare (strict_types=1);
 
-namespace AeonDigital\Interfaces\Objects\Types;
+namespace AeonDigital\Interfaces\Objects\Types\Basic;
 
-use AeonDigital\Interfaces\Objects\Types\iNumeric as iNumeric;
+use AeonDigital\Interfaces\Objects\Types\Basic\iBNumeric as iBNumeric;
 
 
 
@@ -20,7 +20,7 @@ use AeonDigital\Interfaces\Objects\Types\iNumeric as iNumeric;
  * @copyright   2020, Rianna Cantarelli
  * @license     MIT
  */
-interface iNumericInteger extends iNumeric
+interface iBNumericInteger extends iBNumeric
 {
 
 
@@ -35,11 +35,19 @@ interface iNumericInteger extends iNumeric
     /**
      * Retorna o menor valor aceitável para esta instância.
      *
+     * Quando ``null`` indica que não há limites definidos ou que isto não se aplica
+     * para o tipo indicado.
+     * Em tipos ``String`` informa o menor número de caracteres que um valor deve ter.
+     *
      * @return      int
      */
     function getMin() : int;
     /**
      * Retorna o maior valor aceitável para esta instância.
+     *
+     * Quando ``null`` indica que não há limites definidos ou que isto não se aplica
+     * para o tipo indicado.
+     * Em tipos ``String`` informa o maior número de caracteres que um valor deve ter.
      *
      * @return      int
      */
@@ -47,8 +55,10 @@ interface iNumericInteger extends iNumeric
 
 
 
-    /**
+     /**
      * Retorna o valor atualmente definido para a instância atual.
+     *
+     * Usado apenas em casos onde ``self::isIterable() = false``.
      *
      * @return      ?int
      */

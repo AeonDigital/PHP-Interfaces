@@ -13,7 +13,7 @@ use AeonDigital\Interfaces\Objects\iType as iType;
 
 
 /**
- * Descreve uma instância para o tipo ``string``
+ * Tipo ``String``.
  *
  * @package     AeonDigital\Interfaces\Objects
  * @author      Rianna Cantarelli <rianna@aeondigital.com.br>
@@ -35,8 +35,10 @@ interface iString extends iType
 
 
 
-    /**
+     /**
      * Retorna o valor atualmente definido para a instância atual.
+     *
+     * Usado apenas em casos onde ``self::isIterable() = false``.
      *
      * @return      ?string
      */

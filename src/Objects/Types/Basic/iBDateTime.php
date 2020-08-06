@@ -1,7 +1,7 @@
 <?php
 declare (strict_types=1);
 
-namespace AeonDigital\Interfaces\Objects\Types;
+namespace AeonDigital\Interfaces\Objects\Types\Basic;
 
 use AeonDigital\Interfaces\Objects\iType as iType;
 
@@ -13,14 +13,14 @@ use AeonDigital\Interfaces\Objects\iType as iType;
 
 
 /**
- * Descreve uma instância para o tipo ``DateTime``.
+ * Descreve uma instância para os tipos ``DateTime``.
  *
  * @package     AeonDigital\Interfaces\Objects
  * @author      Rianna Cantarelli <rianna@aeondigital.com.br>
  * @copyright   2020, Rianna Cantarelli
  * @license     MIT
  */
-interface iGeneralDateTime extends iType
+interface iBDateTime extends iType
 {
 
 
@@ -35,11 +35,19 @@ interface iGeneralDateTime extends iType
     /**
      * Retorna o menor valor aceitável para esta instância.
      *
+     * Quando ``null`` indica que não há limites definidos ou que isto não se aplica
+     * para o tipo indicado.
+     * Em tipos ``String`` informa o menor número de caracteres que um valor deve ter.
+     *
      * @return      \DateTime
      */
     function getMin() : \DateTime;
     /**
      * Retorna o maior valor aceitável para esta instância.
+     *
+     * Quando ``null`` indica que não há limites definidos ou que isto não se aplica
+     * para o tipo indicado.
+     * Em tipos ``String`` informa o maior número de caracteres que um valor deve ter.
      *
      * @return      \DateTime
      */
@@ -47,8 +55,10 @@ interface iGeneralDateTime extends iType
 
 
 
-    /**
+     /**
      * Retorna o valor atualmente definido para a instância atual.
+     *
+     * Usado apenas em casos onde ``self::isIterable() = false``.
      *
      * @return      ?\DateTime
      */

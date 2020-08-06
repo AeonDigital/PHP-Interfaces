@@ -3,7 +3,7 @@ declare (strict_types=1);
 
 namespace AeonDigital\Interfaces\Objects\Types;
 
-use AeonDigital\Interfaces\Objects\Types\iGeneralDateTime as iGeneralDateTime;
+use AeonDigital\Interfaces\Objects\Types\Basic\iBDateTime as iBDateTime;
 
 
 
@@ -13,13 +13,13 @@ use AeonDigital\Interfaces\Objects\Types\iGeneralDateTime as iGeneralDateTime;
 
 
 /**
- * Descreve uma instância para o tipo ``DateTime``.
+ * Tipo ``DateTime``.
  *
  * @package     AeonDigital\Interfaces\Objects
  * @author      Rianna Cantarelli <rianna@aeondigital.com.br>
  * @copyright   2020, Rianna Cantarelli
  * @license     MIT
  */
-interface iDateTime extends iGeneralDateTime
+interface iDateTime extends iBDateTime
 {
 }

@@ -13,7 +13,7 @@ use AeonDigital\Interfaces\Objects\iType as iType;
 
 
 /**
- * Descreve uma instância para o tipo ``bool``.
+ * Tipo ``Bool``.
  *
  * @package     AeonDigital\Interfaces\Objects
  * @author      Rianna Cantarelli <rianna@aeondigital.com.br>
@@ -32,11 +32,10 @@ interface iBool extends iType
      * @return      ?bool
      */
     function getDefault() : ?bool;
-
-
-
-    /**
+     /**
      * Retorna o valor atualmente definido para a instância atual.
+     *
+     * Usado apenas em casos onde ``self::isIterable() = false``.
      *
      * @return      ?bool
      */
