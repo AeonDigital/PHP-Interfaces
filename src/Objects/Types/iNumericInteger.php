@@ -20,7 +20,7 @@ use AeonDigital\Interfaces\Objects\Types\Basic\iBNumeric as iBNumeric;
  * @copyright   2020, Rianna Cantarelli
  * @license     MIT
  */
-interface iBNumericInteger extends iBNumeric
+interface iNumericInteger extends iBNumeric
 {
 
 

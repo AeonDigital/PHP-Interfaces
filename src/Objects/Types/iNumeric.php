@@ -1,9 +1,9 @@
 <?php
 declare (strict_types=1);
 
-namespace AeonDigital\Interfaces\Objects\Types;
+namespace AeonDigital\Interfaces\Objects\Types\Basic;
 
-use AeonDigital\Interfaces\Objects\Types\Basic\iBNumericReal as iBNumericReal;
+use AeonDigital\Interfaces\Objects\iType as iType;
 
 
 
@@ -13,13 +13,13 @@ use AeonDigital\Interfaces\Objects\Types\Basic\iBNumericReal as iBNumericReal;
 
 
 /**
- * Tipo ``Realtype``.
+ * Descreve uma instância para os tipos numéricos.
  *
  * @package     AeonDigital\Interfaces\Objects
  * @author      Rianna Cantarelli <rianna@aeondigital.com.br>
  * @copyright   2020, Rianna Cantarelli
  * @license     MIT
  */
-interface iReal extends iBNumericReal
+interface iNumeric extends iType
 {
 }

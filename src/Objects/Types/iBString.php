@@ -1,9 +1,9 @@
 <?php
 declare (strict_types=1);
 
-namespace AeonDigital\Interfaces\Objects\Types\Basic;
+namespace AeonDigital\Interfaces\Objects\Types;
 
-use AeonDigital\Interfaces\Objects\Types\Basic\iBNumeric as iBNumeric;
+use AeonDigital\Interfaces\Objects\iType as iType;
 
 
 
@@ -13,14 +13,14 @@ use AeonDigital\Interfaces\Objects\Types\Basic\iBNumeric as iBNumeric;
 
 
 /**
- * Descreve uma instância para os tipos numéricos de ponto flutuante.
+ * Descreve uma instância para os tipos ``String``.
  *
  * @package     AeonDigital\Interfaces\Objects
  * @author      Rianna Cantarelli <rianna@aeondigital.com.br>
  * @copyright   2020, Rianna Cantarelli
  * @license     MIT
  */
-interface iBNumericFloating extends iBNumeric
+interface iBString extends iType
 {
 
 
@@ -29,9 +29,9 @@ interface iBNumericFloating extends iBNumeric
      * Retorna o valor indicado em ``NULL_EQUIVALENT`` convertido para
      * o tipo nativo.
      *
-     * @return      float
+     * @return      string
      */
-    function getNullEquivalent() : float;
+    function getNullEquivalent() : string;
 
 
 
@@ -39,9 +39,9 @@ interface iBNumericFloating extends iBNumeric
      * Valor padrão a ser definido para este tipo de instância caso nenhum valor válido
      * tenha sido explicitamente definido.
      *
-     * @return      ?float
+     * @return      ?string
      */
-    function getDefault() : ?float;
+    function getDefault() : ?string;
     /**
      * Retorna o menor valor aceitável para esta instância.
      *
@@ -49,9 +49,9 @@ interface iBNumericFloating extends iBNumeric
      * para o tipo indicado.
      * Em tipos ``String`` informa o menor número de caracteres que um valor deve ter.
      *
-     * @return      float
+     * @return      ?int
      */
-    function getMin() : float;
+    function getMin() : ?int;
     /**
      * Retorna o maior valor aceitável para esta instância.
      *
@@ -59,9 +59,9 @@ interface iBNumericFloating extends iBNumeric
      * para o tipo indicado.
      * Em tipos ``String`` informa o maior número de caracteres que um valor deve ter.
      *
-     * @return      float
+     * @return      ?int
      */
-    function getMax() : float;
+    function getMax() : ?int;
 
 
 
@@ -70,14 +70,14 @@ interface iBNumericFloating extends iBNumeric
      *
      * Usado apenas em casos onde ``self::isIterable() = false``.
      *
-     * @return      ?float
+     * @return      ?string
      */
-    function get() : ?float;
+    function get() : ?string;
     /**
      * Retorna o valor atualmente definido para a instância atual mas caso o
      * valor seja ``null``, retornará o valor definido em ``self::nullEquivalent``.
      *
-     * @return      float
+     * @return      string
      */
-    function getNotNull() : float;
+    function getNotNull() : string;
 }

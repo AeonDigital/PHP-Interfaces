@@ -3,7 +3,7 @@ declare (strict_types=1);
 
 namespace AeonDigital\Interfaces\Objects\Types\Basic;
 
-use AeonDigital\Interfaces\Objects\iType as iType;
+use AeonDigital\Interfaces\Objects\Types\Basic\iBNumeric as iBNumeric;
 
 
 
@@ -13,14 +13,14 @@ use AeonDigital\Interfaces\Objects\iType as iType;
 
 
 /**
- * Descreve uma instância para os tipos ``DateTime``.
+ * Descreve uma instância para os tipos numéricos de ponto flutuante.
  *
  * @package     AeonDigital\Interfaces\Objects
  * @author      Rianna Cantarelli <rianna@aeondigital.com.br>
  * @copyright   2020, Rianna Cantarelli
  * @license     MIT
  */
-interface iBDateTime extends iType
+interface iNumericFloating extends iBNumeric
 {
 
 
@@ -29,9 +29,9 @@ interface iBDateTime extends iType
      * Retorna o valor indicado em ``NULL_EQUIVALENT`` convertido para
      * o tipo nativo.
      *
-     * @return      \DateTime
+     * @return      float
      */
-    function getNullEquivalent() : \DateTime;
+    function getNullEquivalent() : float;
 
 
 
@@ -39,9 +39,9 @@ interface iBDateTime extends iType
      * Valor padrão a ser definido para este tipo de instância caso nenhum valor válido
      * tenha sido explicitamente definido.
      *
-     * @return      ?\DateTime
+     * @return      ?float
      */
-    function getDefault() : ?\DateTime;
+    function getDefault() : ?float;
     /**
      * Retorna o menor valor aceitável para esta instância.
      *
@@ -49,9 +49,9 @@ interface iBDateTime extends iType
      * para o tipo indicado.
      * Em tipos ``String`` informa o menor número de caracteres que um valor deve ter.
      *
-     * @return      \DateTime
+     * @return      float
      */
-    function getMin() : \DateTime;
+    function getMin() : float;
     /**
      * Retorna o maior valor aceitável para esta instância.
      *
@@ -59,9 +59,9 @@ interface iBDateTime extends iType
      * para o tipo indicado.
      * Em tipos ``String`` informa o maior número de caracteres que um valor deve ter.
      *
-     * @return      \DateTime
+     * @return      float
      */
-    function getMax() : \DateTime;
+    function getMax() : float;
 
 
 
@@ -70,14 +70,14 @@ interface iBDateTime extends iType
      *
      * Usado apenas em casos onde ``self::isIterable() = false``.
      *
-     * @return      ?\DateTime
+     * @return      ?float
      */
-    function get() : ?\DateTime;
+    function get() : ?float;
     /**
      * Retorna o valor atualmente definido para a instância atual mas caso o
      * valor seja ``null``, retornará o valor definido em ``self::nullEquivalent``.
      *
-     * @return      \DateTime
+     * @return      float
      */
-    function getNotNull() : \DateTime;
+    function getNotNull() : float;
 }
