@@ -116,7 +116,7 @@ interface iType
     function getMax();
     /**
      * Em tipos ``String`` retorna o maior número de caracteres aceitável para validar
-     * o valor. Trata-se do mesmo número indicado em ``self::getMax()``
+     * o valor. Trata-se do mesmo número indicado em ``$this->getMax()``
      *
      * @return      ?int
      */
@@ -165,7 +165,7 @@ interface iType
      * Informa se o valor atualmente definido é o mesmo que ``NULL_EQUIVALENT``.
      * Retornará ``false`` caso o valor seja ``null``.
      *
-     * Usado apenas em casos onde ``self::isIterable() = false``.
+     * Usado apenas em casos onde ``$this->isIterable() = false``.
      * Se ``isIterable = true`` deve retornar ``false``.
      *
      * @return      bool
@@ -175,7 +175,7 @@ interface iType
      * Informa se o valor atualmente definido é ``null`` ou se é o mesmo que
      * ``NULL_EQUIVALENT``.
      *
-     * Usado apenas em casos onde ``self::isIterable() = false``.
+     * Usado apenas em casos onde ``$this->isIterable() = false``.
      * Se ``isIterable = true`` deve retornar ``false``.
      *
      * @return      bool
@@ -199,7 +199,7 @@ interface iType
     /**
      * Define um novo valor para a instância.
      *
-     * Usado apenas em casos onde ``self::isIterable() = false``.
+     * Usado apenas em casos onde ``$this->isIterable() = false``.
      *
      * @param       mixed $v
      *              Valor a ser atribuido.
@@ -215,7 +215,7 @@ interface iType
      /**
      * Retorna o valor atualmente definido para a instância atual.
      *
-     * Usado apenas em casos onde ``self::isIterable() = false``.
+     * Usado apenas em casos onde ``$this->isIterable() = false``.
      *
      * @return      mixed
      */
@@ -224,7 +224,7 @@ interface iType
      * Retorna o valor atualmente definido para a instância atual mas caso o
      * valor seja ``null``, retornará o valor definido em ``NULL_EQUIVALENT``.
      *
-     * Usado apenas em casos onde ``self::isIterable() = false``.
+     * Usado apenas em casos onde ``$this->isIterable() = false``.
      *
      * @return      mixed
      */
@@ -237,7 +237,7 @@ interface iType
     /**
      * Converte o valor atualmente definido para uma ``string``.
      *
-     * Usado apenas em casos onde ``self::isIterable() = false``.
+     * Usado apenas em casos onde ``$this->isIterable() = false``.
      * Se ``isIterable = true`` deve retornar sempre ``""``.
      *
      * @return      string
