@@ -3,8 +3,8 @@ declare (strict_types=1);
 
 namespace AeonDigital\Interfaces\Objects\Standart\SType;
 
-use AeonDigital\Interfaces\Objects\Standart\Primitive\iPDateTimeUnsigned as iPDateTimeUnsigned;
-use AeonDigital\Interfaces\Objects\Standart\Flag\iReadOnly as iReadOnly;
+use AeonDigital\Interfaces\Objects\Standart\Primitive\iPDateTime as iPDateTime;
+use AeonDigital\Interfaces\Objects\Standart\Flag\iReadWrite as iReadWrite;
 use AeonDigital\Interfaces\Objects\Standart\Flag\iNullable as iNullable;
 
 
@@ -13,13 +13,13 @@ use AeonDigital\Interfaces\Objects\Standart\Flag\iNullable as iNullable;
 
 
 /**
- * ``Standart ReadOnly Nullable Unsigned DateTime``.
+ * ``Standart Nullable DateTime``.
  *
  * @package     AeonDigital\Interfaces\Objects
  * @author      Rianna Cantarelli <rianna@aeondigital.com.br>
  * @copyright   2020, Rianna Cantarelli
  * @license     MIT
  */
-interface iRONUDateTime extends iPDateTimeUnsigned, iReadOnly, iNullable
+interface iNDateTime extends iPDateTime, iReadWrite, iNullable
 {
 }

@@ -4,7 +4,7 @@ declare (strict_types=1);
 namespace AeonDigital\Interfaces\Objects\Standart\Primitive;
 
 use AeonDigital\Interfaces\Objects\iStandart as iStandart;
-
+use AeonDigital\Interfaces\Objects\Standart\Flag\iUnsigned as iUnsigned;
 
 
 
@@ -20,7 +20,7 @@ use AeonDigital\Interfaces\Objects\iStandart as iStandart;
  * @copyright   2020, Rianna Cantarelli
  * @license     MIT
  */
-interface iPDateTime extends iStandart
+interface iPDateTime extends iStandart, iUnsigned
 {
 
 
@@ -67,7 +67,19 @@ interface iPDateTime extends iStandart
      *
      * @var         ?string
      */
-    const NULL_EQUIVALENT = "0001-01-01 00:00:00";
+    const NULL_EQUIVALENT = "0000-01-01 00:00:00";
+    /**
+     * Representação em ``string`` do valor mínimo aceitável para este tipo.
+     *
+     * @var         string
+     */
+    const MIN = "0000-01-01 00:00:00";
+    /**
+     * Representação em ``string`` do valor máximo aceitável para este tipo.
+     *
+     * @var         string
+     */
+    const MAX = "9999-12-31 23:59:59";
 
 
 
