@@ -36,5 +36,5 @@ interface iPDateTimeSigned extends iPDateTime, iSigned
      *
      * @var         string
      */
-    const MAX = "9999-01-01 23:59:59";
+    const MAX = "9999-12-31 23:59:59";
 }
