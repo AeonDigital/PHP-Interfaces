@@ -140,6 +140,8 @@ interface iType
      * multidimensional, cada entrada deverá ser um novo ``array`` com 2 posições onde a
      * primeira será o valor real do campo e o segundo, um ``label`` para o mesmo.
      *
+     * Para o valor dos dados aceitáveis use sempre representações em ``string``.
+     *
      * ``` php
      *      // Exemplo de definição
      *      $arr = [
