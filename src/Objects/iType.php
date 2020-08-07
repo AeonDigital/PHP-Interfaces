@@ -163,6 +163,13 @@ interface iType
      * @return      bool
      */
     function isUndefined() : bool;
+     /**
+     * Retornará ``true`` a partir do momento em que um valor for
+     * explicitamente definido e aceito para esta instância.
+     *
+     * @return      bool
+     */
+    function isDefined() : bool;
     /**
      * Informa se o valor atualmente definido é o mesmo que ``NULL_EQUIVALENT``.
      * Retornará ``false`` caso o valor seja ``null``.
