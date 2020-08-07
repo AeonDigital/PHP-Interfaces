@@ -1,9 +1,9 @@
 <?php
 declare (strict_types=1);
 
-namespace AeonDigital\Interfaces\Objects\Types\Basic;
+namespace AeonDigital\Interfaces\Objects\Types;
 
-use AeonDigital\Interfaces\Objects\Types\Basic\iBNumeric as iBNumeric;
+use AeonDigital\Interfaces\Objects\Types\iNumeric as iNumeric;
 
 
 
@@ -20,7 +20,7 @@ use AeonDigital\Interfaces\Objects\Types\Basic\iBNumeric as iBNumeric;
  * @copyright   2020, Rianna Cantarelli
  * @license     MIT
  */
-interface iNumericFloating extends iBNumeric
+interface iNumericFloating extends iNumeric
 {
 
 
