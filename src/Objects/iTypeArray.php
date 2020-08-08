@@ -13,8 +13,7 @@ use AeonDigital\Interfaces\Objects\iType as iType;
 
 
 /**
- * Interface que orienta a criação de classes concretas capazes de representar
- * um ``array`` de tipos ``iStandart`` definidos.
+ * Amplia os ``iType`` para serem usados como ``arrays``.
  *
  * @package     AeonDigital\Interfaces\Objects
  * @author      Rianna Cantarelli <rianna@aeondigital.com.br>
@@ -51,7 +50,7 @@ interface iTypeArray extends iType, \IteratorAggregate, \ArrayAccess, \Serializa
 
 
     /**
-     * Indica se a chave de nome indicado existe.
+     * Indica se a chave de nome passado existe.
      *
      * @param       string $key
      *              Chave que será verificada.
@@ -63,7 +62,7 @@ interface iTypeArray extends iType, \IteratorAggregate, \ArrayAccess, \Serializa
      * Define um novo valor para a instância.
      *
      * @param       string $key
-     *              Chave a ser definido para este valor.
+     *              Chave a ser definida para este valor.
      *
      * @param       mixed $v
      *              Valor a ser adicionado ao ``array``.
@@ -112,9 +111,8 @@ interface iTypeArray extends iType, \IteratorAggregate, \ArrayAccess, \Serializa
      * definidos nesta instância.
      *
      * @param       bool $originalKeys
-     *              Quando ``true`` irá usar as chaves conforme foram definidas na função ``set``.
-     *              Se no armazenamento interno elas sofrerem qualquer alteração e for definido
-     *              ``false`` então elas retornarão seu formato alterado.
+     *              Quando ``true`` irá usar as chaves conforme foram definidas na função
+     *              ``setValue``.
      *
      * @param       bool $notNull
      *              Retornará no ``array`` resultante apenas os itens que não são ``null``.
@@ -141,7 +139,7 @@ interface iTypeArray extends iType, \IteratorAggregate, \ArrayAccess, \Serializa
      *              Retornará ``true`` caso TODOS os novos valores sejam adicionados.
      *              Em caso de falha irá parar o processo e NENHUM item passado será
      *              mantido na instância.
-     *              O motivo do erro poderá ser visto em ``self::getLastSetError()``.
+     *              O motivo do erro poderá ser visto em ``$this->getLastSetError()``.
      */
     function insert(iterable $values) : bool;
     /**
