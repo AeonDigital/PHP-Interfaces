@@ -132,7 +132,7 @@ interface iTypeArray extends iType, \IteratorAggregate, \ArrayAccess, \Serializa
     /**
      * Permite inserir multiplos dados de uma única vez no ``array``.
      *
-     * @param       iterable $values
+     * @param       ?iterable $values
      *              ``array associativo`` contendo os valores a serem definidos.
      *
      * @return      bool
@@ -141,7 +141,7 @@ interface iTypeArray extends iType, \IteratorAggregate, \ArrayAccess, \Serializa
      *              mantido na instância.
      *              O motivo do erro poderá ser visto em ``$this->getLastSetError()``.
      */
-    function insert(iterable $values) : bool;
+    function insert(?iterable $values) : bool;
     /**
      * Limpa totalmente o ``array`` eliminando toda informação armazenada no momento.
      *
