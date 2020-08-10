@@ -212,16 +212,14 @@ interface iType
      *
      * @param       mixed $v
      *              Valor a ser atribuido.
+     *
+     * @return      bool
      */
     function set($v) : bool;
+
+
+
     /**
-     * Em classes concretas quando ``allowEmpty = false`` e ``allowNull = true``
-     * deverá convertar todo ``""`` em ``null``.
-     */
-
-
-
-     /**
      * Retorna o valor atualmente definido para a instância atual.
      *
      * Usado apenas em casos onde ``$this->isIterable() = false``.
