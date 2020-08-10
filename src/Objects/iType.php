@@ -153,6 +153,48 @@ interface iType
      */
 
 
+    /**
+     * Retorna o nome da classe que determina o formato de entrada que o valor a ser
+     * armazenado pode assumir
+     * **OU**
+     * retorna o nome de uma instrução especial de transformação de caracteres para
+     * campos do tipo ``String``.
+     *
+     * @return      ?string
+     */
+    function getInputFormat() : ?string;
+    /**
+     * SET
+     * Define um formato para a informação armazenada neste campo.
+     *
+     * A classe informada deve implementar a interface
+     * ``AeonDigital\Interfaces\DataFormat\iFormat``
+     * **OU**
+     * pode ser passado um ``array`` conforme as definições especificadas abaixo:
+     *
+     * ``` php
+     *      $arr = [
+     *          // string   Nome deste tipo de transformação.
+     *          "name" => ,
+     *
+     *          // int      Tamanho máximo que uma string pode ter para ser aceita por este formato.
+     *          "length" => ,
+     *
+     *          // callable Função que valida a string para o tipo de formatação a ser definida.
+     *          "check" => ,
+     *
+     *          // callable Função que remove a formatação padrão.
+     *          "removeFormat" => ,
+     *
+     *          // callable Função que efetivamente formata a string para seu formato final.
+     *          "format" => ,
+     *
+     *          // callable Função que converte o valor para seu formato de armazenamento.
+     *          "storageFormat" =>
+     *      ];
+     * ```
+     */
+
 
 
 
