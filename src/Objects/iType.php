@@ -238,12 +238,21 @@ interface iType
 
 
     /**
-     * Retorna o último código de erro encontrado ao tentar definir um valor
+     * Verifica se o valor indicado satisfaz os critérios de aceitação para este campo.
+     *
+     * @param       mixed $v
+     *              Valor que será testado.
+     *
+     * @return      bool
+     */
+    function validateValue($v) : bool;
+    /**
+     * Retorna o último código de erro encontrado ao tentar definir ou validar um valor
      * para a instância. ``""`` será retornado caso não existam erros.
      *
      * @return      string
      */
-    function getLastSetError() : string;
+    function getLastValidateError() : string;
 
 
 
@@ -264,6 +273,9 @@ interface iType
     /**
      * Retorna o valor atualmente definido para a instância atual.
      *
+     * Se existir um ``inputFormat`` definido, aplicará o formato definido
+     * para o valor atualmente setado (exceto se for ``null``).
+     *
      * Usado apenas em casos onde ``$this->isIterable() = false``.
      *
      * @return      mixed
@@ -273,12 +285,35 @@ interface iType
      * Retorna o valor atualmente definido para a instância atual mas caso o
      * valor seja ``null``, retornará o valor definido em ``NULL_EQUIVALENT``.
      *
+     * Se existir um ``inputFormat`` definido, aplicará o formato definido
+     * para o valor atualmente setado (exceto se for ``null``).
+     *
      * Usado apenas em casos onde ``$this->isIterable() = false``.
      *
      * @return      mixed
      */
     function getNotNull();
 
+
+
+
+
+    /**
+     * Retorna o valor atualmente definido em seu formato de armazenamento.
+     *
+     * Apenas terá um efeito se um ``inputFormat`` estiver definido, caso contrário
+     * retornará o mesmo valor existente em ``get``.
+     *
+     * @return      mixed
+     */
+    function getStorageValue();
+    /**
+     * Retorna o valor atualmente definido em seu formato ``raw`` que é aquele
+     * que foi passado na execução do método ``set``.
+     *
+     * @return      mixed
+     */
+    function getRawValue();
 
 
 

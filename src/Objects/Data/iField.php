@@ -92,37 +92,4 @@ interface iField extends iType
      * @return      string|array
      */
     function getLastValidateState();
-
-
-
-    /**
-     * Verifica se o valor indicado satisfaz os critérios de aceitação para este campo.
-     *
-     * @param       mixed $v
-     *              Valor que será testado.
-     *
-     * @return      bool
-     */
-    function validateValue($v) : bool;
-
-
-
-
-
-    /**
-     * Retorna o valor atual deste campo em seu formato de armazenamento.
-     *
-     * @return      mixed
-     */
-    function getStorageValue();
-
-
-
-    /**
-     * Retorna o valor que está definido para este campo assim como ele foi passado em
-     * ``setValue()``.
-     *
-     * @return      mixed
-     */
-    function getRawValue();
 }
