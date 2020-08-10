@@ -57,7 +57,7 @@ interface iTypeArray extends iType, \IteratorAggregate, \ArrayAccess, \Serializa
      *
      * @return      bool
      */
-    function hasValue(string $key) : bool;
+    function hasKeyValue(string $key) : bool;
     /**
      * Define um novo valor para a instância.
      *
@@ -71,7 +71,7 @@ interface iTypeArray extends iType, \IteratorAggregate, \ArrayAccess, \Serializa
      *              Retornará ``true`` caso o valor tenha sido aceito e ``false``
      *              caso contrário.
      */
-    function setValue(
+    function setKeyValue(
         string $key,
         $v
     ) : bool;
@@ -84,7 +84,7 @@ interface iTypeArray extends iType, \IteratorAggregate, \ArrayAccess, \Serializa
      * @return      bool
      *              Retornará ``true`` apenas se a chave existir e for removida.
      */
-    function unsetValue(string $key) : bool;
+    function unsetKeyValue(string $key) : bool;
     /**
      * Retorna o valor definido para a chave especificada.
      *
@@ -93,7 +93,30 @@ interface iTypeArray extends iType, \IteratorAggregate, \ArrayAccess, \Serializa
      *
      * @return      mixed
      */
-    function getValue(string $key);
+    function getKeyValue(string $key);
+    /**
+     * Retorna o valor definido para a chave especificada em seu formato de
+     * armazenamento.
+     *
+     * Apenas terá um efeito se um ``inputFormat`` estiver definido, caso contrário
+     * retornará o mesmo valor existente em ``get``.
+     *
+     * @param       string $key
+     *              Chave do valor que deve ser retornado.
+     *
+     * @return      mixed
+     */
+    function getStorageKeyValue(string $key);
+    /**
+     * Retorna o valor definido para a chave especificada em seu formato ``raw``
+     * que é aquele que foi passado na execução do método ``set``.
+     *
+     * @param       string $key
+     *              Chave do valor que deve ser retornado.
+     *
+     * @return      mixed
+     */
+    function getRawKeyValue(string $key);
 
 
 
@@ -105,7 +128,7 @@ interface iTypeArray extends iType, \IteratorAggregate, \ArrayAccess, \Serializa
      *
      * @return      self
      */
-    function getValuesNotNull() : self;
+    function getKeyValuesNotNull() : self;
     /**
      * Retorna um ``array associativo`` contendo as chaves e respectivos valores atualmente
      * definidos nesta instância.
@@ -117,12 +140,23 @@ interface iTypeArray extends iType, \IteratorAggregate, \ArrayAccess, \Serializa
      * @param       bool $notNull
      *              Retornará no ``array`` resultante apenas os itens que não são ``null``.
      *
+     * @param       bool $storageFormat
+     *              Retornará no ``array`` resultante os valores em seus respectivos formatos
+     *              de armazenamento.
+     *
+     * @param       bool $rawFormat
+     *              Retornará no ``array`` resultante os valores em seus respectivos formatos
+     *              ``raw``. A configuração ``$storageFormat`` deve se sobrepor a esta caso
+     *              ambas sejam definidas como ``true``.
+     *
      * @return      array
      *              Retorna um ``array associativo`` ou ``[]`` caso a coleção esteja vazia.
      */
     function toArray(
         bool $originalKeys = false,
-        bool $notNull = false
+        bool $notNull = false,
+        bool $storageFormat = false,
+        bool $rawFormat = false
     ) : array;
 
 
