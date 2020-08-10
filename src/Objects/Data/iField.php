@@ -145,7 +145,7 @@ interface iField extends iType
      *
      * @return      bool
      */
-    function validate($v) : bool;
+    function validateValue($v) : bool;
 
 
 
