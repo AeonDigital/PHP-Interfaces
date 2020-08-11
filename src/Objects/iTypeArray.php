@@ -26,6 +26,13 @@ interface iTypeArray extends iType, \IteratorAggregate, \ArrayAccess, \Serializa
 
 
     /**
+     * Configura o ``array`` para que suas chaves tornem-se ``case-insensitive``.
+     * Deve poder ser acionado apenas 1 vez.
+     *
+     * @return      bool
+     */
+    function setCaseInsensitive() : bool;
+    /**
      * Informa se as chaves de valores devem ser tratadas de forma
      * ``case-sensitive`` (padrão).
      *
