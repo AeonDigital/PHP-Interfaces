@@ -59,10 +59,7 @@ interface iField extends iType
      *
      * @return      bool
      */
-    function isValid() : bool;
-
-
-
+    function isValidState() : bool;
     /**
      * Retorna o código do estado atual deste campo.
      *
@@ -83,9 +80,6 @@ interface iField extends iType
      * @return      string|array
      */
     function getCurrentState();
-
-
-
     /**
      * Retorna o código de estado da última validação realizada.
      *
