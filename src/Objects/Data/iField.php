@@ -54,30 +54,34 @@ interface iField extends iType
 
 
     /**
-     * Informa se o campo tem no momento um valor que satisfaz os critérios de validação
-     * para o mesmo.
+     * Informa se o último valor que foi passado para um método ``set`` é válido.
+     * Em campos ``iModel`` retornará ``true`` se todos os valores definidos forem
+     * válidos.
+     *
+     * Difere de ``isValid`` pois refere-se exclusivamente a última tentativa de
+     * definição de valor para este campo.
      *
      * @return      bool
      */
-    function isValidState() : bool;
+    function isCurrentFieldStateValid() : bool;
     /**
-     * Retorna o código do estado atual deste campo.
+     * Retorna o código de estado atual deste campo.
      *
      * **Campos Simples**
-     * Retornará ``valid`` caso o valor definido seja válido, ou o código da validação
-     * que caracteríza a invalidez deste valor.
+     * Retornará ``valid`` se o último valor que foi passado para o campo tiver sido
+     * aceito; Caso contrário retornará o código de erro obtido da validação.
      *
-     * **Campos "reference"**
-     * Retornará ``valid`` se **TODOS** os campos estiverem com valores válidos. Caso
-     * contrário retornará um ``array`` associativo contendo o estado de cada um dos campos
-     * existêntes.
+     * **Campos Array**
+     * Retornará ``valid`` caso **TODOS** os valores contidos no array estejam de acordo
+     * com os critérios de aceite; Caso contrário retornará um array associativo contendo
+     * a coleção de chaves existentes e seus respectivos códigos de validação.
      *
-     * **Campos "collection"**
-     * Retornará ``valid`` caso **TODOS** os valores estejam de acordo com os critérios de
-     * validação ou um ``array`` contendo a validação individual de cada ítem membro da
-     * coleção.
+     * @param       bool $recheckAll
+     *              Quando ``true`` efetuará a revalidação do campo obtendo assim
+     *              a informação precisa sobre o/s valor/es que está/ão definido/s
+     *              neste instante.
      *
      * @return      string|array
      */
-    function getCurrentState();
+    function getCurrentFieldState(bool $recheckAll = false);
 }
