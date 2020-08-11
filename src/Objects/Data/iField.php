@@ -82,7 +82,7 @@ interface iField extends iType
      *
      * @return      string|array
      */
-    function getState();
+    function getCurrentState();
 
 
 
