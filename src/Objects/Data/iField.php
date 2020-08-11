@@ -80,10 +80,4 @@ interface iField extends iType
      * @return      string|array
      */
     function getCurrentState();
-    /**
-     * Retorna o código de estado da última validação realizada.
-     *
-     * @return      string|array
-     */
-    function getLastValidateState();
 }
