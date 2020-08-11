@@ -198,6 +198,13 @@ interface iType
 
 
 
+    /**
+     * Retornará ``true`` caso o valor atualmente definido esteja em conformidade
+     * com todos os critérios de validação para este campo.
+     *
+     * @return      bool
+     */
+    function isValid() : bool;
      /**
      * Retornará ``true`` enquanto nenhum valor for definido para
      * esta instância de forma explicita.
