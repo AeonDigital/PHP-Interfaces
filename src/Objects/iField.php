@@ -54,6 +54,23 @@ interface iField extends iType
 
 
     /**
+     * Indica quando o campo é um modelo de dados.
+     *
+     * @return      bool
+     */
+    function isDataModel() : bool;
+    /**
+     * Indica quando o campo é um array de modelos de dados.
+     *
+     * @return      bool
+     */
+    function isDataModelCollection() : bool;
+
+
+
+
+
+    /**
      * Informa se o último valor que foi passado para um método ``set`` é válido.
      * Em campos ``iModel`` retornará ``true`` se todos os valores definidos forem
      * válidos.
