@@ -1,7 +1,7 @@
 <?php
 declare (strict_types=1);
 
-namespace AeonDigital\Interfaces\Objects\Standart\Commom;
+namespace AeonDigital\Interfaces\Objects\Standart\Complex;
 
 use AeonDigital\Interfaces\Objects\Standart\Primitive\iPGeneric as iPGeneric;
 use AeonDigital\Interfaces\Objects\Standart\Flag\iReadWrite as iReadWrite;
