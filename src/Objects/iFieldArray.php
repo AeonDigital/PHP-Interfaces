@@ -15,7 +15,7 @@ use AeonDigital\Interfaces\Objects\iTypeArray as iTypeArray;
 
 /**
  * Expande um ``iTypeArray`` para que ele possa ser utilizado
- * como um campo de dados.
+ * como um ``array`` de tipos ``iField``.
  *
  * @package     AeonDigital\Interfaces\Objects
  * @author      Rianna Cantarelli <rianna@aeondigital.com.br>

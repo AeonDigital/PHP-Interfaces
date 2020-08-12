@@ -78,10 +78,7 @@ interface iTypeArray extends iType, \IteratorAggregate, \ArrayAccess, \Serializa
      *              Retornará ``true`` caso o valor tenha sido aceito e ``false``
      *              caso contrário.
      */
-    function setKeyValue(
-        string $key,
-        $v
-    ) : bool;
+    function setKeyValue(string $key, $v) : bool;
     /**
      * Remove do ``array`` o item da chave especificada.
      *
