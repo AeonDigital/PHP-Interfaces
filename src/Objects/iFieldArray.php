@@ -1,9 +1,9 @@
 <?php
 declare (strict_types=1);
 
-namespace AeonDigital\Interfaces\Objects\Data;
+namespace AeonDigital\Interfaces\Objects;
 
-use AeonDigital\Interfaces\Objects\Data\iField as iField;
+use AeonDigital\Interfaces\Objects\iField as iField;
 use AeonDigital\Interfaces\Objects\iTypeArray as iTypeArray;
 
 

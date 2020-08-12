@@ -1,7 +1,7 @@
 <?php
 declare (strict_types=1);
 
-namespace AeonDigital\Interfaces\Objects\Data;
+namespace AeonDigital\Interfaces\Objects;
 
 use AeonDigital\Interfaces\Objects\iType as iType;
 
