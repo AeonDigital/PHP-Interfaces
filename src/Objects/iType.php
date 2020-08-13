@@ -256,12 +256,12 @@ interface iType
      */
     function validateValue($v) : bool;
     /**
-     * Retorna o último código de erro encontrado ao tentar validar um valor para a
-     * instância. Será retornado ``""`` caso não existam erros.
+     * Retorna o último código de validação definido.
+     * Retornará ``valid`` caso não existam erros.
      *
      * @return      string
      */
-    function getLastValidateError() : string;
+    function getLastValidateState() : string;
 
 
 
@@ -277,12 +277,12 @@ interface iType
      */
     function set($v) : bool;
     /**
-     * Retorna o último código de erro encontrado ao tentar definir um novo valor
-     * para a instância. Será retornado ``""`` caso não existam erros.
+     * Retorna o último código validação da última ação ``set``.
+     * Retornará ``valid`` caso não existam erros.
      *
      * @return      string
      */
-    function getLastSetError() : string;
+    function getLastSetState() : string;
 
 
 
