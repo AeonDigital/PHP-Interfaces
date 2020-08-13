@@ -170,9 +170,9 @@ interface iDataModel extends iFieldArray
      * de dados.
      *
      * O estado da validação contendo os detalhes da mesma pode ser obtido com o
-     * método ``getCurrentFieldState``.
+     * método ``getLastValidateValuesState``.
      *
-     * @param       ?iterable $values
+     * @param       iterable $values
      *              Objeto com os valores a serem testados.
      *
      * @param       bool $checkAll
@@ -183,7 +183,7 @@ interface iDataModel extends iFieldArray
      *
      * @return      bool
      */
-    function validateValues(?iterable $values, bool $checkAll = false) : bool;
+    function validateValues(iterable $values, bool $checkAll = false) : bool;
 
 
     /**
@@ -193,7 +193,7 @@ interface iDataModel extends iFieldArray
      * Apenas acolherá os valores passados caso tal definição torne o modelo como um
      * todo válido.
      *
-     * @param       ?iterable $values
+     * @param       iterable $values
      *              Objeto com os valores a serem testados.
      *
      * @param       bool $checkAll
@@ -205,7 +205,7 @@ interface iDataModel extends iFieldArray
      * @return      bool
      *              Retornará ``true`` caso os valores passados tornem o modelo válido.
      */
-    function setValues(?iterable $values, bool $checkAll = false) : bool;
+    function setValues(iterable $values, bool $checkAll = false) : bool;
 
 
     /**
