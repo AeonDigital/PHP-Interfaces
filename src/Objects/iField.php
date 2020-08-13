@@ -71,18 +71,8 @@ interface iField extends iType
 
 
     /**
-     * Informa se o último valor que foi passado para um método ``set`` é válido.
-     * Em campos ``iModel`` retornará ``true`` se todos os valores definidos forem
-     * válidos.
-     *
-     * Difere de ``isValid`` pois refere-se exclusivamente a última tentativa de
-     * definição de valor para este campo.
-     *
-     * @return      bool
-     */
-    function isCurrentFieldStateValid() : bool;
-    /**
-     * Retorna o código de estado atual deste campo.
+     * Retorna o código de estado da última tentativa de definição de valor para
+     * este campo.
      *
      * **Campos Simples**
      * Retornará ``valid`` se o último valor que foi passado para o campo tiver sido
@@ -99,6 +89,20 @@ interface iField extends iType
      *              neste instante.
      *
      * @return      string|array
-     */
-    function getCurrentFieldState(bool $recheckAll = false);
+
+    function getLastFieldState(bool $recheckAll = false);
+    /**
+     * Retornará ``true`` se o valor atualmente definido para esta instância for
+     * aceito como válido dentro dos critérios definidos para o campo.
+     *
+     * Em campos ``iDataModel`` e ``Array`` apenas retornará ``true`` se todas instâncias
+     * filhas atualmente definidas forem também válidas.
+     *
+     * Difere de ``isValid`` pois refere-se exclusivamente a última tentativa de
+     * definição de valor para este campo.
+     *
+     * @return      bool
+
+    function isCurrentFieldStateValid() : bool;
+    function getLastValidateState();*/
 }

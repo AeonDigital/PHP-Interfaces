@@ -202,6 +202,8 @@ interface iType
      * Retornará ``true`` caso o valor atualmente definido esteja em conformidade
      * com todos os critérios de validação para este campo.
      *
+     * Seu valor apenas deve ser levado em conta para campos simples.
+     *
      * @return      bool
      */
     function isValid() : bool;
@@ -254,8 +256,8 @@ interface iType
      */
     function validateValue($v) : bool;
     /**
-     * Retorna o último código de erro encontrado ao tentar definir ou validar um valor
-     * para a instância. ``""`` será retornado caso não existam erros.
+     * Retorna o último código de erro encontrado ao tentar validar um valor para a
+     * instância. Será retornado ``""`` caso não existam erros.
      *
      * @return      string
      */
@@ -274,6 +276,13 @@ interface iType
      * @return      bool
      */
     function set($v) : bool;
+    /**
+     * Retorna o último código de erro encontrado ao tentar definir um novo valor
+     * para a instância. Será retornado ``""`` caso não existam erros.
+     *
+     * @return      string
+     */
+    function getLastSetError() : string;
 
 
 

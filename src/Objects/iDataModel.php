@@ -88,6 +88,18 @@ interface iDataModel extends iFieldArray
 
 
     /**
+     * Retornará ``true`` caso todos os campos estejam definidos em conformidade
+     * com seus respectivos critérios de validação.
+     *
+     * @return      bool
+     */
+    function isValid() : bool;
+
+
+
+
+
+    /**
      * Define um novo valor para o campo de nome indicado.
      *
      * @param       string $fieldName
