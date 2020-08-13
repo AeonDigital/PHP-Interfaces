@@ -65,44 +65,4 @@ interface iField extends iType
      * @return      bool
      */
     function isDataModelCollection() : bool;
-
-
-
-
-
-    /**
-     * Retorna o código de estado da última tentativa de definição de valor para
-     * este campo.
-     *
-     * **Campos Simples**
-     * Retornará ``valid`` se o último valor que foi passado para o campo tiver sido
-     * aceito; Caso contrário retornará o código de erro obtido da validação.
-     *
-     * **Campos Array**
-     * Retornará ``valid`` caso **TODOS** os valores contidos no array estejam de acordo
-     * com os critérios de aceite; Caso contrário retornará um array associativo contendo
-     * a coleção de chaves existentes e seus respectivos códigos de validação.
-     *
-     * @param       bool $recheckAll
-     *              Quando ``true`` efetuará a revalidação do campo obtendo assim
-     *              a informação precisa sobre o/s valor/es que está/ão definido/s
-     *              neste instante.
-     *
-     * @return      string|array
-
-    function getLastFieldState(bool $recheckAll = false);
-    /**
-     * Retornará ``true`` se o valor atualmente definido para esta instância for
-     * aceito como válido dentro dos critérios definidos para o campo.
-     *
-     * Em campos ``iDataModel`` e ``Array`` apenas retornará ``true`` se todas instâncias
-     * filhas atualmente definidas forem também válidas.
-     *
-     * Difere de ``isValid`` pois refere-se exclusivamente a última tentativa de
-     * definição de valor para este campo.
-     *
-     * @return      bool
-
-    function isCurrentFieldStateValid() : bool;
-    function getLastValidateState();*/
 }

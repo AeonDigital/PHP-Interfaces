@@ -184,6 +184,19 @@ interface iDataModel extends iFieldArray
      * @return      bool
      */
     function validateValues(iterable $values, bool $checkAll = false) : bool;
+    /**
+     * Retorna o estado detalhado da última execução de uma validação feita usando
+     * o método ``validateValues``.
+     *
+     * @return      string|array
+     */
+    function getLastValidateValuesState();
+    /**
+     * Retorna o estado detalhado do modelo de dados com os valores atualmente definidos.
+     *
+     * @return      string|array
+     */
+    function getCurrentModelState();
 
 
     /**
