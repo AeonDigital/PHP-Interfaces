@@ -237,7 +237,7 @@ interface iTable extends iModel
      *
      * @return      bool
      */
-    function attatchWith(string $tableName, int $tgtId) : bool;
+    function attachWith(string $tableName, int $tgtId) : bool;
 
 
 
