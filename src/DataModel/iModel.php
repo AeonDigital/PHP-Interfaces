@@ -75,9 +75,13 @@ interface iModel extends \IteratorAggregate
      * Retorna um ``array`` contendo o nome de cada um dos campos existentes neste
      * modelo de dados.
      *
+     * @param       bool $getReferences
+     *              Quando ``true`` retornará todos os campos existentes.
+     *              Quando ``false`` não trará os campos que são do tipo ``reference``.
+     *
      * @return      array
      */
-    function getFieldNames() : array;
+    function getFieldNames(bool $getReferences = true) : array;
 
 
 
