@@ -1,8 +1,6 @@
 {
     "name": "aeondigital/phpinterfaces",
     "description": "Coleção de Interfaces para bibliotecas e projetos.",
-    "version": "v0.5.9-beta",
-    "time": "2021-07-26",
     "type": "library",
     "license": "MIT",
     "authors": [
