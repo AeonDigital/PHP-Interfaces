@@ -2,6 +2,7 @@
 # Aeon Digital
 # Rianna Cantarelli <rianna@aeondigital.com.br>
 #
+.SILENT:
 
 
 
@@ -18,15 +19,15 @@
 #
 LOG_LENGTH=10
 git-log:
-	@if [ -z "${len}" ]; then \
-	  git log -${LOG_LENGTH} --pretty='format:%ad | %s' --reverse --date=format:'%d %B | %H:%M' > .tmplogdata; \
+	if [ -z "${len}" ]; then \
+		git log -${LOG_LENGTH} --pretty='format:%ad | %s' --reverse --date=format:'%d %B | %H:%M' > .tmplogdata; \
 	else \
-	  git log -${len} --pretty='format:%ad | %s' --reverse --date=format:'%d %B | %H:%M' > .tmplogdata; \
+		git log -${len} --pretty='format:%ad | %s' --reverse --date=format:'%d %B | %H:%M' > .tmplogdata; \
 	fi;
-	@# Sem esta linha extra o comando 'column' apresenta um erro de 'line too long'
-	@echo "" >> .tmplogdata
-	@column .tmplogdata -e -t -s "|"
-	@rm .tmplogdata
+	# Sem esta linha extra o comando 'column' apresenta um erro de 'line too long'
+	echo "" >> .tmplogdata
+	column .tmplogdata -e -t -s "|"
+	rm .tmplogdata
 	
 
 
@@ -36,7 +37,12 @@ git-log:
 #
 # Mostra qual a tag atual do projeto.
 tag:
-	@git describe --abbrev=0 --tags
+	git describe --abbrev=0 --tags
+
+#
+# Redefine a tag atualmente vigente para o commit mais recente
+tag-remark:
+	./tag-update.sh "remark"
 
 #
 # Atualiza o 'patch' da tag atualmente definida 

@@ -28,6 +28,16 @@ interface iExecute
 
 
     /**
+     * Retorna o status do último erro ocorrido após o a última requisição executada.
+     * O Valor vazio "" indica que nenhum erro ocorreu.
+     *
+     * @return      string
+     */
+    static function getLastError() : string;
+
+
+
+    /**
      * Efetua uma requisição ``Http`` e retorna seu resultado em uma ``string``.
      * Qualquer tipo de falha encontrada fará retornar ``null``.
      *
