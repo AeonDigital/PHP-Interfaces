@@ -1,10 +1,10 @@
 <?php
-declare (strict_types=1);
+
+declare(strict_types=1);
 
 namespace AeonDigital\Interfaces\Http\Data;
 
 use AeonDigital\Interfaces\Collection\iCollection as iCollection;
-
 
 
 
@@ -38,5 +38,5 @@ interface iCookieCollection extends iCollection
      *
      * @return      string
      */
-    function toString(?bool $originalKeys = false) : string;
+    function toString(?bool $originalKeys = false): string;
 }

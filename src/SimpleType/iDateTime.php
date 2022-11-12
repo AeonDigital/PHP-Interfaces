@@ -1,11 +1,11 @@
 <?php
-declare (strict_types=1);
+
+declare(strict_types=1);
 
 namespace AeonDigital\Interfaces\SimpleType;
 
 use AeonDigital\Interfaces\SimpleType\iBasic as iBasic;
 use AeonDigital\Interfaces\SimpleType\iSimpleType as iSimpleType;
-
 
 
 
@@ -33,7 +33,7 @@ interface iDateTime extends iBasic, iSimpleType
      *
      * @return      ?\DateTime
      */
-    public static function min() : ?\DateTime;
+    public static function min(): ?\DateTime;
 
 
     /**
@@ -42,5 +42,5 @@ interface iDateTime extends iBasic, iSimpleType
      *
      * @return      ?\DateTime
      */
-    public static function max() : ?\DateTime;
+    public static function max(): ?\DateTime;
 }

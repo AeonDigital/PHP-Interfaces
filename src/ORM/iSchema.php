@@ -1,10 +1,10 @@
 <?php
-declare (strict_types=1);
+
+declare(strict_types=1);
 
 namespace AeonDigital\Interfaces\ORM;
 
 use AeonDigital\Interfaces\DAL\iDAL as iDAL;
-
 
 
 
@@ -35,7 +35,7 @@ interface iSchema
      *
      * @return      bool
      */
-    function generateCreateSchemaFiles() : bool;
+    function generateCreateSchemaFiles(): bool;
 
 
 
@@ -58,7 +58,7 @@ interface iSchema
      *
      * @return      ?array
      */
-    function listDataBaseTables() : ?array;
+    function listDataBaseTables(): ?array;
 
 
 
@@ -68,7 +68,7 @@ interface iSchema
      *
      * @return      bool
      */
-    function executeDropSchema() : bool;
+    function executeDropSchema(): bool;
 
 
 
@@ -94,7 +94,7 @@ interface iSchema
      *
      * @return      ?array
      */
-    function listTableColumns(string $tableName) : ?array;
+    function listTableColumns(string $tableName): ?array;
 
 
 
@@ -119,7 +119,7 @@ interface iSchema
      *
      * @return      ?array
      */
-    function listSchemaConstraint(?string $tableName = null) : ?array;
+    function listSchemaConstraint(?string $tableName = null): ?array;
 
 
 
@@ -134,5 +134,5 @@ interface iSchema
      *
      * @return      bool
      */
-    function executeCreateSchema(bool $dropSchema = false) : bool;
+    function executeCreateSchema(bool $dropSchema = false): bool;
 }

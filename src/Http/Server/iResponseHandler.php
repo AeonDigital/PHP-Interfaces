@@ -1,10 +1,10 @@
 <?php
-declare (strict_types=1);
+
+declare(strict_types=1);
 
 namespace AeonDigital\Interfaces\Http\Server;
 
 use AeonDigital\Interfaces\Http\Message\iResponse as iResponse;
-
 
 
 
@@ -34,5 +34,5 @@ interface iResponseHandler
      *
      * @return      iResponse
      */
-    function prepareResponse() : iResponse;
+    function prepareResponse(): iResponse;
 }

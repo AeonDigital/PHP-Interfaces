@@ -1,11 +1,11 @@
 <?php
-declare (strict_types=1);
+
+declare(strict_types=1);
 
 namespace AeonDigital\Interfaces\Http\Server;
 
 use AeonDigital\Interfaces\Http\Message\iServerRequest as iServerRequest;
 use AeonDigital\Interfaces\Http\Message\iResponse as iResponse;
-
 
 
 
@@ -46,5 +46,5 @@ interface iRequestHandler
      *
      * @return      iResponse
      */
-    function handle(iServerRequest $request) : iResponse;
+    function handle(iServerRequest $request): iResponse;
 }

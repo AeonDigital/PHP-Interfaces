@@ -1,10 +1,10 @@
 <?php
-declare (strict_types=1);
+
+declare(strict_types=1);
 
 namespace AeonDigital\Interfaces\Http\Data;
 
 use AeonDigital\Interfaces\Collection\iCollection as iCollection;
-
 
 
 
@@ -36,5 +36,5 @@ interface iFileCollection extends iCollection
      *
      * @return      void
      */
-    function dropStreams() : void;
+    function dropStreams(): void;
 }

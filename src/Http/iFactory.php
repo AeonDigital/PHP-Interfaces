@@ -1,5 +1,6 @@
 <?php
-declare (strict_types=1);
+
+declare(strict_types=1);
 
 namespace AeonDigital\Interfaces\Http;
 
@@ -14,7 +15,6 @@ use AeonDigital\Interfaces\Http\Data\iFileCollection as iFileCollection;
 use AeonDigital\Interfaces\Stream\iStream as iStream;
 use AeonDigital\Interfaces\Stream\iFileStream as iFileStream;
 use AeonDigital\Interfaces\Collection\iCollection as iCollection;
-
 
 
 /**
@@ -42,7 +42,7 @@ interface iFactory
      *
      * @return      iHeaderCollection
      */
-    function createHeaderCollection(?array $initialValues = null) : iHeaderCollection;
+    function createHeaderCollection(?array $initialValues = null): iHeaderCollection;
     /**
      * Retorna uma coleção de headers baseado nos valores passados.
      *
@@ -53,7 +53,7 @@ interface iFactory
      *
      * @return      iCookieCollection
      */
-    function createCookieCollection($initialValues = null) : iCookieCollection;
+    function createCookieCollection($initialValues = null): iCookieCollection;
     /**
      * Retorna uma coleção de headers baseado nos valores passados.
      *
@@ -64,7 +64,7 @@ interface iFactory
      *
      * @return      iQueryStringCollection
      */
-    function createQueryStringCollection($initialValues = null) : iQueryStringCollection;
+    function createQueryStringCollection($initialValues = null): iQueryStringCollection;
     /**
      * Retorna uma coleção de headers baseado nos valores passados.
      *
@@ -75,7 +75,7 @@ interface iFactory
      *
      * @return      iFileCollection
      */
-    function createFileCollection(?array $initialValues = null) : iFileCollection;
+    function createFileCollection(?array $initialValues = null): iFileCollection;
     /**
      * Retorna um objeto ``iCollection`` vazio.
      *
@@ -90,7 +90,7 @@ interface iFactory
      *
      * @return      iCollection
      */
-    function createCollection(?array $initialValues = [], bool $autoincrement = false) : iCollection;
+    function createCollection(?array $initialValues = [], bool $autoincrement = false): iCollection;
 
 
 
@@ -112,7 +112,7 @@ interface iFactory
      * @throws      \InvalidArgumentException
      *              Caso a ``uri`` passada seja inválida.
      */
-    function createUri(string $uri = "") : iUrl;
+    function createUri(string $uri = ""): iUrl;
 
 
 
@@ -131,7 +131,7 @@ interface iFactory
      *
      * @return      iStream
      */
-    function createStream(string $content = "") : iStream;
+    function createStream(string $content = ""): iStream;
     /**
      * Retorna um objeto que implemente a interface ``AeonDigital\Interfaces\Stream\iFileStream``.
      *
@@ -143,7 +143,7 @@ interface iFactory
      *
      * @return      iFileStream
      */
-    function createStreamFromFile(string $filename, string $mode = "r") : iFileStream;
+    function createStreamFromFile(string $filename, string $mode = "r"): iFileStream;
     /**
      * Retorna um objeto que implemente a interface ``AeonDigital\Interfaces\Stream\iStream``.
      *
@@ -152,7 +152,7 @@ interface iFactory
      *
      * @return      iStream
      */
-    function createStreamFromResource($resource) : iStream;
+    function createStreamFromResource($resource): iStream;
     /**
      * Retorna um objeto que implemente a interface ``AeonDigital\Interfaces\Stream\iStream``.
      *
@@ -161,7 +161,7 @@ interface iFactory
      *
      * @return      iStream
      */
-    function createStreamFromBodyRequest() : iStream;
+    function createStreamFromBodyRequest(): iStream;
 
 
 
@@ -201,7 +201,7 @@ interface iFactory
         ?string $httpVersion,
         ?iHeaderCollection $headers,
         ?iStream $body
-    ) : iRequest;
+    ): iRequest;
 
 
 
@@ -264,7 +264,7 @@ interface iFactory
         ?array $serverParans = null,
         ?iCollection $attributes = null,
         ?iCollection $bodyParsers = null
-    ) : iServerRequest;
+    ): iServerRequest;
 
 
 
@@ -314,5 +314,5 @@ interface iFactory
         ?\StdClass $viewData = null,
         ?string $mime = null,
         ?string $locale = null
-    ) : iResponse;
+    ): iResponse;
 }

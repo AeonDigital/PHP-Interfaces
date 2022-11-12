@@ -1,11 +1,11 @@
 <?php
-declare (strict_types=1);
+
+declare(strict_types=1);
 
 namespace AeonDigital\Interfaces\SimpleType;
 
 use AeonDigital\Interfaces\SimpleType\iNumeric as iNumeric;
 use AeonDigital\Interfaces\SimpleType\iSimpleType as iSimpleType;
-
 
 
 
@@ -37,7 +37,7 @@ interface iFloat extends iNumeric, iSimpleType
      *
      * @return      float
      */
-    public static function min() : float;
+    public static function min(): float;
 
 
     /**
@@ -45,5 +45,5 @@ interface iFloat extends iNumeric, iSimpleType
      *
      * @return      float
      */
-    public static function max() : float;
+    public static function max(): float;
 }

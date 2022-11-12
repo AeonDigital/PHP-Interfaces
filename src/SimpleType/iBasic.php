@@ -1,8 +1,8 @@
 <?php
-declare (strict_types=1);
+
+declare(strict_types=1);
 
 namespace AeonDigital\Interfaces\SimpleType;
-
 
 
 
@@ -40,7 +40,7 @@ interface iBasic
      *
      * @return      bool
      */
-    static function validate($v) : bool;
+    static function validate(mixed $v): bool;
 
 
 
@@ -53,7 +53,7 @@ interface iBasic
      *
      * @return      ?string
      */
-    static function toString($v) : ?string;
+    static function toString(mixed $v): ?string;
 
 
 
@@ -72,5 +72,5 @@ interface iBasic
      *
      * @return      mixed
      */
-    static function parseIfValidate($v, ?string &$err = null);
+    static function parseIfValidate(mixed $v, ?string &$err = null): mixed;
 }

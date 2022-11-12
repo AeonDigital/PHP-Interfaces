@@ -1,10 +1,10 @@
 <?php
-declare (strict_types=1);
+
+declare(strict_types=1);
 
 namespace AeonDigital\Interfaces\Http\Data;
 
 use AeonDigital\Interfaces\Collection\iCollection as iCollection;
-
 
 
 
@@ -38,7 +38,7 @@ interface iHeaderCollection extends iCollection
      *
      * @return      string
      */
-    function toString(?bool $originalKeys = false) : string;
+    function toString(?bool $originalKeys = false): string;
 
 
 
@@ -55,5 +55,5 @@ interface iHeaderCollection extends iCollection
      *
      * @return      string
      */
-    function getHeaderLine(string $key) : string;
+    function getHeaderLine(string $key): string;
 }

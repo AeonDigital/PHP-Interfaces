@@ -1,10 +1,10 @@
 <?php
-declare (strict_types=1);
+
+declare(strict_types=1);
 
 namespace AeonDigital\Interfaces\Collection;
 
 use AeonDigital\Interfaces\Collection\iBasicCollection as iBasicCollection;
-
 
 
 

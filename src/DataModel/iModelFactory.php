@@ -1,10 +1,10 @@
 <?php
-declare (strict_types=1);
+
+declare(strict_types=1);
 
 namespace AeonDigital\Interfaces\DataModel;
 
 use AeonDigital\Interfaces\DataModel\iModel as iModel;
-
 
 
 
@@ -36,7 +36,7 @@ interface iModelFactory
      *
      * @return      bool
      */
-    function hasDataModel(string $idName) : bool;
+    function hasDataModel(string $idName): bool;
 
 
 
@@ -53,5 +53,5 @@ interface iModelFactory
      *
      * @return      iModel
      */
-    function createDataModel(string $idName, $initialValues = null) : iModel;
+    function createDataModel(string $idName, $initialValues = null): iModel;
 }

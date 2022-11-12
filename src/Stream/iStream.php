@@ -1,10 +1,10 @@
 <?php
-declare (strict_types=1);
+
+declare(strict_types=1);
 
 namespace AeonDigital\Interfaces\Stream;
 
 use Psr\Http\Message\StreamInterface as StreamInterface;
-
 
 
 

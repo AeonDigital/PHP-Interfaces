@@ -1,10 +1,10 @@
 <?php
-declare (strict_types=1);
+
+declare(strict_types=1);
 
 namespace AeonDigital\Interfaces\Collection;
 
 use AeonDigital\Interfaces\Collection\iBasicCollection as iBasicCollection;
-
 
 
 
@@ -45,7 +45,7 @@ interface iProtectedCollection extends iBasicCollection
      * Este método deverá clonar o objeto passado para assim mantê-lo seguro de qualquer
      * posterior alteração.
      *
-     * Quando houver uma tentativa de alterar um valor já definido uma deve simplesmente
+     * Quando houver uma tentativa de alterar um valor já definido deve simplesmente
      * retornar ``false``.
      *
      *

@@ -1,11 +1,11 @@
 <?php
-declare (strict_types=1);
+
+declare(strict_types=1);
 
 namespace AeonDigital\Interfaces\Http\Uri;
 
 use Psr\Http\Message\UriInterface as UriInterface;
 use AeonDigital\Interfaces\Http\Uri\iAbsoluteUri as iAbsoluteUri;
-
 
 
 

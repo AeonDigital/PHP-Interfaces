@@ -1,10 +1,10 @@
 <?php
-declare (strict_types=1);
+
+declare(strict_types=1);
 
 namespace AeonDigital\Interfaces\ORM;
 
 use AeonDigital\Interfaces\ORM\iColumn as iColumn;
-
 
 
 
@@ -33,7 +33,7 @@ interface iColumnFK extends iColumn
      *
      * @return      ?string
      */
-    function getFKDescription() : ?string;
+    function getFKDescription(): ?string;
 
 
     /**
@@ -42,7 +42,7 @@ interface iColumnFK extends iColumn
      *
      * @return      bool
      */
-    function isFKAllowNull() : bool;
+    function isFKAllowNull(): bool;
 
 
     /**
@@ -51,7 +51,7 @@ interface iColumnFK extends iColumn
      *
      * @return      bool
      */
-    function isFKUnique() : bool;
+    function isFKUnique(): bool;
 
 
     /**
@@ -60,7 +60,7 @@ interface iColumnFK extends iColumn
      *
      * @return      bool
      */
-    function isFKLinkTable() : bool;
+    function isFKLinkTable(): bool;
 
 
     /**
@@ -68,7 +68,7 @@ interface iColumnFK extends iColumn
      *
      * @return      ?string
      */
-    function getFKOnUpdate() : ?string;
+    function getFKOnUpdate(): ?string;
     /**
      * Define uma regra de integridade referencial a ser executada no registro que contêm
      * a chave extrangeira sempre que o registro pai for atualizado.
@@ -97,7 +97,7 @@ interface iColumnFK extends iColumn
      *
      * @return      ?string
      */
-    function getFKOnDelete() : ?string;
+    function getFKOnDelete(): ?string;
     /**
      * Define uma regra de integridade referencial a ser executada no registro que contêm
      * a chave extrangeira sempre que o registro pai for excluído.
@@ -128,5 +128,5 @@ interface iColumnFK extends iColumn
      *
      * @return      ?array
      */
-    function getFKLinkTableColumns() : ?array;
+    function getFKLinkTableColumns(): ?array;
 }

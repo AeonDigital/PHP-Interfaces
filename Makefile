@@ -8,26 +8,53 @@
 
 
 #
-# Dependências
-include make/modules/makeEnvironment.sh
-include make/modules/database/Makefile
-include make/modules/docker/Makefile
-include make/modules/git/Makefile
-include make/modules/tests/Makefile
+# Configura o git para o repositório atual
+git-config-local:
+	make/makeActions.sh gitConfigLocal
+
+#
+# Mostra log resumido do git
+# Use o parametro 'len' para indicar a quantidade de itens a serem mostrados.
+log:
+	make/makeActions.sh gitShowLog "${MAKECMDGOALS}"
+
 
 
 
 
 #
-# Redefine a configuração do ambiente.
-env-config:
-	make/makeActions.sh makeExecuteBefore "$@"
-	make/modules/makeActions.sh restartEnvConfig
-	make/makeActions.sh makeExecuteAfter "$@"
+# Mostra qual a tag atual do projeto.
+tag:
+	git describe --abbrev=0 --tags
 
 #
-# Redefine a configuração de acesso ao banco de dados
-env-config-db:
-	make/makeActions.sh makeExecuteBefore "$@"
-	make/modules/makeActions.sh configEnvDataBaseServer
-	make/makeActions.sh makeExecuteAfter "$@"
+# Redefine a tag atualmente vigente para o commit mais recente
+tag-remark:
+	make/makeActions.sh gitTagManagement "remark"
+
+#
+# Atualiza o 'patch' da tag atualmente definida
+# para a branch principal 'main'.
+tag-update:
+	make/makeActions.sh gitTagManagement "version" "patch"
+
+#
+# Atualiza o 'minor version'  da tag atualmente definida
+# para a branch principal 'main'.
+tag-update-minor:
+	make/makeActions.sh gitTagManagement "version" "minor"
+
+#
+# Atualiza o 'major version'  da tag atualmente definida
+# para a branch principal 'main'.
+tag-update-major:
+	make/makeActions.sh gitTagManagement "version" "major"
+
+#
+# Atualiza a 'stability' da tag atualmente definida
+# para a branch principal 'main'.
+#
+# Use o parametro 'stability' para indicar qual será a nova 'stability'.
+# use apenas um dos seguintes valores: 'alpha'; 'beta'; 'cr'; 'r'
+tag-stability:
+	make/makeActions.sh gitTagManagement "stability" "${stability}"

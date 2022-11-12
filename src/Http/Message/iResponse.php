@@ -1,10 +1,10 @@
 <?php
-declare (strict_types=1);
+
+declare(strict_types=1);
 
 namespace AeonDigital\Interfaces\Http\Message;
 
 use Psr\Http\Message\ResponseInterface as ResponseInterface;
-
 
 
 
@@ -33,7 +33,7 @@ interface iResponse extends ResponseInterface
      *
      * @return      ?\StdClass
      */
-    function getViewData() : ?\StdClass;
+    function getViewData(): ?\StdClass;
     /**
      * Este método **DEVE** manter o estado da instância atual e retornar uma nova instância
      * contendo o ``viewData`` especificado.
@@ -43,7 +43,7 @@ interface iResponse extends ResponseInterface
      *
      * @return      iResponse
      */
-    function withViewData(?\StdClass $viewData) : iResponse;
+    function withViewData(?\StdClass $viewData): iResponse;
 
 
 
@@ -57,7 +57,7 @@ interface iResponse extends ResponseInterface
      *
      * @return      ?\StdClass
      */
-    function getViewConfig() : ?\StdClass;
+    function getViewConfig(): ?\StdClass;
     /**
      * Este método **DEVE** manter o estado da instância atual e retornar uma nova instância
      * contendo o ``viewConfig`` especificado.
@@ -67,7 +67,7 @@ interface iResponse extends ResponseInterface
      *
      * @return      iResponse
      */
-    function withViewConfig(?\StdClass $viewConfig) : iResponse;
+    function withViewConfig(?\StdClass $viewConfig): iResponse;
 
 
 
@@ -86,7 +86,7 @@ interface iResponse extends ResponseInterface
      *
      * @return      iResponse
      */
-    function withHeaders(array $headers, bool $merge = false) : iResponse;
+    function withHeaders(array $headers, bool $merge = false): iResponse;
 
 
 
@@ -112,5 +112,5 @@ interface iResponse extends ResponseInterface
         ?\StdClass $viewData,
         ?\StdClass $viewConfig,
         ?array $headers
-    ) : iResponse;
+    ): iResponse;
 }

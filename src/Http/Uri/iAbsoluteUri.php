@@ -1,10 +1,10 @@
 <?php
-declare (strict_types=1);
+
+declare(strict_types=1);
 
 namespace AeonDigital\Interfaces\Http\Uri;
 
 use AeonDigital\Interfaces\Http\Uri\iHierPartUri as iHierPartUri;
-
 
 
 
@@ -84,7 +84,7 @@ interface iAbsoluteUri extends iHierPartUri
      *
      * @return      string
      */
-    function getQuery() : string;
+    function getQuery(): string;
 
 
 
@@ -116,7 +116,7 @@ interface iAbsoluteUri extends iHierPartUri
      *
      * @return      string
      */
-    function getFragment() : string;
+    function getFragment(): string;
 
 
 
@@ -187,7 +187,7 @@ interface iAbsoluteUri extends iHierPartUri
      *
      * @return      string
      */
-    function getAbsoluteUri(bool $withFragment = false) : string;
+    function getAbsoluteUri(bool $withFragment = false): string;
 
 
 
@@ -207,7 +207,7 @@ interface iAbsoluteUri extends iHierPartUri
      *
      * @return      string
      */
-    function getRelativeUri(bool $withFragment = false) : string;
+    function getRelativeUri(bool $withFragment = false): string;
 
 
 

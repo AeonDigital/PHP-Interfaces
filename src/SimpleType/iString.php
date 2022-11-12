@@ -1,11 +1,11 @@
 <?php
-declare (strict_types=1);
+
+declare(strict_types=1);
 
 namespace AeonDigital\Interfaces\SimpleType;
 
 use AeonDigital\Interfaces\SimpleType\iBasic as iBasic;
 use AeonDigital\Interfaces\SimpleType\iSimpleType as iSimpleType;
-
 
 
 

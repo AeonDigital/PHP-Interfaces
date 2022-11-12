@@ -1,8 +1,8 @@
 <?php
-declare (strict_types=1);
+
+declare(strict_types=1);
 
 namespace AeonDigital\Interfaces\Http\Data;
-
 
 
 
@@ -37,13 +37,13 @@ interface iCookie
      * @throws      \InvalidArgumentException
      *              Caso o valor indicado seja inválido.
      */
-    function setName(string $name) : void;
+    function setName(string $name): void;
     /**
      * Retorna o nome identificador do cookie.
      *
      * @return      string
      */
-    function getName() : string;
+    function getName(): string;
 
 
 
@@ -58,7 +58,7 @@ interface iCookie
      *
      * @return      void
      */
-    function setValue(string $value) : void;
+    function setValue(string $value): void;
     /**
      * Retorna o valor do cookie.
      * O valor será retornado usando ``percent-encode``.
@@ -69,7 +69,7 @@ interface iCookie
      *
      * @return      string
      */
-    function getValue(bool $urldecoded = true) : string;
+    function getValue(bool $urldecoded = true): string;
 
 
 
@@ -85,7 +85,7 @@ interface iCookie
      *
      * @return      void
      */
-    function setExpires(?\DateTime $expires) : void;
+    function setExpires(?\DateTime $expires): void;
     /**
      * Retorna o atual valor de ``Expires`` definido para este cookie em formato \DateTime.
      *
@@ -93,7 +93,7 @@ interface iCookie
      *
      * @return      ?DateTime
      */
-    function getExpires() : ?\DateTime;
+    function getExpires(): ?\DateTime;
     /**
      * Retorna o atual valor de ``Expires`` definido para este cookie.
      * O valor deve ser devolvido usando o modelo:
@@ -106,7 +106,7 @@ interface iCookie
      *
      * @return      ?\DateTime
      */
-    function getStrExpires() : ?string;
+    function getStrExpires(): ?string;
 
 
 
@@ -122,7 +122,7 @@ interface iCookie
      *
      * @return      void
      */
-    function setDomain(?string $domain) : void;
+    function setDomain(?string $domain): void;
     /**
      * Retorna o ``Domain`` definido para este cookie.
      * O velor deve ser devolvido em seu formato ``lowerCase``.
@@ -131,7 +131,7 @@ interface iCookie
      *
      * @return      ?string
      */
-    function getDomain() : ?string;
+    function getDomain(): ?string;
 
 
 
@@ -147,7 +147,7 @@ interface iCookie
      *
      * @return      void
      */
-    function setPath(?string $path) : void;
+    function setPath(?string $path): void;
     /**
      * Retorna o ``Path`` definido para este cookie.
      *
@@ -155,7 +155,7 @@ interface iCookie
      *
      * @return      string
      */
-    function getPath() : string;
+    function getPath(): string;
 
 
 
@@ -174,7 +174,7 @@ interface iCookie
      *
      * @return      void
      */
-    function setSecure(bool $secure) : void;
+    function setSecure(bool $secure): void;
     /**
      * Indica se a diretiva ``Secure`` deve ser aplicada.
      *
@@ -183,7 +183,7 @@ interface iCookie
      *
      * @return      bool
      */
-    function getSecure() : bool;
+    function getSecure(): bool;
 
 
 
@@ -201,7 +201,7 @@ interface iCookie
      *
      * @return      void
      */
-    function setHttpOnly(bool $httpOnly) : void;
+    function setHttpOnly(bool $httpOnly): void;
     /**
      * Indica se a diretiva ``HttpOnly`` deve ser aplicada.
      *
@@ -209,7 +209,7 @@ interface iCookie
      *
      * @return      bool
      */
-    function getHttpOnly() : bool;
+    function getHttpOnly(): bool;
 
 
 
@@ -233,7 +233,7 @@ interface iCookie
      *
      * @return      string
      */
-    function toString(bool $urldecoded = true) : string;
+    function toString(bool $urldecoded = true): string;
 
 
 
@@ -244,7 +244,7 @@ interface iCookie
      *
      * @return      bool
      */
-    function defineCookie() : bool;
+    function defineCookie(): bool;
 
 
 
@@ -256,5 +256,5 @@ interface iCookie
      *
      * @return      bool
      */
-    function removeCookie() : bool;
+    function removeCookie(): bool;
 }

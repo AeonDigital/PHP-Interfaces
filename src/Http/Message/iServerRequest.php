@@ -1,11 +1,11 @@
 <?php
-declare (strict_types=1);
+
+declare(strict_types=1);
 
 namespace AeonDigital\Interfaces\Http\Message;
 
 use Psr\Http\Message\ServerRequestInterface as ServerRequestInterface;
 use AeonDigital\Interfaces\Http\Data\iCookie as iCookie;
-
 
 
 
@@ -30,7 +30,7 @@ interface iServerRequest extends ServerRequestInterface
      *
      * @return      \DateTime
      */
-    function getNow() : \DateTime;
+    function getNow(): \DateTime;
 
 
 
@@ -43,7 +43,7 @@ interface iServerRequest extends ServerRequestInterface
      *
      * @return      ?string
      */
-    function getQueryString(string $name) : ?string;
+    function getQueryString(string $name): ?string;
 
 
 
@@ -54,7 +54,7 @@ interface iServerRequest extends ServerRequestInterface
      *
      * @return      ?array
      */
-    function getPostedFields() : ?array;
+    function getPostedFields(): ?array;
 
 
 
@@ -80,7 +80,7 @@ interface iServerRequest extends ServerRequestInterface
      *
      * @return      ?iCookie
      */
-    function getCookie(string $name) : ?iCookie;
+    function getCookie(string $name): ?iCookie;
 
 
 
@@ -93,7 +93,7 @@ interface iServerRequest extends ServerRequestInterface
      *
      * @return      ?string
      */
-    function getCookieValue(string $name) : ?string;
+    function getCookieValue(string $name): ?string;
 
 
 
@@ -126,7 +126,7 @@ interface iServerRequest extends ServerRequestInterface
      *
      * @return      void
      */
-    function setInitialAttributes(array $attributes) : void;
+    function setInitialAttributes(array $attributes): void;
 
 
 
@@ -152,7 +152,7 @@ interface iServerRequest extends ServerRequestInterface
      *  ];
      * ```
      */
-    function getResponseMimes() : ?array;
+    function getResponseMimes(): ?array;
 
 
 
@@ -170,7 +170,7 @@ interface iServerRequest extends ServerRequestInterface
      *
      * @return      ?array
      */
-    function getResponseLocales() : ?array;
+    function getResponseLocales(): ?array;
 
 
 
@@ -188,5 +188,5 @@ interface iServerRequest extends ServerRequestInterface
      *
      * @return      ?array
      */
-    function getResponseLanguages() : ?array;
+    function getResponseLanguages(): ?array;
 }

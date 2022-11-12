@@ -1,10 +1,10 @@
 <?php
-declare (strict_types=1);
+
+declare(strict_types=1);
 
 namespace AeonDigital\Interfaces\Collection;
 
 use AeonDigital\Interfaces\Collection\iBasicCollection as iBasicCollection;
-
 
 
 
@@ -37,7 +37,7 @@ interface iCollection extends iBasicCollection
      * @return      array
      *              Retorna um ``array associativo`` ou ``[]`` caso a coleção esteja vazia.
      */
-    function toArray(bool $originalKeys = false) : array;
+    function toArray(bool $originalKeys = false): array;
 
 
 
@@ -51,7 +51,7 @@ interface iCollection extends iBasicCollection
      *              Retornará ``true`` caso TODOS os novos valores sejam adicionados e ``false``
      *              caso 1 deles falhe.
      */
-    function insert(array $newValues) : bool;
+    function insert(array $newValues): bool;
 
 
 
@@ -63,5 +63,5 @@ interface iCollection extends iBasicCollection
      *              e ``false`` caso ocorra algum erro em algum dos itens. Neste caso, a coleção
      *              ficará pela metade.
      */
-    function clean() : bool;
+    function clean(): bool;
 }

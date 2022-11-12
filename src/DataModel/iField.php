@@ -1,10 +1,10 @@
 <?php
-declare (strict_types=1);
+
+declare(strict_types=1);
 
 namespace AeonDigital\Interfaces\DataModel;
 
-
-
+use AeonDigital\Interfaces\iRealType as iRealType;
 
 
 
@@ -71,7 +71,7 @@ interface iField
      *
      * @return      string
      */
-    function getName() : string;
+    function getName(): string;
     /**
      * SET
      * Define o nome do campo.
@@ -85,7 +85,7 @@ interface iField
      *
      * @return      string
      */
-    function getDescription() : string;
+    function getDescription(): string;
 
 
 
@@ -94,7 +94,7 @@ interface iField
      *
      * @return      string
      */
-    function getType() : string;
+    function getType(): string;
     /**
      * SET
      * Define o nome completo da classe que determina o tipo deste campo.
@@ -114,7 +114,7 @@ interface iField
      *
      * @return      ?string
      */
-    function getInputFormat() : ?string;
+    function getInputFormat(): ?string;
     /**
      * SET
      * Define um formato para a informação armazenada neste campo.
@@ -155,7 +155,7 @@ interface iField
      *
      * @return      ?int
      */
-    function getLength() : ?int;
+    function getLength(): ?int;
     /**
      * SET
      * Retorna o tamanho máximo (em caracteres) aceitos por este campo.
@@ -170,9 +170,9 @@ interface iField
      * Retorna o menor valor possível para um tipo numérico ou ``DateTime``.
      * Por padrão, herdará este valor da definição de seu ``type`` quando isto for aplicável.
      *
-     * @return      ?int|?\AeonDigital\Numbers\RealNumber|?\DateTime
+     * @return      null|int|iRealType|\DateTime
      */
-    function getMin();
+    function getMin(): null|int|iRealType|\DateTime;
     /**
      * SET
      * Define o menor valor possível para um tipo numérico ou ``DateTime``.
@@ -193,9 +193,9 @@ interface iField
      * Retorna o maior valor possível para um tipo numérico ou ``DateTime``.
      * Por padrão, herdará este valor da definição de seu ``type`` quando isto for aplicável.
      *
-     * @return      ?int|?\AeonDigital\Numbers\RealNumber|?\DateTime
+     * @return      null|int|iRealType|\DateTime
      */
-    function getMax();
+    function getMax(): null|int|iRealType|\DateTime;
     /**
      * SET
      * Define o maior valor possível para um tipo numérico ou ``DateTime``.
@@ -224,7 +224,7 @@ interface iField
      *
      * @return      bool
      */
-    function isAllowNull() : bool;
+    function isAllowNull(): bool;
     /**
      * SET
      * Define se é ou não permitido atribuir ``null`` como um valor válido para este campo.
@@ -239,7 +239,7 @@ interface iField
      *
      * @return      ?bool
      */
-    function isAllowEmpty() : ?bool;
+    function isAllowEmpty(): ?bool;
     /**
      * SET
      * Define se é ou não permitido atribuir ``''`` como um valor válido para este campo.
@@ -254,7 +254,7 @@ interface iField
      *
      * @return      bool
      */
-    function isConvertEmptyToNull() : bool;
+    function isConvertEmptyToNull(): bool;
     /**
      * SET
      * Define se, ao receber um valor ``''``, este deverá ser convertido para ``null``.
@@ -271,7 +271,7 @@ interface iField
      *
      * @return      bool
      */
-    function isReadOnly() : bool;
+    function isReadOnly(): bool;
     /**
      * SET
      * Indica se este campo é ``readonly``.
@@ -296,7 +296,7 @@ interface iField
      *
      * @return      bool
      */
-    function isReference() : bool;
+    function isReference(): bool;
 
 
 
@@ -305,7 +305,7 @@ interface iField
      *
      * @return      bool
      */
-    function isCollection() : bool;
+    function isCollection(): bool;
 
 
 
@@ -322,7 +322,7 @@ interface iField
      *
      * @return      bool
      */
-    function isValid() : bool;
+    function isValid(): bool;
 
 
     /**
@@ -344,7 +344,7 @@ interface iField
      *
      * @return      string|array
      */
-    function getState();
+    function getState(): string|array;
 
 
     /**
@@ -366,7 +366,7 @@ interface iField
      *
      * @return      string|array
      */
-    function getLastValidateState();
+    function getLastValidateState(): string|array;
 
 
     /**
@@ -386,7 +386,7 @@ interface iField
      *
      * @return      bool
      */
-    function getLastValidateCanSet() : bool;
+    function getLastValidateCanSet(): bool;
 
 
     /**
@@ -415,7 +415,7 @@ interface iField
      *  2. Verifica se o valor cai em algum dos valores especiais citados no tópico anterior.
      *  3. Verifica se o valor não é um objeto de um tipo não aceito.
      *    Os tipos aceitos para campos simples são:
-     *    ``bool``, ``int``, ``float``, ``RealNumber``, ``DateTime``, ``string``
+     *    ``bool``, ``int``, ``float``, ``iRealType``, ``DateTime``, ``string``
      *  4. Validação de tipo:
      *  4.1. Havendo um ``inputFormat`` definido, identifica se o valor passa em sua
      *    respectiva validação.
@@ -429,7 +429,7 @@ interface iField
      *   limites.
      *
      * **Valores aceitáveis**
-     * ``null``, ``bool``, ``int``, ``float``, ``RealNumber``, ``DateTime``, ``string``
+     * ``null``, ``bool``, ``int``, ``float``, ``iRealType``, ``DateTime``, ``string``
      *
      *
      * **Regras de aceitação**
@@ -469,7 +469,7 @@ interface iField
      *
      * @return      bool
      */
-    function validateValue($v) : bool;
+    function validateValue(mixed $v): bool;
 
 
 
@@ -494,7 +494,7 @@ interface iField
      *
      * @return      mixed
      */
-    function getDefault(bool $getInstruction = false);
+    function getDefault(bool $getInstruction = false): mixed;
     /**
      * SET
      * Define o valor padrão que este campo deve ter caso nenhum outro seja definido.
@@ -515,7 +515,7 @@ interface iField
      *
      * @return      ?array
      */
-    function getEnumerator(bool $getOnlyValues = false) : ?array;
+    function getEnumerator(bool $getOnlyValues = false): ?array;
     /**
      * SET
      * Define a coleção de valores que este campo está apto a assumir.
@@ -558,7 +558,7 @@ interface iField
      * Caso contrário o campo ficará com o valor ``null``.
      *
      * **Valores aceitáveis**
-     * ``null``, ``bool``, ``int``, ``float``, ``RealNumber``, ``DateTime``, ``string``
+     * ``null``, ``bool``, ``int``, ``float``, ``iRealType``, ``DateTime``, ``string``
      *
      *
      * **Campos "reference"**
@@ -601,7 +601,7 @@ interface iField
      *              agora ele esteja inválido. Também retornará ``false`` caso o valor seja
      *              totalmente incompatível com o campo.
      */
-    function setValue($v) : bool;
+    function setValue(mixed $v): bool;
 
 
 
@@ -636,7 +636,7 @@ interface iField
      *
      * @return      mixed
      */
-    function getValue();
+    function getValue(): mixed;
 
 
     /**
@@ -671,7 +671,7 @@ interface iField
      *
      * @return      mixed
      */
-    function getStorageValue();
+    function getStorageValue(): mixed;
 
 
     /**
@@ -680,5 +680,5 @@ interface iField
      *
      * @return      mixed
      */
-    function getRawValue();
+    function getRawValue(): mixed;
 }

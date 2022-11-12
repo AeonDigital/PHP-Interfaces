@@ -1,8 +1,11 @@
  PHP-Interfaces
 ================
 
-> [Aeon Digital](http://aeondigital.com.br)
+> [Aeon Digital](http://www.aeondigital.com.br)
+>
 > rianna@aeondigital.com.br
+
+&nbsp;
 
 Coleção de Interfaces para bibliotecas e projetos.
 

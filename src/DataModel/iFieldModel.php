@@ -1,12 +1,12 @@
 <?php
-declare (strict_types=1);
+
+declare(strict_types=1);
 
 namespace AeonDigital\Interfaces\DataModel;
 
 use AeonDigital\Interfaces\DataModel\iField as iField;
 use AeonDigital\Interfaces\DataModel\iModel as iModel;
-
-
+use AeonDigital\undefined as undefined;
 
 
 
@@ -51,7 +51,7 @@ interface iFieldModel extends iField
      *
      * @return      bool
      */
-    function isInitial() : bool;
+    function isInitial(): bool;
 
 
     /**
@@ -59,7 +59,7 @@ interface iFieldModel extends iField
      *
      * @return      iModel
      */
-    function getModel() : iModel;
+    function getModel(): iModel;
 
 
     /**
@@ -67,7 +67,7 @@ interface iFieldModel extends iField
      *
      * @return      string
      */
-    function getModelName() : string;
+    function getModelName(): string;
 
 
     /**
@@ -76,7 +76,7 @@ interface iFieldModel extends iField
      * Em campos *collection* será retornado o ``array`` contendo as instâncias que
      * compõe a coleção atual.
      *
-     * @return      iModel|iModel[]
+     * @return      string|array|iModel|undefined
      */
-    function getInstanceValue();
+    function getInstanceValue(): string|array|iModel|undefined;
 }

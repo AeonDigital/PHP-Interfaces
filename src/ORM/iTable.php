@@ -1,11 +1,11 @@
 <?php
-declare (strict_types=1);
+
+declare(strict_types=1);
 
 namespace AeonDigital\Interfaces\ORM;
 
 use AeonDigital\Interfaces\DAL\iDAL as iDAL;
 use AeonDigital\Interfaces\DataModel\iModel as iModel;
-
 
 
 
@@ -39,7 +39,7 @@ interface iTable extends iModel
      *
      * @return      void
      */
-    function setDAL(iDAL $DAL) : void;
+    function setDAL(iDAL $DAL): void;
 
 
 
@@ -50,7 +50,7 @@ interface iTable extends iModel
      *
      * @return      string
      */
-    function getAlias() : string;
+    function getAlias(): string;
 
 
 
@@ -60,7 +60,7 @@ interface iTable extends iModel
      *
      * @return      ?array
      */
-    function getExecuteAfterCreateTable() : ?array;
+    function getExecuteAfterCreateTable(): ?array;
 
 
 
@@ -71,7 +71,7 @@ interface iTable extends iModel
      *
      * @return      ?array
      */
-    function getUniqueMultipleKeys() : ?array;
+    function getUniqueMultipleKeys(): ?array;
 
 
 
@@ -89,7 +89,7 @@ interface iTable extends iModel
      *
      * @return      ?string
      */
-    function getLastDALError() : ?string;
+    function getLastDALError(): ?string;
 
 
 
@@ -98,7 +98,7 @@ interface iTable extends iModel
      *
      * @return      int
      */
-    function countRows() : int;
+    function countRows(): int;
 
 
 
@@ -110,7 +110,7 @@ interface iTable extends iModel
      *
      * @return      bool
      */
-    function hasId(int $Id) : bool;
+    function hasId(int $Id): bool;
 
 
 
@@ -130,7 +130,7 @@ interface iTable extends iModel
     function save(
         ?string $parentTableName = null,
         ?int $parentId = null
-    ) : bool;
+    ): bool;
     /**
      * Insere os dados desta instância em um novo registro no banco de dados.
      *
@@ -149,7 +149,7 @@ interface iTable extends iModel
     function insert(
         ?string $parentTableName = null,
         ?int $parentId = null
-    ) : bool;
+    ): bool;
     /**
      * Atualiza os dados desta instância em um novo registro no banco de dados.
      *
@@ -168,7 +168,7 @@ interface iTable extends iModel
     function update(
         ?string $parentTableName = null,
         ?int $parentId = null
-    ) : bool;
+    ): bool;
 
 
 
@@ -189,7 +189,7 @@ interface iTable extends iModel
     function select(
         int $Id,
         bool $loadChilds = false
-    ) : bool;
+    ): bool;
 
 
 
@@ -206,7 +206,7 @@ interface iTable extends iModel
      *
      * @return      ?int
      */
-    function selectParentIdOf(string $tableName) : ?int;
+    function selectParentIdOf(string $tableName): ?int;
 
 
 
@@ -219,7 +219,7 @@ interface iTable extends iModel
      *
      * @return      bool
      */
-    function delete() : bool;
+    function delete(): bool;
 
 
 
@@ -237,7 +237,7 @@ interface iTable extends iModel
      *
      * @return      bool
      */
-    function attachWith(string $tableName, int $tgtId) : bool;
+    function attachWith(string $tableName, int $tgtId): bool;
 
 
 
@@ -282,5 +282,5 @@ interface iTable extends iModel
      *
      * @return      bool
      */
-    function detachWith(string $tableName, ?int $tgtId = null) : bool;
+    function detachWith(string $tableName, ?int $tgtId = null): bool;
 }

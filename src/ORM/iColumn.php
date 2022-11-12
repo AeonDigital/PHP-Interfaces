@@ -1,10 +1,10 @@
 <?php
-declare (strict_types=1);
+
+declare(strict_types=1);
 
 namespace AeonDigital\Interfaces\ORM;
 
 use AeonDigital\Interfaces\DataModel\iField as iField;
-
 
 
 
@@ -34,7 +34,7 @@ interface iColumn extends iField
      *
      * @return      bool
      */
-    function isUnique() : bool;
+    function isUnique(): bool;
 
 
     /**
@@ -42,7 +42,7 @@ interface iColumn extends iField
      *
      * @return      bool
      */
-    function isAutoIncrement() : bool;
+    function isAutoIncrement(): bool;
 
 
     /**
@@ -50,7 +50,7 @@ interface iColumn extends iField
      *
      * @return      bool
      */
-    function isPrimaryKey() : bool;
+    function isPrimaryKey(): bool;
 
 
     /**
@@ -58,7 +58,7 @@ interface iColumn extends iField
      *
      * @return      bool
      */
-    function isForeignKey() : bool;
+    function isForeignKey(): bool;
 
 
     /**
@@ -67,5 +67,5 @@ interface iColumn extends iField
      *
      * @return      bool
      */
-    function isIndex() : bool;
+    function isIndex(): bool;
 }

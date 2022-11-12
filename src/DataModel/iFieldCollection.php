@@ -1,10 +1,10 @@
 <?php
-declare (strict_types=1);
+
+declare(strict_types=1);
 
 namespace AeonDigital\Interfaces\DataModel;
 
 use AeonDigital\Interfaces\DataModel\iField as iField;
-
 
 
 
@@ -57,14 +57,14 @@ interface iFieldCollection extends iField
      *
      * @return      string
      */
-    function collectionGetState() : string;
+    function collectionGetState(): string;
     /**
      * Retornará ``valid`` caso a última validação de uma coleção tenha ocorrido sem falhas.
      * Caso a validação tenha falhado, retornará o código que identifica a natureza do erro.
      *
      * @return      string
      */
-    function collectionGetLastValidateState() : string;
+    function collectionGetLastValidateState(): string;
 
 
 
@@ -73,7 +73,7 @@ interface iFieldCollection extends iField
      *
      * @return      bool
      */
-    function collectionIsDistinct() : bool;
+    function collectionIsDistinct(): bool;
     /**
      * SET
      * Define se esta coleção exige que cada um de seus valores seja único.
@@ -82,7 +82,7 @@ interface iFieldCollection extends iField
 
 
 
-     /**
+    /**
      * Retorna a coleção de nomes de campos (chaves) que permitem avaliar quando uma coleção
      * de modelos de dados possui objetos iguais.
      *
@@ -93,7 +93,7 @@ interface iFieldCollection extends iField
      *
      * @return      ?array
      */
-    function collectionGetDistinctKeys() : ?array;
+    function collectionGetDistinctKeys(): ?array;
 
 
 
@@ -111,7 +111,7 @@ interface iFieldCollection extends iField
      *              agora ele esteja inválido. Também retornará ``false`` caso o valor seja
      *              totalmente incompatível com o campo.
      */
-    function collectionAddValue($v) : bool;
+    function collectionAddValue(mixed $v): bool;
 
 
 
@@ -127,7 +127,7 @@ interface iFieldCollection extends iField
      *
      * @return      ?int
      */
-    function collectionGetIndexOfValue($v) : ?int;
+    function collectionGetIndexOfValue(mixed $v): ?int;
 
 
 
@@ -139,7 +139,7 @@ interface iFieldCollection extends iField
      *
      * @return      int
      */
-    function collectionCountOccurrenciesOfValue($v) : int;
+    function collectionCountOccurrenciesOfValue(mixed $v): int;
 
 
 
@@ -151,7 +151,7 @@ interface iFieldCollection extends iField
      *
      * @return      bool
      */
-    function collectionHasValue($v) : bool;
+    function collectionHasValue(mixed $v): bool;
 
 
 
@@ -160,7 +160,7 @@ interface iFieldCollection extends iField
      *
      * @return      int
      */
-    function collectionCount() : int;
+    function collectionCount(): int;
 
 
 
@@ -175,7 +175,7 @@ interface iFieldCollection extends iField
      *
      * @return      void
      */
-    function collectionUnsetValue($v, bool $all = false) : void;
+    function collectionUnsetValue(mixed $v, bool $all = false): void;
 
 
 
@@ -187,7 +187,7 @@ interface iFieldCollection extends iField
      *
      * @return      void
      */
-    function collectionUnsetIndex(int $i) : void;
+    function collectionUnsetIndex(int $i): void;
 
 
 
@@ -216,7 +216,7 @@ interface iFieldCollection extends iField
      *
      * @return      ?array
      */
-    function collectionGetAcceptedCount() : ?array;
+    function collectionGetAcceptedCount(): ?array;
     /**
      * SET
      * Se definido, permite informar uma composição de regras que especificam as contagens
@@ -278,7 +278,7 @@ interface iFieldCollection extends iField
      *
      * @return      ?int
      */
-    function collectionGetMin() : ?int;
+    function collectionGetMin(): ?int;
 
 
 
@@ -288,5 +288,5 @@ interface iFieldCollection extends iField
      *
      * @return      ?int
      */
-    function collectionGetMax() : ?int;
+    function collectionGetMax(): ?int;
 }

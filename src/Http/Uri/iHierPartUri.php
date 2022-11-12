@@ -1,10 +1,10 @@
 <?php
-declare (strict_types=1);
+
+declare(strict_types=1);
 
 namespace AeonDigital\Interfaces\Http\Uri;
 
 use AeonDigital\Interfaces\Http\Uri\iBasicUri as iBasicUri;
-
 
 
 
@@ -78,7 +78,7 @@ interface iHierPartUri extends iBasicUri
      *
      * @return      string
      */
-    function getUser() : string;
+    function getUser(): string;
 
 
 
@@ -108,7 +108,7 @@ interface iHierPartUri extends iBasicUri
      *
      * @return      ?string
      */
-    function getPassword() : ?string;
+    function getPassword(): ?string;
 
 
 
@@ -136,7 +136,7 @@ interface iHierPartUri extends iBasicUri
      *
      * @return      string
      */
-    function getHost() : string;
+    function getHost(): string;
 
 
 
@@ -164,7 +164,7 @@ interface iHierPartUri extends iBasicUri
      *
      * @return      ?int
      */
-    function getPort() : ?int;
+    function getPort(): ?int;
 
 
 
@@ -174,7 +174,7 @@ interface iHierPartUri extends iBasicUri
      *
      * @return      ?int
      */
-    function getDefaultPort() : ?int;
+    function getDefaultPort(): ?int;
 
 
 
@@ -218,7 +218,7 @@ interface iHierPartUri extends iBasicUri
      *
      * @return      string
      */
-    function getUserInfo() : string;
+    function getUserInfo(): string;
 
 
 
@@ -266,7 +266,7 @@ interface iHierPartUri extends iBasicUri
      *
      * @return      string
      */
-    function getAuthority() : string;
+    function getAuthority(): string;
 
 
 
@@ -313,7 +313,7 @@ interface iHierPartUri extends iBasicUri
      *
      * @return      string
      */
-    function getPath() : string;
+    function getPath(): string;
 
 
 
@@ -354,7 +354,7 @@ interface iHierPartUri extends iBasicUri
      *
      * @return      string
      */
-    function getBase() : string;
+    function getBase(): string;
 
 
 
@@ -370,5 +370,5 @@ interface iHierPartUri extends iBasicUri
      *
      * @return      string
      */
-    function getBasePath() : string;
+    function getBasePath(): string;
 }

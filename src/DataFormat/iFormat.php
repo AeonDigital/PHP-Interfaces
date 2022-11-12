@@ -1,8 +1,8 @@
 <?php
-declare (strict_types=1);
+
+declare(strict_types=1);
 
 namespace AeonDigital\Interfaces\DataFormat;
-
 
 
 
@@ -39,7 +39,7 @@ interface iFormat
      *
      * @return      bool
      */
-    static function check(?string $v, ?array $aux = null) : bool;
+    static function check(?string $v, ?array $aux = null): bool;
 
 
 
@@ -55,7 +55,7 @@ interface iFormat
      *
      * @return      ?string
      */
-    static function format($v, ?array $aux = null) : ?string;
+    static function format(mixed $v, ?array $aux = null): ?string;
 
 
 
@@ -74,7 +74,7 @@ interface iFormat
      *
      * @return      mixed
      */
-    static function removeFormat(?string $v, ?array $aux = null);
+    static function removeFormat(?string $v, ?array $aux = null): mixed;
 
 
 
@@ -90,5 +90,5 @@ interface iFormat
      *
      * @return      mixed
      */
-    static function storageFormat(?string $v);
+    static function storageFormat(?string $v): mixed;
 }

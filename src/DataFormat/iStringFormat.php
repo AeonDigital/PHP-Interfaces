@@ -1,10 +1,10 @@
 <?php
-declare (strict_types=1);
+
+declare(strict_types=1);
 
 namespace AeonDigital\Interfaces\DataFormat;
 
 use AeonDigital\Interfaces\DataFormat\iFormat as iFormat;
-
 
 
 

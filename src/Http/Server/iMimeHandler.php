@@ -1,8 +1,8 @@
 <?php
-declare (strict_types=1);
+
+declare(strict_types=1);
 
 namespace AeonDigital\Interfaces\Http\Server;
-
 
 
 
@@ -34,5 +34,5 @@ interface iMimeHandler
      *
      * @return      string
      */
-    function createResponseBody() : string;
+    function createResponseBody(): string;
 }

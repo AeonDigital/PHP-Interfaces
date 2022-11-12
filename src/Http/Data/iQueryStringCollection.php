@@ -1,10 +1,10 @@
 <?php
-declare (strict_types=1);
+
+declare(strict_types=1);
 
 namespace AeonDigital\Interfaces\Http\Data;
 
 use AeonDigital\Interfaces\Collection\iCollection as iCollection;
-
 
 
 
@@ -39,7 +39,7 @@ interface iQueryStringCollection extends iCollection
      *
      * @return      string
      */
-    function toString(?bool $originalKeys = false) : string;
+    function toString(?bool $originalKeys = false): string;
 
 
 
@@ -55,5 +55,5 @@ interface iQueryStringCollection extends iCollection
      *
      * @return      void
      */
-    function usePercentEncode(bool $use) : void;
+    function usePercentEncode(bool $use): void;
 }

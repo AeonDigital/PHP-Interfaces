@@ -1,8 +1,8 @@
 <?php
-declare (strict_types=1);
+
+declare(strict_types=1);
 
 namespace AeonDigital\Interfaces\DAL;
-
 
 
 
@@ -32,7 +32,7 @@ interface iDAL
      *
      * @return       \PDO
      */
-    function getConnection() : \PDO;
+    function getConnection(): \PDO;
 
 
 
@@ -43,7 +43,7 @@ interface iDAL
      *
      * @return      string
      */
-    function getDBType() : string;
+    function getDBType(): string;
 
 
     /**
@@ -51,7 +51,7 @@ interface iDAL
      *
      * @return      string
      */
-    function getDBHost() : string;
+    function getDBHost(): string;
 
 
     /**
@@ -59,7 +59,7 @@ interface iDAL
      *
      * @return      string
      */
-    function getDBName() : string;
+    function getDBName(): string;
 
 
 
@@ -73,7 +73,7 @@ interface iDAL
      *
      * @return      void
      */
-    function replaceConnection(iDAL $oConnection) : void;
+    function replaceConnection(iDAL $oConnection): void;
 
 
 
@@ -91,7 +91,7 @@ interface iDAL
      *
      * @return      bool
      */
-    function executeInstruction(string $strSQL, ?array $parans = null) : bool;
+    function executeInstruction(string $strSQL, ?array $parans = null): bool;
 
 
     /**
@@ -106,7 +106,7 @@ interface iDAL
      *
      * @return      ?array
      */
-    function getDataTable(string $strSQL, ?array $parans = null) : ?array;
+    function getDataTable(string $strSQL, ?array $parans = null): ?array;
 
 
     /**
@@ -121,7 +121,7 @@ interface iDAL
      *
      * @return      ?array
      */
-    function getDataRow(string $strSQL, ?array $parans = null) : ?array;
+    function getDataRow(string $strSQL, ?array $parans = null): ?array;
 
 
     /**
@@ -161,7 +161,7 @@ interface iDAL
      *
      * @return      int
      */
-    function getCountOf(string $strSQL, ?array $parans = null) : int;
+    function getCountOf(string $strSQL, ?array $parans = null): int;
 
 
 
@@ -172,7 +172,7 @@ interface iDAL
      *
      * @return      bool
      */
-    function isExecuted() : bool;
+    function isExecuted(): bool;
 
 
     /**
@@ -181,7 +181,7 @@ interface iDAL
      *
      * @return      int
      */
-    function countAffectedRows() : int;
+    function countAffectedRows(): int;
 
 
     /**
@@ -190,7 +190,7 @@ interface iDAL
      *
      * @return      ?string
      */
-    function getLastError() : ?string;
+    function getLastError(): ?string;
 
 
 
@@ -209,7 +209,7 @@ interface iDAL
      *
      * @return      ?int
      */
-    function getLastPK(string $tableName, string $pkName) : ?int;
+    function getLastPK(string $tableName, string $pkName): ?int;
 
 
 
@@ -226,7 +226,7 @@ interface iDAL
      *
      * @return      int
      */
-    function countRowsFrom(string $tableName, string $pkName) : int;
+    function countRowsFrom(string $tableName, string $pkName): int;
 
 
     /**
@@ -244,7 +244,7 @@ interface iDAL
      *
      * @return      int
      */
-    function countRowsWith(string $tablename, string $colName, $colValue) : int;
+    function countRowsWith(string $tablename, string $colName, $colValue): int;
 
 
     /**
@@ -262,7 +262,7 @@ interface iDAL
      *
      * @return      bool
      */
-    function hasRowsWith(string $tablename, string $colName, $colValue) : bool;
+    function hasRowsWith(string $tablename, string $colName, $colValue): bool;
 
 
     /**
@@ -278,7 +278,7 @@ interface iDAL
      *
      * @return      bool
      */
-    function insertInto(string $tableName, array $rowData) : bool;
+    function insertInto(string $tableName, array $rowData): bool;
 
 
     /**
@@ -298,7 +298,7 @@ interface iDAL
      *
      * @return      bool
      */
-    function updateSet(string $tableName, array $rowData, string $pkName) : bool;
+    function updateSet(string $tableName, array $rowData, string $pkName): bool;
 
 
     /**
@@ -317,7 +317,7 @@ interface iDAL
      *
      * @return      bool
      */
-    function insertOrUpdate(string $tableName, array $rowData, string $pkName) : bool;
+    function insertOrUpdate(string $tableName, array $rowData, string $pkName): bool;
 
 
     /**
@@ -340,7 +340,7 @@ interface iDAL
      *
      * @return      ?array
      */
-    function selectFrom(string $tableName, string $pkName, int $pk, ?array $columnNames = null) : ?array;
+    function selectFrom(string $tableName, string $pkName, int $pk, ?array $columnNames = null): ?array;
 
 
     /**
@@ -358,7 +358,7 @@ interface iDAL
      *
      * @return      bool
      */
-    function deleteFrom(string $tableName, string $pkName, int $pk) : bool;
+    function deleteFrom(string $tableName, string $pkName, int $pk): bool;
 
 
 
@@ -369,7 +369,7 @@ interface iDAL
      *
      * @return      bool
      */
-    function inTransaction() : bool;
+    function inTransaction(): bool;
 
 
     /**
@@ -378,7 +378,7 @@ interface iDAL
      *
      * @return      bool
      */
-    function beginTransaction() : bool;
+    function beginTransaction(): bool;
 
 
     /**
@@ -386,7 +386,7 @@ interface iDAL
      *
      * @return      bool
      */
-    function commit() : bool;
+    function commit(): bool;
 
 
     /**
@@ -394,5 +394,5 @@ interface iDAL
      *
      * @return      bool
      */
-    function rollBack() : bool;
+    function rollBack(): bool;
 }

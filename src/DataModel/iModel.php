@@ -1,10 +1,10 @@
 <?php
-declare (strict_types=1);
+
+declare(strict_types=1);
 
 namespace AeonDigital\Interfaces\DataModel;
 
 use AeonDigital\Interfaces\DataModel\iField as iField;
-
 
 
 
@@ -32,7 +32,7 @@ interface iModel extends \IteratorAggregate
      *
      * @return      string
      */
-    function getName() : string;
+    function getName(): string;
     /**
      * SET
      * Define o nome do modelo de dados.
@@ -46,7 +46,7 @@ interface iModel extends \IteratorAggregate
      *
      * @return      string
      */
-    function getDescription() : string;
+    function getDescription(): string;
 
 
 
@@ -60,7 +60,7 @@ interface iModel extends \IteratorAggregate
      *
      * @return      bool
      */
-    function hasField(string $f) : bool;
+    function hasField(string $f): bool;
 
 
     /**
@@ -68,7 +68,7 @@ interface iModel extends \IteratorAggregate
      *
      * @return      int
      */
-    function countFields() : int;
+    function countFields(): int;
 
 
     /**
@@ -81,7 +81,7 @@ interface iModel extends \IteratorAggregate
      *
      * @return      array
      */
-    function getFieldNames(bool $getReferences = true) : array;
+    function getFieldNames(bool $getReferences = true): array;
 
 
 
@@ -93,7 +93,7 @@ interface iModel extends \IteratorAggregate
      *
      * @return      array
      */
-    function getInitialDataModel() : array;
+    function getInitialDataModel(): array;
 
 
 
@@ -112,7 +112,7 @@ interface iModel extends \IteratorAggregate
      *
      * @return      bool
      */
-    function isInitial() : bool;
+    function isInitial(): bool;
 
 
 
@@ -122,7 +122,7 @@ interface iModel extends \IteratorAggregate
      *
      * @return      bool
      */
-    function isValid() : bool;
+    function isValid(): bool;
 
 
     /**
@@ -146,7 +146,7 @@ interface iModel extends \IteratorAggregate
      *
      * @return      string|array
      */
-    function getState();
+    function getState(): string|array;
 
 
     /**
@@ -170,9 +170,9 @@ interface iModel extends \IteratorAggregate
      *      ];
      * ```
      *
-     * @return      string|array
+     * @return      null|string|array
      */
-    function getLastValidateState();
+    function getLastValidateState(): null|string|array;
 
 
     /**
@@ -181,7 +181,7 @@ interface iModel extends \IteratorAggregate
      *
      * @return      bool
      */
-    function getLastValidateCanSet() : bool;
+    function getLastValidateCanSet(): bool;
 
 
     /**
@@ -226,7 +226,7 @@ interface iModel extends \IteratorAggregate
      *              Caso o objeto passado possua propriedades não correspondentes aos campos
      *              definidos.
      */
-    function validateValues($objValues, bool $checkAll = false) : bool;
+    function validateValues(mixed $objValues, bool $checkAll = false): bool;
 
 
 
@@ -256,7 +256,7 @@ interface iModel extends \IteratorAggregate
      * @throws      \InvalidArgumentException
      *              Caso o nome do campo não seja válido.
      */
-    function setFieldValue(string $f, $v) : bool;
+    function setFieldValue(string $f, mixed $v): bool;
 
 
     /**
@@ -271,7 +271,7 @@ interface iModel extends \IteratorAggregate
      * @throws      \InvalidArgumentException
      *              Caso o nome do campo não seja válido.
      */
-    function getFieldValue(string $f);
+    function getFieldValue(string $f): mixed;
 
 
     /**
@@ -286,7 +286,7 @@ interface iModel extends \IteratorAggregate
      * @throws      \InvalidArgumentException
      *              Caso o nome do campo não seja válido.
      */
-    function getFieldStorageValue(string $f);
+    function getFieldStorageValue(string $f): mixed;
 
 
     /**
@@ -301,7 +301,7 @@ interface iModel extends \IteratorAggregate
      * @throws      \InvalidArgumentException
      *              Caso o nome do campo não seja válido.
      */
-    function getFieldRawValue(string $f);
+    function getFieldRawValue(string $f): mixed;
 
 
 
@@ -337,7 +337,7 @@ interface iModel extends \IteratorAggregate
      *              Caso o objeto passado possua propriedades não correspondentes aos campos
      *              definidos.
      */
-    function setValues($objValues, bool $checkAll = false) : bool;
+    function setValues(mixed $objValues, bool $checkAll = false): bool;
 
 
     /**
@@ -349,7 +349,7 @@ interface iModel extends \IteratorAggregate
      *
      * @return      array
      */
-    function getValues() : array;
+    function getValues(): array;
 
 
     /**
@@ -361,7 +361,7 @@ interface iModel extends \IteratorAggregate
      *
      * @return      array
      */
-    function getStorageValues() : array;
+    function getStorageValues(): array;
 
 
     /**
@@ -373,5 +373,5 @@ interface iModel extends \IteratorAggregate
      *
      * @return      array
      */
-    function getRawValues() : array;
+    function getRawValues(): array;
 }

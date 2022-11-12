@@ -1,10 +1,10 @@
 <?php
-declare (strict_types=1);
+
+declare(strict_types=1);
 
 namespace AeonDigital\Interfaces\Collection;
 
 use AeonDigital\Interfaces\Collection\iBasicCollection as iBasicCollection;
-
 
 
 
@@ -96,7 +96,7 @@ interface iTypeList extends iBasicCollection
      * @return      bool
      *              Retornará ``true`` se valores ``null`` puderem ser definidos.
      */
-    function isNullable() : bool;
+    function isNullable(): bool;
 
 
 
@@ -112,5 +112,5 @@ interface iTypeList extends iBasicCollection
      * @return      string
      *              ``String`` que demonstra o tipo de dado aceito para esta lista.
      */
-    function getType() : string;
+    function getType(): string;
 }

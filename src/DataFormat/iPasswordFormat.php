@@ -1,10 +1,10 @@
 <?php
-declare (strict_types=1);
+
+declare(strict_types=1);
 
 namespace AeonDigital\Interfaces\DataFormat;
 
 use AeonDigital\Interfaces\DataFormat\iStringFormat as iStringFormat;
-
 
 
 
@@ -59,7 +59,7 @@ interface iPasswordFormat extends iStringFormat
      *
      * @return      int
      */
-    static function checkStrength(string $v) : int;
+    static function checkStrength(string $v): int;
 
 
 
@@ -82,7 +82,7 @@ interface iPasswordFormat extends iStringFormat
      *          "MinLength"     => 8
      *
      *          // Número máximo de caracteres para compor uma senha.
-     *          "MaxLength"     => 20
+     *          "MaxLength"     => 128
      *      ];
      * ```
      *
@@ -92,7 +92,7 @@ interface iPasswordFormat extends iStringFormat
      *
      * @return      string
      */
-    static function generate(?array $cfg = null) : string;
+    static function generate(?array $cfg = null): string;
 
 
 
@@ -117,7 +117,7 @@ interface iPasswordFormat extends iStringFormat
      *          "MinLength"     => 8
      *
      *          // Número máximo de caracteres para compor uma senha.
-     *          "MaxLength"     => 20
+     *          "MaxLength"     => 128
      *      ];
      * ```
      *
@@ -130,7 +130,7 @@ interface iPasswordFormat extends iStringFormat
      * @param       ?string $err
      *              Código do erro da validação.
      *
-     * @return      mixed
+     * @return      bool
      */
-    static function checkPassword(?string $v, ?array $aux = null, ?string &$err = null) : bool;
+    static function checkPassword(?string $v, ?array $aux = null, ?string &$err = null): bool;
 }

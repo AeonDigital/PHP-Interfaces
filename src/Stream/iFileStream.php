@@ -1,10 +1,10 @@
 <?php
-declare (strict_types=1);
+
+declare(strict_types=1);
 
 namespace AeonDigital\Interfaces\Stream;
 
 use AeonDigital\Interfaces\Stream\iStream as iStream;
-
 
 
 
@@ -32,7 +32,7 @@ interface iFileStream extends iStream
      *
      * @return      string
      */
-    function getPathToFile() : string;
+    function getPathToFile(): string;
 
 
 
@@ -41,7 +41,7 @@ interface iFileStream extends iStream
      *
      * @return      string
      */
-    function getFilename() : string;
+    function getFilename(): string;
 
 
 
@@ -50,7 +50,7 @@ interface iFileStream extends iStream
      *
      * @return      string
      */
-    function getMimeType() : string;
+    function getMimeType(): string;
 
 
 
@@ -71,5 +71,5 @@ interface iFileStream extends iStream
      * @throws      \InvalidArgumentException
      *              Caso o arquivo indicado não exista.
      */
-    function setFileStream(string $pathToFile, ?string $openMode = null) : void;
+    function setFileStream(string $pathToFile, ?string $openMode = null): void;
 }

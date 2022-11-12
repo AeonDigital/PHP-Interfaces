@@ -1,5 +1,6 @@
 <?php
-declare (strict_types=1);
+
+declare(strict_types=1);
 
 namespace AeonDigital\Interfaces\ORM;
 
@@ -7,7 +8,6 @@ use AeonDigital\Interfaces\DataModel\iModelFactory as iModelFactory;
 use AeonDigital\Interfaces\DataModel\iModel as iModel;
 use AeonDigital\Interfaces\ORM\iTable as iTable;
 use AeonDigital\Interfaces\DAL\iDAL as iDAL;
-
 
 
 
@@ -32,7 +32,7 @@ interface iDataTableFactory extends iModelFactory
      *
      * @return      iDAL
      */
-    function getDAL() : iDAL;
+    function getDAL(): iDAL;
 
 
     /**
@@ -41,7 +41,7 @@ interface iDataTableFactory extends iModelFactory
      *
      * @return      string
      */
-    function getProjectName() : string;
+    function getProjectName(): string;
 
 
     /**
@@ -53,7 +53,7 @@ interface iDataTableFactory extends iModelFactory
      *
      * @return      string
      */
-    function getProjectDirectory() : string;
+    function getProjectDirectory(): string;
 
 
     /**
@@ -65,7 +65,7 @@ interface iDataTableFactory extends iModelFactory
      *
      * @return      void
      */
-    function recreateProjectDataFile() : void;
+    function recreateProjectDataFile(): void;
 
 
     /**
@@ -73,7 +73,7 @@ interface iDataTableFactory extends iModelFactory
      *
      * @return      array
      */
-    function getDataTableList() : array;
+    function getDataTableList(): array;
 
 
     /**
@@ -85,7 +85,7 @@ interface iDataTableFactory extends iModelFactory
      *
      * @return      bool
      */
-    function hasDataModel(string $idName) : bool;
+    function hasDataModel(string $idName): bool;
 
 
     /**
@@ -96,7 +96,7 @@ interface iDataTableFactory extends iModelFactory
      *
      * @return      bool
      */
-    function hasDataTable(string $tableName) : bool;
+    function hasDataTable(string $tableName): bool;
 
 
 
@@ -115,7 +115,7 @@ interface iDataTableFactory extends iModelFactory
      * @throws      \InvalidArgumentException
      *              Caso o nome da tabela seja inexistente.
      */
-    function createDataModel(string $idName, $initialValues = null) : iModel;
+    function createDataModel(string $idName, $initialValues = null): iModel;
 
 
     /**
@@ -132,5 +132,5 @@ interface iDataTableFactory extends iModelFactory
      * @throws      \InvalidArgumentException
      *              Caso o nome da tabela seja inexistente.
      */
-    function createDataTable(string $tableName, $initialValues = null) : iTable;
+    function createDataTable(string $tableName, $initialValues = null): iTable;
 }

@@ -1,8 +1,8 @@
 <?php
-declare (strict_types=1);
+
+declare(strict_types=1);
 
 namespace AeonDigital\Interfaces\Http\Uri;
-
 
 
 
@@ -265,7 +265,7 @@ interface iBasicUri
      *
      * @return      string
      */
-    function getScheme() : string;
+    function getScheme(): string;
 
 
 
@@ -305,5 +305,5 @@ interface iBasicUri
      *
      * @return      string
      */
-    function __toString();
+    function __toString(): string;
 }

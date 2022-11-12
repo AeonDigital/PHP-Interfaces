@@ -1,10 +1,10 @@
 <?php
-declare (strict_types=1);
+
+declare(strict_types=1);
 
 namespace AeonDigital\Interfaces\Http\Data;
 
 use Psr\Http\Message\UploadedFileInterface as UploadedFileInterface;
-
 
 
 
@@ -32,7 +32,7 @@ interface iFile extends UploadedFileInterface
      *
      * @return      string
      */
-    function getPathToFile() : string;
+    function getPathToFile(): string;
 
 
 
@@ -44,5 +44,5 @@ interface iFile extends UploadedFileInterface
      *
      * @return      void
      */
-    function dropStream() : void;
+    function dropStream(): void;
 }

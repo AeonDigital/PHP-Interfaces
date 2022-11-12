@@ -1,8 +1,8 @@
 <?php
-declare (strict_types=1);
+
+declare(strict_types=1);
 
 namespace AeonDigital\Interfaces\Http;
-
 
 
 
@@ -33,7 +33,7 @@ interface iExecute
      *
      * @return      string
      */
-    static function getLastError() : string;
+    static function getLastError(): string;
 
 
 
@@ -60,7 +60,7 @@ interface iExecute
         string $absoluteURL,
         array $content = [],
         array $headers = []
-    ) : ?string;
+    ): ?string;
 
 
 
@@ -84,5 +84,5 @@ interface iExecute
         string $absoluteURL,
         string $absoluteSystemPathToDir,
         string $fileName = ""
-    ) : bool;
+    ): bool;
 }
