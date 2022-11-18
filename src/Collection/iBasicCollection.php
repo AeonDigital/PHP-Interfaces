@@ -45,10 +45,10 @@ interface iBasicCollection extends \ArrayAccess, \Countable, \IteratorAggregate
     /**
      * Indica se a coleção implementa a interface ``iProtectedCollection``.
      *
-     * @return      bool
-     *              Quando ``true`` indica que a coleção manterá o estado de todos os seus
-     *              objetos não permitindo que eles sejam alterados, no entanto os valores uma
-     *              vez definidos PODEM ser excluídos.
+     * @return bool
+     * Quando ``true`` indica que a coleção manterá o estado de todos os seus
+     * objetos não permitindo que eles sejam alterados, no entanto os valores uma
+     * vez definidos PODEM ser excluídos.
      */
     function isProtected(): bool;
 
@@ -57,9 +57,9 @@ interface iBasicCollection extends \ArrayAccess, \Countable, \IteratorAggregate
     /**
      * Indica se a coleção implementa a interface ``iAppendOnlyCollection``.
      *
-     * @return      bool
-     *              Quando ``true`` indica que a coleção pode ser apenas incrementada mas jamais
-     *              modificada nem reduzida.
+     * @return bool
+     * Quando ``true`` indica que a coleção pode ser apenas incrementada mas jamais
+     * modificada nem reduzida.
      */
     function isAppendOnly(): bool;
 
@@ -68,9 +68,9 @@ interface iBasicCollection extends \ArrayAccess, \Countable, \IteratorAggregate
     /**
      * Indica se a coleção implementa a interface ``iReadOnlyCollection``.
      *
-     * @return      bool
-     *              Quando ``true`` indica que a coleção não pode ser alterada após ser definida
-     *              durante a construção da instância.
+     * @return bool
+     * Quando ``true`` indica que a coleção não pode ser alterada após ser definida
+     * durante a construção da instância.
      */
     function isReadOnly(): bool;
 
@@ -79,9 +79,9 @@ interface iBasicCollection extends \ArrayAccess, \Countable, \IteratorAggregate
     /**
      * Indica se a coleção implementa a interface ``iCaseInsensitiveCollection``.
      *
-     * @return      bool
-     *              Quando ``true`` indica que os nomes das chaves de cada entrada de dados será
-     *              tratado de forma ``case insensitive``, ou seja, ``KeyName = keyname = KEYNAME``.
+     * @return bool
+     * Quando ``true`` indica que os nomes das chaves de cada entrada de dados será
+     * tratado de forma ``case insensitive``, ou seja, ``KeyName = keyname = KEYNAME``.
      */
     function isCaseInsensitive(): bool;
 
@@ -101,14 +101,14 @@ interface iBasicCollection extends \ArrayAccess, \Countable, \IteratorAggregate
      * removidos. A regra geral é que TODOS os itens existentes mantenham como chave o índice
      * correspondente a sua real posição.
      *
-     * ``` php
+     * ```php
      *      // Neste caso uma coleção com 10 itens que execute 5 vezes a instrução:
      *      $collection->remove("0");
      *      // Ficará, ao final com 5 itens cada qual ocupando uma posição entre 0 e 4.
      * ```
      *
-     * @return      bool
-     *              Retorna ``true`` quando a coleção é do tipo ``autoincrement``.
+     * @return bool
+     * Retorna ``true`` quando a coleção é do tipo ``autoincrement``.
      */
     function isAutoIncrement(): bool;
 
@@ -124,12 +124,12 @@ interface iBasicCollection extends \ArrayAccess, \Countable, \IteratorAggregate
     /**
      * Indica se a chave de nome indicado existe entre os itens da coleção.
      *
-     * @param       string $key
-     *              Nome da chave que será identificada.
+     * @param string $key
+     * Nome da chave que será identificada.
      *
-     * @return      bool
-     *              Retorna ``true`` caso a chave indicada existir entre os itens da coleção ou
-     *              ``false`` se não existir.
+     * @return bool
+     * Retorna ``true`` caso a chave indicada existir entre os itens da coleção ou
+     * ``false`` se não existir.
      */
     function has(string $key): bool;
 
@@ -140,15 +140,15 @@ interface iBasicCollection extends \ArrayAccess, \Countable, \IteratorAggregate
      *
      * Se já existe um valor com chave de mesmo nome então, o valor antigo será substituído.
      *
-     * @param       string $key
-     *              Nome da chave.
-     *              Pode ser usado ``''`` caso a instância seja do tipo ``autoincrement``.
+     * @param string $key
+     * Nome da chave.
+     * Pode ser usado ``''`` caso a instância seja do tipo ``autoincrement``.
      *
-     * @param       mixed $value
-     *              Valor que será associado a esta chave.
+     * @param mixed $value
+     * Valor que será associado a esta chave.
      *
-     * @return      bool
-     *              Retorna ``true`` quando a insersão/atualização do item foi bem sucedido.
+     * @return bool
+     * Retorna ``true`` quando a insersão/atualização do item foi bem sucedido.
      */
     function set(string $key, mixed $value): bool;
 
@@ -157,12 +157,12 @@ interface iBasicCollection extends \ArrayAccess, \Countable, \IteratorAggregate
     /**
      * Resgata um valor da coleção a partir do nome da chave indicada.
      *
-     * @param       string $key
-     *              Nome da chave cujo valor deve ser retornado.
+     * @param string $key
+     * Nome da chave cujo valor deve ser retornado.
      *
-     * @return      mixed
-     *              Valor armazenado na ``collection`` que correspondente a chave passada.
-     *              DEVE retornar ``null`` quando a chave de nome indicado não existir.
+     * @return mixed
+     * Valor armazenado na ``collection`` que correspondente a chave passada.
+     * DEVE retornar ``null`` quando a chave de nome indicado não existir.
      */
     function get(string $key): mixed;
 
@@ -171,13 +171,13 @@ interface iBasicCollection extends \ArrayAccess, \Countable, \IteratorAggregate
     /**
      * Remove da coleção o item com a chave indicada.
      *
-     * @param       string $key
-     *              Nome da chave do valor que será excluído.
+     * @param string $key
+     * Nome da chave do valor que será excluído.
      *
-     * @return      bool
-     *              Retornará ``true`` se a chave foi removida, ou, se, ela não existia dentro
-     *              da coleção atual e ``false`` caso por algum motivo não seja possível executar
-     *              este método.
+     * @return bool
+     * Retornará ``true`` se a chave foi removida, ou, se, ela não existia dentro
+     * da coleção atual e ``false`` caso por algum motivo não seja possível executar
+     * este método.
      */
     function remove(string $key): bool;
 }

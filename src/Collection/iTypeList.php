@@ -17,7 +17,7 @@ use AeonDigital\Interfaces\Collection\iBasicCollection as iBasicCollection;
  * nos objetos de tipos definidos.
  *
  * Ex:
- * ``` php
+ * ```php
  *      $list = new iTypeList("string");
  *      $list->set("key1", "value1");    // true
  *      $list->set("key2", "value2");    // true
@@ -31,7 +31,7 @@ use AeonDigital\Interfaces\Collection\iBasicCollection as iBasicCollection;
  * de qualquer tipo definido.
  *
  * Ex:
- * ``` php
+ * ```php
  *      $list = new iTypeList("?string");
  *      $list->set("key1", "value1");    // true
  *      $list->set("key2", "value2");    // true
@@ -44,7 +44,7 @@ use AeonDigital\Interfaces\Collection\iBasicCollection as iBasicCollection;
  * ou objetos que implementem uma determinada interface.
  *
  * Ex:
- * ``` php
+ * ```php
  *      $list = new iTypeList("[string, int, mixed]");
  *      $list->set("key1", ["value1", 1, 10]);                      // true
  *      $list->set("key2", ["value2", 2, "20"]);                    // true
@@ -54,7 +54,7 @@ use AeonDigital\Interfaces\Collection\iBasicCollection as iBasicCollection;
  *      $list = new iTypeList("[string => [DateTime, iTarget]]");
  *      $list->set("key1", ["value1" => [$objDT1, $objITarget]]);   // true
  *      $list->set("key2", ["value2" => [$objDT2, $nonITarget]]);   // false
- * ``` php
+ * ```
  *
  *
  * Por último, uma lista deve poder ser ``autoincrement``, ou seja, permitir que o nome da chave
@@ -63,7 +63,7 @@ use AeonDigital\Interfaces\Collection\iBasicCollection as iBasicCollection;
  *
  *
  * Ex:
- * ``` php
+ * ```php
  *      $list = new iTypeList("string", [], true);
  *      $list->set("", "value1");                   // true
  *      $list->set("", "value2");                   // true
@@ -71,7 +71,7 @@ use AeonDigital\Interfaces\Collection\iBasicCollection as iBasicCollection;
  *      var_dump($list->toArray());
  *      > output:
  *      > [ ["0"] => "value1", ["1"] => "value2" ]
- * ``` php
+ * ```
  *
  *
  * **IMPORTANTE**:
@@ -93,8 +93,8 @@ interface iTypeList extends iBasicCollection
     /**
      * Indica se a lista aceita valores ``null`` para seus valores.
      *
-     * @return      bool
-     *              Retornará ``true`` se valores ``null`` puderem ser definidos.
+     * @return bool
+     * Retornará ``true`` se valores ``null`` puderem ser definidos.
      */
     function isNullable(): bool;
 
@@ -109,8 +109,8 @@ interface iTypeList extends iBasicCollection
      * daquele próprio tipo, é aceito também ``null`` como um valor válido de ser armazenado na
      * lista.
      *
-     * @return      string
-     *              ``String`` que demonstra o tipo de dado aceito para esta lista.
+     * @return string
+     * ``String`` que demonstra o tipo de dado aceito para esta lista.
      */
     function getType(): string;
 }
