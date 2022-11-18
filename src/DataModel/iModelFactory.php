@@ -31,10 +31,10 @@ interface iModelFactory
      * Identifica se esta fábrica pode fornecer um objeto compatível com o nome do
      * Identificador passado.
      *
-     * @param       string $idName
-     *              Identificador único do modelo de dados dentro do escopo definido.
+     * @param string $idName
+     * Identificador único do modelo de dados dentro do escopo definido.
      *
-     * @return      bool
+     * @return bool
      */
     function hasDataModel(string $idName): bool;
 
@@ -44,14 +44,14 @@ interface iModelFactory
      * Retorna um objeto ``iModel`` com as configurações equivalentes ao identificador
      * único do mesmo.
      *
-     * @param       string $idName
-     *              Identificador único do modelo de dados dentro do escopo definido.
+     * @param string $idName
+     * Identificador único do modelo de dados dentro do escopo definido.
      *
-     * @param       mixed $initialValues
-     *              Coleção de valores a serem setados para a nova instância que será
-     *              retornada.
+     * @param mixed $initialValues
+     * Coleção de valores a serem setados para a nova instância que será
+     * retornada.
      *
-     * @return      iModel
+     * @return iModel
      */
-    function createDataModel(string $idName, $initialValues = null): iModel;
+    function createDataModel(string $idName, mixed $initialValues = null): iModel;
 }

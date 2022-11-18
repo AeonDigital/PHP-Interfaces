@@ -16,6 +16,7 @@ use AeonDigital\Interfaces\iRealType as iRealType;
  * Interface que define as características mínimas que um campo de dados deve ter.
  *
  * **Propriedades imutáveis**
+ *
  * Com excessão de ``value`` todas as propriedades definidas são imutáveis, ou seja,
  * após serem definidas não devem poder ser alteradas.
  *
@@ -24,11 +25,13 @@ use AeonDigital\Interfaces\iRealType as iRealType;
  *
  *
  * **Construtor**
+ *
  * Ao implementar esta interface use o construtor para receber todas as configurações
  * necessárias para montar o objeto final.
  *
  *
  * **Definição de valores**
+ *
  * Cada campo poderá receber **APENAS** valores que sejam do mesmo tipo que ele próprio **OU**
  * que sejam possíveis de serem convertidos para o formato básico especificado na
  * propriedade ``type``.
@@ -41,6 +44,7 @@ use AeonDigital\Interfaces\iRealType as iRealType;
  *
  *
  * **Validação e estado do campo**
+ *
  * De acordo com o valor atualmente definido para o campo ele pode ser considerado ``válido``
  * ou ``inválido``. Para saber em que estado ele está, basta usar o método ``isValid()``.
  *
@@ -69,7 +73,7 @@ interface iField
     /**
      * Retorna o nome do campo.
      *
-     * @return      string
+     * @return string
      */
     function getName(): string;
     /**
@@ -83,7 +87,7 @@ interface iField
     /**
      * Retorna a descrição de uso/funcionalidade do campo.
      *
-     * @return      string
+     * @return string
      */
     function getDescription(): string;
 
@@ -92,7 +96,7 @@ interface iField
     /**
      * Retorna o nome completo da classe que determina o tipo deste campo.
      *
-     * @return      string
+     * @return string
      */
     function getType(): string;
     /**
@@ -112,7 +116,7 @@ interface iField
      * retorna o nome de uma instrução especial de transformação de caracteres para
      * campos do tipo ``string``.
      *
-     * @return      ?string
+     * @return ?string
      */
     function getInputFormat(): ?string;
     /**
@@ -124,7 +128,7 @@ interface iField
      * **OU**
      * pode ser passado um ``array`` conforme as definições especificadas abaixo:
      *
-     * ``` php
+     * ```php
      *      $arr = [
      *          // string   Nome deste tipo de transformação.
      *          "name" => ,
@@ -153,7 +157,7 @@ interface iField
      * Retorna o tamanho máximo (em caracteres) aceitos por este campo.
      * Deve retornar ``null`` quando não há um limite definido.
      *
-     * @return      ?int
+     * @return ?int
      */
     function getLength(): ?int;
     /**
@@ -170,7 +174,7 @@ interface iField
      * Retorna o menor valor possível para um tipo numérico ou ``DateTime``.
      * Por padrão, herdará este valor da definição de seu ``type`` quando isto for aplicável.
      *
-     * @return      null|int|iRealType|\DateTime
+     * @return null|int|iRealType|\DateTime
      */
     function getMin(): null|int|iRealType|\DateTime;
     /**
@@ -193,7 +197,7 @@ interface iField
      * Retorna o maior valor possível para um tipo numérico ou ``DateTime``.
      * Por padrão, herdará este valor da definição de seu ``type`` quando isto for aplicável.
      *
-     * @return      null|int|iRealType|\DateTime
+     * @return null|int|iRealType|\DateTime
      */
     function getMax(): null|int|iRealType|\DateTime;
     /**
@@ -222,7 +226,7 @@ interface iField
     /**
      * Indica se é ou não permitido atribuir ``null`` como um valor válido para este campo.
      *
-     * @return      bool
+     * @return bool
      */
     function isAllowNull(): bool;
     /**
@@ -237,7 +241,7 @@ interface iField
     /**
      * Indica se é ou não permitido atribuir ``''`` como um valor válido para este campo.
      *
-     * @return      ?bool
+     * @return ?bool
      */
     function isAllowEmpty(): ?bool;
     /**
@@ -252,7 +256,7 @@ interface iField
     /**
      * Define se, ao receber um valor ``''``, este deverá ser convertido para ``null``.
      *
-     * @return      bool
+     * @return bool
      */
     function isConvertEmptyToNull(): bool;
     /**
@@ -269,7 +273,7 @@ interface iField
     /**
      * Indica se este campo é ou não ``readonly``.
      *
-     * @return      bool
+     * @return bool
      */
     function isReadOnly(): bool;
     /**
@@ -291,10 +295,10 @@ interface iField
 
 
     /**
-     * Indica quando este campo é do tipo *reference*, ou seja, seu valor é um
+     * Indica quando este campo é do tipo ``reference``, ou seja, seu valor é um
      * modelo de dados.
      *
-     * @return      bool
+     * @return bool
      */
     function isReference(): bool;
 
@@ -303,7 +307,7 @@ interface iField
     /**
      * Indica quando trata-se de um campo capaz de conter uma coleção de valores.
      *
-     * @return      bool
+     * @return bool
      */
     function isCollection(): bool;
 
@@ -320,7 +324,7 @@ interface iField
      * Informa se o campo tem no momento um valor que satisfaz os critérios de validação
      * para o mesmo.
      *
-     * @return      bool
+     * @return bool
      */
     function isValid(): bool;
 
@@ -329,20 +333,23 @@ interface iField
      * Retorna o código do estado atual deste campo.
      *
      * **Campos Simples**
+     *
      * Retornará ``valid`` caso o valor definido seja válido, ou o código da validação
      * que caracteríza a invalidez deste valor.
      *
      * **Campos "reference"**
+     *
      * Retornará ``valid`` se **TODOS** os campos estiverem com valores válidos. Caso
      * contrário retornará um ``array`` associativo contendo o estado de cada um dos campos
      * existêntes.
      *
      * **Campos "collection"**
+     *
      * Retornará ``valid`` caso **TODOS** os valores estejam de acordo com os critérios de
      * validação ou um ``array`` contendo a validação individual de cada ítem membro da
      * coleção.
      *
-     * @return      string|array
+     * @return string|array
      */
     function getState(): string|array;
 
@@ -351,20 +358,23 @@ interface iField
      * Retornará o resultado da validação conforme o tipo de campo testado.
      *
      * **Campos Simples**
+     *
      * Retornará ``valid`` caso o valor definido seja válido, ou o código da validação
      * que caracteríza a invalidez deste valor.
      *
      * **Campos "reference"**
+     *
      * Retornará ``valid`` se **TODOS** os campos estiverem com valores válidos. Caso
      * contrário retornará um ``array`` associativo contendo o estado de cada um dos campos
      * existêntes.
      *
      * **Campos "collection"**
+     *
      * Retornará ``valid`` caso **TODOS** os valores estejam de acordo com os critérios de
      * validação ou um ``array`` contendo a validação individual de cada ítem membro da
      * coleção.
      *
-     * @return      string|array
+     * @return string|array
      */
     function getLastValidateState(): string|array;
 
@@ -374,17 +384,20 @@ interface iField
      * seja definido para este campo.
      *
      * **Campos Simples**
+     *
      * Valores inválidos podem ser definidos quando eles forem do mesmo ``type`` deste campo.
      *
      * **Campos "reference"**
+     *
      * Se **TODOS** os valores passados para um modelo de dados puderem ser assumidos por seus
      * respectivos campos, então tais dados poderão ser utilizados para preencher a instância.
      *
      * **Campos "collection"**
+     *
      * Se **TODOS** os valores membros para uma coleção de dados puderem ser setados,
      * independente de serem válidos, então, a coleção poderá assumir aquele grupo de dados.
      *
-     * @return      bool
+     * @return bool
      */
     function getLastValidateCanSet(): bool;
 
@@ -394,45 +407,50 @@ interface iField
      * passado é válido.
      *
      * **Valores especiais e seus efeitos**
-     *  ``undefined``
-     *  Sempre falhará na validação.
      *
-     *  ``null``
-     *  Falhará se o campo não permitir este valor [ veja propriedade ``allowNull`` ].
+     * ``undefined``
+     * Sempre falhará na validação.
      *
-     *  ``''``
-     *  Falhará se o campo não permitir este valor e estiver com a conversão de ``''`` em
-     *  ``null`` desabilitada [ veja as propriedades ``allowEmpty`` e ``convertEmptyToNull`` ].
+     * ``null``
+     * Falhará se o campo não permitir este valor [ veja propriedade ``allowNull`` ].
      *
-     *  ``[]``
-     *  Falhará SEMPRE para campos que não forem ``collection``.
+     * ``''``
+     * Falhará se o campo não permitir este valor e estiver com a conversão de ``''`` em
+     * ``null`` desabilitada [ veja as propriedades ``allowEmpty`` e ``convertEmptyToNull`` ].
+     *
+     * ``[]``
+     * Falhará SEMPRE para campos que não forem ``collection``.
      *
      *
      * **Validação dos Campos Simples**
-     *  A validação é feita seguindo os seguintes passos:
      *
-     *  1. Verifica se o campo está apto a receber um valor ou se ele é do tipo ``readOnly``.
-     *  2. Verifica se o valor cai em algum dos valores especiais citados no tópico anterior.
-     *  3. Verifica se o valor não é um objeto de um tipo não aceito.
-     *    Os tipos aceitos para campos simples são:
-     *    ``bool``, ``int``, ``float``, ``iRealType``, ``DateTime``, ``string``
-     *  4. Validação de tipo:
-     *  4.1. Havendo um ``inputFormat`` definido, identifica se o valor passa em sua
-     *    respectiva validação.
-     *  4.2. Verifica se o valor passado é um representante válido do tipo base do campo.
-     *  5. Verificação de adequação:
-     *  5.1. Enumerador, se houver, verifica se o valor está entre os itens válidos.
-     *  5.2. Sendo um campo ``string`` e existindo uma definição de tamanho máximo
-     *   [ propriedade ``length`` ] verifica se o valor não excede seu limite.
-     *  5.3. Sendo um campo numérico ou de data e existindo limites definidos para seus
-     *   valores mínimos e máximos, identifica se o valor passado não excede algum destes
-     *   limites.
+     * A validação é feita seguindo os seguintes passos:
+     *
+     * - ``1`` Verifica se o campo está apto a receber um valor ou se ele é do tipo ``readOnly``.
+     * - ``2`` Verifica se o valor cai em algum dos valores especiais citados no tópico anterior.
+     * - ``3`` Verifica se o valor não é um objeto de um tipo não aceito.
+     *         Os tipos aceitos para campos simples são:
+     *         ``bool``, ``int``, ``float``, ``iRealType``, ``DateTime``, ``string``
+     * - ``4`` Validação de tipo:
+     * - ``4.1`` Havendo um ``inputFormat`` definido, identifica se o valor passa em sua
+     *           respectiva validação.
+     * - ``4.2`` Verifica se o valor passado é um representante válido do tipo base do campo.
+     * - ``5`` Verificação de adequação:
+     * - ``5.1`` Enumerador, se houver, verifica se o valor está entre os itens válidos.
+     * - ``5.2`` Sendo um campo ``string`` e existindo uma definição de tamanho máximo
+     *           [ propriedade ``length`` ] verifica se o valor não excede seu limite.
+     * - ``5.3`` Sendo um campo numérico ou de data e existindo limites definidos para seus
+     *           valores mínimos e máximos, identifica se o valor passado não excede algum destes
+     *           limites.
+     *
      *
      * **Valores aceitáveis**
+     *
      * ``null``, ``bool``, ``int``, ``float``, ``iRealType``, ``DateTime``, ``string``
      *
      *
      * **Regras de aceitação**
+     *
      *  No passo 4.1, caso falhe na validação de ``inputFormat`` mas tanto o valor passado
      *  quanto o próprio campo são do tipo ``string`` ocorrerá que a validação não impedirá
      *  que tal valor seja definido para este campo, mas ele ficará com o estado inválido.
@@ -445,6 +463,7 @@ interface iField
      *
      *
      * **Validação de Campos "reference"**
+     *
      *  A validação é feita tentando usar o conjunto de valores passado para que ele preencha
      *  os campos de um modelo de dados do mesmo tipo que este campo está apto a representar.
      *  É preciso que **TODAS** as respectivas chaves de dados compatíveis com o modelo de
@@ -452,22 +471,26 @@ interface iField
      *  que o objeto seja validado.
      *
      * **Valores aceitáveis**
+     *
      *  ``null``, ``iterable``, ``array``, ``iModel``
      *
      *
      * **Validação de Campos "collection"**
+     *
      *  A validação é feita submetendo cada um dos membros da coleção indicada a seu
      *  respectivo tipo de validação. Os dados serão utilizados pelo campo se todos os membros
      *  apresentados puderem ser definidos.
      *
+     *
      * **Valores aceitáveis**
+     *
      * ``null``, ``array``
      *
      *
-     * @param       mixed $v
-     *              Valor que será testado.
+     * @param mixed $v
+     * Valor que será testado.
      *
-     * @return      bool
+     * @return bool
      */
     function validateValue(mixed $v): bool;
 
@@ -488,11 +511,11 @@ interface iField
      * Retorna o valor padrão que este campo deve ter caso nenhum outro seja definido.
      * Se ``default`` não for definido, ``undefined`` será retornado.
      *
-     * @param       bool $getInstruction
-     *              Quando ``true``, retorna o nome da instrução especial que define o
-     *              valor padrão.
+     * @param bool $getInstruction
+     * Quando ``true``, retorna o nome da instrução especial que define o
+     * valor padrão.
      *
-     * @return      mixed
+     * @return mixed
      */
     function getDefault(bool $getInstruction = false): mixed;
     /**
@@ -509,11 +532,11 @@ interface iField
      * Os valores aqui pré-definidos devem seguir as mesmas regras de validade especificadas
      * nas demais propriedades.
      *
-     * @param       bool $getOnlyValues
-     *              Quando ``true``, retorna um array unidimensional contendo apenas os
-     *              valores válidos de serem selecionados sem seus respectivos ``labels``.
+     * @param bool $getOnlyValues
+     * Quando ``true``, retorna um array unidimensional contendo apenas os
+     * valores válidos de serem selecionados sem seus respectivos ``labels``.
      *
-     * @return      ?array
+     * @return ?array
      */
     function getEnumerator(bool $getOnlyValues = false): ?array;
     /**
@@ -526,7 +549,7 @@ interface iField
      *
      * Os valores aqui pré-definidos devem seguir as mesmas regras de validação para o campo.
      *
-     * ``` php
+     * ```php
      *      // Exemplo de definição
      *      $arr = [
      *          ["RS", "Rio Grande do Sul"],
@@ -550,28 +573,36 @@ interface iField
      * Define um novo valor para este campo.
      *
      * **undefined**
+     *
      * Este valor **NUNCA** será aceito por nenhum tipo de campo e em qualquer circunstância.
      *
      *
      * **Campos Simples**
+     *
      * Para que o campo assuma o novo valor ele precisa ser compatível com o ``type`` definido.
      * Caso contrário o campo ficará com o valor ``null``.
      *
+     *
      * **Valores aceitáveis**
+     *
      * ``null``, ``bool``, ``int``, ``float``, ``iRealType``, ``DateTime``, ``string``
      *
      *
      * **Campos "reference"**
+     *
      * Campos deste tipo apenas aceitarão valores capazes de preencher os campos do modelo
      * de dados ao qual eles se referenciam. Independente de tornar o modelo de dados válido
      * ou não, os valores serão definidos exceto se o valor passado for incompatível com o
      * modelo de dados configurado.
      *
+     *
      * **Valores aceitáveis**
+     *
      * ``null``, ``iterable``, ``array``, ``iModel``
      *
      *
      * **Campos "collection"**
+     *
      * Uma coleção de dados sempre será definida como o valor de um campo que aceite este
      * tipo de valor.
      * Os membros da coleção serão convertidos para o tipo ``type`` definido. Membros que
@@ -581,11 +612,14 @@ interface iField
      * Coleções do tipo *reference* apenas serão redefinidos se **TODOS** seus itens forem
      * capazes de tornarem-se objetos ``iModel`` do tipo definido para este campo.
      *
+     *
      * **Valores aceitáveis**
+     *
      * ``null``, ``array``
      *
      *
      * **Estado e validação**
+     *
      * Independente de o valor vir a ser efetivamente definido para o campo o estado da
      * validação pode ser verificado usando ``getLastValidateState()``.
      *
@@ -593,13 +627,13 @@ interface iField
      * validação e poderá ser verificado em ``getState()``.
      *
      *
-     * @param       mixed $v
-     *              Valor a ser definido para o campo.
+     * @param mixed $v
+     * Valor a ser definido para o campo.
      *
-     * @return      bool
-     *              Retornará ``true`` se o valor tornou o campo válido ou ``false`` caso
-     *              agora ele esteja inválido. Também retornará ``false`` caso o valor seja
-     *              totalmente incompatível com o campo.
+     * @return bool
+     * Retornará ``true`` se o valor tornou o campo válido ou ``false`` caso
+     * agora ele esteja inválido. Também retornará ``false`` caso o valor seja
+     * totalmente incompatível com o campo.
      */
     function setValue(mixed $v): bool;
 
@@ -609,23 +643,27 @@ interface iField
      * Retorna o valor atual deste campo.
      *
      * **undefined**
+     *
      * Este valor será retornado **ENQUANTO** o campo **AINDA** não foi redefinido com qualquer
      * outro valor. Esta regra se aplica para campos simples e *reference*.
      *
      *
      * **Campos Simples**
+     *
      * O valor retornado estará sempre no mesmo ``type`` que aquele que o campo está
      * configurado para assumir. Havendo alguma formatação indicada em ``inputFormat``, esta
      * será usada sobrepondo-se ao ``type``.
      *
      *
      * **Campos "reference"**
+     *
      * Estes campos apenas são capazes de retornar valores ``undefined``, ``null`` ou um ``array``
      * associativo representando o respectivo modelo de dados que ele está configurado para
      * receber.
      *
      *
      * **Campos "collection"**
+     *
      * O valor retornado será **SEMPRE** um ``array`` contendo os itens atualmente definidos.
      * Estes itens serão retornados conforme as regras definidas acima para *campos simples*.
      *
@@ -634,7 +672,7 @@ interface iField
      *
      * Um *collection* em seu estado inicial retornará sempre um ``array`` vazio.
      *
-     * @return      mixed
+     * @return mixed
      */
     function getValue(): mixed;
 
@@ -643,22 +681,26 @@ interface iField
      * Retorna o valor atual deste campo em seu formato de armazenamento.
      *
      * **undefined**
+     *
      * O valor ``null`` será retornado no lugar de ``undefined`` para campos simples e
      * *reference*.
      *
      *
      * **Campos Simples**
+     *
      * O valor retornado estará sempre no mesmo ``type`` que aquele que o campo está
      * configurado para assumir. Qualquer regra para **REMOÇÃO** de formatação será aplicada
      * caso exista.
      *
      *
      * **Campos "reference"**
+     *
      * Estes campos apenas são capazes de retornar valores ``null`` ou arrays associativos
      * representando o respectivo modelo de dados que ele está configurado para receber.
      *
      *
      * **Campos "collection"**
+     *
      * O valor retornado será **SEMPRE** um ``array`` contendo os itens atualmente definidos.
      * Estes itens serão retornados conforme as regras definidas acima para *campos simples*.
      *
@@ -669,7 +711,7 @@ interface iField
      * Coleções que possuam valores inválidos entre seus membros também retornarão um ``array``
      * vazio.
      *
-     * @return      mixed
+     * @return mixed
      */
     function getStorageValue(): mixed;
 
@@ -678,7 +720,7 @@ interface iField
      * Retorna o valor que está definido para este campo assim como ele foi passado em
      * ``setValue()``.
      *
-     * @return      mixed
+     * @return mixed
      */
     function getRawValue(): mixed;
 }

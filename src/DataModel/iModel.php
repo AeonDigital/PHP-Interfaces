@@ -30,7 +30,7 @@ interface iModel extends \IteratorAggregate
     /**
      * Retorna o nome do modelo de dados.
      *
-     * @return      string
+     * @return string
      */
     function getName(): string;
     /**
@@ -44,7 +44,7 @@ interface iModel extends \IteratorAggregate
     /**
      * Retorna a descrição de uso/funcionalidade do modelo de dados.
      *
-     * @return      string
+     * @return string
      */
     function getDescription(): string;
 
@@ -55,10 +55,10 @@ interface iModel extends \IteratorAggregate
     /**
      * Identifica se o campo com o nome indicado existe neste modelo de dados.
      *
-     * @param       string $f
-     *              Nome do campo que será verificado.
+     * @param string $f
+     * Nome do campo que será verificado.
      *
-     * @return      bool
+     * @return bool
      */
     function hasField(string $f): bool;
 
@@ -66,7 +66,7 @@ interface iModel extends \IteratorAggregate
     /**
      * Retorna a contagem total dos campos existentes para este modelo de dados.
      *
-     * @return      int
+     * @return int
      */
     function countFields(): int;
 
@@ -75,11 +75,11 @@ interface iModel extends \IteratorAggregate
      * Retorna um ``array`` contendo o nome de cada um dos campos existentes neste
      * modelo de dados.
      *
-     * @param       bool $getReferences
-     *              Quando ``true`` retornará todos os campos existentes.
-     *              Quando ``false`` não trará os campos que são do tipo ``reference``.
+     * @param bool $getReferences
+     * Quando ``true`` retornará todos os campos existentes.
+     * Quando ``false`` não trará os campos que são do tipo ``reference``.
      *
-     * @return      array
+     * @return array
      */
     function getFieldNames(bool $getReferences = true): array;
 
@@ -91,7 +91,7 @@ interface iModel extends \IteratorAggregate
      * Retorna um ``array`` associativo contendo todos os campos definidos para o
      * modelo atual e seus respectivos valores iniciais.
      *
-     * @return      array
+     * @return array
      */
     function getInitialDataModel(): array;
 
@@ -110,7 +110,7 @@ interface iModel extends \IteratorAggregate
      * A partir do acionamento de qualquer método de alteração de campos e obter sucesso
      * ao defini-lo, o resultado deste método será sempre ``false``.
      *
-     * @return      bool
+     * @return bool
      */
     function isInitial(): bool;
 
@@ -120,7 +120,7 @@ interface iModel extends \IteratorAggregate
      * Informa se o modelo de dados tem no momento valores que satisfazem os critérios de
      * validação para todos os seus campos.
      *
-     * @return      bool
+     * @return bool
      */
     function isValid(): bool;
 
@@ -144,7 +144,7 @@ interface iModel extends \IteratorAggregate
      *      ];
      * ```
      *
-     * @return      string|array
+     * @return string|array
      */
     function getState(): string|array;
 
@@ -170,7 +170,7 @@ interface iModel extends \IteratorAggregate
      *      ];
      * ```
      *
-     * @return      null|string|array
+     * @return null|string|array
      */
     function getLastValidateState(): null|string|array;
 
@@ -179,7 +179,7 @@ interface iModel extends \IteratorAggregate
      * Retornará ``true`` caso a última validação realizada permitir que o valor testado seja
      * definido para o modelo de dados usado.
      *
-     * @return      bool
+     * @return bool
      */
     function getLastValidateCanSet(): bool;
 
@@ -199,6 +199,7 @@ interface iModel extends \IteratorAggregate
      *
      *
      * **Método "getLastValidateState()"**
+     *
      * Após uma validação é possível usar este método para averiguar com precisão qual foi o
      * motivo da falha.
      * Para os passos **1** e **3** será retornado uma ``string`` única com o código do erro.
@@ -207,24 +208,25 @@ interface iModel extends \IteratorAggregate
      *
      *
      * **Método "getLastValidateCanSet()"**
+     *
      * Após uma validação é possível usar este método para averiguar se o valor passado,
      * passando ou não, pode ser efetivamente definido para o modelo de dados.
      *
      *
-     * @param       mixed $objValues
-     *              Objeto que traz os valores a serem testados.
+     * @param mixed $objValues
+     * Objeto que traz os valores a serem testados.
      *
-     * @param       bool $checkAll
-     *              Quando ``true`` apenas confirmará a validade da coleção de valores se com os
-     *              mesmos for possível preencher todos os campos obrigatórios deste modelo de
-     *              dados. Campos não declarados mas que possuem um valor padrão definido **SEMPRE**
-     *              passarão neste tipo de validação
+     * @param bool $checkAll
+     * Quando ``true`` apenas confirmará a validade da coleção de valores se com os
+     * mesmos for possível preencher todos os campos obrigatórios deste modelo de
+     * dados. Campos não declarados mas que possuem um valor padrão definido **SEMPRE**
+     * passarão neste tipo de validação
      *
-     * @return      bool
+     * @return bool
      *
-     * @throws      \InvalidArgumentException
-     *              Caso o objeto passado possua propriedades não correspondentes aos campos
-     *              definidos.
+     * @throws \InvalidArgumentException
+     * Caso o objeto passado possua propriedades não correspondentes aos campos
+     * definidos.
      */
     function validateValues(mixed $objValues, bool $checkAll = false): bool;
 
@@ -241,20 +243,20 @@ interface iModel extends \IteratorAggregate
      * Define o valor do campo de nome indicado.
      * Internamente executa o método ``iField->setValue()``.
      *
-     * @param       string $f
-     *              Nome do campo cujo valor será definido.
+     * @param string $f
+     * Nome do campo cujo valor será definido.
      *
-     * @param       mixed $v
-     *              Valor a ser definido para o campo.
+     * @param mixed $v
+     * Valor a ser definido para o campo.
      *
-     * @return      bool
-     *              Retornará ``true`` se o valor tornou o campo válido ou ``false`` caso
-     *              agora ele esteja inválido.
-     *              Também retornará ``false`` caso o valor seja totalmente incompatível
-     *              com o campo.
+     * @return bool
+     * Retornará ``true`` se o valor tornou o campo válido ou ``false`` caso
+     * agora ele esteja inválido.
+     * Também retornará ``false`` caso o valor seja totalmente incompatível
+     * com o campo.
      *
-     * @throws      \InvalidArgumentException
-     *              Caso o nome do campo não seja válido.
+     * @throws \InvalidArgumentException
+     * Caso o nome do campo não seja válido.
      */
     function setFieldValue(string $f, mixed $v): bool;
 
@@ -263,13 +265,13 @@ interface iModel extends \IteratorAggregate
      * Retorna o valor atual do campo de nome indicado.
      * Internamente executa o método ``iField->getValue()``.
      *
-     * @param       string $f
-     *              Nome do campo alvo.
+     * @param string $f
+     * Nome do campo alvo.
      *
-     * @return      mixed
+     * @return mixed
      *
-     * @throws      \InvalidArgumentException
-     *              Caso o nome do campo não seja válido.
+     * @throws \InvalidArgumentException
+     * Caso o nome do campo não seja válido.
      */
     function getFieldValue(string $f): mixed;
 
@@ -278,13 +280,13 @@ interface iModel extends \IteratorAggregate
      * Retorna o valor atual do campo de nome indicado.
      * Internamente executa o método ``iField->getStorageValue()``.
      *
-     * @param       string $f
-     *              Nome do campo alvo.
+     * @param string $f
+     * Nome do campo alvo.
      *
-     * @return      mixed
+     * @return mixed
      *
-     * @throws      \InvalidArgumentException
-     *              Caso o nome do campo não seja válido.
+     * @throws \InvalidArgumentException
+     * Caso o nome do campo não seja válido.
      */
     function getFieldStorageValue(string $f): mixed;
 
@@ -293,13 +295,13 @@ interface iModel extends \IteratorAggregate
      * Retorna o valor atual do campo de nome indicado.
      * Internamente executa o método ``iField->getRawValue()``.
      *
-     * @param       string $f
-     *              Nome do campo alvo.
+     * @param string $f
+     * Nome do campo alvo.
      *
-     * @return      mixed
+     * @return mixed
      *
-     * @throws      \InvalidArgumentException
-     *              Caso o nome do campo não seja válido.
+     * @throws \InvalidArgumentException
+     * Caso o nome do campo não seja válido.
      */
     function getFieldRawValue(string $f): mixed;
 
@@ -320,22 +322,22 @@ interface iModel extends \IteratorAggregate
      * campos de dados então isto será feito mesmo que isto  torne o modelo como um todo
      * inválido.
      *
-     * @param       mixed $objValues
-     *              Objeto que traz os valores a serem redefinidos para o atual modelo de
-     *              dados.
+     * @param mixed $objValues
+     * Objeto que traz os valores a serem redefinidos para o atual modelo de
+     * dados.
      *
-     * @param       bool $checkAll
-     *              Quando ``true`` apenas irá definir os dados caso seja possível definir
-     *              todos os campos do modelo de dados com os valores explicitados.
-     *              Os campos não definidos devem poder serem definidos com seus valores
-     *              padrão, caso contrário o *set* não será feito.
+     * @param bool $checkAll
+     * Quando ``true`` apenas irá definir os dados caso seja possível definir
+     * todos os campos do modelo de dados com os valores explicitados.
+     * Os campos não definidos devem poder serem definidos com seus valores
+     * padrão, caso contrário o *set* não será feito.
      *
-     * @return      bool
-     *              Retornará ``true`` caso os valores passados tornem o modelo válido.
+     * @return bool
+     * Retornará ``true`` caso os valores passados tornem o modelo válido.
      *
-     * @throws      \InvalidArgumentException
-     *              Caso o objeto passado possua propriedades não correspondentes aos campos
-     *              definidos.
+     * @throws \InvalidArgumentException
+     * Caso o objeto passado possua propriedades não correspondentes aos campos
+     * definidos.
      */
     function setValues(mixed $objValues, bool $checkAll = false): bool;
 
@@ -347,7 +349,7 @@ interface iModel extends \IteratorAggregate
      * Internamente executa o método ``iField->getValue()`` para cada um dos campos de dados
      * existente.
      *
-     * @return      array
+     * @return array
      */
     function getValues(): array;
 
@@ -359,7 +361,7 @@ interface iModel extends \IteratorAggregate
      * Internamente executa o método ``iField->getStorageValue()`` para cada um dos campos
      * de dados existente.
      *
-     * @return      array
+     * @return array
      */
     function getStorageValues(): array;
 
@@ -371,7 +373,7 @@ interface iModel extends \IteratorAggregate
      * Internamente executa o método ``iField->getRawValue()`` para cada um dos campos de
      * dados existente.
      *
-     * @return      array
+     * @return array
      */
     function getRawValues(): array;
 }

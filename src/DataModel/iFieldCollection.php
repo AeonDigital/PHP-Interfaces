@@ -16,15 +16,17 @@ use AeonDigital\Interfaces\DataModel\iField as iField;
  * Expande a interface ``iField`` dando a ela a capacidade de lidar com coleções de dados.
  *
  * **Propriedades padrão**
+ *
  * As seguintes propriedades básicas terão seus valores predefinidos e não devem poder ser
  * alterados:
- *  - allowNull             = ``false``
- *  - allowEmpty            = ``false``
- *  - convertEmptyToNull    = ``false``
- *  - readOnly              = ``false``
+ * - allowNull             = ``false``
+ * - allowEmpty            = ``false``
+ * - convertEmptyToNull    = ``false``
+ * - readOnly              = ``false``
  *
  *
  * **Valor padrão**
+ *
  * Uma coleção de dados é, por definição, um ``array``, e, diferente de um campo comum, o
  * valor inicial (``undefined``) de uma coleção é caracterizado por um ``array vazio``.
  *
@@ -55,14 +57,14 @@ interface iFieldCollection extends iField
     /**
      * Retorna o código de estado de uma coleção de dados.
      *
-     * @return      string
+     * @return string
      */
     function collectionGetState(): string;
     /**
      * Retornará ``valid`` caso a última validação de uma coleção tenha ocorrido sem falhas.
      * Caso a validação tenha falhado, retornará o código que identifica a natureza do erro.
      *
-     * @return      string
+     * @return string
      */
     function collectionGetLastValidateState(): string;
 
@@ -71,7 +73,7 @@ interface iFieldCollection extends iField
     /**
      * Indica se esta coleção exige que cada um de seus valores seja único.
      *
-     * @return      bool
+     * @return bool
      */
     function collectionIsDistinct(): bool;
     /**
@@ -91,7 +93,7 @@ interface iFieldCollection extends iField
      * Se nenhuma coleção for definida para ``distinctKeys`` então deverá usar TODOS os
      * campos do modelo de dados para efetuar a comparação.
      *
-     * @return      ?array
+     * @return ?array
      */
     function collectionGetDistinctKeys(): ?array;
 
@@ -103,13 +105,13 @@ interface iFieldCollection extends iField
      * Para a aceitação do valor serão seguidas as mesmas regras especificadas para campos
      * simples e *reference*.
      *
-     * @param       mixed $v
-     *              Valor a ser adicionado na coleção.
+     * @param mixed $v
+     * Valor a ser adicionado na coleção.
      *
-     * @return      bool
-     *              Retornará ``true`` se o valor tornou o campo válido ou ``false`` caso
-     *              agora ele esteja inválido. Também retornará ``false`` caso o valor seja
-     *              totalmente incompatível com o campo.
+     * @return bool
+     * Retornará ``true`` se o valor tornou o campo válido ou ``false`` caso
+     * agora ele esteja inválido. Também retornará ``false`` caso o valor seja
+     * totalmente incompatível com o campo.
      */
     function collectionAddValue(mixed $v): bool;
 
@@ -122,10 +124,10 @@ interface iFieldCollection extends iField
      * Havendo mais de 1 valor igual na coleção, retornará o índice da primeira ocorrência
      * encontrada.
      *
-     * @param       mixed $v
-     *              Valor que será verificado.
+     * @param mixed $v
+     * Valor que será verificado.
      *
-     * @return      ?int
+     * @return ?int
      */
     function collectionGetIndexOfValue(mixed $v): ?int;
 
@@ -134,10 +136,10 @@ interface iFieldCollection extends iField
     /**
      * Retorna a contagem de ocorrências do valor passado na coleção atualmente armazenada.
      *
-     * @param       mixed $v
-     *              Valor que será verificado.
+     * @param mixed $v
+     * Valor que será verificado.
      *
-     * @return      int
+     * @return int
      */
     function collectionCountOccurrenciesOfValue(mixed $v): int;
 
@@ -146,10 +148,10 @@ interface iFieldCollection extends iField
     /**
      * Verifica se o valor informado existe na coleção de valores atuais deste campo.
      *
-     * @param       mixed $v
-     *              Valor que será verificado.
+     * @param mixed $v
+     * Valor que será verificado.
      *
-     * @return      bool
+     * @return bool
      */
     function collectionHasValue(mixed $v): bool;
 
@@ -158,7 +160,7 @@ interface iFieldCollection extends iField
     /**
      * Retorna a quantidade de valores que estão atualmente definidos na coleção do campo.
      *
-     * @return      int
+     * @return int
      */
     function collectionCount(): int;
 
@@ -167,13 +169,13 @@ interface iFieldCollection extends iField
     /**
      * Removerá da coleção de valores a primeira ocorrência do valor informado.
      *
-     * @param       mixed $v
-     *              Valor que será removido.
+     * @param mixed $v
+     * Valor que será removido.
      *
-     * @param       bool $all
-     *              Quando ``true`` irá remover TODAS as ocorrências do valor indicado.
+     * @param bool $all
+     * Quando ``true`` irá remover TODAS as ocorrências do valor indicado.
      *
-     * @return      void
+     * @return void
      */
     function collectionUnsetValue(mixed $v, bool $all = false): void;
 
@@ -182,10 +184,10 @@ interface iFieldCollection extends iField
     /**
      * Removerá da coleção de valores o item na posição indicada.
      *
-     * @param       int $i
-     *              Índice que será removido.
+     * @param int $i
+     * Índice que será removido.
      *
-     * @return      void
+     * @return void
      */
     function collectionUnsetIndex(int $i): void;
 
@@ -198,7 +200,7 @@ interface iFieldCollection extends iField
      *
      * O retorno deve ser um ``array`` associativo seguindo as seguintes orientações:
      *
-     * ``` php
+     * ```php
      *      $arr = [
      *          // int      Coleção de valores exatos que podem ser encontrados na contagem dos itens em uma coleção.
      *          "exactValues" => 0,
@@ -214,7 +216,7 @@ interface iFieldCollection extends iField
      *      ];
      * ```
      *
-     * @return      ?array
+     * @return ?array
      */
     function collectionGetAcceptedCount(): ?array;
     /**
@@ -243,7 +245,9 @@ interface iFieldCollection extends iField
      *   O primeiro é sempre o número mínimo a ser aceito e o segundo o número
      *   máximo de componentes que a coleção pode atinjir.
      *
+     *
      * **Exemplo**
+     *
      *  Regra: ``2``
      *  Indica que a coleção será válida somente se houverem exatos 2 itens na coleção.
      *
@@ -276,7 +280,7 @@ interface iFieldCollection extends iField
      * Retornará o número mínimo de itens que esta coleção pode possuir para ser considerada
      * válida.
      *
-     * @return      ?int
+     * @return ?int
      */
     function collectionGetMin(): ?int;
 
@@ -286,7 +290,7 @@ interface iFieldCollection extends iField
      * Retornará o número máximo de itens que esta coleção pode possuir para ser considerada
      * válida.
      *
-     * @return      ?int
+     * @return ?int
      */
     function collectionGetMax(): ?int;
 }

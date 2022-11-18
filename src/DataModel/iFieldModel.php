@@ -17,17 +17,18 @@ use AeonDigital\undefined as undefined;
  * instâncias ``iModel``.
  *
  * **Propriedades padrão**
+ *
  * As seguintes propriedades básicas terão seus valores predefinidos e não devem poder
  * ser alterados:
- *  - type                  = ``string``
- *  - inputFormat           = ``null``
- *  - length                = ``null``
- *  - min                   = ``null``
- *  - max                   = ``null``
- *  - allowEmpty            = ``false``
- *  - convertEmptyToNull    = ``false``
- *  - default               = ``undefined``
- *  - enumerator            = ``undefined``
+ * - type                  = ``string``
+ * - inputFormat           = ``null``
+ * - length                = ``null``
+ * - min                   = ``null``
+ * - max                   = ``null``
+ * - allowEmpty            = ``false``
+ * - convertEmptyToNull    = ``false``
+ * - default               = ``undefined``
+ * - enumerator            = ``undefined``
  *
  *
  * @package     AeonDigital\Interfaces\DataModel
@@ -49,7 +50,7 @@ interface iFieldModel extends iField
      * A partir do acionamento de qualquer método de alteração de campos e obter sucesso
      * ao defini-lo, o resultado deste método será sempre ``false``.
      *
-     * @return      bool
+     * @return bool
      */
     function isInitial(): bool;
 
@@ -57,7 +58,7 @@ interface iFieldModel extends iField
     /**
      * Retorna uma instância do modelo de dados usada por este campo.
      *
-     * @return      iModel
+     * @return iModel
      */
     function getModel(): iModel;
 
@@ -65,7 +66,7 @@ interface iFieldModel extends iField
     /**
      * Retorna o nome do modelo de dados usado.
      *
-     * @return      string
+     * @return string
      */
     function getModelName(): string;
 
@@ -76,7 +77,7 @@ interface iFieldModel extends iField
      * Em campos *collection* será retornado o ``array`` contendo as instâncias que
      * compõe a coleção atual.
      *
-     * @return      string|array|iModel|undefined
+     * @return string|array|iModel|undefined
      */
     function getInstanceValue(): string|array|iModel|undefined;
 }
