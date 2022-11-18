@@ -35,7 +35,7 @@ interface iInt extends iNumeric, iSimpleType
     /**
      * Retorna o menor valor possível para o tipo definido.
      *
-     * @return      int
+     * @return int
      */
     public static function min(): int;
 
@@ -43,7 +43,7 @@ interface iInt extends iNumeric, iSimpleType
     /**
      * Retorna o maior valor possível para o tipo definido.
      *
-     * @return      int
+     * @return int
      */
     public static function max(): int;
 }

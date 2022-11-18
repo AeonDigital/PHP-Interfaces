@@ -37,7 +37,7 @@ interface iReal extends iNumeric, iSimpleType
      * Retorna o menor valor possível para o tipo definido. Se for definido ``null``, não
      * haverá limites para a representação numérica a ser utilizada.
      *
-     * @return      ?string
+     * @return ?string
      */
     public static function min(): ?string;
 
@@ -46,7 +46,7 @@ interface iReal extends iNumeric, iSimpleType
      * Retorna o maior valor possível para o tipo definido. Se for definido ``null``, não
      * haverá limites para a representação numérica a ser utilizada.
      *
-     * @return      ?string
+     * @return ?string
      */
     public static function max(): ?string;
 }

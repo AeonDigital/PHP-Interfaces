@@ -31,7 +31,7 @@ interface iDateTime extends iBasic, iSimpleType
      * Retorna o menor valor possível para este tipo de data. Se for definido ``null``,
      * o limite será dado pelo próprio sistema.
      *
-     * @return      ?\DateTime
+     * @return ?\DateTime
      */
     public static function min(): ?\DateTime;
 
@@ -40,7 +40,7 @@ interface iDateTime extends iBasic, iSimpleType
      * Retorna o maior valor possível para este tipo de data. Se for definido ``null``,
      * o limite será dado pelo próprio sistema.
      *
-     * @return      ?\DateTime
+     * @return ?\DateTime
      */
     public static function max(): ?\DateTime;
 }

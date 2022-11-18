@@ -35,7 +35,7 @@ interface iFloat extends iNumeric, iSimpleType
     /**
      * Retorna o menor valor possível para o tipo definido.
      *
-     * @return      float
+     * @return float
      */
     public static function min(): float;
 
@@ -43,7 +43,7 @@ interface iFloat extends iNumeric, iSimpleType
     /**
      * Retorna o maior valor possível para o tipo definido.
      *
-     * @return      float
+     * @return float
      */
     public static function max(): float;
 }
