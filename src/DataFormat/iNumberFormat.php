@@ -30,7 +30,7 @@ interface iNumberFormat extends iStringFormat
     /**
      * String usado como separador decimal.
      *
-     * @var         string
+     * @var string
      */
     const Decimal = ".";
 
@@ -39,7 +39,7 @@ interface iNumberFormat extends iStringFormat
     /**
      * String usado como separador de milhar.
      *
-     * @var         string
+     * @var string
      */
     const Thousand = ",";
 }

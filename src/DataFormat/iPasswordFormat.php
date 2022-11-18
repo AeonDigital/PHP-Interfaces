@@ -28,7 +28,7 @@ interface iPasswordFormat extends iStringFormat
     /**
      * Caracteres comuns a serem aceitos.
      *
-     * @var         string
+     * @var string
      */
     const CommomChars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
 
@@ -36,7 +36,7 @@ interface iPasswordFormat extends iStringFormat
     /**
      * Caracteres especiais que podem ser usados.
      *
-     * @var         string
+     * @var string
      */
     const SpecialChars = "!@#$%¨*()-_+=?";
 
@@ -48,16 +48,17 @@ interface iPasswordFormat extends iStringFormat
      * Testa a força da string enquanto senha e retorna sua pontuação.
      *
      * **Pontuação**
-     * ``+ 10 pontos``  :   Por cada caracter diferente onde ``T != t``
-     * ``+ 05 pontos``  :   Se houver ao menos 3 numerais diferentes.
-     * ``+ 05 pontos``  :   Se houver ao menos 2 simbolos diferentes ``!@#$+-_=[]{}?``
-     * ``+ 10 pontos``  :   Por cada familia de caracteres alem da primeira
+     * - ``+ 10 pontos``  :   Por cada caracter diferente onde ``T != t``
+     * - ``+ 05 pontos``  :   Se houver ao menos 3 numerais diferentes.
+     * - ``+ 05 pontos``  :   Se houver ao menos 2 simbolos diferentes ``!@#$+-_=[]{}?``
+     * - ``+ 10 pontos``  :   Por cada familia de caracteres alem da primeira
+     *
      * As famílias de caracteres são: ``Minusculas`` | ``Maiusculas`` | ``Numeros`` | ``Simbolos``
      *
-     * @param       string $v
-     *              Valor a ser ajustado.
+     * @param string $v
+     * Valor a ser ajustado.
      *
-     * @return      int
+     * @return int
      */
     static function checkStrength(string $v): int;
 
@@ -70,7 +71,7 @@ interface iPasswordFormat extends iStringFormat
      * senha será o valor informado em ``$cfg[¨MinLength¨]``
      *
      * **Exemplo de parametro $cfg***
-     * ``` php
+     * ```php
      *      $arr = [
      *          // Coleção de caracteres comuns aceitos.
      *          "CommomChars"   => "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789",
@@ -86,11 +87,11 @@ interface iPasswordFormat extends iStringFormat
      *      ];
      * ```
      *
-     * @param       ?array $cfg
-     *              Configurações da senha que será gerada. Usará os valores padrões caso
-     *              este parametro não seja informado.
+     * @param ?array $cfg
+     * Configurações da senha que será gerada. Usará os valores padrões caso
+     * este parametro não seja informado.
      *
-     * @return      string
+     * @return string
      */
     static function generate(?array $cfg = null): string;
 
@@ -105,7 +106,7 @@ interface iPasswordFormat extends iStringFormat
      * variável ``$err``.
      *
      * **Exemplo de parametro $aux***
-     * ``` php
+     * ```php
      *      $arr = [
      *          // Coleção de caracteres comuns aceitos.
      *          "CommomChars"   => "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789",
@@ -121,16 +122,16 @@ interface iPasswordFormat extends iStringFormat
      *      ];
      * ```
      *
-     * @param       ?string $v
-     *              Valor a ser testado.
+     * @param ?string $v
+     * Valor a ser testado.
      *
-     * @param       ?array $aux
-     *              Array associativo trazendo a configuração para formatação da string.
+     * @param ?array $aux
+     * Array associativo trazendo a configuração para formatação da string.
      *
-     * @param       ?string $err
-     *              Código do erro da validação.
+     * @param ?string $err
+     * Código do erro da validação.
      *
-     * @return      bool
+     * @return bool
      */
     static function checkPassword(?string $v, ?array $aux = null, ?string &$err = null): bool;
 }

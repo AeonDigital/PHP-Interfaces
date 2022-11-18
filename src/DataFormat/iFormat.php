@@ -31,13 +31,13 @@ interface iFormat
     /**
      * Verifica se o valor passado corresponde ao tipo/formato esperado.
      *
-     * @param       ?string $v
-     *              Valor a ser testado.
+     * @param ?string $v
+     * Valor a ser testado.
      *
-     * @param       ?array $aux
-     *              Dados auxiliares para o processamento.
+     * @param ?array $aux
+     * Dados auxiliares para o processamento.
      *
-     * @return      bool
+     * @return bool
      */
     static function check(?string $v, ?array $aux = null): bool;
 
@@ -47,13 +47,13 @@ interface iFormat
      * Formata ``$v`` para que seja retornado uma ``string`` que represente este tipo. Caso
      * não seja possível efetuar a formatação retornará ``null``.
      *
-     * @param       mixed $v
-     *              Valor a ser formatado.
+     * @param mixed $v
+     * Valor a ser formatado.
      *
-     * @param       ?array $aux
-     *              Dados auxiliares para o processamento.
+     * @param ?array $aux
+     * Dados auxiliares para o processamento.
      *
-     * @return      ?string
+     * @return ?string
      */
     static function format(mixed $v, ?array $aux = null): ?string;
 
@@ -66,13 +66,13 @@ interface iFormat
      *
      * Retornará ``null`` caso a ``string`` passada seja considerada inválida.
      *
-     * @param       ?string $v
-     *              Valor a ser ajustado.
+     * @param ?string $v
+     * Valor a ser ajustado.
      *
-     * @param       ?array $aux
-     *              Dados auxiliares para o processamento.
+     * @param ?array $aux
+     * Dados auxiliares para o processamento.
      *
-     * @return      mixed
+     * @return mixed
      */
     static function removeFormat(?string $v, ?array $aux = null): mixed;
 
@@ -85,10 +85,10 @@ interface iFormat
      *
      * Retornará ``null`` caso a ``string`` passada seja considerada inválida.
      *
-     * @param       ?string $v
-     *              Valor a ser ajustado.
+     * @param ?string $v
+     * Valor a ser ajustado.
      *
-     * @return      mixed
+     * @return mixed
      */
     static function storageFormat(?string $v): mixed;
 }

@@ -45,7 +45,7 @@ interface iDateTimeFormat extends iStringFormat
      *
      * As máscaras de data são **case-sensitive**.
      *
-     * @var         ?string
+     * @var ?string
      */
     const DateMask = null;
 }

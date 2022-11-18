@@ -34,7 +34,7 @@ interface iStringFormat extends iFormat
      * Define uma expressão regular que permite a validação do formato de entrada. Deve
      * ser usado SEMPRE para tipos de dados ``string``.
      *
-     * @var         ?string
+     * @var ?string
      */
     const RegExp = null;
 
@@ -43,7 +43,7 @@ interface iStringFormat extends iFormat
     /**
      * Quantidade **mínima** de caracteres necessários para expressar o formato.
      *
-     * @var         int
+     * @var int
      */
     const MinLength = 0;
 
@@ -52,7 +52,7 @@ interface iStringFormat extends iFormat
     /**
      * Quantidade **máxima** de caracteres necessários para expressar o formato.
      *
-     * @var         int
+     * @var int
      */
     const MaxLength = 0;
 }
