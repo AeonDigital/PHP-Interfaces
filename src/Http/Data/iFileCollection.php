@@ -34,7 +34,7 @@ interface iFileCollection extends iCollection
      * Após esta ação os métodos das instâncias que dependem diretamente do recurso que foi
      * liberado não irão funcionar.
      *
-     * @return      void
+     * @return void
      */
     function dropStreams(): void;
 }

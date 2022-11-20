@@ -29,19 +29,19 @@ interface iCookie
     /**
      * Define o nome do cookie.
      *
-     * @param       string $name
-     *              Nome do cookie.
+     * @param string $name
+     * Nome do cookie.
      *
-     * @return      void
+     * @return void
      *
-     * @throws      \InvalidArgumentException
-     *              Caso o valor indicado seja inválido.
+     * @throws \InvalidArgumentException
+     * Caso o valor indicado seja inválido.
      */
     function setName(string $name): void;
     /**
      * Retorna o nome identificador do cookie.
      *
-     * @return      string
+     * @return string
      */
     function getName(): string;
 
@@ -53,21 +53,21 @@ interface iCookie
      * Define o valor do cookie.
      * O valor será armazenado em ``percent-encode``.
      *
-     * @param       string $value
-     *              Valor do cookie.
+     * @param string $value
+     * Valor do cookie.
      *
-     * @return      void
+     * @return void
      */
     function setValue(string $value): void;
     /**
      * Retorna o valor do cookie.
      * O valor será retornado usando ``percent-encode``.
      *
-     * @param       bool $urldecoded
-     *              Indica se o valor retornado deve ser convertido para o formato **natural**,
-     *              sem ``percent-encode``.
+     * @param bool $urldecoded
+     * Indica se o valor retornado deve ser convertido para o formato **natural**,
+     * sem ``percent-encode``.
      *
-     * @return      string
+     * @return string
      */
     function getValue(bool $urldecoded = true): string;
 
@@ -80,10 +80,10 @@ interface iCookie
      *
      * O valor ``null`` irá remover esta propriedade do cookie.
      *
-     * @param       ?DateTime $expires
-     *              Data de expiração.
+     * @param ?\DateTime $expires
+     * Data de expiração.
      *
-     * @return      void
+     * @return void
      */
     function setExpires(?\DateTime $expires): void;
     /**
@@ -91,20 +91,20 @@ interface iCookie
      *
      * O valor ``null`` será retornado caso nenhum valor esteja definido para esta propriedade.
      *
-     * @return      ?DateTime
+     * @return ?\DateTime
      */
     function getExpires(): ?\DateTime;
     /**
      * Retorna o atual valor de ``Expires`` definido para este cookie.
-     * O valor deve ser devolvido usando o modelo:
      *
-     * ```
+     * O valor deve ser devolvido usando o modelo:
+     * ```txt
      *  strDay(3 char), intDay strMonth(3 char) intYear intHour:intMinute:intSec UTC
      * ```
      *
      * O valor ``null`` será retornado caso nenhum valor esteja definido para esta propriedade.
      *
-     * @return      ?\DateTime
+     * @return ?string
      */
     function getStrExpires(): ?string;
 
@@ -117,10 +117,10 @@ interface iCookie
      *
      * O valor ``null`` irá remover esta propriedade do cookie.
      *
-     * @param       ?string $domain
-     *              Domain.
+     * @param ?string $domain
+     * Domain.
      *
-     * @return      void
+     * @return void
      */
     function setDomain(?string $domain): void;
     /**
@@ -129,7 +129,7 @@ interface iCookie
      *
      * O valor ``null`` será retornado caso nenhum valor esteja definido para esta propriedade.
      *
-     * @return      ?string
+     * @return ?string
      */
     function getDomain(): ?string;
 
@@ -142,10 +142,10 @@ interface iCookie
      *
      * O valor ``null`` irá remover esta propriedade do cookie.
      *
-     * @param       ?string $path
-     *              Path.
+     * @param ?string $path
+     * Path.
      *
-     * @return      void
+     * @return void
      */
     function setPath(?string $path): void;
     /**
@@ -153,7 +153,7 @@ interface iCookie
      *
      * O valor ``/`` será retornado caso nenhum valor esteja definido para esta propriedade.
      *
-     * @return      string
+     * @return string
      */
     function getPath(): string;
 
@@ -169,10 +169,10 @@ interface iCookie
      *
      * O valor ``null`` irá remover esta propriedade do cookie.
      *
-     * @param       bool $secure
-     *              Secure.
+     * @param bool $secure
+     * Secure.
      *
-     * @return      void
+     * @return void
      */
     function setSecure(bool $secure): void;
     /**
@@ -181,7 +181,7 @@ interface iCookie
      * Quando ``true`` significa que o cookie só deve trafegar em canais seguros (tipicamente
      * ``Http`` sobre uma camada TSL).
      *
-     * @return      bool
+     * @return bool
      */
     function getSecure(): bool;
 
@@ -196,10 +196,10 @@ interface iCookie
      *
      * O valor ``null`` irá remover esta propriedade do cookie.
      *
-     * @param       bool $httpOnly
-     *              HttpOnly.
+     * @param bool $httpOnly
+     * HttpOnly.
      *
-     * @return      void
+     * @return void
      */
     function setHttpOnly(bool $httpOnly): void;
     /**
@@ -207,7 +207,7 @@ interface iCookie
      *
      * Quando ``true`` significa que o cookie só deve trafegar em via ``Http``.
      *
-     * @return      bool
+     * @return bool
      */
     function getHttpOnly(): bool;
 
@@ -223,15 +223,15 @@ interface iCookie
     /**
      * Devolve uma string com o valor completo do Cookie.
      *
-     * ```
+     * ```txt
      *  name=value; [Expires=string;] [Domain=string;] [Path=string;] [Secure;] [HttpOnly;]
      * ```
      *
-     * @param       bool $urldecoded
-     *              Indica se o valor retornado deve ser convertido para o formato **natural**,
-     *              sem ``percent-encode``.
+     * @param bool $urldecoded
+     * Indica se o valor retornado deve ser convertido para o formato **natural**,
+     * sem ``percent-encode``.
      *
-     * @return      string
+     * @return string
      */
     function toString(bool $urldecoded = true): string;
 
@@ -242,7 +242,7 @@ interface iCookie
      * O retorno ``true`` apenas indica que a operação foi concluída mas não que o ``UA``
      * aceitou o Cookie.
      *
-     * @return      bool
+     * @return bool
      */
     function defineCookie(): bool;
 
@@ -254,7 +254,7 @@ interface iCookie
      * O retorno ``true`` apenas indica que a operação foi concluída mas não que o ``UA``
      * aceitou o Cookie.
      *
-     * @return      bool
+     * @return bool
      */
     function removeCookie(): bool;
 }
