@@ -31,7 +31,7 @@ interface iExecute
      * Retorna o status do último erro ocorrido após o a última requisição executada.
      * O Valor vazio "" indica que nenhum erro ocorreu.
      *
-     * @return      string
+     * @return string
      */
     static function getLastError(): string;
 
@@ -41,19 +41,19 @@ interface iExecute
      * Efetua uma requisição ``Http`` e retorna seu resultado em uma ``string``.
      * Qualquer tipo de falha encontrada fará retornar ``null``.
      *
-     * @param       string $method
-     *              Método ``Http`` que será executado.
+     * @param string $method
+     * Método ``Http`` que será executado.
      *
-     * @param       string $absoluteURL
-     *              ``URL`` alvo.
+     * @param string $absoluteURL
+     * ``URL`` alvo.
      *
-     * @param       array $content
-     *              Array associativo com as chaves e valores que serão enviados.
+     * @param array $content
+     * Array associativo com as chaves e valores que serão enviados.
      *
-     * @param       array $headers
-     *              Array associativo com cabeçalhos ``Http`` para serem enviados na requisição.
+     * @param array $headers
+     * Array associativo com cabeçalhos ``Http`` para serem enviados na requisição.
      *
-     * @return      ?string
+     * @return ?string
      */
     static function request(
         string $method,
@@ -68,17 +68,17 @@ interface iExecute
      * Efetua o download de um arquivo a partir de uma ``URL`` e salva-o no diretório indicado
      * com o nome escolhido.
      *
-     * @param       string $absoluteURL
-     *              ``URL`` de onde o arquivo será resgatado.
+     * @param string $absoluteURL
+     * ``URL`` de onde o arquivo será resgatado.
      *
-     * @param       string $absoluteSystemPathToDir
-     *              Diretório da aplicação onde o arquivo será salvo.
+     * @param string $absoluteSystemPathToDir
+     * Diretório da aplicação onde o arquivo será salvo.
      *
-     * @param       string $fileName
-     *              Nome usado para salvar o arquivo.
-     *              Se não informado será usado o nome original do mesmo.
+     * @param string $fileName
+     * Nome usado para salvar o arquivo.
+     * Se não informado será usado o nome original do mesmo.
      *
-     * @return      bool
+     * @return bool
      */
     static function download(
         string $absoluteURL,

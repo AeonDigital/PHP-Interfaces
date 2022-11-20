@@ -37,10 +37,10 @@ interface iFactory
      *
      * O objeto retornado deve implementar a interface ``AeonDigital\Interfaces\Http\Data\iHeaderCollection``.
      *
-     * @param       ?array $initialValues
-     *              Valores iniciais dos headers.
+     * @param ?array $initialValues
+     * Valores iniciais dos headers.
      *
-     * @return      iHeaderCollection
+     * @return iHeaderCollection
      */
     function createHeaderCollection(?array $initialValues = null): iHeaderCollection;
     /**
@@ -48,32 +48,32 @@ interface iFactory
      *
      * O objeto retornado deve implementar a interface ``AeonDigital\Interfaces\Http\Data\iCookieCollection``.
      *
-     * @param       ?string|array $initialValues
-     *              Valores iniciais para a coleção de cookies.
+     * @param null|string|array $initialValues
+     * Valores iniciais para a coleção de cookies.
      *
-     * @return      iCookieCollection
+     * @return iCookieCollection
      */
-    function createCookieCollection($initialValues = null): iCookieCollection;
+    function createCookieCollection(null|string|array $initialValues = null): iCookieCollection;
     /**
      * Retorna uma coleção de headers baseado nos valores passados.
      *
      * O objeto retornado deve implementar a interface ``AeonDigital\Interfaces\Http\Data\iQueryStringCollection``.
      *
-     * @param       ?string|array $initialValues
-     *              Valores iniciais para a coleção de cookies.
+     * @param null|string|array $initialValues
+     * Valores iniciais para a coleção de cookies.
      *
-     * @return      iQueryStringCollection
+     * @return iQueryStringCollection
      */
-    function createQueryStringCollection($initialValues = null): iQueryStringCollection;
+    function createQueryStringCollection(null|string|array $initialValues = null): iQueryStringCollection;
     /**
      * Retorna uma coleção de headers baseado nos valores passados.
      *
      * O objeto retornado deve implementar a interface ``AeonDigital\Interfaces\Http\Data\iFileCollection``.
      *
-     * @param       ?array $initialValues
-     *              Valores iniciais para a coleção de cookies.
+     * @param ?array $initialValues
+     * Valores iniciais para a coleção de cookies.
      *
-     * @return      iFileCollection
+     * @return iFileCollection
      */
     function createFileCollection(?array $initialValues = null): iFileCollection;
     /**
@@ -81,14 +81,14 @@ interface iFactory
      *
      * O objeto retornado deve implementar a interface ``AeonDigital\Interfaces\Collection\iCollection``.
      *
-     * @param       ?array $initialValues
-     *              Valores com os quais a instância deve iniciar.
+     * @param ?array $initialValues
+     * Valores com os quais a instância deve iniciar.
      *
-     * @param       bool $autoincrement
-     *              Quando ``true`` permite que seja omitido o nome da chave dos valores pois
-     *              eles serão definidos internamente conforme fosse um array começando em zero.
+     * @param bool $autoincrement
+     * Quando ``true`` permite que seja omitido o nome da chave dos valores pois
+     * eles serão definidos internamente conforme fosse um array começando em zero.
      *
-     * @return      iCollection
+     * @return iCollection
      */
     function createCollection(?array $initialValues = [], bool $autoincrement = false): iCollection;
 
@@ -104,13 +104,13 @@ interface iFactory
     /**
      * Retorna um objeto que implemente a interface ``AeonDigital\Interfaces\Http\Uri\iUrl``.
      *
-     * @param       string $uri
-     *              Uri.
+     * @param string $uri
+     * Uri.
      *
-     * @return      iUrl
+     * @return iUrl
      *
-     * @throws      \InvalidArgumentException
-     *              Caso a ``uri`` passada seja inválida.
+     * @throws \InvalidArgumentException
+     * Caso a ``uri`` passada seja inválida.
      */
     function createUri(string $uri = ""): iUrl;
 
@@ -126,31 +126,31 @@ interface iFactory
     /**
      * Retorna um objeto que implemente a interface ``AeonDigital\Interfaces\Stream\iStream``.
      *
-     * @param       string $content
-     *              Conteúdo inicial.
+     * @param string $content
+     * Conteúdo inicial.
      *
-     * @return      iStream
+     * @return iStream
      */
     function createStream(string $content = ""): iStream;
     /**
      * Retorna um objeto que implemente a interface ``AeonDigital\Interfaces\Stream\iFileStream``.
      *
-     * @param       string $filename
-     *              Caminho completo até o arquivo.
+     * @param string $filename
+     * Caminho completo até o arquivo.
      *
-     * @param       string $mode
-     *              Modo no qual o stream será aberto.
+     * @param string $mode
+     * Modo no qual o stream será aberto.
      *
-     * @return      iFileStream
+     * @return iFileStream
      */
     function createStreamFromFile(string $filename, string $mode = "r"): iFileStream;
     /**
      * Retorna um objeto que implemente a interface ``AeonDigital\Interfaces\Stream\iStream``.
      *
-     * @param       resource $resource
-     *              Recurso que será aberto no stream.
+     * @param resource $resource
+     * Recurso que será aberto no stream.
      *
-     * @return      iStream
+     * @return iStream
      */
     function createStreamFromResource($resource): iStream;
     /**
@@ -159,7 +159,7 @@ interface iFactory
      * O objeto criado deve ser baseado no ``stream`` do ``body`` da requisição que está
      * ocorrendo no momento.
      *
-     * @return      iStream
+     * @return iStream
      */
     function createStreamFromBodyRequest(): iStream;
 
@@ -175,25 +175,25 @@ interface iFactory
     /**
      * Retorna um objeto que implemente a interface ``AeonDigital\Interfaces\Http\Message\iRequest``.
      *
-     * @param       string $httpMethod
-     *              Método ``Http`` que está sendo usado para a requisição.
+     * @param string $httpMethod
+     * Método ``Http`` que está sendo usado para a requisição.
      *
-     * @param       string $uri
-     *              ``URI`` que está sendo executada.
+     * @param string $uri
+     * ``URI`` que está sendo executada.
      *
-     * @param       ?string $httpVersion
-     *              Versão do protocolo ``Http``.
+     * @param ?string $httpVersion
+     * Versão do protocolo ``Http``.
      *
-     * @param       ?iHeaderCollection $headers
-     *              Objeto que implementa ``iHeaderCollection`` cotendo os cabeçalhos da requisição.
+     * @param ?iHeaderCollection $headers
+     * Objeto que implementa ``iHeaderCollection`` cotendo os cabeçalhos da requisição.
      *
-     * @param       ?iStream $body
-     *              Objeto ``stream`` que faz parte do corpo da mensagem.
+     * @param ?iStream $body
+     * Objeto ``stream`` que faz parte do corpo da mensagem.
      *
-     * @return      iRequest
+     * @return iRequest
      *
-     * @throws      \InvalidArgumentException
-     *              Caso algum dos argumentos passados seja inválido.
+     * @throws \InvalidArgumentException
+     * Caso algum dos argumentos passados seja inválido.
      */
     function createRequest(
         string $httpMethod,
@@ -210,47 +210,47 @@ interface iFactory
     /**
      * Retorna um objeto que implemente a interface ``AeonDigital\Interfaces\Http\Message\iServerRequest``.
      *
-     * @param       string $httpMethod
-     *              Método ``Http`` que está sendo usado para a requisição.
+     * @param string $httpMethod
+     * Método ``Http`` que está sendo usado para a requisição.
      *
-     * @param       string $uri
-     *              ``URI`` que está sendo executada.
+     * @param string $uri
+     * ``URI`` que está sendo executada.
      *
-     * @param       ?string $httpVersion
-     *              Versão do protocolo ``Http``.
+     * @param ?string $httpVersion
+     * Versão do protocolo ``Http``.
      *
-     * @param       ?iHeaderCollection $headers
-     *              Objeto que implementa ``iHeaderCollection`` cotendo os cabeçalhos da requisição.
+     * @param ?iHeaderCollection $headers
+     * Objeto que implementa ``iHeaderCollection`` cotendo os cabeçalhos da requisição.
      *
-     * @param       ?iStream $body
-     *              Objeto ``stream`` que faz parte do corpo da mensagem.
+     * @param ?iStream $body
+     * Objeto ``stream`` que faz parte do corpo da mensagem.
      *
-     * @param       ?iCookieCollection $cookies
-     *              Objeto que implementa ``iCookieCollection`` cotendo os cookies da requisição.
+     * @param ?iCookieCollection $cookies
+     * Objeto que implementa ``iCookieCollection`` cotendo os cookies da requisição.
      *
-     * @param       ?iQueryStringCollection $queryStrings
-     *              Objeto que implementa ``iQueryStringCollection`` cotendo os queryStrings da ``URI``.
+     * @param ?iQueryStringCollection $queryStrings
+     * Objeto que implementa ``iQueryStringCollection`` cotendo os queryStrings da ``URI``.
      *
-     * @param       ?iFileCollection $files
-     *              Objeto que implementa ``iFileCollection`` cotendo os arquivos enviados nesta
-     *              requisição.
+     * @param ?iFileCollection $files
+     * Objeto que implementa ``iFileCollection`` cotendo os arquivos enviados nesta
+     * requisição.
      *
-     * @param       ?array $serverParans
-     *              Coleção de parametros definidos pelo servidor sobre o ambiente e requisição
-     *              atual.
+     * @param ?array $serverParans
+     * Coleção de parametros definidos pelo servidor sobre o ambiente e requisição
+     * atual.
      *
-     * @param       ?iCollection $attributes
-     *              Objeto que implementa ``iCollection`` cotendo atributos personalizados para
-     *              esta requisição.
+     * @param ?iCollection $attributes
+     * Objeto que implementa ``iCollection`` cotendo atributos personalizados para
+     * esta requisição.
      *
-     * @param       ?iCollection $bodyParsers
-     *              Objeto que implementa ``iCollection`` cotendo os closures que podem efetuar
-     *              o processamento do body da requisição.
+     * @param ?iCollection $bodyParsers
+     * Objeto que implementa ``iCollection`` cotendo os closures que podem efetuar
+     * o processamento do body da requisição.
      *
-     * @return      iServerRequest
+     * @return iServerRequest
      *
-     * @throws      \InvalidArgumentException
-     *              Caso algum dos argumentos passados seja inválido.
+     * @throws \InvalidArgumentException
+     * Caso algum dos argumentos passados seja inválido.
      */
     function createServerRequest(
         string $httpMethod,
@@ -273,37 +273,37 @@ interface iFactory
     /**
      * Retorna um objeto que implemente a interface ``AeonDigital\Interfaces\Http\Message\iResponse``.
      *
-     * @param       int $statusCode
-     *              Código do status ``Http``.
+     * @param int $statusCode
+     * Código do status ``Http``.
      *
-     * @param       string $reasonPhrase
-     *              Frase razão do status ``Http``.
-     *              Se não for definida e o código informado for um código padrão, usará a frase
-     *              razão correspondente.
+     * @param string $reasonPhrase
+     * Frase razão do status ``Http``.
+     * Se não for definida e o código informado for um código padrão, usará a frase
+     * razão correspondente.
      *
-     * @param       ?string $httpVersion
-     *              Versão do protocolo ``Http``.
+     * @param ?string $httpVersion
+     * Versão do protocolo ``Http``.
      *
-     * @param       ?iHeaderCollection $headers
-     *              Objeto que implementa ``iHeaderCollection``
-     *              cotendo os cabeçalhos da requisição.
+     * @param ?iHeaderCollection $headers
+     * Objeto que implementa ``iHeaderCollection``
+     * cotendo os cabeçalhos da requisição.
      *
-     * @param       ?iStream $body
-     *              Objeto ``stream`` que faz parte do corpo da mensagem.
+     * @param ?iStream $body
+     * Objeto ``stream`` que faz parte do corpo da mensagem.
      *
-     * @param       ?\StdClass $viewData
-     *              Objeto ``viewData``.
+     * @param ?\StdClass $viewData
+     * Objeto ``viewData``.
      *
-     * @param       ?string $mime
-     *              Mimetype que deve ser usado para criar o corpo da mensagem.
+     * @param ?string $mime
+     * Mimetype que deve ser usado para criar o corpo da mensagem.
      *
-     * @param       ?string $locale
-     *              Locale no qual a informação que consta no corpo da mensagem está construído.
+     * @param ?string $locale
+     * Locale no qual a informação que consta no corpo da mensagem está construído.
      *
-     * @return      iResponse
+     * @return iResponse
      *
-     * @throws      \InvalidArgumentException
-     *              Caso algum dos argumentos passados seja inválido.
+     * @throws \InvalidArgumentException
+     * Caso algum dos argumentos passados seja inválido.
      */
     function createResponse(
         int $statusCode = 200,
