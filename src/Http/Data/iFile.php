@@ -58,7 +58,7 @@ interface iFile
      * @throws \RuntimeException
      * Quando alguma operação de mover ou excluir falhar.
      */
-    public function moveTo(string $targetPath) : void;
+    public function moveTo(string $targetPath): void;
 
     /**
      * Retorna o tamanho (em bytes) do ``Stream`` carregado.
