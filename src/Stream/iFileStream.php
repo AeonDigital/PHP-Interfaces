@@ -28,6 +28,15 @@ interface iFileStream extends iStream
 
 
     /**
+     * Retorna o modo em que o stream está aberto..
+     *
+     * @return string
+     */
+    function getOpenMode(): string;
+
+
+
+    /**
      * Retorna o caminho completo até onde o arquivo está no momento.
      *
      * @return string
