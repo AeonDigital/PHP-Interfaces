@@ -87,7 +87,7 @@ interface iHierPartUri extends iBasicUri
      * Este método ``DEVE`` manter o estado da instância atual e retornar uma nova instância
      * contendo o ``user`` especificado.
      *
-     * @param ?string $user
+     * @param string $user
      * O novo valor para ``user`` para a nova instância.
      *
      * @return static
@@ -95,7 +95,7 @@ interface iHierPartUri extends iBasicUri
      * @throws \InvalidArgumentException
      * Caso seja definido um valor inválido para ``user``.
      */
-    function withUser(?string $user): static;
+    function withUser(string $user): static;
 
 
 
