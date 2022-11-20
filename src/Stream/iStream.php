@@ -197,7 +197,7 @@ interface iStream
      * @param ?string $key
      * Nome da chave de metadados que serão retornados.
      *
-     * @return null|array|mixed
+     * @return mixed
      * Retorna ``null`` se o stream principal não estiver definido.
      *
      * Retorna um array associativo com todos valores atualmente definidos quando
@@ -208,7 +208,7 @@ interface iStream
      *
      * Retorna ``null`` se a chave não for encontrada.
      */
-    function getMetadata(?string $key = null): null|array|mixed;
+    function getMetadata(?string $key = null): mixed;
 
 
 
