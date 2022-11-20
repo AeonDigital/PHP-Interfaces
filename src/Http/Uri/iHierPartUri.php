@@ -11,13 +11,14 @@ use AeonDigital\Interfaces\Http\Uri\iBasicUri as iBasicUri;
 
 
 
+
 /**
  * Esta interface indica como implementar uma classe ``URI`` que possui uma parte hierarquica
  * (tipo mais comum de ``URI``).
  * Esta parte da ``URI`` é formada pela parte conhecida como ``authority`` em conjunto com a
  * parte conhecida como ``path``.
  *
- * @see         https://tools.ietf.org/html/rfc3986#section-3
+ * @see https://tools.ietf.org/html/rfc3986#section-3
  *
  * @package     AeonDigital\Interfaces\Http
  * @author      Rianna Cantarelli <rianna@aeondigital.com.br>
@@ -76,7 +77,7 @@ interface iHierPartUri extends iBasicUri
      * Retorna o componente ``user`` da ``URI`` ou ``''`` caso ele não esteja especificado.
      * O valor será retornado usando ``percent-encoding``.
      *
-     * @return      string
+     * @return string
      */
     function getUser(): string;
 
@@ -86,15 +87,15 @@ interface iHierPartUri extends iBasicUri
      * Este método ``DEVE`` manter o estado da instância atual e retornar uma nova instância
      * contendo o ``user`` especificado.
      *
-     * @param       ?string $user
-     *              O novo valor para ``user`` para a nova instância.
+     * @param ?string $user
+     * O novo valor para ``user`` para a nova instância.
      *
-     * @return      static
+     * @return static
      *
-     * @throws      \InvalidArgumentException
-     *              Caso seja definido um valor inválido para ``user``.
+     * @throws \InvalidArgumentException
+     * Caso seja definido um valor inválido para ``user``.
      */
-    function withUser($user);
+    function withUser(?string $user): static;
 
 
 
@@ -106,7 +107,7 @@ interface iHierPartUri extends iBasicUri
      * não está setada.
      * O valor será retornado usando ``percent-encoding``.
      *
-     * @return      ?string
+     * @return ?string
      */
     function getPassword(): ?string;
 
@@ -116,16 +117,16 @@ interface iHierPartUri extends iBasicUri
      * Este método ``DEVE`` manter o estado da instância atual e retornar uma nova instância
      * contendo o ``password`` especificado.
      *
-     * @param       ?string $password
-     *              O novo valor para ``password`` para a nova instância.
-     *              Se ``null`` for passado, o valor da ``password`` será removido.
+     * @param ?string $password
+     * O novo valor para ``password`` para a nova instância.
+     * Se ``null`` for passado, o valor da ``password`` será removido.
      *
-     * @return      static
+     * @return static
      *
-     * @throws      \InvalidArgumentException
-     *              Caso seja definido um valor inválido para ``password``.
+     * @throws \InvalidArgumentException
+     * Caso seja definido um valor inválido para ``password``.
      */
-    function withPassword($password = null);
+    function withPassword(?string $password = null): static;
 
 
 
@@ -134,7 +135,7 @@ interface iHierPartUri extends iBasicUri
     /**
      * Retorna o componente ``host`` da ``URI`` ou ``''`` caso ele não esteja especificado.
      *
-     * @return      string
+     * @return string
      */
     function getHost(): string;
 
@@ -144,15 +145,15 @@ interface iHierPartUri extends iBasicUri
      * Este método ``DEVE`` manter o estado da instância atual e retornar uma nova instância
      * contendo o ``host`` especificado.
      *
-     * @param       string $host
-     *              O novo valor para ``host`` para a nova instância.
+     * @param string $host
+     * O novo valor para ``host`` para a nova instância.
      *
-     * @return      static
+     * @return static
      *
-     * @throws      \InvalidArgumentException
-     *              Caso seja definido um valor inválido para ``host``.
+     * @throws \InvalidArgumentException
+     * Caso seja definido um valor inválido para ``host``.
      */
-    function withHost($host);
+    function withHost(string $host): static;
 
 
 
@@ -162,7 +163,7 @@ interface iHierPartUri extends iBasicUri
      * Retorna o componente ``port`` da ``URI`` ou ``null`` caso a porta definida seja a padrão
      * para o ``scheme`` que está sendo usado.
      *
-     * @return      ?int
+     * @return ?int
      */
     function getPort(): ?int;
 
@@ -172,7 +173,7 @@ interface iHierPartUri extends iBasicUri
      * Retorna a porta padrão para o ``scheme`` definido para este ``URI``.
      * Se o ``scheme`` não possui uma porta padrão deverá ser retornado ``null``.
      *
-     * @return      ?int
+     * @return ?int
      */
     function getDefaultPort(): ?int;
 
@@ -182,15 +183,15 @@ interface iHierPartUri extends iBasicUri
      * Este método ``DEVE`` manter o estado da instância atual e retornar uma nova instância
      * contendo o ``port`` especificado.
      *
-     * @param       ?int $port
-     *              O novo valor para ``port`` para a nova instância.
+     * @param ?int $port
+     * O novo valor para ``port`` para a nova instância.
      *
-     * @return      static
+     * @return static
      *
-     * @throws      \InvalidArgumentException
-     *              Caso seja definido um valor inválido para ``port``.
+     * @throws \InvalidArgumentException
+     * Caso seja definido um valor inválido para ``port``.
      */
-    function withPort($port);
+    function withPort(?int $port): static;
 
 
 
@@ -212,11 +213,11 @@ interface iHierPartUri extends iBasicUri
      *
      * A sintaxe padrão deste componente é:
      *
-     * ```
+     * ```txt
      *  [username[:password]]
      * ```
      *
-     * @return      string
+     * @return string
      */
     function getUserInfo(): string;
 
@@ -226,18 +227,18 @@ interface iHierPartUri extends iBasicUri
      * Este método ``DEVE`` manter o estado da instância atual e retornar uma nova instância
      * contendo o ``user information`` especificado.
      *
-     * @param       string $user
-     *              O novo valor para ``user`` na nova instância.
+     * @param string $user
+     * O novo valor para ``user`` na nova instância.
      *
-     * @param       string $password
-     *              O novo valor para ``password`` na nova instância.
+     * @param string $password
+     * O novo valor para ``password`` na nova instância.
      *
-     * @return      static
+     * @return static
      *
-     * @throws      \InvalidArgumentException
-     *              Caso seja definido um valor inválido para algum argumento.
+     * @throws \InvalidArgumentException
+     * Caso seja definido um valor inválido para algum argumento.
      */
-    function withUserInfo($user, $password = null);
+    function withUserInfo(string $user, string $password = null): static;
 
 
 
@@ -255,16 +256,16 @@ interface iHierPartUri extends iBasicUri
      *
      * A sintaxe padrão deste componente é:
      *
-     * ```
+     * ```txt
      *  [[user-info@]host[:port]]
      * ```
      *
      * O componente ``port`` deve ser omitido quando esta não estiver definida, ou, se for uma
      * das portas padrão para o ``scheme`` atualmente em uso.
      *
-     * @see         https://tools.ietf.org/html/rfc3986#section-3.2
+     * @see https://tools.ietf.org/html/rfc3986#section-3.2
      *
-     * @return      string
+     * @return string
      */
     function getAuthority(): string;
 
@@ -274,26 +275,31 @@ interface iHierPartUri extends iBasicUri
      * Este método ``DEVE`` manter o estado da instância atual e retornar uma nova instância
      * contendo a parte "autority" especificado.
      *
-     * @param       string $user
-     *              O novo valor para ``user`` na nova instância.
+     * @param string $user
+     * O novo valor para ``user`` na nova instância.
      *
-     * @param       ?string $password
-     *              O novo valor para ``password`` para a nova instância.
-     *              Se ``null`` for passado, o valor da ``password`` será removido.
+     * @param ?string $password
+     * O novo valor para ``password`` para a nova instância.
+     * Se ``null`` for passado, o valor da ``password`` será removido.
      *
-     * @param       string $host
-     *              O novo valor para ``host`` na nova instância.
+     * @param string $host
+     * O novo valor para ``host`` na nova instância.
      *
-     * @param       ?int $port
-     *              O novo valor para ``port`` na nova instância.
-     *              Use ``null`` para ignorar usar o valor padrão para o ``scheme``.
+     * @param ?int $port
+     * O novo valor para ``port`` na nova instância.
+     * Use ``null`` para ignorar usar o valor padrão para o ``scheme``.
      *
-     * @return      static
+     * @return static
      *
-     * @throws      \InvalidArgumentException
-     *              Caso seja definido um valor inválido para algum argumento.
+     * @throws \InvalidArgumentException
+     * Caso seja definido um valor inválido para algum argumento.
      */
-    function withAuthority($user = "", $password = null, $host = "", $port = null);
+    function withAuthority(
+        string $user = "",
+        ?string $password = null,
+        string $host = "",
+        ?int $port = null
+    ): static;
 
 
 
@@ -311,7 +317,7 @@ interface iHierPartUri extends iBasicUri
      * Retorna o componente ``path`` da ``URI`` ou ``''`` caso ele não esteja especificado.
      * O valor será retornado usando ``percent-encoding``.
      *
-     * @return      string
+     * @return string
      */
     function getPath(): string;
 
@@ -321,15 +327,15 @@ interface iHierPartUri extends iBasicUri
      * Este método ``DEVE`` manter o estado da instância atual e retornar uma nova instância
      * contendo o ``path`` especificado.
      *
-     * @param       string $path
-     *              O novo valor para ``path`` para a nova instância.
+     * @param string $path
+     * O novo valor para ``path`` para a nova instância.
      *
-     * @return      static
+     * @return static
      *
-     * @throws      \InvalidArgumentException
-     *              Caso seja definido um valor inválido para ``path``.
+     * @throws \InvalidArgumentException
+     * Caso seja definido um valor inválido para ``path``.
      */
-    function withPath($path);
+    function withPath(string $path): static;
 
 
 
@@ -348,11 +354,11 @@ interface iHierPartUri extends iBasicUri
      *
      * O resultado será uma string com o seguinte formato:
      *
-     * ```
+     * ```txt
      *  [ scheme ":" ][ "//" authority ]
      * ```
      *
-     * @return      string
+     * @return string
      */
     function getBase(): string;
 
@@ -364,11 +370,11 @@ interface iHierPartUri extends iBasicUri
      *
      * O resultado será uma string com o seguinte formato:
      *
-     * ```
+     * ```txt
      *  [ scheme ":" ][ "//" authority ][ "/" path ]
      * ```
      *
-     * @return      string
+     * @return string
      */
     function getBasePath(): string;
 }

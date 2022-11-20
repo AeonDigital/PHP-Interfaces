@@ -13,9 +13,10 @@ use AeonDigital\Interfaces\Http\Uri\iHierPartUri as iHierPartUri;
 
 
 /**
- * Uma ``absolute-uri`` refere-se ao formato de ``URI`` que corresponde ao seguinte esquema:
+ * Uma ``absolute-uri``.
  *
- * ```
+ * Refere-se ao formato de ``URI`` que corresponde ao seguinte esquema:
+ * ```txt
  *  absolute-URI  = scheme ":" hier-part [ "?" query ] [ "#" fragment ]
  * ```
  *
@@ -27,8 +28,8 @@ use AeonDigital\Interfaces\Http\Uri\iHierPartUri as iHierPartUri;
  * reference)
  *
  *
- * @see         https://tools.ietf.org/html/rfc3986#section-4.3
- * @see         https://tools.ietf.org/html/rfc3986#section-4.4
+ * @see https://tools.ietf.org/html/rfc3986#section-4.3
+ * @see https://tools.ietf.org/html/rfc3986#section-4.4
  *
  * @package     AeonDigital\Interfaces\Http
  * @author      Rianna Cantarelli <rianna@aeondigital.com.br>
@@ -80,9 +81,9 @@ interface iAbsoluteUri extends iHierPartUri
      *
      * Os valores definidos serão retornados usando ``percent-encoding``.
      *
-     * @see         https://tools.ietf.org/html/rfc3986#section-3.4
+     * @see https://tools.ietf.org/html/rfc3986#section-3.4
      *
-     * @return      string
+     * @return string
      */
     function getQuery(): string;
 
@@ -92,15 +93,15 @@ interface iAbsoluteUri extends iHierPartUri
      * Este método ``DEVE`` manter o estado da instância atual e retornar uma nova instância
      * contendo o ``query`` especificado.
      *
-     * @param       string $query
-     *              O novo valor para ``query`` na nova instância.
+     * @param string $query
+     * O novo valor para ``query`` na nova instância.
      *
-     * @return      static
+     * @return static
      *
-     * @throws      \InvalidArgumentException
-     *              Caso seja definido um valor inválido para ``query``.
+     * @throws \InvalidArgumentException
+     * Caso seja definido um valor inválido para ``query``.
      */
-    function withQuery($query);
+    function withQuery(string $query): static;
 
 
 
@@ -112,9 +113,9 @@ interface iAbsoluteUri extends iHierPartUri
      *
      * Os valores definidos serão retornados usando ``percent-encoding``.
      *
-     * @see         https://tools.ietf.org/html/rfc3986#section-3.4
+     * @see https://tools.ietf.org/html/rfc3986#section-3.4
      *
-     * @return      string
+     * @return string
      */
     function getFragment(): string;
 
@@ -124,15 +125,15 @@ interface iAbsoluteUri extends iHierPartUri
      * Este método ``DEVE`` manter o estado da instância atual e retornar uma nova instância
      * contendo o ``fragment`` especificado.
      *
-     * @param       string $fragment
-     *              O novo valor para ``fragment`` na nova instância.
+     * @param string $fragment
+     * O novo valor para ``fragment`` na nova instância.
      *
-     * @return      static
+     * @return static
      *
-     * @throws      \InvalidArgumentException
-     *              Caso seja definido um valor inválido para ``fragment``.
+     * @throws \InvalidArgumentException
+     * Caso seja definido um valor inválido para ``fragment``.
      */
-    function withFragment($fragment);
+    function withFragment(string $fragment): static;
 
 
 
@@ -147,21 +148,21 @@ interface iAbsoluteUri extends iHierPartUri
      * Este método ``DEVE`` manter o estado da instância atual e retornar uma nova instância
      * contendo a parte ``relative-uri`` especificado.
      *
-     * @param       string $path
-     *              O novo valor para ``path`` na nova instância.
+     * @param string $path
+     * O novo valor para ``path`` na nova instância.
      *
-     * @param       string $query
-     *              O novo valor para ``query`` na nova instância.
+     * @param string $query
+     * O novo valor para ``query`` na nova instância.
      *
-     * @param       string $fragment
-     *              O novo valor para ``fragment`` na nova instância.
+     * @param string $fragment
+     * O novo valor para ``fragment`` na nova instância.
      *
-     * @return      static
+     * @return static
      *
-     * @throws      \InvalidArgumentException
-     *              Caso seja definido um valor inválido para algum argumento.
+     * @throws \InvalidArgumentException
+     * Caso seja definido um valor inválido para algum argumento.
      */
-    function withRelativeUri($path = "", $query = "", $fragment = "");
+    function withRelativeUri(string $path = "", string $query = "", string $fragment = ""): static;
 
 
 
@@ -177,15 +178,15 @@ interface iAbsoluteUri extends iHierPartUri
      *
      * O resultado será uma string com o seguinte formato:
      *
-     * ```
+     * ```txt
      *  [ scheme ":" ][ "//" authority ][ "/" path ][ "?" query ][ "#" fragment ]
      * ```
      *
-     * @param       bool $withFragment
-     *              Quando ``true`` irá adicionar o componente ``fragment``.
-     *              Se ``false`` irá omitir totalmente este componente.
+     * @param bool $withFragment
+     * Quando ``true`` irá adicionar o componente ``fragment``.
+     * Se ``false`` irá omitir totalmente este componente.
      *
-     * @return      string
+     * @return string
      */
     function getAbsoluteUri(bool $withFragment = false): string;
 
@@ -197,15 +198,15 @@ interface iAbsoluteUri extends iHierPartUri
      *
      * O resultado será uma string com o seguinte formato:
      *
-     * ```
+     * ```txt
      *  [ "/" path ][ "?" query ][ "#" fragment ]
      * ```
      *
-     * @param       bool $withFragment
-     *              Quando ``true`` irá adicionar o componente ``fragment``.
-     *              Se ``false`` irá omitir totalmente este componente.
+     * @param bool $withFragment
+     * Quando ``true`` irá adicionar o componente ``fragment``.
+     * Se ``false`` irá omitir totalmente este componente.
      *
-     * @return      string
+     * @return string
      */
     function getRelativeUri(bool $withFragment = false): string;
 
@@ -224,5 +225,5 @@ interface iAbsoluteUri extends iHierPartUri
      * @throws      \InvalidArgumentException
      *              Exception lançada caso a ``URI`` indicada seja inválida.
      */
-    static function fromString(string $uri);
+    static function fromString(string $uri): static;
 }

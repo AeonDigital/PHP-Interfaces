@@ -27,17 +27,17 @@ namespace AeonDigital\Interfaces\Http\Uri;
  * nova instância com a alteração necessária para o novo estado.
  *
  *
- * @see         https://tools.ietf.org/html/rfc2234
- *              Augmented BNF for Syntax Specifications: ABNF
+ * @see https://tools.ietf.org/html/rfc2234
+ * Augmented BNF for Syntax Specifications: ABNF
  *
- * @see         https://tools.ietf.org/html/rfc1630
- *              Universal Resource Identifiers in WWW
+ * @see https://tools.ietf.org/html/rfc1630
+ * Universal Resource Identifiers in WWW
  *
- * @see         https://tools.ietf.org/html/rfc3986
- *              Uniform Resource Identifier (URI): Generic Syntax
+ * @see https://tools.ietf.org/html/rfc3986
+ * Uniform Resource Identifier (URI): Generic Syntax
  *
- * @see         https://tools.ietf.org/html/rfc1738
- *              Uniform Resource Locators (URL)
+ * @see https://tools.ietf.org/html/rfc1738
+ * Uniform Resource Locators (URL)
  *
  * @package     AeonDigital\Interfaces\Http
  * @author      Rianna Cantarelli <rianna@aeondigital.com.br>
@@ -257,13 +257,13 @@ interface iBasicUri
      *
      * Nomes válidos devem seguir o formato:
      *
-     * ```
+     * ```txt
      *  scheme = ALPHA * ( ALPHA / DIGIT / "+" / "-" / "." )
      * ```
      *
-     * @see         https://tools.ietf.org/html/rfc3986#section-3.1
+     * @see https://tools.ietf.org/html/rfc3986#section-3.1
      *
-     * @return      string
+     * @return string
      */
     function getScheme(): string;
 
@@ -273,37 +273,37 @@ interface iBasicUri
      * Este método ``DEVE`` manter o estado da instância atual e retornar uma nova instância
      * contendo o ``scheme`` especificado.
      *
-     * @param       string $scheme
-     *              O novo valor para ``scheme`` para a nova instância.
+     * @param string $scheme
+     * O novo valor para ``scheme`` para a nova instância.
      *
-     * @return      static
+     * @return static
      *
-     * @throws      \InvalidArgumentException
-     *              Caso seja definido um valor inválido para ``scheme``.
+     * @throws \InvalidArgumentException
+     * Caso seja definido um valor inválido para ``scheme``.
      */
-    function withScheme($scheme);
+    function withScheme(string $scheme): static;
 
 
 
     /**
      * Retorna uma nova instância definida a partir do valor indicado na string ``$uri``.
      *
-     * @param       string $uri
-     *              ``URI`` que será usada de base para a nova instância.
+     * @param string $uri
+     * ``URI`` que será usada de base para a nova instância.
      *
-     * @return      static
+     * @return static
      *
-     * @throws      \InvalidArgumentException
-     *              Exception lançada caso a ``URI`` indicada seja inválida.
+     * @throws \InvalidArgumentException
+     * Exception lançada caso a ``URI`` indicada seja inválida.
      */
-    static function fromString(string $uri);
+    static function fromString(string $uri): static;
 
 
 
     /**
      * Converte os atributos que formam a ``URI`` em uma string válida para seu respectivo ``scheme``.
      *
-     * @return      string
+     * @return string
      */
     function __toString(): string;
 }
