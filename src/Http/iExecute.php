@@ -15,7 +15,7 @@ namespace AeonDigital\Interfaces\Http;
 /**
  * Interface que implementa métodos de execução de ações ``Http``.
  *
- * @package     AeonDigital\EnGarde
+ * @package     AeonDigital\Interfaces\Http
  * @author      Rianna Cantarelli <rianna@aeondigital.com.br>
  * @copyright   2020, Rianna Cantarelli
  * @license     MIT
@@ -33,7 +33,7 @@ interface iExecute
      *
      * @return string
      */
-    static function getLastError(): string;
+    public static function getLastError(): string;
 
 
 
@@ -55,7 +55,7 @@ interface iExecute
      *
      * @return ?string
      */
-    static function request(
+    public static function request(
         string $method,
         string $absoluteURL,
         array $content = [],
@@ -80,7 +80,7 @@ interface iExecute
      *
      * @return bool
      */
-    static function download(
+    public static function download(
         string $absoluteURL,
         string $absoluteSystemPathToDir,
         string $fileName = ""

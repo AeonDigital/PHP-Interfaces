@@ -40,7 +40,7 @@ interface iBasic
      *
      * @return bool
      */
-    static function validate(mixed $v): bool;
+    public static function validate(mixed $v): bool;
 
 
 
@@ -53,7 +53,7 @@ interface iBasic
      *
      * @return ?string
      */
-    static function toString(mixed $v): ?string;
+    public static function toString(mixed $v): ?string;
 
 
 
@@ -72,5 +72,5 @@ interface iBasic
      *
      * @return mixed
      */
-    static function parseIfValidate(mixed $v, ?string &$err = null): mixed;
+    public static function parseIfValidate(mixed $v, ?string &$err = null): mixed;
 }

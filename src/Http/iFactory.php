@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace AeonDigital\Interfaces\Http;
 
-use AeonDigital\Interfaces\Http\Uri\iUrl as iUrl;
+use AeonDigital\Interfaces\Http\Uri\iUri as iUri;
 use AeonDigital\Interfaces\Http\Message\iRequest as iRequest;
 use AeonDigital\Interfaces\Http\Message\iResponse as iResponse;
 use AeonDigital\Interfaces\Http\Message\iServerRequest as iServerRequest;
@@ -20,7 +20,7 @@ use AeonDigital\Interfaces\Collection\iCollection as iCollection;
 /**
  * Define uma fábrica de instâncias da namespace ``AeonDigital\Interfaces\Http``.
  *
- * @package     AeonDigital\EnGarde
+ * @package     AeonDigital\Interfaces\Http
  * @author      Rianna Cantarelli <rianna@aeondigital.com.br>
  * @copyright   2020, Rianna Cantarelli
  * @license     MIT
@@ -42,7 +42,7 @@ interface iFactory
      *
      * @return iHeaderCollection
      */
-    function createHeaderCollection(?array $initialValues = null): iHeaderCollection;
+    public function createHeaderCollection(?array $initialValues = null): iHeaderCollection;
     /**
      * Retorna uma coleção de headers baseado nos valores passados.
      *
@@ -53,7 +53,7 @@ interface iFactory
      *
      * @return iCookieCollection
      */
-    function createCookieCollection(null|string|array $initialValues = null): iCookieCollection;
+    public function createCookieCollection(null|string|array $initialValues = null): iCookieCollection;
     /**
      * Retorna uma coleção de headers baseado nos valores passados.
      *
@@ -64,7 +64,7 @@ interface iFactory
      *
      * @return iQueryStringCollection
      */
-    function createQueryStringCollection(null|string|array $initialValues = null): iQueryStringCollection;
+    public function createQueryStringCollection(null|string|array $initialValues = null): iQueryStringCollection;
     /**
      * Retorna uma coleção de headers baseado nos valores passados.
      *
@@ -75,7 +75,7 @@ interface iFactory
      *
      * @return iFileCollection
      */
-    function createFileCollection(?array $initialValues = null): iFileCollection;
+    public function createFileCollection(?array $initialValues = null): iFileCollection;
     /**
      * Retorna um objeto ``iCollection`` vazio.
      *
@@ -90,7 +90,7 @@ interface iFactory
      *
      * @return iCollection
      */
-    function createCollection(?array $initialValues = [], bool $autoincrement = false): iCollection;
+    public function createCollection(?array $initialValues = [], bool $autoincrement = false): iCollection;
 
 
 
@@ -102,17 +102,17 @@ interface iFactory
 
 
     /**
-     * Retorna um objeto que implemente a interface ``AeonDigital\Interfaces\Http\Uri\iUrl``.
+     * Retorna um objeto que implemente a interface ``AeonDigital\Interfaces\Http\Uri\iUri``.
      *
      * @param string $uri
      * Uri.
      *
-     * @return iUrl
+     * @return iUri
      *
      * @throws \InvalidArgumentException
      * Caso a ``uri`` passada seja inválida.
      */
-    function createUri(string $uri = ""): iUrl;
+    public function createUri(string $uri = ""): iUri;
 
 
 
@@ -131,7 +131,7 @@ interface iFactory
      *
      * @return iStream
      */
-    function createStream(string $content = ""): iStream;
+    public function createStream(string $content = ""): iStream;
     /**
      * Retorna um objeto que implemente a interface ``AeonDigital\Interfaces\Stream\iFileStream``.
      *
@@ -143,7 +143,7 @@ interface iFactory
      *
      * @return iFileStream
      */
-    function createStreamFromFile(string $filename, string $mode = "r"): iFileStream;
+    public function createStreamFromFile(string $filename, string $mode = "r"): iFileStream;
     /**
      * Retorna um objeto que implemente a interface ``AeonDigital\Interfaces\Stream\iStream``.
      *
@@ -152,7 +152,7 @@ interface iFactory
      *
      * @return iStream
      */
-    function createStreamFromResource($resource): iStream;
+    public function createStreamFromResource($resource): iStream;
     /**
      * Retorna um objeto que implemente a interface ``AeonDigital\Interfaces\Stream\iStream``.
      *
@@ -161,7 +161,7 @@ interface iFactory
      *
      * @return iStream
      */
-    function createStreamFromBodyRequest(): iStream;
+    public function createStreamFromBodyRequest(): iStream;
 
 
 
@@ -195,7 +195,7 @@ interface iFactory
      * @throws \InvalidArgumentException
      * Caso algum dos argumentos passados seja inválido.
      */
-    function createRequest(
+    public function createRequest(
         string $httpMethod,
         string $uri,
         ?string $httpVersion,
@@ -252,7 +252,7 @@ interface iFactory
      * @throws \InvalidArgumentException
      * Caso algum dos argumentos passados seja inválido.
      */
-    function createServerRequest(
+    public function createServerRequest(
         string $httpMethod,
         string $uri,
         ?string $httpVersion = null,
@@ -291,7 +291,7 @@ interface iFactory
      * @param ?iStream $body
      * Objeto ``stream`` que faz parte do corpo da mensagem.
      *
-     * @param ?\StdClass $viewData
+     * @param ?\stdClass $viewData
      * Objeto ``viewData``.
      *
      * @param ?string $mime
@@ -305,13 +305,13 @@ interface iFactory
      * @throws \InvalidArgumentException
      * Caso algum dos argumentos passados seja inválido.
      */
-    function createResponse(
+    public function createResponse(
         int $statusCode = 200,
         string $reasonPhrase = "",
         ?string $httpVersion = null,
         ?iHeaderCollection $headers = null,
         ?iStream $body = null,
-        ?\StdClass $viewData = null,
+        ?\stdClass $viewData = null,
         ?string $mime = null,
         ?string $locale = null
     ): iResponse;

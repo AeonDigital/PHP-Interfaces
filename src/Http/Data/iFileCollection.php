@@ -36,5 +36,5 @@ interface iFileCollection extends iCollection
      *
      * @return void
      */
-    function dropStreams(): void;
+    public function dropStreams(): void;
 }

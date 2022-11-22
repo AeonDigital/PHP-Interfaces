@@ -75,7 +75,7 @@ interface iField
      *
      * @return string
      */
-    function getName(): string;
+    public function getName(): string;
     /**
      * SET
      * Define o nome do campo.
@@ -89,7 +89,7 @@ interface iField
      *
      * @return string
      */
-    function getDescription(): string;
+    public function getDescription(): string;
 
 
 
@@ -98,7 +98,7 @@ interface iField
      *
      * @return string
      */
-    function getType(): string;
+    public function getType(): string;
     /**
      * SET
      * Define o nome completo da classe que determina o tipo deste campo.
@@ -118,7 +118,7 @@ interface iField
      *
      * @return ?string
      */
-    function getInputFormat(): ?string;
+    public function getInputFormat(): ?string;
     /**
      * SET
      * Define um formato para a informação armazenada neste campo.
@@ -159,7 +159,7 @@ interface iField
      *
      * @return ?int
      */
-    function getLength(): ?int;
+    public function getLength(): ?int;
     /**
      * SET
      * Retorna o tamanho máximo (em caracteres) aceitos por este campo.
@@ -176,7 +176,7 @@ interface iField
      *
      * @return null|int|iRealType|\DateTime
      */
-    function getMin(): null|int|iRealType|\DateTime;
+    public function getMin(): null|int|iRealType|\DateTime;
     /**
      * SET
      * Define o menor valor possível para um tipo numérico ou ``DateTime``.
@@ -199,7 +199,7 @@ interface iField
      *
      * @return null|int|iRealType|\DateTime
      */
-    function getMax(): null|int|iRealType|\DateTime;
+    public function getMax(): null|int|iRealType|\DateTime;
     /**
      * SET
      * Define o maior valor possível para um tipo numérico ou ``DateTime``.
@@ -228,7 +228,7 @@ interface iField
      *
      * @return bool
      */
-    function isAllowNull(): bool;
+    public function isAllowNull(): bool;
     /**
      * SET
      * Define se é ou não permitido atribuir ``null`` como um valor válido para este campo.
@@ -243,7 +243,7 @@ interface iField
      *
      * @return ?bool
      */
-    function isAllowEmpty(): ?bool;
+    public function isAllowEmpty(): ?bool;
     /**
      * SET
      * Define se é ou não permitido atribuir ``''`` como um valor válido para este campo.
@@ -258,7 +258,7 @@ interface iField
      *
      * @return bool
      */
-    function isConvertEmptyToNull(): bool;
+    public function isConvertEmptyToNull(): bool;
     /**
      * SET
      * Define se, ao receber um valor ``''``, este deverá ser convertido para ``null``.
@@ -275,7 +275,7 @@ interface iField
      *
      * @return bool
      */
-    function isReadOnly(): bool;
+    public function isReadOnly(): bool;
     /**
      * SET
      * Indica se este campo é ``readonly``.
@@ -300,7 +300,7 @@ interface iField
      *
      * @return bool
      */
-    function isReference(): bool;
+    public function isReference(): bool;
 
 
 
@@ -309,7 +309,7 @@ interface iField
      *
      * @return bool
      */
-    function isCollection(): bool;
+    public function isCollection(): bool;
 
 
 
@@ -326,7 +326,7 @@ interface iField
      *
      * @return bool
      */
-    function isValid(): bool;
+    public function isValid(): bool;
 
 
     /**
@@ -351,7 +351,7 @@ interface iField
      *
      * @return string|array
      */
-    function getState(): string|array;
+    public function getState(): string|array;
 
 
     /**
@@ -376,7 +376,7 @@ interface iField
      *
      * @return string|array
      */
-    function getLastValidateState(): string|array;
+    public function getLastValidateState(): string|array;
 
 
     /**
@@ -399,7 +399,7 @@ interface iField
      *
      * @return bool
      */
-    function getLastValidateCanSet(): bool;
+    public function getLastValidateCanSet(): bool;
 
 
     /**
@@ -492,7 +492,7 @@ interface iField
      *
      * @return bool
      */
-    function validateValue(mixed $v): bool;
+    public function validateValue(mixed $v): bool;
 
 
 
@@ -517,7 +517,7 @@ interface iField
      *
      * @return mixed
      */
-    function getDefault(bool $getInstruction = false): mixed;
+    public function getDefault(bool $getInstruction = false): mixed;
     /**
      * SET
      * Define o valor padrão que este campo deve ter caso nenhum outro seja definido.
@@ -538,7 +538,7 @@ interface iField
      *
      * @return ?array
      */
-    function getEnumerator(bool $getOnlyValues = false): ?array;
+    public function getEnumerator(bool $getOnlyValues = false): ?array;
     /**
      * SET
      * Define a coleção de valores que este campo está apto a assumir.
@@ -546,6 +546,10 @@ interface iField
      * O ``array`` pode ser unidimensional ou multidimensional, no caso de ser
      * multidimensional, cada entrada deverá ser um novo ``array`` com 2 posições onde a
      * primeira será o valor real do campo e o segundo, um ``label`` para o mesmo.
+     *
+     * A opção por um array multidimensional no lugar de um array associativo se dá pelo fato
+     * de que no caso escolhido a ordem dos elementos é sempre respeitada na apresentação
+     * dos itens definidos.
      *
      * Os valores aqui pré-definidos devem seguir as mesmas regras de validação para o campo.
      *
@@ -635,7 +639,7 @@ interface iField
      * agora ele esteja inválido. Também retornará ``false`` caso o valor seja
      * totalmente incompatível com o campo.
      */
-    function setValue(mixed $v): bool;
+    public function setValue(mixed $v): bool;
 
 
 
@@ -674,7 +678,7 @@ interface iField
      *
      * @return mixed
      */
-    function getValue(): mixed;
+    public function getValue(): mixed;
 
 
     /**
@@ -713,7 +717,7 @@ interface iField
      *
      * @return mixed
      */
-    function getStorageValue(): mixed;
+    public function getStorageValue(): mixed;
 
 
     /**
@@ -722,5 +726,5 @@ interface iField
      *
      * @return mixed
      */
-    function getRawValue(): mixed;
+    public function getRawValue(): mixed;
 }

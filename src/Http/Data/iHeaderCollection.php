@@ -38,7 +38,7 @@ interface iHeaderCollection extends iCollection
      *
      * @return string
      */
-    function toString(?bool $originalKeys = false): string;
+    public function toString(?bool $originalKeys = false): string;
 
 
 
@@ -48,12 +48,11 @@ interface iHeaderCollection extends iCollection
      * Retorna uma string representando toda a coleção de valores determinados para o header de
      * nome indicado. Cada valor é separado por virgula.
      *
-     * Uma string vazia será retornada caso o header não exista.
-     *
      * @param string $key
      * Nome do header alvo.
      *
      * @return string
+     * Uma string vazia será retornada caso o header não exista.
      */
-    function getHeaderLine(string $key): string;
+    public function getHeaderLine(string $key): string;
 }

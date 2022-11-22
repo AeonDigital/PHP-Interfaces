@@ -16,7 +16,7 @@ namespace AeonDigital\Interfaces;
  * Interface para tipo numérico "Real".
  * Nas classes concretas deve usar alguma extenção matemática como **BC Math**.
  *
- * @package     AeonDigital\Interfaces\DataModel
+ * @package     AeonDigital\Interfaces
  * @author      Rianna Cantarelli <rianna@aeondigital.com.br>
  * @copyright   2022, Rianna Cantarelli
  * @license     MIT
@@ -33,21 +33,21 @@ interface iRealType
      *
      * @return string
      */
-    function value(): string;
+    public function value(): string;
 
     /**
      * Retorna apenas a parte inteira do numeral representado por esta instância.
      *
      * @return string
      */
-    function getIntegerPart(): string;
+    public function getIntegerPart(): string;
 
     /**
      * Retorna apenas a parte decimal do numeral representado por esta instância.
      *
      * @return string
      */
-    function getDecimalPart(): string;
+    public function getDecimalPart(): string;
 
     /**
      * Retorna o total de dígitos que compõe este numeral somando o total de casas antes e após
@@ -55,7 +55,7 @@ interface iRealType
      *
      * @return int
      */
-    function precision(): int;
+    public function precision(): int;
 
     /**
      * Retorna o total de digitos que são usados para representar a parte inteira do numeral
@@ -63,7 +63,7 @@ interface iRealType
      *
      * @return int
      */
-    function integerPlaces(): int;
+    public function integerPlaces(): int;
 
     /**
      * Retorna o total de digitos que são usados para representar a parte decimal do numeral
@@ -71,7 +71,7 @@ interface iRealType
      *
      * @return int
      */
-    function decimalPlaces(): int;
+    public function decimalPlaces(): int;
 
 
 
@@ -89,7 +89,7 @@ interface iRealType
      *
      * @return void
      */
-    static function defineGlobalDecimalPlaces(int $v): void;
+    public static function defineGlobalDecimalPlaces(int $v): void;
 
     /**
      * Retorna o número de casas decimais sendo usadas no momento para fins de cálculos com esta
@@ -97,7 +97,7 @@ interface iRealType
      *
      * @return int
      */
-    static function getGlobalDecimalPlaces(): int;
+    public static function getGlobalDecimalPlaces(): int;
 
     /**
      * Define a forma padrão pela qual os valores, quando calculados, serão arredondados.
@@ -123,21 +123,21 @@ interface iRealType
      *
      * @return void
      */
-    static function defineGlobalRoundType(?string $roundType, ?iRealType $sensibility): void;
+    public static function defineGlobalRoundType(?string $roundType, ?iRealType $sensibility): void;
 
     /**
      * Retorna o tipo de arredondamento definido para os cálculos realizados com esta classe.
      *
      * @return ?string
      */
-    static function getRoundType(): ?string;
+    public static function getRoundType(): ?string;
 
     /**
      * Retorna o nível de sensibilidade usada para os arredondamentos.
      *
      * @return ?iRealType
      */
-    static function getRoundSensibility(): ?iRealType;
+    public static function getRoundSensibility(): ?iRealType;
 
     /**
      * Identifica se o valor passado é um ``iRealType`` válido.
@@ -148,7 +148,7 @@ interface iRealType
      * @return bool
      * Retorna ``true`` se o valor passado for válido.
      */
-    static function isValidRealtype(mixed $v): bool;
+    public static function isValidRealtype(mixed $v): bool;
 
 
 
@@ -164,7 +164,7 @@ interface iRealType
      * Retorna ``true`` se o valor atual desta instância e o valor passado em ``$v``
      * forem **IDÊNTICOS**.
      */
-    function isEqualAs(int|float|string|iRealType $v): bool;
+    public function isEqualAs(int|float|string|iRealType $v): bool;
 
     /**
      * Verifica se o valor atual desta instância é maior que o valor passado para comparação.
@@ -176,7 +176,7 @@ interface iRealType
      * Retornará ``true`` se o valor atual desta instância é **MAIOR** que o valor
      * indicado em ``$v``.
      */
-    function isGreaterThan(int|float|string|iRealType $v): bool;
+    public function isGreaterThan(int|float|string|iRealType $v): bool;
 
     /**
      * Verifica se o valor atual desta instância é maior ou igual ao valor passado para comparação.
@@ -188,7 +188,7 @@ interface iRealType
      * Retornará ``true`` se o valor atual desta instância é **MAIOR** ou **IGUAL**
      * ao o valor indicado em ``$v``.
      */
-    function isGreaterOrEqualAs(int|float|string|iRealType $v): bool;
+    public function isGreaterOrEqualAs(int|float|string|iRealType $v): bool;
 
     /**
      * Verifica se o valor atual desta instância é menor que o valor passado para comparação.
@@ -200,7 +200,7 @@ interface iRealType
      * Retornará ``true`` se o valor atual desta instância é **MENOR** que o valor
      * indicado em ``$v``.
      */
-    function isLessThan(int|float|string|iRealType $v): bool;
+    public function isLessThan(int|float|string|iRealType $v): bool;
 
     /**
      * Verifica se o valor atual desta instância é menor ou igual ao valor passado para comparação.
@@ -212,7 +212,7 @@ interface iRealType
      * Retornará ``true`` se o valor atual desta instância é **MENOR** ou **IGUAL**
      * ao o valor indicado em ``$v``.
      */
-    function isLessOrEqualAs(int|float|string|iRealType $v): bool;
+    public function isLessOrEqualAs(int|float|string|iRealType $v): bool;
 
 
 
@@ -224,7 +224,7 @@ interface iRealType
      * @return bool
      * Retornará ``true`` se o valor atual desta instância for ``zero``.
      */
-    function isZero(): bool;
+    public function isZero(): bool;
 
     /**
      * Verifica se o valor atual desta instância é um número positivo.
@@ -232,7 +232,7 @@ interface iRealType
      * @return bool
      * Retornará ``true`` se o valor atual desta instância for um número positivo.
      */
-    function isPositive(): bool;
+    public function isPositive(): bool;
 
     /**
      * Verifica se o valor atual desta instância é um número negativo.
@@ -240,7 +240,7 @@ interface iRealType
      * @return bool
      * Retornará ``true`` se o valor atual desta instância for um número negativo.
      */
-    function isNegative(): bool;
+    public function isNegative(): bool;
 
     /**
      * Retorna uma nova instância ``iRealType`` com o mesmo valor atual desta instância mas com
@@ -248,7 +248,7 @@ interface iRealType
      *
      * @return iRealType
      */
-    function toPositive(): iRealType;
+    public function toPositive(): iRealType;
 
     /**
      * Retorna uma nova instância ``iRealType`` com o mesmo valor atual desta instância mas com
@@ -256,7 +256,7 @@ interface iRealType
      *
      * @return iRealType
      */
-    function toNegative(): iRealType;
+    public function toNegative(): iRealType;
 
     /**
      * Retorna uma nova instância ``iRealType`` com o mesmo valor atual desta instância mas com
@@ -264,7 +264,7 @@ interface iRealType
      *
      * @return iRealType
      */
-    function invertSignal(): iRealType;
+    public function invertSignal(): iRealType;
 
 
 
@@ -299,7 +299,7 @@ interface iRealType
      * @return iRealType
      * Nova instância ``iRealType`` com o resultado do arredondamento indicado.
      */
-    static function roundTo(iRealType $v, string $roundType, iRealType $sensibility): iRealType;
+    public static function roundTo(iRealType $v, string $roundType, iRealType $sensibility): iRealType;
 
 
 
@@ -318,7 +318,7 @@ interface iRealType
      * @return iRealType
      * Nova instância com o resultado desta operação.
      */
-    function sum(int|float|string|iRealType $v, ?int $dPlaces = null): iRealType;
+    public function sum(int|float|string|iRealType $v, ?int $dPlaces = null): iRealType;
 
     /**
      * Efetua uma subtração do valor atual desta instância com o valor indicado.
@@ -333,7 +333,7 @@ interface iRealType
      * @return iRealType
      * Nova instância com o resultado desta operação.
      */
-    function sub(int|float|string|iRealType $v, ?int $dPlaces = null): iRealType;
+    public function sub(int|float|string|iRealType $v, ?int $dPlaces = null): iRealType;
 
     /**
      * Efetua uma multiplicação do valor atual desta instância com o valor indicado.
@@ -348,7 +348,7 @@ interface iRealType
      * @return iRealType
      * Nova instância com o resultado desta operação.
      */
-    function mul(int|float|string|iRealType $v, ?int $dPlaces = null): iRealType;
+    public function mul(int|float|string|iRealType $v, ?int $dPlaces = null): iRealType;
 
     /**
      * Efetua uma divisão do valor atual desta instância com o valor indicado.
@@ -363,7 +363,7 @@ interface iRealType
      * @return iRealType
      * Nova instância com o resultado desta operação.
      */
-    function div(int|float|string|iRealType $v, ?int $dPlaces = null): iRealType;
+    public function div(int|float|string|iRealType $v, ?int $dPlaces = null): iRealType;
 
     /**
      * Calcula o módulo da divisão do valor atual desta instância pelo valor indicado.
@@ -378,7 +378,7 @@ interface iRealType
      * @return iRealType
      * Nova instância com o resultado desta operação.
      */
-    function mod(int|float|string|iRealType $v, ?int $dPlaces = null): iRealType;
+    public function mod(int|float|string|iRealType $v, ?int $dPlaces = null): iRealType;
 
     /**
      * Eleva o valor atual desta instância pelo expoente indicado.
@@ -393,7 +393,7 @@ interface iRealType
      * @return iRealType
      * Nova instância com o resultado desta operação.
      */
-    function pow(int|float|string|iRealType $v, ?int $dPlaces = null): iRealType;
+    public function pow(int|float|string|iRealType $v, ?int $dPlaces = null): iRealType;
 
     /**
      * Calcula a raiz quadrada do valor atual desta instância.
@@ -405,7 +405,7 @@ interface iRealType
      * @return iRealType
      * Raiz quadrada do valor atual desta instância.
      */
-    function sqrt(?int $dPlaces = null): iRealType;
+    public function sqrt(?int $dPlaces = null): iRealType;
 
 
 
@@ -417,7 +417,7 @@ interface iRealType
      *
      * @return string
      */
-    function __toString(): string;
+    public function __toString(): string;
 
     /**
      * Permite definir um novo objeto baseado no estado completo passado pelo parametro ``$state``.
@@ -428,7 +428,7 @@ interface iRealType
      * @return iRealType
      * Nova instância preenchida com os valores do estado indicado em ``$state``.
      */
-    static function __set_state(array $state): iRealType;
+    public static function __set_state(array $state): iRealType;
 
     /**
      * Formata o valor atual desta instância usando o pontuador decimal e de milhar indicados.
@@ -446,5 +446,5 @@ interface iRealType
      * @return string
      * Valor atual desta instância formatado conforme definido.
      */
-    function format(?int $dPlaces = null, string $dec, string $tho): string;
+    public function format(?int $dPlaces = null, string $dec, string $tho): string;
 }

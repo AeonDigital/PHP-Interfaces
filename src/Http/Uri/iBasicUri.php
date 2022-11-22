@@ -265,9 +265,7 @@ interface iBasicUri
      *
      * @return string
      */
-    function getScheme(): string;
-
-
+    public function getScheme(): string;
 
     /**
      * Este método ``DEVE`` manter o estado da instância atual e retornar uma nova instância
@@ -281,7 +279,16 @@ interface iBasicUri
      * @throws \InvalidArgumentException
      * Caso seja definido um valor inválido para ``scheme``.
      */
-    function withScheme(string $scheme): static;
+    public function withScheme(string $scheme): static;
+
+
+
+    /**
+     * Converte os atributos que formam a ``URI`` em uma string válida para seu respectivo ``scheme``.
+     *
+     * @return string
+     */
+    public function __toString(): string;
 
 
 
@@ -296,14 +303,5 @@ interface iBasicUri
      * @throws \InvalidArgumentException
      * Exception lançada caso a ``URI`` indicada seja inválida.
      */
-    static function fromString(string $uri): static;
-
-
-
-    /**
-     * Converte os atributos que formam a ``URI`` em uma string válida para seu respectivo ``scheme``.
-     *
-     * @return string
-     */
-    function __toString(): string;
+    public static function fromString(string $uri): static;
 }

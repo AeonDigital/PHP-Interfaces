@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace AeonDigital\Interfaces\Http\Server;
 
+use Psr\Http\Server\RequestHandlerInterface as RequestHandlerInterface;
 use AeonDigital\Interfaces\Http\Message\iServerRequest as iServerRequest;
 use AeonDigital\Interfaces\Http\Message\iResponse as iResponse;
 
@@ -13,9 +14,22 @@ use AeonDigital\Interfaces\Http\Message\iResponse as iResponse;
 
 
 /**
- * Responsável por manipular uma requisição ``Http``.
+ * Manipula uma requisição recebida pelo servidor e produz uma respota.
  *
- * @package     AeonDigital\EnGarde
+ * Equivalente à ``Psr\Http\Server\RequestHandlerInterface``, porém, com algumas alterações
+ * para permitir o uso de tipagem equivalente à versão 8.2 do PHP além de melhorias percebidas
+ * como necessárias para este tipo de objeto.
+ *
+ * Visto que todos os métodos existentes na interface original estarão presentes aqui mas com
+ * uma assinatura levemente diferente, e, para permitir manter a compatibilidade com o projeto
+ * PSR original foram adicionados 2 métodos extra sendo eles ``toPSR`` e ``fromPSR``.
+ *
+ * Obs:
+ * Os textos originais dos métodos da interface base foram mantidos alterando apenas alguns
+ * itens contextuais que ficarão evidentes ao efetuar a leitura e/ou comparação entre os casos.
+ *
+ *
+ * @package     AeonDigital\Interfaces\Http
  * @author      Rianna Cantarelli <rianna@aeondigital.com.br>
  * @copyright   2020, Rianna Cantarelli
  * @license     MIT
@@ -23,28 +37,37 @@ use AeonDigital\Interfaces\Http\Message\iResponse as iResponse;
 interface iRequestHandler
 {
 
-    /**
-     * Esta interface é uma especialização da interface
-     * ``Psr\Http\Server\RequestHandlerInterface`` mas que utiliza as
-     * classes derivadas das interfaces dos projetos ``AeonDigital`` para
-     * executar as mesmas tarefas mas com o ganho de algumas funções extras.
-     *
-     * Uma vez que todas as classes definidas aqui implementam
-     * também as interfaces PSR originais é garantido a compatibilidade entre
-     * estes projetos e outros que utilizem Middlewares PSR.
-     */
-
-
-
 
 
     /**
-     * Processa a requisição e produz uma resposta.
+     * Handles a request and produces a response.
      *
-     * @param       iServerRequest $request
-     *              Requisição que está sendo executada.
+     * May call other collaborating code to generate the response.
      *
-     * @return      iResponse
+     * @param iServerRequest $request
+     *
+     * @return iResponse
      */
-    function handle(iServerRequest $request): iResponse;
+    public function handle(iServerRequest $request): iResponse;
+
+
+
+
+
+    /**
+     * Retorna uma instância deste mesmo objeto, porém, compatível com a interface
+     * em que foi baseada ``Psr\Http\Server\RequestHandlerInterface``.
+     */
+    public function toPSR(): RequestHandlerInterface;
+    /**
+     * A partir de um objeto ``Psr\Http\Server\RequestHandlerInterface``, retorna um novo que implementa
+     * a interface ``AeonDigital\Interfaces\Http\Server\iRequestHandler``.
+     *
+     * @param RequestHandlerInterface $obj
+     * Instância original.
+     *
+     * @return static
+     * Nova instância, sob nova interface.
+     */
+    public static function fromPSR(RequestHandlerInterface $obj): static;
 }

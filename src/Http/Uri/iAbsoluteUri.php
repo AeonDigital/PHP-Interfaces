@@ -85,9 +85,7 @@ interface iAbsoluteUri extends iHierPartUri
      *
      * @return string
      */
-    function getQuery(): string;
-
-
+    public function getQuery(): string;
 
     /**
      * Este método ``DEVE`` manter o estado da instância atual e retornar uma nova instância
@@ -101,9 +99,7 @@ interface iAbsoluteUri extends iHierPartUri
      * @throws \InvalidArgumentException
      * Caso seja definido um valor inválido para ``query``.
      */
-    function withQuery(string $query): static;
-
-
+    public function withQuery(string $query): static;
 
 
 
@@ -117,9 +113,7 @@ interface iAbsoluteUri extends iHierPartUri
      *
      * @return string
      */
-    function getFragment(): string;
-
-
+    public function getFragment(): string;
 
     /**
      * Este método ``DEVE`` manter o estado da instância atual e retornar uma nova instância
@@ -133,14 +127,7 @@ interface iAbsoluteUri extends iHierPartUri
      * @throws \InvalidArgumentException
      * Caso seja definido um valor inválido para ``fragment``.
      */
-    function withFragment(string $fragment): static;
-
-
-
-
-
-
-
+    public function withFragment(string $fragment): static;
 
 
 
@@ -162,14 +149,7 @@ interface iAbsoluteUri extends iHierPartUri
      * @throws \InvalidArgumentException
      * Caso seja definido um valor inválido para algum argumento.
      */
-    function withRelativeUri(string $path = "", string $query = "", string $fragment = ""): static;
-
-
-
-
-
-
-
+    public function withRelativeUri(string $path = "", string $query = "", string $fragment = ""): static;
 
 
 
@@ -188,9 +168,7 @@ interface iAbsoluteUri extends iHierPartUri
      *
      * @return string
      */
-    function getAbsoluteUri(bool $withFragment = false): string;
-
-
+    public function getAbsoluteUri(bool $withFragment = false): string;
 
     /**
      * Retorna uma string que representa toda a parte relativa da ``URI`` atualmente representada
@@ -208,22 +186,5 @@ interface iAbsoluteUri extends iHierPartUri
      *
      * @return string
      */
-    function getRelativeUri(bool $withFragment = false): string;
-
-
-
-
-
-    /**
-     * Retorna uma nova instância definida a partir do valor indicado na string ``$uri``.
-     *
-     * @param       string $uri
-     *              ``URI`` que será usada de base para a nova instância.
-     *
-     * @return      static
-     *
-     * @throws      \InvalidArgumentException
-     *              Exception lançada caso a ``URI`` indicada seja inválida.
-     */
-    static function fromString(string $uri): static;
+    public function getRelativeUri(bool $withFragment = false): string;
 }

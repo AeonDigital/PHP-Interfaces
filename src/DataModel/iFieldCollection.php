@@ -59,14 +59,14 @@ interface iFieldCollection extends iField
      *
      * @return string
      */
-    function collectionGetState(): string;
+    public function collectionGetState(): string;
     /**
      * Retornará ``valid`` caso a última validação de uma coleção tenha ocorrido sem falhas.
      * Caso a validação tenha falhado, retornará o código que identifica a natureza do erro.
      *
      * @return string
      */
-    function collectionGetLastValidateState(): string;
+    public function collectionGetLastValidateState(): string;
 
 
 
@@ -75,7 +75,7 @@ interface iFieldCollection extends iField
      *
      * @return bool
      */
-    function collectionIsDistinct(): bool;
+    public function collectionIsDistinct(): bool;
     /**
      * SET
      * Define se esta coleção exige que cada um de seus valores seja único.
@@ -95,7 +95,7 @@ interface iFieldCollection extends iField
      *
      * @return ?array
      */
-    function collectionGetDistinctKeys(): ?array;
+    public function collectionGetDistinctKeys(): ?array;
 
 
 
@@ -113,7 +113,7 @@ interface iFieldCollection extends iField
      * agora ele esteja inválido. Também retornará ``false`` caso o valor seja
      * totalmente incompatível com o campo.
      */
-    function collectionAddValue(mixed $v): bool;
+    public function collectionAddValue(mixed $v): bool;
 
 
 
@@ -129,7 +129,7 @@ interface iFieldCollection extends iField
      *
      * @return ?int
      */
-    function collectionGetIndexOfValue(mixed $v): ?int;
+    public function collectionGetIndexOfValue(mixed $v): ?int;
 
 
 
@@ -141,7 +141,7 @@ interface iFieldCollection extends iField
      *
      * @return int
      */
-    function collectionCountOccurrenciesOfValue(mixed $v): int;
+    public function collectionCountOccurrenciesOfValue(mixed $v): int;
 
 
 
@@ -153,7 +153,7 @@ interface iFieldCollection extends iField
      *
      * @return bool
      */
-    function collectionHasValue(mixed $v): bool;
+    public function collectionHasValue(mixed $v): bool;
 
 
 
@@ -162,7 +162,7 @@ interface iFieldCollection extends iField
      *
      * @return int
      */
-    function collectionCount(): int;
+    public function collectionCount(): int;
 
 
 
@@ -177,7 +177,7 @@ interface iFieldCollection extends iField
      *
      * @return void
      */
-    function collectionUnsetValue(mixed $v, bool $all = false): void;
+    public function collectionUnsetValue(mixed $v, bool $all = false): void;
 
 
 
@@ -189,7 +189,7 @@ interface iFieldCollection extends iField
      *
      * @return void
      */
-    function collectionUnsetIndex(int $i): void;
+    public function collectionUnsetIndex(int $i): void;
 
 
 
@@ -218,7 +218,7 @@ interface iFieldCollection extends iField
      *
      * @return ?array
      */
-    function collectionGetAcceptedCount(): ?array;
+    public function collectionGetAcceptedCount(): ?array;
     /**
      * SET
      * Se definido, permite informar uma composição de regras que especificam as contagens
@@ -282,7 +282,7 @@ interface iFieldCollection extends iField
      *
      * @return ?int
      */
-    function collectionGetMin(): ?int;
+    public function collectionGetMin(): ?int;
 
 
 
@@ -292,5 +292,5 @@ interface iFieldCollection extends iField
      *
      * @return ?int
      */
-    function collectionGetMax(): ?int;
+    public function collectionGetMax(): ?int;
 }

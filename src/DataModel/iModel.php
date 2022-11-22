@@ -32,7 +32,7 @@ interface iModel extends \IteratorAggregate
      *
      * @return string
      */
-    function getName(): string;
+    public function getName(): string;
     /**
      * SET
      * Define o nome do modelo de dados.
@@ -46,7 +46,7 @@ interface iModel extends \IteratorAggregate
      *
      * @return string
      */
-    function getDescription(): string;
+    public function getDescription(): string;
 
 
 
@@ -60,7 +60,7 @@ interface iModel extends \IteratorAggregate
      *
      * @return bool
      */
-    function hasField(string $f): bool;
+    public function hasField(string $f): bool;
 
 
     /**
@@ -68,7 +68,7 @@ interface iModel extends \IteratorAggregate
      *
      * @return int
      */
-    function countFields(): int;
+    public function countFields(): int;
 
 
     /**
@@ -81,7 +81,7 @@ interface iModel extends \IteratorAggregate
      *
      * @return array
      */
-    function getFieldNames(bool $getReferences = true): array;
+    public function getFieldNames(bool $getReferences = true): array;
 
 
 
@@ -93,7 +93,7 @@ interface iModel extends \IteratorAggregate
      *
      * @return array
      */
-    function getInitialDataModel(): array;
+    public function getInitialDataModel(): array;
 
 
 
@@ -112,7 +112,7 @@ interface iModel extends \IteratorAggregate
      *
      * @return bool
      */
-    function isInitial(): bool;
+    public function isInitial(): bool;
 
 
 
@@ -122,7 +122,7 @@ interface iModel extends \IteratorAggregate
      *
      * @return bool
      */
-    function isValid(): bool;
+    public function isValid(): bool;
 
 
     /**
@@ -146,7 +146,7 @@ interface iModel extends \IteratorAggregate
      *
      * @return string|array
      */
-    function getState(): string|array;
+    public function getState(): string|array;
 
 
     /**
@@ -172,7 +172,7 @@ interface iModel extends \IteratorAggregate
      *
      * @return null|string|array
      */
-    function getLastValidateState(): null|string|array;
+    public function getLastValidateState(): null|string|array;
 
 
     /**
@@ -181,7 +181,7 @@ interface iModel extends \IteratorAggregate
      *
      * @return bool
      */
-    function getLastValidateCanSet(): bool;
+    public function getLastValidateCanSet(): bool;
 
 
     /**
@@ -228,7 +228,7 @@ interface iModel extends \IteratorAggregate
      * Caso o objeto passado possua propriedades não correspondentes aos campos
      * definidos.
      */
-    function validateValues(mixed $objValues, bool $checkAll = false): bool;
+    public function validateValues(mixed $objValues, bool $checkAll = false): bool;
 
 
 
@@ -258,7 +258,7 @@ interface iModel extends \IteratorAggregate
      * @throws \InvalidArgumentException
      * Caso o nome do campo não seja válido.
      */
-    function setFieldValue(string $f, mixed $v): bool;
+    public function setFieldValue(string $f, mixed $v): bool;
 
 
     /**
@@ -273,7 +273,7 @@ interface iModel extends \IteratorAggregate
      * @throws \InvalidArgumentException
      * Caso o nome do campo não seja válido.
      */
-    function getFieldValue(string $f): mixed;
+    public function getFieldValue(string $f): mixed;
 
 
     /**
@@ -288,7 +288,7 @@ interface iModel extends \IteratorAggregate
      * @throws \InvalidArgumentException
      * Caso o nome do campo não seja válido.
      */
-    function getFieldStorageValue(string $f): mixed;
+    public function getFieldStorageValue(string $f): mixed;
 
 
     /**
@@ -303,7 +303,7 @@ interface iModel extends \IteratorAggregate
      * @throws \InvalidArgumentException
      * Caso o nome do campo não seja válido.
      */
-    function getFieldRawValue(string $f): mixed;
+    public function getFieldRawValue(string $f): mixed;
 
 
 
@@ -339,7 +339,7 @@ interface iModel extends \IteratorAggregate
      * Caso o objeto passado possua propriedades não correspondentes aos campos
      * definidos.
      */
-    function setValues(mixed $objValues, bool $checkAll = false): bool;
+    public function setValues(mixed $objValues, bool $checkAll = false): bool;
 
 
     /**
@@ -351,7 +351,7 @@ interface iModel extends \IteratorAggregate
      *
      * @return array
      */
-    function getValues(): array;
+    public function getValues(): array;
 
 
     /**
@@ -363,7 +363,7 @@ interface iModel extends \IteratorAggregate
      *
      * @return array
      */
-    function getStorageValues(): array;
+    public function getStorageValues(): array;
 
 
     /**
@@ -375,5 +375,5 @@ interface iModel extends \IteratorAggregate
      *
      * @return array
      */
-    function getRawValues(): array;
+    public function getRawValues(): array;
 }

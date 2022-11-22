@@ -52,7 +52,7 @@ interface iFieldModel extends iField
      *
      * @return bool
      */
-    function isInitial(): bool;
+    public function isInitial(): bool;
 
 
     /**
@@ -60,7 +60,7 @@ interface iFieldModel extends iField
      *
      * @return iModel
      */
-    function getModel(): iModel;
+    public function getModel(): iModel;
 
 
     /**
@@ -68,7 +68,7 @@ interface iFieldModel extends iField
      *
      * @return string
      */
-    function getModelName(): string;
+    public function getModelName(): string;
 
 
     /**
@@ -79,5 +79,5 @@ interface iFieldModel extends iField
      *
      * @return string|array|iModel|undefined
      */
-    function getInstanceValue(): string|array|iModel|undefined;
+    public function getInstanceValue(): string|array|iModel|undefined;
 }

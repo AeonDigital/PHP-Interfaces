@@ -13,14 +13,19 @@ use Psr\Http\Message\StreamInterface as StreamInterface;
 
 
 /**
- * Interface iStream.
+ * Descreve um stream.
  *
  * Equivalente à ``Psr\Http\Message\StreamInterface``, porém, com algumas alterações
  * para permitir o uso de tipagem equivalente à versão 8.2 do PHP além de melhorias percebidas
- * como necessárias.
+ * como necessárias para este tipo de objeto.
  *
- * Para permitir aderencia à interface PSR foi criado o método "toPSR" que deve retornar um
- * objeto que não quebre a interface na qual esta foi baseada.
+ * Visto que todos os métodos existentes na interface original estarão presentes aqui mas com
+ * uma assinatura levemente diferente, e, para permitir manter a compatibilidade com o projeto
+ * PSR original foram adicionados 2 métodos extra sendo eles ``toPSR`` e ``fromPSR``.
+ *
+ * Obs:
+ * Os textos originais dos métodos da interface base foram mantidos alterando apenas alguns
+ * itens contextuais que ficarão evidentes ao efetuar a leitura e/ou comparação entre os casos.
  *
  *
  * @package     AeonDigital\Interfaces\Stream
@@ -34,181 +39,151 @@ interface iStream
 
 
     /**
-     * Este método retorna todo o conteúdo do ``Stream`` em uma string.
-     * Para isso, primeiro o cursor é reposicionado no início do mesmo e então seu conteúdo é
-     * retornado.
+     * Reads all data from the stream into a string, from the beginning to end.
      *
-     * Ao final do processo, se possível (conforme o modo no qual o arquivo está aberto) o cursor
-     * será reposicionado onde estava imediatamente antes da execução deste método. Este
-     * comportamento é próprio desta implementação.
+     * This method MUST attempt to seek to the beginning of the stream before
+     * reading data and read the stream until the end is reached.
+     *
+     * Warning: This could attempt to load a large amount of data into memory.
+     *
+     * This method MUST NOT raise an exception in order to conform with PHP's
+     * string casting operations.
      *
      * @see http://php.net/manual/en/language.oop5.magic.php#object.tostring
-     *
      * @return string
-     *
-     * @codeCoverageIgnore
      */
-    function __toString(): string;
+    public function __toString(): string;
 
     /**
-     * Encerra o ``Stream``.
+     * Closes the stream and any underlying resources.
      *
      * @return void
      */
-    function close(): void;
+    public function close(): void;
 
     /**
-     * Encerra o uso do ``Stream`` atualmente carregado para esta instância.
-     * Retorna o objeto ``Stream`` em sua condição atual ou ``null`` caso ele não esteja definido.
+     * Separates any underlying resources from the stream.
      *
-     * @return ?resource
+     * After the stream has been detached, the stream is in an unusable state.
+     *
+     * @return resource|null Underlying PHP stream, if any
      */
-    function detach();
+    public function detach(): mixed;
 
     /**
-     * Retorna o tamanho (em bytes) do ``Stream`` carregado ou ``null`` caso ele não exista ou se
-     * não for possível determinar.
+     * Get the size of the stream if known.
      *
-     * @return ?int
+     * @return int|null Returns the size in bytes if known, or null if unknown.
      */
-    function getSize(): ?int;
+    public function getSize(): int|null;
 
     /**
-     * Retorna a posição atual do ponteiro.
+     * Returns the current position of the file read/write pointer
      *
-     * @return int
-     *
-     * @throws \RuntimeException
+     * @return int Position of the file pointer
+     * @throws \RuntimeException on error.
      */
-    function tell(): int;
+    public function tell(): int;
 
     /**
-     * Retornará ``true`` caso o ponteiro do ``Stream`` esteja posicionado no final do arquivo.
+     * Returns true if the stream is at the end of the stream.
      *
      * @return bool
      */
-    function eof(): bool;
+    public function eof(): bool;
 
     /**
-     * Retorna ``true`` se o ``Stream`` carregado é *pesquisável*.
+     * Returns whether or not the stream is seekable.
      *
      * @return bool
      */
-    function isSeekable(): bool;
+    public function isSeekable(): bool;
 
     /**
-     * Modifica a posição do cursor dentro do ``Stream`` conforme indicações ``offset`` e
-     * ``whence``.
-     *
-     * Esta função tem funcionamento identico ao ``fseek`` do PHP.
-     * Importante lembrar que conforme o modo de abertura do recurso (r ; rw; r+; a+ ...) esta
-     * função pode não funcionar adequadamente.
+     * Seek to a position in the stream.
      *
      * @link http://www.php.net/manual/en/function.fseek.php
-     *
-     * @param int $offset
-     * Posição que será definida para o cursor.
-     *
-     * @param int $whence
-     * Especifica a forma como a posição do cursor será calculado.
-     * Valores válidos são ``SEEK_SET``, ``SEEK_CUR`` e ``SEEK_END``.
-     *
+     * @param int $offset Stream offset
+     * @param int $whence Specifies how the cursor position will be calculated
+     *     based on the seek offset. Valid values are identical to the built-in
+     *     PHP $whence values for `fseek()`.  SEEK_SET: Set position equal to
+     *     offset bytes SEEK_CUR: Set position to current location plus offset
+     *     SEEK_END: Set position to end-of-stream plus offset.
      * @return void
-     *
-     * @throws \RuntimeException
+     * @throws \RuntimeException on failure.
      */
-    function seek(int $offset, int $whence = SEEK_SET): void;
+    public function seek(int $offset, int $whence = SEEK_SET): void;
 
     /**
-     * Posiciona o cursor do ``Stream`` no início do mesmo.
-     * Se o ``Stream`` não for *pesquisável* então este método irá lançar uma exception.
+     * Seek to the beginning of the stream.
+     *
+     * If the stream is not seekable, this method will raise an exception;
+     * otherwise, it will perform a seek(0).
      *
      * @see seek()
-     *
      * @link http://www.php.net/manual/en/function.fseek.php
-     *
      * @return void
-     *
-     * @throws \RuntimeException
+     * @throws \RuntimeException on failure.
      */
-    function rewind(): void;
+    public function rewind(): void;
 
     /**
-     * Retorna ``true`` se é possível escrever no ``Stream`` ou se ele está com seu modo de
-     * escrita ativo.
+     * Returns whether or not the stream is writable.
      *
      * @return bool
      */
-    function isWritable(): bool;
+    public function isWritable(): bool;
 
     /**
-     * Escreve no ``Stream`` carregado.
-     * Retorna o número de bytes escritos no ``Stream``.
+     * Write data to the stream.
      *
-     * @param string $string
-     * Dados que serão escritos.
-     *
-     * @return int
-     *
-     * @throws \RuntimeException
+     * @param string $string The string that is to be written.
+     * @return int Returns the number of bytes written to the stream.
+     * @throws \RuntimeException on failure.
      */
-    function write(string $string): int;
+    public function write(string $string): int;
 
     /**
-     * Retorna ``true`` se é possível ler o ``Stream`` ou se ele está com seu modo de
-     * leitura ativo.
+     * Returns whether or not the stream is readable.
      *
      * @return bool
      */
-    function isReadable(): bool;
+    public function isReadable(): bool;
 
     /**
-     * Lê as informações do ``Stream`` carregado a partir da posição atual do cursor até onde
-     * ``$length`` indicar.
+     * Read data from the stream.
      *
-     * @param int $length
-     * Tamanho da string que será retornada.
+     * @param int $length Read up to $length bytes from the object and return
+     *     them. Fewer than $length bytes may be returned if underlying stream
+     *     call returns fewer bytes.
+     * @return string Returns the data read from the stream, or an empty string
+     *     if no bytes are available.
+     * @throws \RuntimeException if an error occurs.
+     */
+    public function read(int $length): string;
+
+    /**
+     * Returns the remaining contents in a string
      *
      * @return string
-     *
-     * @throws \RuntimeException
+     * @throws \RuntimeException if unable to read or an error occurs while
+     *     reading.
      */
-    function read(int $length): string;
+    public function getContents(): string;
 
     /**
-     * A partir da posição atual do cursor, retorna o conteúdo do ``Stream`` em uma string.
-     * Lança uma exception caso algum erro ocorra.
+     * Get stream metadata as an associative array or retrieve a specific key.
      *
-     * @return string
-     *
-     * @throws \RuntimeException
-     */
-    function getContents(): string;
-
-    /**
-     * Retorna os metadados do stream como um array associativo ou o valor específico de
-     * uma chave indicada.
-     *
-     * Os dados retornados são identicos aos que seriam pegos pela função do PHP
-     * ``stream_get_meta_data``.
+     * The keys returned are identical to the keys returned from PHP's
+     * stream_get_meta_data() function.
      *
      * @link http://php.net/manual/en/function.stream-get-meta-data.php
-     *
-     * @param ?string $key
-     * Nome da chave de metadados que serão retornados.
-     *
-     * @return mixed
-     * Retorna ``null`` se o stream principal não estiver definido.
-     *
-     * Retorna um array associativo com todos valores atualmente definidos quando
-     * a chave não for passada, ou, se for passada como ``null`` ou se for passada
-     * como um valor que não seja uma ``string``.
-     *
-     * Retorna o valor atual da chave se ela existir.
-     *
-     * Retorna ``null`` se a chave não for encontrada.
+     * @param ?string $key Specific metadata to retrieve.
+     * @return mixed Returns an associative array if no key is
+     *     provided. Returns a specific key value if a key is provided and the
+     *     value is found, or null if the key is not found.
      */
-    function getMetadata(?string $key = null): mixed;
+    public function getMetadata(?string $key = null): mixed;
 
 
 
@@ -216,7 +191,18 @@ interface iStream
 
     /**
      * Retorna uma instância deste mesmo objeto, porém, compatível com a interface
-     * original ``Psr\Http\Message\StreamInterface``.
+     * em que foi baseada ``Psr\Http\Message\StreamInterface``.
      */
-    function toPSR(): StreamInterface;
+    public function toPSR(): StreamInterface;
+    /**
+     * A partir de um objeto ``Psr\Http\Message\StreamInterface``, retorna um novo que implementa
+     * a interface ``AeonDigital\Interfaces\Stream\iStream``.
+     *
+     * @param StreamInterface $obj
+     * Instância original.
+     *
+     * @return static
+     * Nova instância, sob nova interface.
+     */
+    public static function fromPSR(StreamInterface $obj): static;
 }

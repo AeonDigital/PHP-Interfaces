@@ -38,5 +38,5 @@ interface iCookieCollection extends iCollection
      *
      * @return string
      */
-    function toString(?bool $originalKeys = false): string;
+    public function toString(?bool $originalKeys = false): string;
 }

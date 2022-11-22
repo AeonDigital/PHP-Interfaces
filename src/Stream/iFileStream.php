@@ -13,7 +13,7 @@ use AeonDigital\Interfaces\Stream\iStream as iStream;
 
 
 /**
- * Interface iFileStream.
+ * Descreve um stream vinculada a um arquivo existente.
  *
  * @package     AeonDigital\Stream
  * @author      Rianna Cantarelli <rianna@aeondigital.com.br>
@@ -25,43 +25,33 @@ interface iFileStream extends iStream
 
 
 
-
-
     /**
-     * Retorna o modo em que o stream está aberto..
+     * Retorna o modo em que o stream está aberto.
      *
      * @return string
      */
-    function getOpenMode(): string;
-
-
+    public function getOpenMode(): string;
 
     /**
      * Retorna o caminho completo até onde o arquivo está no momento.
      *
      * @return string
      */
-    function getPathToFile(): string;
-
-
+    public function getPathToFile(): string;
 
     /**
      * Retorna o nome do arquivo.
      *
      * @return string
      */
-    function getFilename(): string;
-
-
+    public function getFilename(): string;
 
     /**
      * Resgata o mimetype do arquivo.
      *
      * @return string
      */
-    function getMimeType(): string;
-
-
+    public function getMimeType(): string;
 
     /**
      * Define um novo arquivo alvo para a instância ``FileStream``.
@@ -78,7 +68,8 @@ interface iFileStream extends iStream
      * @return void
      *
      * @throws \InvalidArgumentException
-     * Caso o arquivo indicado não exista.
+     * Caso o arquivo indicado não exista ou se o modo de abertura do novo stream
+     * não for válido.
      */
-    function setFileStream(string $pathToFile, ?string $openMode = null): void;
+    public function setFileStream(string $pathToFile, ?string $openMode = null): void;
 }

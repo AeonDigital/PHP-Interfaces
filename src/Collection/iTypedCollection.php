@@ -96,7 +96,7 @@ interface iTypedCollection extends iBasicCollection
      * @return bool
      * Retornará ``true`` se valores ``null`` puderem ser definidos.
      */
-    function isNullable(): bool;
+    public function isNullable(): bool;
 
 
 
@@ -112,5 +112,5 @@ interface iTypedCollection extends iBasicCollection
      * @return string
      * ``String`` que demonstra o tipo de dado aceito para esta coleção.
      */
-    function getType(): string;
+    public function getType(): string;
 }

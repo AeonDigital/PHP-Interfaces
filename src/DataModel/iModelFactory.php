@@ -36,7 +36,7 @@ interface iModelFactory
      *
      * @return bool
      */
-    function hasDataModel(string $idName): bool;
+    public function hasDataModel(string $idName): bool;
 
 
 
@@ -53,5 +53,5 @@ interface iModelFactory
      *
      * @return iModel
      */
-    function createDataModel(string $idName, mixed $initialValues = null): iModel;
+    public function createDataModel(string $idName, mixed $initialValues = null): iModel;
 }

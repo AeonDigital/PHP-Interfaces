@@ -39,7 +39,7 @@ interface iFormat
      *
      * @return bool
      */
-    static function check(?string $v, ?array $aux = null): bool;
+    public static function check(?string $v, ?array $aux = null): bool;
 
 
 
@@ -55,7 +55,7 @@ interface iFormat
      *
      * @return ?string
      */
-    static function format(mixed $v, ?array $aux = null): ?string;
+    public static function format(mixed $v, ?array $aux = null): ?string;
 
 
 
@@ -74,7 +74,7 @@ interface iFormat
      *
      * @return mixed
      */
-    static function removeFormat(?string $v, ?array $aux = null): mixed;
+    public static function removeFormat(?string $v, ?array $aux = null): mixed;
 
 
 
@@ -90,5 +90,5 @@ interface iFormat
      *
      * @return mixed
      */
-    static function storageFormat(?string $v): mixed;
+    public static function storageFormat(?string $v): mixed;
 }

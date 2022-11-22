@@ -60,7 +60,7 @@ interface iPasswordFormat extends iStringFormat
      *
      * @return int
      */
-    static function checkStrength(string $v): int;
+    public static function checkStrength(string $v): int;
 
 
 
@@ -93,7 +93,7 @@ interface iPasswordFormat extends iStringFormat
      *
      * @return string
      */
-    static function generate(?array $cfg = null): string;
+    public static function generate(?array $cfg = null): string;
 
 
 
@@ -133,5 +133,5 @@ interface iPasswordFormat extends iStringFormat
      *
      * @return bool
      */
-    static function checkPassword(?string $v, ?array $aux = null, ?string &$err = null): bool;
+    public static function checkPassword(?string $v, ?array $aux = null, ?string &$err = null): bool;
 }

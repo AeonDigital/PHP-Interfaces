@@ -39,7 +39,7 @@ interface iQueryStringCollection extends iCollection
      *
      * @return string
      */
-    function toString(?bool $originalKeys = false): string;
+    public function toString(?bool $originalKeys = false): string;
 
 
 
@@ -55,5 +55,5 @@ interface iQueryStringCollection extends iCollection
      *
      * @return void
      */
-    function usePercentEncode(bool $use): void;
+    public function usePercentEncode(bool $use): void;
 }

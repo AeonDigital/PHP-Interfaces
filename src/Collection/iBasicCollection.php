@@ -50,7 +50,7 @@ interface iBasicCollection extends \ArrayAccess, \Countable, \IteratorAggregate
      * objetos não permitindo que eles sejam alterados, no entanto os valores uma
      * vez definidos PODEM ser excluídos.
      */
-    function isProtected(): bool;
+    public function isProtected(): bool;
 
 
 
@@ -61,7 +61,7 @@ interface iBasicCollection extends \ArrayAccess, \Countable, \IteratorAggregate
      * Quando ``true`` indica que a coleção pode ser apenas incrementada mas jamais
      * modificada nem reduzida.
      */
-    function isAppendOnly(): bool;
+    public function isAppendOnly(): bool;
 
 
 
@@ -72,7 +72,7 @@ interface iBasicCollection extends \ArrayAccess, \Countable, \IteratorAggregate
      * Quando ``true`` indica que a coleção não pode ser alterada após ser definida
      * durante a construção da instância.
      */
-    function isReadOnly(): bool;
+    public function isReadOnly(): bool;
 
 
 
@@ -83,7 +83,7 @@ interface iBasicCollection extends \ArrayAccess, \Countable, \IteratorAggregate
      * Quando ``true`` indica que os nomes das chaves de cada entrada de dados será
      * tratado de forma ``case insensitive``, ou seja, ``KeyName = keyname = KEYNAME``.
      */
-    function isCaseInsensitive(): bool;
+    public function isCaseInsensitive(): bool;
 
 
 
@@ -110,7 +110,7 @@ interface iBasicCollection extends \ArrayAccess, \Countable, \IteratorAggregate
      * @return bool
      * Retorna ``true`` quando a coleção é do tipo ``autoincrement``.
      */
-    function isAutoIncrement(): bool;
+    public function isAutoIncrement(): bool;
 
 
 
@@ -131,7 +131,7 @@ interface iBasicCollection extends \ArrayAccess, \Countable, \IteratorAggregate
      * Retorna ``true`` caso a chave indicada existir entre os itens da coleção ou
      * ``false`` se não existir.
      */
-    function has(string $key): bool;
+    public function has(string $key): bool;
 
 
 
@@ -150,7 +150,7 @@ interface iBasicCollection extends \ArrayAccess, \Countable, \IteratorAggregate
      * @return bool
      * Retorna ``true`` quando a insersão/atualização do item foi bem sucedido.
      */
-    function set(string $key, mixed $value): bool;
+    public function set(string $key, mixed $value): bool;
 
 
 
@@ -164,7 +164,7 @@ interface iBasicCollection extends \ArrayAccess, \Countable, \IteratorAggregate
      * Valor armazenado na ``collection`` que correspondente a chave passada.
      * DEVE retornar ``null`` quando a chave de nome indicado não existir.
      */
-    function get(string $key): mixed;
+    public function get(string $key): mixed;
 
 
 
@@ -179,5 +179,5 @@ interface iBasicCollection extends \ArrayAccess, \Countable, \IteratorAggregate
      * da coleção atual e ``false`` caso por algum motivo não seja possível executar
      * este método.
      */
-    function remove(string $key): bool;
+    public function remove(string $key): bool;
 }
