@@ -15,7 +15,7 @@ use AeonDigital\Interfaces\Stream\iStream as iStream;
 /**
  * Descreve um stream vinculada a um arquivo existente.
  *
- * @package     AeonDigital\Stream
+ * @package     AeonDigital\Interfaces\Stream
  * @author      Rianna Cantarelli <rianna@aeondigital.com.br>
  * @copyright   2020, Rianna Cantarelli
  * @license     MIT
