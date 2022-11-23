@@ -161,11 +161,18 @@ interface iUploadedFile
      * A partir de um objeto ``Psr\Http\Message\UploadedFileInterface``, retorna um novo que implementa
      * a interface ``AeonDigital\Interfaces\Http\Data\iUploadedFile``.
      *
+     * Efetuará o ``detach`` do stream usado na instância passada para criar
+     * esta nova instância.
+     *
      * @param UploadedFileInterface $obj
      * Instância original.
      *
      * @return static
      * Nova instância, sob nova interface.
+     *
+     * @throws \InvalidArgumentException
+     * Se por qualquer motivo não for possível retornar uma nova instância a partir da
+     * que foi passada
      */
     public static function fromPSR(UploadedFileInterface $obj): static;
 }

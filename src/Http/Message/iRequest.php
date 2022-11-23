@@ -160,6 +160,10 @@ interface iRequest extends iMessage
      *
      * @return static
      * Nova instância, sob nova interface.
+     *
+     * @throws \InvalidArgumentException
+     * Se por qualquer motivo não for possível retornar uma nova instância a partir da
+     * que foi passada
      */
     public static function fromPSR(RequestInterface|ServerRequestInterface $obj): static;
 }
