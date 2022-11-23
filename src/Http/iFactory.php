@@ -75,7 +75,7 @@ interface iFactory
      *
      * @return iUploadedFileCollection
      */
-    public function createFileCollection(?array $initialValues = null): iUploadedFileCollection;
+    public function createUploadedFileCollection(?array $initialValues = null): iUploadedFileCollection;
     /**
      * Retorna um objeto ``iCollection`` vazio.
      *
