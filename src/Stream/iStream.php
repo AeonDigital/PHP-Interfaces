@@ -198,11 +198,18 @@ interface iStream
      * A partir de um objeto ``Psr\Http\Message\StreamInterface``, retorna um novo que implementa
      * a interface ``AeonDigital\Interfaces\Stream\iStream``.
      *
+     * Efetuará o ``detach`` do stream usado na instância passada para criar
+     * esta nova instância.
+     *
      * @param StreamInterface $obj
      * Instância original.
      *
      * @return static
      * Nova instância, sob nova interface.
+     *
+     * @throws \InvalidArgumentException
+     * Se por qualquer motivo não for possível retornar uma nova instância a partir da
+     * que foi passada
      */
     public static function fromPSR(StreamInterface $obj): static;
 }
