@@ -11,7 +11,7 @@ use AeonDigital\Interfaces\Http\Message\iServerRequest as iServerRequest;
 use AeonDigital\Interfaces\Http\Data\iHeaderCollection as iHeaderCollection;
 use AeonDigital\Interfaces\Http\Data\iCookieCollection as iCookieCollection;
 use AeonDigital\Interfaces\Http\Data\iQueryStringCollection as iQueryStringCollection;
-use AeonDigital\Interfaces\Http\Data\iFileCollection as iFileCollection;
+use AeonDigital\Interfaces\Http\Data\iUploadedFileCollection as iUploadedFileCollection;
 use AeonDigital\Interfaces\Stream\iStream as iStream;
 use AeonDigital\Interfaces\Stream\iFileStream as iFileStream;
 use AeonDigital\Interfaces\Collection\iCollection as iCollection;
@@ -68,14 +68,14 @@ interface iFactory
     /**
      * Retorna uma coleção de headers baseado nos valores passados.
      *
-     * O objeto retornado deve implementar a interface ``AeonDigital\Interfaces\Http\Data\iFileCollection``.
+     * O objeto retornado deve implementar a interface ``AeonDigital\Interfaces\Http\Data\iUploadedFileCollection``.
      *
      * @param ?array $initialValues
      * Valores iniciais para a coleção de cookies.
      *
-     * @return iFileCollection
+     * @return iUploadedFileCollection
      */
-    public function createFileCollection(?array $initialValues = null): iFileCollection;
+    public function createFileCollection(?array $initialValues = null): iUploadedFileCollection;
     /**
      * Retorna um objeto ``iCollection`` vazio.
      *
@@ -231,8 +231,8 @@ interface iFactory
      * @param ?iQueryStringCollection $queryStrings
      * Objeto que implementa ``iQueryStringCollection`` cotendo os queryStrings da ``URI``.
      *
-     * @param ?iFileCollection $files
-     * Objeto que implementa ``iFileCollection`` cotendo os arquivos enviados nesta
+     * @param ?iUploadedFileCollection $files
+     * Objeto que implementa ``iUploadedFileCollection`` cotendo os arquivos enviados nesta
      * requisição.
      *
      * @param ?array $serverParans
@@ -260,7 +260,7 @@ interface iFactory
         ?iStream $body = null,
         ?iCookieCollection $cookies = null,
         ?iQueryStringCollection $queryStrings = null,
-        ?iFileCollection $files = null,
+        ?iUploadedFileCollection $files = null,
         ?array $serverParans = null,
         ?iCollection $attributes = null,
         ?iCollection $bodyParsers = null
