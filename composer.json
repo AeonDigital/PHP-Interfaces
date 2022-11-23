@@ -15,7 +15,8 @@
     "require": {
         "php": ">=8.2",
         "psr/http-message": "v1.0.1",
-        "psr/http-server-handler": "v1.0.1"
+        "psr/http-server-handler": "v1.0.1",
+        "psr/http-server-middleware": "v1.0.1"
     },
     "autoload": {
         "classmap": [
