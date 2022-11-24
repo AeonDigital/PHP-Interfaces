@@ -19,6 +19,12 @@
         "psr/http-server-middleware": "v1.0.1"
     },
     "autoload": {
+        "files": [
+            "src/Iana/HTTPMethod.php",
+            "src/Iana/HTTPStatusCode.php",
+            "src/Iana/MimeExtension.php",
+            "src/Iana/MimeType.php"
+        ],
         "classmap": [
             "src/"
         ]
