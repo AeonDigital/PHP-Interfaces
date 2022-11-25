@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace AeonDigital\Iana;
+namespace AeonDigital\Iana\Const;
 
 
 
