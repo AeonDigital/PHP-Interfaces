@@ -64,7 +64,6 @@ class Iana
      *
      * @see https://www.iana.org/assignments/media-types/media-types.xhtml
      * @see http://svn.apache.org/repos/asf/httpd/httpd/trunk/docs/conf/mime.types
-     * @see https://mimetype.io/all-types/
      */
     public const MimeExtension = \AeonDigital\Iana\Const\MimeExtension;
 
@@ -86,7 +85,6 @@ class Iana
      *
      * @see https://www.iana.org/assignments/media-types/media-types.xhtml
      * @see http://svn.apache.org/repos/asf/httpd/httpd/trunk/docs/conf/mime.types
-     * @see https://mimetype.io/all-types/
      */
     public const MimeType = \AeonDigital\Iana\Const\MimeType;
 }
