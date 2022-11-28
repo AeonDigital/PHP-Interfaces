@@ -432,7 +432,7 @@ interface iServerRequest extends iRequest
      * Retorna uma instância deste mesmo objeto, porém, compatível com a interface
      * em que foi baseada ``Psr\Http\Message\ServerRequestInterface``.
      */
-    public function toPSR(): ServerRequestInterface;
+    public function toPSR(): RequestInterface|ServerRequestInterface;
     /**
      * A partir de um objeto ``Psr\Http\Message\ServerRequestInterface``, retorna um novo que implementa
      * a interface ``AeonDigital\Interfaces\Http\Message\iServerRequest``.
