@@ -157,10 +157,10 @@ interface iServerRequest extends iRequest
      * potential types MUST be arrays or objects only. A null value indicates
      * the absence of body content.
      *
-     * @return null|array The deserialized body parameters, if any.
+     * @return null|array|object The deserialized body parameters, if any.
      *     These will typically be an array or object.
      */
-    public function getParsedBody(): null|array;
+    public function getParsedBody(): null|array|object;
 
     /**
      * Return an instance with the specified body parameters.
@@ -184,13 +184,13 @@ interface iServerRequest extends iRequest
      * immutability of the message, and MUST return an instance that has the
      * updated body parameters.
      *
-     * @param null|array $data The deserialized body data. This will
+     * @param null|array|object $data The deserialized body data. This will
      *     typically be in an array or object.
      * @return static
      * @throws \InvalidArgumentException if an unsupported argument type is
      *     provided.
      */
-    public function withParsedBody(null|array $data): static;
+    public function withParsedBody(null|array|object $data): static;
 
     /**
      * Retrieve attributes derived from the request.
