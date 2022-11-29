@@ -34,12 +34,12 @@ interface iTable extends iModel
      *
      * Deve ser definido apenas 1 vez.
      *
-     * @param       iDAL $DAL
-     *              Objeto DAL a ser usado.
+     * @param iDAL $DAL
+     * Objeto DAL a ser usado.
      *
-     * @return      void
+     * @return void
      */
-    function setDAL(iDAL $DAL): void;
+    public function setDAL(iDAL $DAL): void;
 
 
 
@@ -48,9 +48,9 @@ interface iTable extends iModel
      * Usado para evitar ambiguidades entre as colunas desta e de outras tabelas de
      * dados.
      *
-     * @return      string
+     * @return string
      */
-    function getAlias(): string;
+    public function getAlias(): string;
 
 
 
@@ -58,9 +58,9 @@ interface iTable extends iModel
      * Retorna um array contendo as instruções que devem ser executadas após a tabela de
      * dados ser criada.
      *
-     * @return      ?array
+     * @return ?array
      */
-    function getExecuteAfterCreateTable(): ?array;
+    public function getExecuteAfterCreateTable(): ?array;
 
 
 
@@ -69,9 +69,9 @@ interface iTable extends iModel
      * dados desta mesma tabela. Cada conjunto de nomes irá corresponder a uma constraint
      * do tipo unique composta.
      *
-     * @return      ?array
+     * @return ?array
      */
-    function getUniqueMultipleKeys(): ?array;
+    public function getUniqueMultipleKeys(): ?array;
 
 
 
@@ -87,47 +87,47 @@ interface iTable extends iModel
      * pela conexão com o banco de dados.
      * Não havendo erro, retorna ``null``.
      *
-     * @return      ?string
+     * @return ?string
      */
-    function getLastDALError(): ?string;
+    public function getLastDALError(): ?string;
 
 
 
     /**
      * Retorna o total de registros existentes nesta tabela de dados.
      *
-     * @return      int
+     * @return int
      */
-    function countRows(): int;
+    public function countRows(): int;
 
 
 
     /**
      * Identifica se existe na tabela de dados um registro com o Id indicado.
      *
-     * @param       int $Id
-     *              Id do objeto.
+     * @param int $Id
+     * Id do objeto.
      *
-     * @return      bool
+     * @return bool
      */
-    function hasId(int $Id): bool;
+    public function hasId(int $Id): bool;
 
 
 
     /**
      * Insere ou atualiza os dados da instância atual no banco de dados.
      *
-     * @param       ?string $parentTableName
-     *              Se definido, deve ser o nome do modelo de dados ao qual o objeto atual
-     *              deve ser associado.
+     * @param ?string $parentTableName
+     * Se definido, deve ser o nome do modelo de dados ao qual o objeto atual
+     * deve ser associado.
      *
-     * @param       ?int $parentId
-     *              Id do objeto pai ao qual este registro deve estar associado.
+     * @param ?int $parentId
+     * Id do objeto pai ao qual este registro deve estar associado.
      *
-     * @return      bool
-     *              Retornará ``true`` caso esta ação tenha sido bem sucedida.
+     * @return bool
+     * Retornará ``true`` caso esta ação tenha sido bem sucedida.
      */
-    function save(
+    public function save(
         ?string $parentTableName = null,
         ?int $parentId = null
     ): bool;
@@ -136,17 +136,17 @@ interface iTable extends iModel
      *
      * Se este objeto já possui um Id definido esta ação irá falhar.
      *
-     * @param       ?string $parentTableName
-     *              Se definido, deve ser o nome do modelo de dados ao qual o objeto atual
-     *              deve ser associado.
+     * @param ?string $parentTableName
+     * Se definido, deve ser o nome do modelo de dados ao qual o objeto atual
+     * deve ser associado.
      *
-     * @param       ?int $parentId
-     *              Id do objeto pai ao qual este registro deve estar associado.
+     * @param ?int $parentId
+     * Id do objeto pai ao qual este registro deve estar associado.
      *
-     * @return      bool
-     *              Retornará ``true`` caso esta ação tenha sido bem sucedida.
+     * @return bool
+     * Retornará ``true`` caso esta ação tenha sido bem sucedida.
      */
-    function insert(
+    public function insert(
         ?string $parentTableName = null,
         ?int $parentId = null
     ): bool;
@@ -155,17 +155,17 @@ interface iTable extends iModel
      *
      * Se este objeto não possui um Id definido esta ação irá falhar.
      *
-     * @param       ?string $parentTableName
-     *              Se definido, deve ser o nome do modelo de dados ao qual o objeto atual
-     *              deve ser associado.
+     * @param ?string $parentTableName
+     * Se definido, deve ser o nome do modelo de dados ao qual o objeto atual
+     * deve ser associado.
      *
-     * @param       ?int $parentId
-     *              Id do objeto pai ao qual este registro deve estar associado.
+     * @param ?int $parentId
+     * Id do objeto pai ao qual este registro deve estar associado.
      *
-     * @return      bool
-     *              Retornará ``true`` caso esta ação tenha sido bem sucedida.
+     * @return bool
+     * Retornará ``true`` caso esta ação tenha sido bem sucedida.
      */
-    function update(
+    public function update(
         ?string $parentTableName = null,
         ?int $parentId = null
     ): bool;
@@ -177,16 +177,16 @@ interface iTable extends iModel
     /**
      * Carrega esta instância com os dados do registro de Id informado.
      *
-     * @param       int $Id
-     *              Id do registro que será carregado.
+     * @param int $Id
+     * Id do registro que será carregado.
      *
-     * @param       bool $loadChilds
-     *              Quando ``true`` irá carregar todos os objetos que são filhos diretos
-     *              deste.
+     * @param bool $loadChilds
+     * Quando ``true`` irá carregar todos os objetos que são filhos diretos
+     * deste.
      *
-     * @return      bool
+     * @return bool
      */
-    function select(
+    public function select(
         int $Id,
         bool $loadChilds = false
     ): bool;
@@ -201,12 +201,12 @@ interface iTable extends iModel
      *
      * Apenas funcionará para os objetos FILHOS em relações ``1-1`` e ``1-N``.
      *
-     * @param       string $tableName
-     *              Nome da tabela de dados do objeto pai.
+     * @param string $tableName
+     * Nome da tabela de dados do objeto pai.
      *
-     * @return      ?int
+     * @return ?int
      */
-    function selectParentIdOf(string $tableName): ?int;
+    public function selectParentIdOf(string $tableName): ?int;
 
 
 
@@ -217,9 +217,9 @@ interface iTable extends iModel
      * Irá limpar totalmente os objetos filhos substituindo-os por instâncias vazias, ou
      * por coleções vazias.
      *
-     * @return      bool
+     * @return bool
      */
-    function delete(): bool;
+    public function delete(): bool;
 
 
 
@@ -228,16 +228,16 @@ interface iTable extends iModel
      * Permite definir o vínculo da instância atualmente carregada a um de seus possíveis
      * relacionamentos indicados nos modelos de dados.
      *
-     * @param       string $tableName
-     *              Nome da tabela de dados com a qual esta instância passará a ter um
-     *              vínculo referencial.
+     * @param string $tableName
+     * Nome da tabela de dados com a qual esta instância passará a ter um
+     * vínculo referencial.
      *
-     * @param       int $tgtId
-     *              Id do registro da tabela de dados alvo onde este vinculo será firmado.
+     * @param int $tgtId
+     * Id do registro da tabela de dados alvo onde este vinculo será firmado.
      *
-     * @return      bool
+     * @return bool
      */
-    function attachWith(string $tableName, int $tgtId): bool;
+    public function attachWith(string $tableName, int $tgtId): bool;
 
 
 
@@ -273,14 +273,14 @@ interface iTable extends iModel
      *   Omitindo ``$tgtId``:
      *   TODOS os vínculos entre a instância atual e TODOS os demais serão desfeitos.
      *
-     * @param       string $tableName
-     *              Nome da tabela de dados com a qual esta instância irá romper um vínculo
-     *              existente.
+     * @param string $tableName
+     * Nome da tabela de dados com a qual esta instância irá romper um vínculo
+     * existente.
      *
-     * @param       ?int $tgtId
-     *              Id do registro da tabela de dados.
+     * @param ?int $tgtId
+     * Id do registro da tabela de dados.
      *
-     * @return      bool
+     * @return bool
      */
-    function detachWith(string $tableName, ?int $tgtId = null): bool;
+    public function detachWith(string $tableName, ?int $tgtId = null): bool;
 }

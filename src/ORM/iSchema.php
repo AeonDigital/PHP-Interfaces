@@ -33,9 +33,9 @@ interface iSchema
      * uso, gera um arquivo ``_schema.php`` contendo todas as instruções SQL necessárias
      * para a criação dos modelos no banco de dados alvo.
      *
-     * @return      bool
+     * @return bool
      */
-    function generateCreateSchemaFiles(): bool;
+    public function generateCreateSchemaFiles(): bool;
 
 
 
@@ -45,7 +45,7 @@ interface iSchema
      * Retorna uma coleção de arrays contendo o nome e a descrição de cada uma das
      * tabelas do atual banco de dados (mesmo aquelas que não estão mapeadas).
      *
-     * ``` php
+     * ```php
      *      // O array retornado é uma coleção de entradas conforme o exemplo abaixo:
      *      $arr = [
      *          string  "tableName"         Nome da tabela.
@@ -56,9 +56,9 @@ interface iSchema
      * ```
      *
      *
-     * @return      ?array
+     * @return ?array
      */
-    function listDataBaseTables(): ?array;
+    public function listDataBaseTables(): ?array;
 
 
 
@@ -66,9 +66,9 @@ interface iSchema
      * Remove completamente todo o schema atualmente existente dentro do banco de dados
      * alvo.
      *
-     * @return      bool
+     * @return bool
      */
-    function executeDropSchema(): bool;
+    public function executeDropSchema(): bool;
 
 
 
@@ -76,7 +76,7 @@ interface iSchema
      * Retorna uma coleção de arrays contendo o nome, tipo e a descrição de cada uma das
      * colunas da tabela indicada.
      *
-     * ``` php
+     * ```php
      *      // O array retornado é uma coleção de entradas conforme o exemplo abaixo:
      *      $arr = [
      *          bool    "columnPrimaryKey"      Indica se a coluna é uma chave primária.
@@ -89,12 +89,12 @@ interface iSchema
      *      ];
      * ```
      *
-     * @param       string $tableName
-     *              Nome da tabela de dados alvo.
+     * @param string $tableName
+     * Nome da tabela de dados alvo.
      *
-     * @return      ?array
+     * @return ?array
      */
-    function listTableColumns(string $tableName): ?array;
+    public function listTableColumns(string $tableName): ?array;
 
 
 
@@ -102,7 +102,7 @@ interface iSchema
      * Retorna um array associativo contendo a coleção de ``constraints`` definidas
      * atualmente no banco de dados.
      *
-     * ``` php
+     * ```php
      *      // O array retornado é uma coleção de entradas conforme o exemplo abaixo:
      *      $arr = [
      *          string "tableName"              Nome da tabela de dados na qual a regra está vinculada.
@@ -113,13 +113,13 @@ interface iSchema
      *      ];
      * ```
      *
-     * @param       ?string $tableName
-     *              Se for definido, deverá retornar apenas os registros relacionados
-     *              com a tabela alvo.
+     * @param ?string $tableName
+     * Se for definido, deverá retornar apenas os registros relacionados
+     * com a tabela alvo.
      *
-     * @return      ?array
+     * @return ?array
      */
-    function listSchemaConstraint(?string $tableName = null): ?array;
+    public function listSchemaConstraint(?string $tableName = null): ?array;
 
 
 
@@ -128,11 +128,11 @@ interface iSchema
      * Executa o script de criação do schema gerado por último pela função
      * ``generateCreateSchemaFiles``.
      *
-     * @param       bool $dropSchema
-     *              Quando ``true`` irá excluir totalmente todas as tabelas de dados
-     *              existentes no banco de dados alvo e então recriar o schema.
+     * @param bool $dropSchema
+     * Quando ``true`` irá excluir totalmente todas as tabelas de dados
+     * existentes no banco de dados alvo e então recriar o schema.
      *
-     * @return      bool
+     * @return bool
      */
-    function executeCreateSchema(bool $dropSchema = false): bool;
+    public function executeCreateSchema(bool $dropSchema = false): bool;
 }

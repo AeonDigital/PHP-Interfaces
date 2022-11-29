@@ -31,44 +31,44 @@ interface iColumnFK extends iColumn
     /**
      * Retorna a descrição para ser usada na documentação SQL de uma chave extrangeira.
      *
-     * @return      ?string
+     * @return ?string
      */
-    function getFKDescription(): ?string;
+    public function getFKDescription(): ?string;
 
 
     /**
      * Indica se os objetos filhos (que recebem a FK) aceita serem orfãos, ou seja, se
      * podem existir sem vínculo com com o objeto pai.
      *
-     * @return      bool
+     * @return bool
      */
-    function isFKAllowNull(): bool;
+    public function isFKAllowNull(): bool;
 
 
     /**
      * Indica se os objetos filhos (que recebem a FK) exigem exclusividade na relação com
      * seus respectivos objetos pai, ou seja, nenhum objeto filho pode ter o mesmo objeto pai.
      *
-     * @return      bool
+     * @return bool
      */
-    function isFKUnique(): bool;
+    public function isFKUnique(): bool;
 
 
     /**
      * Indica se o vínculo entre as 2 tabelas de dados se dá por meio de uma ``linkTable``.
      * Quando ``true``, designa que a relação é do tipo ``N-N``.
      *
-     * @return      bool
+     * @return bool
      */
-    function isFKLinkTable(): bool;
+    public function isFKLinkTable(): bool;
 
 
     /**
      * Retorna a regra definida para o uso da definição ``ON UPDATE``.
      *
-     * @return      ?string
+     * @return ?string
      */
-    function getFKOnUpdate(): ?string;
+    public function getFKOnUpdate(): ?string;
     /**
      * Define uma regra de integridade referencial a ser executada no registro que contêm
      * a chave extrangeira sempre que o registro pai for atualizado.
@@ -95,9 +95,9 @@ interface iColumnFK extends iColumn
     /**
      * Retorna a regra definida para o uso da definição ``ON DELETE``.
      *
-     * @return      ?string
+     * @return ?string
      */
-    function getFKOnDelete(): ?string;
+    public function getFKOnDelete(): ?string;
     /**
      * Define uma regra de integridade referencial a ser executada no registro que contêm
      * a chave extrangeira sempre que o registro pai for excluído.
@@ -126,7 +126,7 @@ interface iColumnFK extends iColumn
     /**
      * Retorna a coleção de colunas especialmente definidas para figurar em uma linkTable.
      *
-     * @return      ?array
+     * @return ?array
      */
-    function getFKLinkTableColumns(): ?array;
+    public function getFKLinkTableColumns(): ?array;
 }

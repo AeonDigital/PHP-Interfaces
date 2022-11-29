@@ -30,18 +30,18 @@ interface iDataTableFactory extends iModelFactory
     /**
      * Retorna o objeto ``DAL`` que está sendo usado por esta instância.
      *
-     * @return      iDAL
+     * @return iDAL
      */
-    function getDAL(): iDAL;
+    public function getDAL(): iDAL;
 
 
     /**
      * Nome do projeto.
      * Geralmente é o mesmo nome do banco de dados definido na instância ``iDAL`` usada.
      *
-     * @return      string
+     * @return string
      */
-    function getProjectName(): string;
+    public function getProjectName(): string;
 
 
     /**
@@ -51,9 +51,9 @@ interface iDataTableFactory extends iModelFactory
      * Dentro do mesmo diretório deve haver um outro chamado ``enum`` contendo os
      * enumeradores usados pelo projeto.
      *
-     * @return      string
+     * @return string
      */
-    function getProjectDirectory(): string;
+    public function getProjectDirectory(): string;
 
 
     /**
@@ -63,40 +63,40 @@ interface iDataTableFactory extends iModelFactory
      *
      * Caso o arquivo já exista, será substituído por um novo.
      *
-     * @return      void
+     * @return void
      */
-    function recreateProjectDataFile(): void;
+    public function recreateProjectDataFile(): void;
 
 
     /**
      * Retorna um array com a lista de todas as tabelas de dados existêntes neste projeto.
      *
-     * @return      array
+     * @return array
      */
-    function getDataTableList(): array;
+    public function getDataTableList(): array;
 
 
     /**
      * Identifica se esta fábrica pode fornecer um objeto compatível com o nome do Identificador
      * passado.
      *
-     * @param       string $idName
-     *              Identificador único do modelo de dados dentro do escopo definido.
+     * @param string $idName
+     * Identificador único do modelo de dados dentro do escopo definido.
      *
-     * @return      bool
+     * @return bool
      */
-    function hasDataModel(string $idName): bool;
+    public function hasDataModel(string $idName): bool;
 
 
     /**
      * Identifica se no atual projeto existe uma tabela de dados com o nome passado.
      *
-     * @param       string $tableName
-     *              Nome da tabela de dados.
+     * @param string $tableName
+     * Nome da tabela de dados.
      *
-     * @return      bool
+     * @return bool
      */
-    function hasDataTable(string $tableName): bool;
+    public function hasDataTable(string $tableName): bool;
 
 
 
@@ -104,33 +104,33 @@ interface iDataTableFactory extends iModelFactory
      * Retorna um objeto ``iModel`` com as configurações equivalentes ao identificador único
      * do mesmo.
      *
-     * @param       string $idName
-     *              Identificador único do modelo de dados dentro do escopo definido.
+     * @param string $idName
+     * Identificador único do modelo de dados dentro do escopo definido.
      *
-     * @param       mixed $initialValues
-     *              Coleção de valores a serem setados para a nova instância que será retornada.
+     * @param mixed $initialValues
+     * Coleção de valores a serem setados para a nova instância que será retornada.
      *
-     * @return      iModel
+     * @return iModel
      *
-     * @throws      \InvalidArgumentException
-     *              Caso o nome da tabela seja inexistente.
+     * @throws \InvalidArgumentException
+     * Caso o nome da tabela seja inexistente.
      */
-    function createDataModel(string $idName, $initialValues = null): iModel;
+    public function createDataModel(string $idName, mixed $initialValues = null): iModel;
 
 
     /**
      * Retorna uma tabela de dados correspondente ao nome informado no argumento ``$tableName``.
      *
-     * @param       string $tableName
-     *              Nome da tabela de dados.
+     * @param string $tableName
+     * Nome da tabela de dados.
      *
-     * @param       mixed $initialValues
-     *              Coleção de valores a serem setados para a nova instância que será retornada.
+     * @param mixed $initialValues
+     * Coleção de valores a serem setados para a nova instância que será retornada.
      *
-     * @return      iTable
+     * @return iTable
      *
-     * @throws      \InvalidArgumentException
-     *              Caso o nome da tabela seja inexistente.
+     * @throws \InvalidArgumentException
+     * Caso o nome da tabela seja inexistente.
      */
-    function createDataTable(string $tableName, $initialValues = null): iTable;
+    public function createDataTable(string $tableName, mixed $initialValues = null): iTable;
 }

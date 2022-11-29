@@ -32,40 +32,40 @@ interface iColumn extends iField
      * Indica se o valor para esta coluna pode ser repetido entre os demais registros
      * que compões a coleção da tabela de dados.
      *
-     * @return      bool
+     * @return bool
      */
-    function isUnique(): bool;
+    public function isUnique(): bool;
 
 
     /**
      * Indica quando o o valor desta coluna é do tipo *auto-incremento*.
      *
-     * @return      bool
+     * @return bool
      */
-    function isAutoIncrement(): bool;
+    public function isAutoIncrement(): bool;
 
 
     /**
      * Indica se esta coluna é a chave primária da tabela de dados.
      *
-     * @return      bool
+     * @return bool
      */
-    function isPrimaryKey(): bool;
+    public function isPrimaryKey(): bool;
 
 
     /**
      * Indica se esta coluna é uma chave extrangeira.
      *
-     * @return      bool
+     * @return bool
      */
-    function isForeignKey(): bool;
+    public function isForeignKey(): bool;
 
 
     /**
      * Indica se esta coluna está ou não indexada.
      * Por padrão, toda ``primaryKey`` e ``foreignKey`` é automaticamente indexada.
      *
-     * @return      bool
+     * @return bool
      */
-    function isIndex(): bool;
+    public function isIndex(): bool;
 }
