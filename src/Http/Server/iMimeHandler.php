@@ -13,7 +13,7 @@ namespace AeonDigital\Interfaces\Http\Server;
 
 
 /**
- * Interface para gerar um manipulador capaz de gerar uma resposta
+ * Interface de um manipulador capaz de gerar uma resposta
  * adequada a um determinado tipo mime.
  *
  * @package     AeonDigital\Interfaces\Http

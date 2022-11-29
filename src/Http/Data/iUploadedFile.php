@@ -19,9 +19,9 @@ use AeonDigital\Interfaces\Stream\iFileStream as iFileStream;
  * para permitir o uso de tipagem equivalente à versão 8.2 do PHP além de melhorias percebidas
  * como necessárias para este tipo de objeto.
  *
- * Visto que todos os métodos existentes na interface original estarão presentes aqui mas com
- * uma assinatura levemente diferente, e, para permitir manter a compatibilidade com o projeto
- * PSR original foram adicionados 2 métodos extra sendo eles ``toPSR`` e ``fromPSR``.
+ * Todos os métodos existentes na interface original estão presentes aqui mas com uma assinatura
+ * levemente diferente. Para permitir manter a compatibilidade com o projeto PSR foram
+ * adicionados 2 métodos extra sendo eles ``toPSR`` e ``fromPSR``.
  *
  * Obs:
  * Os textos originais dos métodos da interface base foram mantidos alterando apenas alguns
