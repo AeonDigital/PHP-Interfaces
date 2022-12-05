@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace AeonDigital\Interfaces\DAL;
 
-use AeonDigital\Interfaces\iRealType;
+use AeonDigital\Interfaces\iRealType as iRealType;
 
 
 
