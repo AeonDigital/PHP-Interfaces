@@ -28,7 +28,7 @@ interface iDAL
 
 
     /**
-     * Retorna um objeto clone do ``dbConnection`` desta instância.
+     * Retorna um objeto de conexão ``\PDO`` desta instância.
      *
      * @return \PDO
      */
