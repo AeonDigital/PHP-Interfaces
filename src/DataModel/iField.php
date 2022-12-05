@@ -174,9 +174,9 @@ interface iField
      * Retorna o menor valor possível para um tipo numérico ou ``DateTime``.
      * Por padrão, herdará este valor da definição de seu ``type`` quando isto for aplicável.
      *
-     * @return null|int|iRealType|\DateTime
+     * @return null|int|float|iRealType|\DateTime
      */
-    public function getMin(): null|int|iRealType|\DateTime;
+    public function getMin(): null|int|float|iRealType|\DateTime;
     /**
      * SET
      * Define o menor valor possível para um tipo numérico ou ``DateTime``.
@@ -197,9 +197,9 @@ interface iField
      * Retorna o maior valor possível para um tipo numérico ou ``DateTime``.
      * Por padrão, herdará este valor da definição de seu ``type`` quando isto for aplicável.
      *
-     * @return null|int|iRealType|\DateTime
+     * @return null|int|float|iRealType|\DateTime
      */
-    public function getMax(): null|int|iRealType|\DateTime;
+    public function getMax(): null|int|float|iRealType|\DateTime;
     /**
      * SET
      * Define o maior valor possível para um tipo numérico ou ``DateTime``.
