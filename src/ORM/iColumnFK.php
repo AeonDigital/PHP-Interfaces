@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace AeonDigital\Interfaces\ORM;
 
+use AeonDigital\Interfaces\DataModel\iFieldModel as iFieldModel;
 use AeonDigital\Interfaces\ORM\iColumn as iColumn;
-
-
+use AeonDigital\Interfaces\ORM\iTable as iTable;
 
 
 
@@ -21,7 +21,7 @@ use AeonDigital\Interfaces\ORM\iColumn as iColumn;
  * @copyright   2020, Rianna Cantarelli
  * @license     MIT
  */
-interface iColumnFK extends iColumn
+interface iColumnFK extends iFieldModel, iColumn
 {
 
 
@@ -129,4 +129,14 @@ interface iColumnFK extends iColumn
      * @return ?array
      */
     public function getFKLinkTableColumns(): ?array;
+
+
+
+    /**
+     * Retorna uma instância do objeto ``iTable`` que representa
+     * o modelo de dados usado por este campo.
+     *
+     * @return iTable
+     */
+    public function getTable(): iTable;
 }
