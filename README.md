@@ -69,6 +69,8 @@ ________________________________________________________________________________
 
 ## Outras Informações
 
+Se estiver trabalhando no VSCode considere a instalação das extensões recomendadas para este **Workspace**.  
+
 Este e outros projetos **Aeon Digital** utilizam o sistema de [Versionamento Semântico](https://semver.org/) proposto 
 por Tom Preston-Werner.
 
