@@ -6,7 +6,7 @@ namespace AeonDigital\Interfaces\DataModel;
 
 use AeonDigital\Interfaces\DataModel\iField as iField;
 use AeonDigital\Interfaces\DataModel\iModel as iModel;
-use AeonDigital\undefined as undefined;
+use AeonDigital\Interfaces\iUndefined as iUndefined;
 
 
 
@@ -77,7 +77,7 @@ interface iFieldModel extends iField
      * Em campos *collection* será retornado o ``array`` contendo as instâncias que
      * compõe a coleção atual.
      *
-     * @return string|array|iModel|undefined
+     * @return string|array|iModel|iUndefined
      */
-    public function getInstanceValue(): string|array|iModel|undefined;
+    public function getInstanceValue(): string|array|iModel|iUndefined;
 }
