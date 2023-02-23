@@ -9,4 +9,5 @@
 
 #
 # Carrega variáveis e módulos
+include .env
 include Shell-Make/Makefile

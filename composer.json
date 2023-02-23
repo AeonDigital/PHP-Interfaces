@@ -20,10 +20,7 @@
     },
     "autoload": {
         "files": [
-            "src/Iana/Const/HTTPMethod.php",
-            "src/Iana/Const/HTTPStatusCode.php",
-            "src/Iana/Const/MimeExtension.php",
-            "src/Iana/Const/MimeType.php"
+            "src/bootstrap.php"
         ],
         "classmap": [
             "src/"
