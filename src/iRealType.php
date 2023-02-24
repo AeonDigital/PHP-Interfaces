@@ -26,8 +26,6 @@ interface iRealType
 
 
 
-
-
     /**
      * Retorna o valor que esta instância está representando.
      *
@@ -446,5 +444,5 @@ interface iRealType
      * @return string
      * Valor atual desta instância formatado conforme definido.
      */
-    public function format(?int $dPlaces = null, string $dec, string $tho): string;
+    public function format(?int $dPlaces = null, string $dec = "", string $tho = ""): string;
 }
